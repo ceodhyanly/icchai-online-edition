@@ -1,0 +1,273 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  /* ── Warm white / cream backgrounds ── */
+  --background:   #FFFFFF;
+  --surface:      #FAF7F4;
+  --surface-2:    #F2ECE5;
+  --surface-3:    #E9E0D6;
+
+  /* ── Text (warm, not cool) ── */
+  --foreground:   #1A0C08;
+  --muted:        #6E5A4E;
+  --muted-light:  #8A7268;
+
+  /* ── Harvard Crimson brand ── */
+  --teal:         #A41C30;
+  --teal-vibrant: #C4122F;
+  --teal-dim:     rgba(164,28,48,0.07);
+  --teal-border:  rgba(164,28,48,0.22);
+
+  /* ── Gold accent ── */
+  --gold:         #C69232;
+
+  /* ── Borders ── */
+  --border:       rgba(26,12,8,0.09);
+  --border-mid:   rgba(26,12,8,0.16);
+
+  /* ── Hero stays dark ── */
+  --hero-bg:      #16040A;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--surface-2); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+::selection { background: rgba(164,28,48,0.12); color: var(--foreground); }
+
+/* ── Typography ── */
+.display {
+  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  font-size: clamp(48px, 7vw, 84px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+}
+.headline {
+  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  font-size: clamp(30px, 4vw, 50px);
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  line-height: 1.15;
+  color: var(--foreground);
+}
+.title {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.body-lg {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--muted-light);
+}
+.body {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted-light);
+}
+.caption {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ── Layout ── */
+.container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 96px 0; }
+.section-lg { padding: 128px 0; }
+
+/* ── Dividers ── */
+.rule { height: 1px; background: var(--border); width: 100%; }
+.rule-teal { height: 1px; background: linear-gradient(90deg, var(--teal), transparent); }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-teal {
+  background: var(--teal);
+  color: #FFFFFF;
+}
+.btn-teal:hover {
+  background: #8B1728;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(164,28,48,0.28);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--foreground);
+  border: 1.5px solid var(--border-mid);
+}
+.btn-outline:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 0;
+}
+.btn-ghost:hover { color: var(--teal); }
+
+/* ── Cards ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.card:hover {
+  border-color: var(--teal-border);
+  box-shadow: 0 4px 24px rgba(26,12,8,0.08);
+  transform: translateY(-2px);
+}
+
+/* ── Chips / Tags ── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  background: var(--surface-3);
+  border: 1px solid var(--border-mid);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.chip-teal {
+  background: var(--teal-dim);
+  border-color: var(--teal-border);
+  color: var(--teal);
+}
+
+/* ── Form elements ── */
+.field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.field-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1.5px solid var(--border-mid);
+  border-radius: 3px;
+  padding: 12px 16px;
+  color: var(--foreground);
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.field-input:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(164,28,48,0.10);
+}
+.field-input::placeholder { color: var(--muted); opacity: 0.6; }
+
+select.field-input { cursor: pointer; }
+
+/* ── Nav links ── */
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted-light);
+  text-decoration: none;
+  transition: color 0.2s;
+  letter-spacing: 0.01em;
+}
+.nav-link:hover { color: var(--teal); }
+
+/* ── Hover cells ── */
+.hover-cell { transition: background 0.2s; }
+.hover-cell:hover { background: var(--surface-2) !important; }
+
+/* ── Institution blocks ── */
+.inst-block { border-left: 2px solid var(--teal); padding-left: 16px; }
+
+/* ── Hero section overrides (stays dark) ── */
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(228,220,212,0.85);
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(8px);
+}
+.hero-chip-teal {
+  background: rgba(198,146,50,0.14);
+  border-color: rgba(198,146,50,0.38);
+  color: #D4A540;
+}
+.hero-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  background: transparent;
+  color: rgba(228,220,212,0.9);
+  border: 1.5px solid rgba(255,255,255,0.22);
+  transition: all 0.2s;
+}
+.hero-btn-outline:hover {
+  border-color: rgba(198,146,50,0.60);
+  color: #D4A540;
+  transform: translateY(-1px);
+}

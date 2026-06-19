@@ -1,0 +1,187 @@
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
+const roles = [
+  'Researcher / Academic', 'Clinician / Therapist', 'Technology / Industry',
+  'Yoga / Meditation Practitioner', 'Student', 'Journalist / Media', 'Other',
+]
+const pillars = [
+  'Contemplative Neuroscience & Self-Regulation',
+  'Yoga, Ayurveda & Indian Knowledge Systems',
+  'AI & Digital Therapeutics',
+  'Biofeedback, Wearables & Biosignal Science',
+  'Clinical Translation & Digital Health Delivery',
+  'Ethics, Responsibility & the Future',
+]
+const attendance = [
+  { value: 'both', label: 'Both Days', sub: 'October 22–23, 2026' },
+  { value: 'day1', label: 'Day 1 Only', sub: 'October 22 — The Science of Self-Regulation' },
+  { value: 'day2', label: 'Day 2 Only', sub: 'October 23 — AI & Digital Therapeutics' },
+]
+
+const stepLabels = ['Personal Info', 'Background', 'Preferences']
+
+export default function RegisterPage() {
+  const router = useRouter()
+  const [step, setStep] = useState(1)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [form, setForm] = useState({
+    firstName: '', lastName: '', email: '', password: '', confirmPassword: '',
+    institution: '', country: '', role: '', interests: [] as string[], attendance: 'both',
+  })
+
+  const set = (k: string, v: string | string[]) => setForm(f => ({ ...f, [k]: v }))
+  const toggle = (pillar: string) => set('interests', form.interests.includes(pillar)
+    ? form.interests.filter(p => p !== pillar) : [...form.interests, pillar])
+
+  const next = (requiredFields: (keyof typeof form)[]) => {
+    for (const f of requiredFields) {
+      if (!form[f]) { setError(`Please fill in all required fields`); return }
+    }
+    setError(''); setStep(s => s + 1)
+  }
+
+  const submit = async () => {
+    if (form.password !== form.confirmPassword) { setError('Passwords do not match'); return }
+    if (form.password.length < 8) { setError('Password must be at least 8 characters'); return }
+    setLoading(true); setError('')
+    const res = await fetch('/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...form }),
+    })
+    const data = await res.json()
+    setLoading(false)
+    if (!res.ok) { setError(data.error ?? 'Registration failed'); return }
+    router.push('/dashboard')
+  }
+
+  return (
+    <div style={{ minHeight: '100vh', background: 'var(--background)', paddingTop: 68, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '100px 24px 80px' }}>
+      <div style={{ width: '100%', maxWidth: 600 }}>
+        {/* Header */}
+        <div style={{ marginBottom: 48 }}>
+          <p className="label" style={{ marginBottom: 16 }}>Free Registration</p>
+          <h1 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 8 }}>
+            Register for MBDHC 2026
+          </h1>
+          <p className="body">October 22–23, 2026 · Online · Free to attend</p>
+        </div>
+
+        {/* Step indicator */}
+        <div style={{ display: 'flex', gap: 0, marginBottom: 40, borderBottom: '1px solid var(--border)' }}>
+          {stepLabels.map((l, i) => (
+            <div key={l} style={{ flex: 1, paddingBottom: 14, borderBottom: step === i + 1 ? '2px solid var(--teal)' : '2px solid transparent', marginBottom: -1 }}>
+              <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: step === i + 1 ? 'var(--teal)' : step > i + 1 ? 'var(--muted-light)' : 'var(--muted)' }}>
+                {i + 1}. {l}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Error */}
+        {error && (
+          <div style={{ padding: '12px 16px', background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.25)', borderRadius: 6, fontSize: 14, color: '#FCA5A5', marginBottom: 24 }}>
+            {error}
+          </div>
+        )}
+
+        {step === 1 && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              <Field label="First Name *"><input className="field-input" placeholder="Jane" value={form.firstName} onChange={e => set('firstName', e.target.value)} /></Field>
+              <Field label="Last Name *"><input className="field-input" placeholder="Smith" value={form.lastName} onChange={e => set('lastName', e.target.value)} /></Field>
+            </div>
+            <Field label="Email Address *"><input className="field-input" type="email" placeholder="jane@example.com" value={form.email} onChange={e => set('email', e.target.value)} /></Field>
+            <Field label="Password *"><input className="field-input" type="password" placeholder="Minimum 8 characters" value={form.password} onChange={e => set('password', e.target.value)} /></Field>
+            <Field label="Confirm Password *"><input className="field-input" type="password" placeholder="Repeat your password" value={form.confirmPassword} onChange={e => set('confirmPassword', e.target.value)} /></Field>
+            <button className="btn btn-teal" style={{ width: '100%', justifyContent: 'center', marginTop: 8 }} onClick={() => next(['firstName','lastName','email','password'])}>
+              Continue
+            </button>
+          </div>
+        )}
+
+        {step === 2 && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+            <Field label="Institution / Organisation">
+              <input className="field-input" placeholder="University, Hospital, Company..." value={form.institution} onChange={e => set('institution', e.target.value)} />
+            </Field>
+            <Field label="Country">
+              <input className="field-input" placeholder="e.g. India, United States, United Kingdom" value={form.country} onChange={e => set('country', e.target.value)} />
+            </Field>
+            <Field label="Your Role">
+              <select className="field-input" value={form.role} onChange={e => set('role', e.target.value)}>
+                <option value="">Select your role...</option>
+                {roles.map(r => <option key={r} value={r}>{r}</option>)}
+              </select>
+            </Field>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 8 }}>
+              <button className="btn btn-outline" style={{ justifyContent: 'center' }} onClick={() => setStep(1)}>Back</button>
+              <button className="btn btn-teal" style={{ justifyContent: 'center' }} onClick={() => { setError(''); setStep(3) }}>Continue</button>
+            </div>
+          </div>
+        )}
+
+        {step === 3 && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+            {/* Attendance */}
+            <div>
+              <label className="field-label" style={{ marginBottom: 12 }}>Attendance</label>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {attendance.map(a => (
+                  <label key={a.value} style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '16px 18px', background: form.attendance === a.value ? 'rgba(164,28,48,0.06)' : 'var(--surface-3)', borderRadius: 6, border: `1px solid ${form.attendance === a.value ? 'var(--teal-border)' : 'var(--border-mid)'}`, cursor: 'pointer', transition: 'all 0.15s' }}>
+                    <input type="radio" name="attendance" value={a.value} checked={form.attendance === a.value} onChange={e => set('attendance', e.target.value)} style={{ accentColor: 'var(--teal)' }} />
+                    <div>
+                      <div style={{ fontWeight: 600, fontSize: 14 }}>{a.label}</div>
+                      <div className="caption" style={{ marginTop: 2 }}>{a.sub}</div>
+                    </div>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Interests */}
+            <div>
+              <label className="field-label" style={{ marginBottom: 12 }}>Areas of Interest</label>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                {pillars.map((pillar, i) => (
+                  <label key={pillar} style={{ display: 'flex', gap: 12, alignItems: 'center', padding: '12px 14px', background: form.interests.includes(pillar) ? 'rgba(164,28,48,0.04)' : 'transparent', borderRadius: 6, border: `1px solid ${form.interests.includes(pillar) ? 'var(--teal-border)' : 'var(--border)'}`, cursor: 'pointer', transition: 'all 0.15s' }}>
+                    <input type="checkbox" checked={form.interests.includes(pillar)} onChange={() => toggle(pillar)} style={{ accentColor: 'var(--teal)', flexShrink: 0 }} />
+                    <span style={{ fontSize: 13, color: 'var(--muted-light)' }}>
+                      <span style={{ color: 'var(--teal)', fontWeight: 700, marginRight: 8 }}>P{i + 1}</span>
+                      {pillar}
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 12 }}>
+              <button className="btn btn-outline" style={{ justifyContent: 'center' }} onClick={() => setStep(2)}>Back</button>
+              <button className="btn btn-teal" style={{ justifyContent: 'center', opacity: loading ? 0.7 : 1 }} onClick={submit} disabled={loading}>
+                {loading ? 'Registering...' : 'Complete Registration'}
+              </button>
+            </div>
+          </div>
+        )}
+
+        <p style={{ textAlign: 'center', marginTop: 32, fontSize: 14, color: 'var(--muted)' }}>
+          Already registered? <Link href="/login" style={{ color: 'var(--teal)', textDecoration: 'none', fontWeight: 600 }}>Sign in</Link>
+        </p>
+      </div>
+    </div>
+  )
+}
+
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <label className="field-label">{label}</label>
+      {children}
+    </div>
+  )
+}
