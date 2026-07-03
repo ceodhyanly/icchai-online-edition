@@ -23,40 +23,44 @@ const attLabel: Record<string, string> = {
   day2: 'Day 2 Only',
 }
 
-async function downloadBlob(url: string, filename: string) {
-  const res = await fetch(url)
-  if (!res.ok) throw new Error('Download failed')
+async function downloadPDF(userId: number, name: string) {
+  const res = await fetch(`/api/slip/by-user/${userId}?adminKey=${ADMIN_KEY}`)
+  if (!res.ok) { alert('Failed to generate PDF. Try again.'); return }
   const blob = await res.blob()
   const a = document.createElement('a')
   a.href = URL.createObjectURL(blob)
-  a.download = filename
+  a.download = `ICCHAI-2026-Pass-${name.replace(/\s+/g, '-')}.pdf`
+  document.body.appendChild(a)
   a.click()
+  document.body.removeChild(a)
   URL.revokeObjectURL(a.href)
 }
 
-async function downloadBulk(regNumbers: string[] | 'all', label: string) {
-  const body = regNumbers === 'all'
+async function downloadBulkZip(userIds: number[] | 'all', filename: string) {
+  const body = userIds === 'all'
     ? { adminKey: ADMIN_KEY, all: true }
-    : { adminKey: ADMIN_KEY, regNumbers }
+    : { adminKey: ADMIN_KEY, userIds }
 
   const res = await fetch('/api/slip/bulk', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   })
-  if (!res.ok) throw new Error('Bulk download failed')
+  if (!res.ok) { alert('Bulk download failed. Try again.'); return }
   const blob = await res.blob()
   const a = document.createElement('a')
   a.href = URL.createObjectURL(blob)
-  a.download = label
+  a.download = filename
+  document.body.appendChild(a)
   a.click()
+  document.body.removeChild(a)
   URL.revokeObjectURL(a.href)
 }
 
 export default function AdminTable({ users }: { users: User[] }) {
   const [selected, setSelected] = useState<Set<number>>(new Set())
+  const [loading, setLoading] = useState<number | null>(null)
   const [bulkLoading, setBulkLoading] = useState(false)
-  const [bulkError, setBulkError] = useState('')
 
   const allChecked = users.length > 0 && selected.size === users.length
   const toggleAll = () => setSelected(allChecked ? new Set() : new Set(users.map(u => u.id)))
@@ -66,22 +70,19 @@ export default function AdminTable({ users }: { users: User[] }) {
     return next
   })
 
-  const selectedUsers = users.filter(u => selected.has(u.id))
-  const selectedRegNumbers = selectedUsers
-    .map(u => u.registrationNumber)
-    .filter((r): r is string => r !== null)
+  const handleSingleDownload = async (u: User) => {
+    setLoading(u.id)
+    await downloadPDF(u.id, `${u.firstName}-${u.lastName}`)
+    setLoading(null)
+  }
 
-  const handleBulkDownload = async (mode: 'selected' | 'all') => {
-    setBulkLoading(true); setBulkError('')
-    try {
-      if (mode === 'all') {
-        await downloadBulk('all', 'ICCHAI-2026-All-Registration-Passes.zip')
-      } else {
-        if (selectedRegNumbers.length === 0) { setBulkError('No registrants selected'); setBulkLoading(false); return }
-        await downloadBulk(selectedRegNumbers, `ICCHAI-2026-Selected-${selectedRegNumbers.length}-Passes.zip`)
-      }
-    } catch {
-      setBulkError('Download failed. Please try again.')
+  const handleBulk = async (mode: 'selected' | 'all') => {
+    setBulkLoading(true)
+    if (mode === 'all') {
+      await downloadBulkZip('all', 'ICCHAI-2026-All-Registration-Passes.zip')
+    } else {
+      if (selected.size === 0) { setBulkLoading(false); return }
+      await downloadBulkZip(Array.from(selected), `ICCHAI-2026-Selected-${selected.size}-Passes.zip`)
     }
     setBulkLoading(false)
   }
@@ -89,35 +90,52 @@ export default function AdminTable({ users }: { users: User[] }) {
   return (
     <div>
       {/* Bulk action bar */}
-      <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', marginBottom: 24 }}>
-        <span style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 600 }}>
-          {selected.size > 0 ? `${selected.size} selected` : 'Select registrants to download passes'}
+      <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', marginBottom: 20, padding: '14px 18px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6 }}>
+        <span style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 600, marginRight: 4 }}>
+          {selected.size > 0 ? `${selected.size} selected` : 'Select rows to bulk download'}
         </span>
+
         <button
-          onClick={() => handleBulkDownload('selected')}
+          onClick={() => handleBulk('selected')}
           disabled={bulkLoading || selected.size === 0}
-          style={{ padding: '8px 18px', background: selected.size > 0 ? 'var(--teal)' : 'var(--surface-3)', color: selected.size > 0 ? '#fff' : 'var(--muted)', border: '1px solid var(--teal-border)', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: selected.size > 0 ? 'pointer' : 'not-allowed', opacity: bulkLoading ? 0.6 : 1 }}
+          style={{
+            padding: '8px 16px',
+            background: selected.size > 0 ? 'var(--teal)' : 'var(--surface-3)',
+            color: selected.size > 0 ? '#fff' : 'var(--muted)',
+            border: 'none', borderRadius: 5, fontSize: 12, fontWeight: 700,
+            cursor: selected.size > 0 && !bulkLoading ? 'pointer' : 'not-allowed',
+          }}
         >
-          Download Selected ({selected.size})
+          Download Selected ({selected.size}) as ZIP
         </button>
+
         <button
-          onClick={() => handleBulkDownload('all')}
+          onClick={() => handleBulk('all')}
           disabled={bulkLoading || users.length === 0}
-          style={{ padding: '8px 18px', background: 'var(--surface)', color: 'var(--foreground)', border: '1px solid var(--border)', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', opacity: bulkLoading ? 0.6 : 1 }}
+          style={{
+            padding: '8px 16px',
+            background: '#1a1a2e', color: '#fff',
+            border: 'none', borderRadius: 5, fontSize: 12, fontWeight: 700,
+            cursor: !bulkLoading && users.length > 0 ? 'pointer' : 'not-allowed',
+            opacity: bulkLoading ? 0.6 : 1,
+          }}
         >
-          {bulkLoading ? 'Preparing ZIP...' : `Download All (${users.length})`}
+          {bulkLoading ? 'Preparing ZIP...' : `Download All (${users.length}) as ZIP`}
         </button>
+
         {selected.size > 0 && (
-          <button onClick={() => setSelected(new Set())} style={{ padding: '8px 14px', background: 'transparent', color: 'var(--muted)', border: '1px solid var(--border)', borderRadius: 4, fontSize: 12, cursor: 'pointer' }}>
-            Clear
+          <button
+            onClick={() => setSelected(new Set())}
+            style={{ padding: '8px 12px', background: 'transparent', color: 'var(--muted)', border: '1px solid var(--border)', borderRadius: 5, fontSize: 12, cursor: 'pointer' }}
+          >
+            Clear Selection
           </button>
         )}
-        {bulkError && <span style={{ fontSize: 12, color: '#FCA5A5' }}>{bulkError}</span>}
       </div>
 
       {/* Table */}
       <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6, overflow: 'hidden' }}>
-        <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ padding: '18px 24px', borderBottom: '1px solid var(--border)' }}>
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)' }}>
             All Registrants — {users.length} total
           </p>
@@ -127,22 +145,39 @@ export default function AdminTable({ users }: { users: User[] }) {
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
             <thead>
               <tr style={{ background: 'var(--surface-2)' }}>
-                <th style={{ padding: '12px 16px', borderBottom: '1px solid var(--border)', width: 40 }}>
-                  <input type="checkbox" checked={allChecked} onChange={toggleAll} style={{ cursor: 'pointer', accentColor: 'var(--teal)' }} />
+                <th style={{ padding: '12px 16px', borderBottom: '1px solid var(--border)', width: 44 }}>
+                  <input
+                    type="checkbox"
+                    checked={allChecked}
+                    onChange={toggleAll}
+                    style={{ cursor: 'pointer', accentColor: 'var(--teal)', width: 15, height: 15 }}
+                  />
                 </th>
-                {['#', 'Name', 'Email', 'Institution', 'Country', 'Role', 'Attendance', 'Reg No.', 'Registered', 'Pass'].map(h => (
-                  <th key={h} style={{ padding: '12px 14px', textAlign: 'left', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', whiteSpace: 'nowrap', borderBottom: '1px solid var(--border)' }}>{h}</th>
+                {['#', 'Name', 'Email', 'Institution', 'Country', 'Role', 'Attendance', 'Reg No.', 'Registered', 'Pass PDF'].map(h => (
+                  <th key={h} style={{ padding: '12px 14px', textAlign: 'left', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', whiteSpace: 'nowrap', borderBottom: '1px solid var(--border)' }}>
+                    {h}
+                  </th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {users.map((u, i) => (
-                <tr key={u.id} style={{ borderBottom: '1px solid var(--border)', background: selected.has(u.id) ? 'rgba(164,28,48,0.03)' : 'transparent' }}>
+                <tr
+                  key={u.id}
+                  style={{ borderBottom: '1px solid var(--border)', background: selected.has(u.id) ? 'rgba(164,28,48,0.04)' : 'transparent', transition: 'background 0.1s' }}
+                >
                   <td style={{ padding: '12px 16px' }}>
-                    <input type="checkbox" checked={selected.has(u.id)} onChange={() => toggle(u.id)} style={{ cursor: 'pointer', accentColor: 'var(--teal)' }} />
+                    <input
+                      type="checkbox"
+                      checked={selected.has(u.id)}
+                      onChange={() => toggle(u.id)}
+                      style={{ cursor: 'pointer', accentColor: 'var(--teal)', width: 15, height: 15 }}
+                    />
                   </td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted)', fontVariantNumeric: 'tabular-nums' }}>{i + 1}</td>
-                  <td style={{ padding: '12px 14px', fontWeight: 600, color: 'var(--foreground)', whiteSpace: 'nowrap' }}>{u.firstName} {u.lastName}</td>
+                  <td style={{ padding: '12px 14px', fontWeight: 600, color: 'var(--foreground)', whiteSpace: 'nowrap' }}>
+                    {u.firstName} {u.lastName}
+                  </td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.email}</td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.institution ?? '—'}</td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)', whiteSpace: 'nowrap' }}>{u.country ?? '—'}</td>
@@ -152,30 +187,35 @@ export default function AdminTable({ users }: { users: User[] }) {
                       {attLabel[u.attendance] ?? u.attendance}
                     </span>
                   </td>
-                  <td style={{ padding: '12px 14px', fontFamily: 'monospace', fontSize: 12, color: 'var(--teal)', whiteSpace: 'nowrap' }}>
-                    {u.registrationNumber ?? '—'}
+                  <td style={{ padding: '12px 14px', fontFamily: 'monospace', fontSize: 11, color: 'var(--teal)', whiteSpace: 'nowrap' }}>
+                    {u.registrationNumber ?? `ICCHAI-2026-${1000 + u.id}`}
                   </td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted)', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums' }}>
                     {new Date(u.createdAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}
                   </td>
                   <td style={{ padding: '12px 14px' }}>
-                    {u.registrationNumber ? (
-                      <button
-                        onClick={() => downloadBlob(
-                          `/api/slip/${u.registrationNumber}?adminKey=${ADMIN_KEY}`,
-                          `ICCHAI-2026-Pass-${u.registrationNumber}.pdf`
-                        )}
-                        style={{ padding: '5px 12px', background: 'var(--surface-3)', border: '1px solid var(--border)', borderRadius: 4, fontSize: 11, fontWeight: 600, color: 'var(--teal)', cursor: 'pointer', whiteSpace: 'nowrap' }}
-                      >
-                        PDF
-                      </button>
-                    ) : '—'}
+                    <button
+                      onClick={() => handleSingleDownload(u)}
+                      disabled={loading === u.id}
+                      style={{
+                        padding: '6px 14px',
+                        background: loading === u.id ? 'var(--surface-3)' : 'var(--teal)',
+                        color: loading === u.id ? 'var(--muted)' : '#fff',
+                        border: 'none', borderRadius: 4, fontSize: 11, fontWeight: 700,
+                        cursor: loading === u.id ? 'not-allowed' : 'pointer',
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      {loading === u.id ? '...' : 'Download PDF'}
+                    </button>
                   </td>
                 </tr>
               ))}
               {users.length === 0 && (
                 <tr>
-                  <td colSpan={11} style={{ padding: '48px 16px', textAlign: 'center', color: 'var(--muted)' }}>No registrations yet</td>
+                  <td colSpan={11} style={{ padding: '48px 16px', textAlign: 'center', color: 'var(--muted)' }}>
+                    No registrations yet
+                  </td>
                 </tr>
               )}
             </tbody>

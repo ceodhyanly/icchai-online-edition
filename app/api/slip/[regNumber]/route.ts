@@ -5,6 +5,13 @@ import { generateSlipPDF } from '@/lib/generateSlipPDF'
 
 const ADMIN_KEY = process.env.ADMIN_KEY ?? '19977991'
 
+async function ensureRegNumber(user: { id: number; registrationNumber: string | null }) {
+  if (user.registrationNumber) return user.registrationNumber
+  const regNum = `ICCHAI-2026-${1000 + user.id}`
+  await prisma.user.update({ where: { id: user.id }, data: { registrationNumber: regNum } })
+  return regNum
+}
+
 export async function GET(
   req: NextRequest,
   { params }: { params: Promise<{ regNumber: string }> }
@@ -27,27 +34,22 @@ export async function GET(
       }
     }
 
-    if (!authorized) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
+    if (!authorized) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
     const user = await prisma.user.findUnique({ where: { registrationNumber: regNumber } })
-    if (!user?.registrationNumber) {
-      return NextResponse.json({ error: 'Not found' }, { status: 404 })
-    }
+    if (!user) return NextResponse.json({ error: 'Not found' }, { status: 404 })
 
+    const regNum = await ensureRegNumber(user)
     const pdfBytes = await generateSlipPDF({
       firstName: user.firstName, lastName: user.lastName, email: user.email,
       institution: user.institution, country: user.country, role: user.role,
-      attendance: user.attendance, registrationNumber: user.registrationNumber,
-      createdAt: user.createdAt,
+      attendance: user.attendance, registrationNumber: regNum, createdAt: user.createdAt,
     })
 
     return new NextResponse(pdfBytes, {
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="ICCHAI-2026-Pass-${regNumber}.pdf"`,
-        'Content-Length': pdfBytes.length.toString(),
+        'Content-Disposition': `attachment; filename="ICCHAI-2026-Pass-${regNum}.pdf"`,
       },
     })
   } catch {

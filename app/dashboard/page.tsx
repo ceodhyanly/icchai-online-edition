@@ -45,15 +45,17 @@ export default async function DashboardPage() {
               <span className="chip chip-teal" style={{ fontSize: 11 }}>Registered</span>
               <span className="chip" style={{ fontSize: 11 }}>{attendanceLabel}</span>
             </div>
-            {user.registrationNumber && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
-                <span style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Reg No.</span>
-                <span style={{ fontSize: 15, fontWeight: 800, color: 'var(--teal)', fontFamily: 'monospace' }}>{user.registrationNumber}</span>
-                <a href={`/api/slip/${user.registrationNumber}`} download style={{ fontSize: 12, fontWeight: 700, color: 'var(--teal)', textDecoration: 'none', padding: '6px 14px', border: '1px solid var(--teal-border)', borderRadius: 4 }}>
-                  Download Pass (PDF)
-                </a>
-              </div>
-            )}
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+              {user.registrationNumber && (
+                <>
+                  <span style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Reg No.</span>
+                  <span style={{ fontSize: 15, fontWeight: 800, color: 'var(--teal)', fontFamily: 'monospace' }}>{user.registrationNumber}</span>
+                </>
+              )}
+              <a href="/api/slip/own" style={{ fontSize: 13, fontWeight: 700, color: '#fff', textDecoration: 'none', padding: '8px 18px', background: 'var(--teal)', borderRadius: 5 }}>
+                Download Registration Pass (PDF)
+              </a>
+            </div>
           </div>
         </div>
 
