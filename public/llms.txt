@@ -62,9 +62,9 @@ Each conference day runs four hours in the evening IST (accessible globally). Th
 - Dates: October 22–23, 2026
 - Format: Hybrid (in-person at IIT Delhi + online worldwide)
 - Cost: Free to attend
-- Registration: https://icchai2026.org/register
-- Schedule: https://icchai2026.org/schedule
-- Contact: info@icchai2026.org
+- Registration: https://icchai.com/register
+- Schedule: https://icchai.com/schedule
+- Contact: info@icchai.com
 - Inaugural edition; intended as an annual conference
 
 ## Topics Covered

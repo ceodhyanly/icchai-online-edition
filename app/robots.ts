@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/admin', '/api/', '/dashboard', '/login'],
       },
     ],
-    sitemap: 'https://icchai2026.org/sitemap.xml',
+    sitemap: 'https://icchai.com/sitemap.xml',
   }
 }

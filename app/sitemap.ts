@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://icchai2026.org'
+  const base = 'https://icchai.com'
   const now = new Date()
   return [
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1 },

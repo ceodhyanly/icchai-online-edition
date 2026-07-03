@@ -5,7 +5,7 @@ import Link from 'next/link'
 const nav = [
   { heading: 'Conference', links: [['/#partners','Partners'], ['/#about','About'], ['/#pillars','Pillars'], ['/schedule','Schedule'], ['/#speakers','Speakers']] },
   { heading: 'Attend', links: [['/register','Register Free'], ['/login','Sign In'], ['/schedule','Full Programme']] },
-  { heading: 'Legal', links: [['/privacy','Privacy Policy'], ['/terms','Terms of Use'], ['/#faq','FAQs']] },
+  { heading: 'Legal', links: [['/privacy','Privacy Policy'], ['/terms','Terms of Use'], ['/cookies','Cookie Policy'], ['/#faq','FAQs']] },
 ]
 
 export default function Footer() {
@@ -32,7 +32,7 @@ export default function Footer() {
               <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', background: 'rgba(198,146,50,0.10)', border: '1px solid rgba(198,146,50,0.25)', borderRadius: 3, fontSize: 11, fontWeight: 500, color: 'rgba(198,146,50,0.80)', letterSpacing: '0.02em' }}>IIT Delhi + Online</span>
             </div>
             <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.40)', lineHeight: 1.6 }}>
-              Contact: <a href="mailto:info@icchai2026.org" style={{ color: 'rgba(198,146,50,0.70)', textDecoration: 'none' }}>info@icchai2026.org</a>
+              Contact: <a href="mailto:info@icchai.com" style={{ color: 'rgba(198,146,50,0.70)', textDecoration: 'none' }}>info@icchai.com</a>
             </p>
           </div>
 

@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
 
             <Block title="Who we are">
-              ICCHAI 2026 (International Conference on Contemplative HealthTech and AI) is organised by YogaXBiofeedback Pvt Ltd (Dhyanly) in partnership with The India Center, University of Central Florida. The conference takes place October 22–23, 2026, in-person at IIT Delhi and online worldwide. This website is operated at icchai2026.org.
+              ICCHAI 2026 (International Conference on Contemplative HealthTech and AI) is organised by YogaXBiofeedback Pvt Ltd (Dhyanly) in partnership with The India Center, University of Central Florida. The conference takes place October 22–23, 2026, in-person at IIT Delhi and online worldwide. This website is operated at icchai.com.
             </Block>
 
             <Block title="What information we collect">
@@ -49,7 +49,7 @@ export default function PrivacyPage() {
             </Block>
 
             <Block title="Your rights">
-              You have the right to access, correct, or delete your personal data at any time. To make a request, contact us at info@icchai2026.org. We will respond within 30 days.
+              You have the right to access, correct, or delete your personal data at any time. To make a request, contact us at info@icchai.com. We will respond within 30 days.
             </Block>
 
             <Block title="Retention">
@@ -57,7 +57,7 @@ export default function PrivacyPage() {
             </Block>
 
             <Block title="Contact">
-              For any privacy-related questions, write to us at <a href="mailto:info@icchai2026.org" style={{ color: 'var(--teal)', textDecoration: 'none' }}>info@icchai2026.org</a>.
+              For any privacy-related questions, write to us at <a href="mailto:info@icchai.com" style={{ color: 'var(--teal)', textDecoration: 'none' }}>info@icchai.com</a>.
             </Block>
 
           </div>

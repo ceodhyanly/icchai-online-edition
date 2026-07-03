@@ -22,7 +22,7 @@ export default function TermsPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
 
             <Block title="Acceptance">
-              By accessing or using the ICCHAI 2026 website (icchai2026.org) you agree to these terms. If you do not agree, please do not use the site.
+              By accessing or using the ICCHAI 2026 website (icchai.com) you agree to these terms. If you do not agree, please do not use the site.
             </Block>
 
             <Block title="About the conference">
@@ -58,7 +58,7 @@ export default function TermsPage() {
             </Block>
 
             <Block title="Contact">
-              Questions about these terms may be sent to <a href="mailto:info@icchai2026.org" style={{ color: 'var(--teal)', textDecoration: 'none' }}>info@icchai2026.org</a>.
+              Questions about these terms may be sent to <a href="mailto:info@icchai.com" style={{ color: 'var(--teal)', textDecoration: 'none' }}>info@icchai.com</a>.
             </Block>
 
           </div>

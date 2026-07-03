@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', weight: ['400', '500', '600', '700', '800'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://icchai2026.org'),
+  metadataBase: new URL('https://icchai.com'),
   icons: {
     icon: '/images/emoticonimg.png',
     shortcut: '/images/emoticonimg.png',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: 'ICCHAI 2026 | International Conference on Contemplative HealthTech and AI',
     description: 'Free hybrid conference on AI, yoga, meditation and contemplative science. October 22–23, 2026. In-person at IIT Delhi and online worldwide.',
     type: 'website',
-    url: 'https://icchai2026.org',
+    url: 'https://icchai.com',
     siteName: 'ICCHAI 2026',
     images: [{ url: '/images/og-image.svg', width: 1200, height: 630, alt: 'ICCHAI 2026 Conference' }],
     locale: 'en_US',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     images: ['/images/og-image.svg'],
   },
   alternates: {
-    canonical: 'https://icchai2026.org',
+    canonical: 'https://icchai.com',
   },
 }
 
@@ -58,15 +58,15 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Event',
-      '@id': 'https://icchai2026.org/#event',
+      '@id': 'https://icchai.com/#event',
       name: 'ICCHAI 2026: International Conference on Contemplative HealthTech and AI',
       description: 'The inaugural International Conference on Contemplative HealthTech and AI, bringing together researchers, clinicians, and technologists at the intersection of yoga, meditation, AI, and digital health. Free hybrid event held in-person at IIT Delhi and online worldwide.',
-      url: 'https://icchai2026.org',
+      url: 'https://icchai.com',
       startDate: '2026-10-22T18:30:00+05:30',
       endDate: '2026-10-23T22:30:00+05:30',
       eventStatus: 'https://schema.org/EventScheduled',
       eventAttendanceMode: 'https://schema.org/MixedEventAttendanceMode',
-      image: 'https://icchai2026.org/images/og-image.svg',
+      image: 'https://icchai.com/images/og-image.svg',
       location: [
         {
           '@type': 'Place',
@@ -82,7 +82,7 @@ const jsonLd = {
         },
         {
           '@type': 'VirtualLocation',
-          url: 'https://icchai2026.org',
+          url: 'https://icchai.com',
         },
       ],
       organizer: [
@@ -114,7 +114,7 @@ const jsonLd = {
         price: '0',
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
-        url: 'https://icchai2026.org/register',
+        url: 'https://icchai.com/register',
         validFrom: '2026-01-01',
       },
       about: [
@@ -132,27 +132,27 @@ const jsonLd = {
     },
     {
       '@type': 'Organization',
-      '@id': 'https://icchai2026.org/#organizer',
+      '@id': 'https://icchai.com/#organizer',
       name: 'ICCHAI 2026',
-      url: 'https://icchai2026.org',
-      logo: 'https://icchai2026.org/images/emoticonimg.png',
+      url: 'https://icchai.com',
+      logo: 'https://icchai.com/images/emoticonimg.png',
       contactPoint: {
         '@type': 'ContactPoint',
-        email: 'info@icchai2026.org',
+        email: 'info@icchai.com',
         contactType: 'Conference Enquiries',
       },
       sameAs: [],
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://icchai2026.org/#website',
-      url: 'https://icchai2026.org',
+      '@id': 'https://icchai.com/#website',
+      url: 'https://icchai.com',
       name: 'ICCHAI 2026',
       description: 'Official website of the International Conference on Contemplative HealthTech and AI',
-      publisher: { '@id': 'https://icchai2026.org/#organizer' },
+      publisher: { '@id': 'https://icchai.com/#organizer' },
       potentialAction: {
         '@type': 'RegisterAction',
-        target: 'https://icchai2026.org/register',
+        target: 'https://icchai.com/register',
         name: 'Register for ICCHAI 2026',
       },
     },
