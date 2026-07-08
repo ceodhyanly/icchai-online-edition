@@ -101,7 +101,7 @@ export default function RegisterPage() {
           </Link>
 
           <div style={{ padding: '20px 24px', background: 'var(--surface-3)', borderRadius: 6, fontSize: 13, color: 'var(--muted-light)', lineHeight: 1.7 }}>
-            October 22–23, 2026 &nbsp;·&nbsp; IIT Delhi, New Delhi &amp; Online &nbsp;·&nbsp; 18:30–22:30 IST
+            October 22–23, 2026 &nbsp;·&nbsp; Fully Online &nbsp;·&nbsp; 18:30–22:30 IST
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@ export default function RegisterPage() {
           <h1 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 8 }}>
             Register for ICCHAI 2026
           </h1>
-          <p className="body">October 22–23, 2026 · Hybrid, in-person at IIT Delhi, New Delhi and online worldwide · Free to attend</p>
+          <p className="body">October 22–23, 2026 · Fully online worldwide · Free to attend</p>
         </div>
 
         {/* Step indicator */}

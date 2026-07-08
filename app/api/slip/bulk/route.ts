@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
       ? 'ICCHAI-2026-All-Registration-Passes.zip'
       : `ICCHAI-2026-Selected-${users.length}-Passes.zip`
 
-    return new NextResponse(zipBytes, {
+    return new NextResponse(new Blob([new Uint8Array(zipBytes)]), {
       headers: {
         'Content-Type': 'application/zip',
         'Content-Disposition': `attachment; filename="${filename}"`,

@@ -26,7 +26,7 @@ export async function GET() {
       attendance: user.attendance, registrationNumber: regNum, createdAt: user.createdAt,
     })
 
-    return new NextResponse(pdfBytes, {
+    return new NextResponse(new Blob([new Uint8Array(pdfBytes)]), {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="ICCHAI-2026-Pass-${regNum}.pdf"`,

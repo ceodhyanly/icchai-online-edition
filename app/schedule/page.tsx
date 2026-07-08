@@ -76,7 +76,7 @@ export default function SchedulePage() {
           <p className="label" style={{ marginBottom: 20 }}>Programme</p>
           <h1 className="display" style={{ marginBottom: 20 }}>Conference Schedule</h1>
           <p className="body-lg" style={{ maxWidth: 560, marginBottom: 32 }}>
-            October 22–23, 2026 &nbsp;·&nbsp; Hybrid, in-person at IIT Delhi and online worldwide &nbsp;·&nbsp; Four hours per day across all time zones
+            October 22–23, 2026 &nbsp;·&nbsp; Fully online, worldwide &nbsp;·&nbsp; Four hours per day across all time zones
           </p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             <span className="chip chip-teal">18:30 IST</span>
@@ -116,7 +116,7 @@ export default function SchedulePage() {
       <section className="section" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', textAlign: 'center' }}>
         <div className="container">
           <h2 className="headline" style={{ marginBottom: 16 }}>Reserve your place</h2>
-          <p className="body" style={{ maxWidth: 460, margin: '0 auto 40px' }}>Registration is free. Join researchers, clinicians and technologists from six institutions across four countries.</p>
+          <p className="body" style={{ maxWidth: 460, margin: '0 auto 40px' }}>Registration is free. Join researchers, clinicians and technologists from multiple institutions across several countries.</p>
           <Link href="/register" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register Free</Link>
         </div>
       </section>

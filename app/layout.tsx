@@ -18,11 +18,11 @@ export const metadata: Metadata = {
     default: 'ICCHAI 2026 | International Conference on Contemplative HealthTech and AI',
     template: '%s | ICCHAI 2026',
   },
-  description: 'ICCHAI 2026 is the International Conference on Contemplative HealthTech and AI. October 22–23, 2026. Free hybrid event, in-person at IIT Delhi and online worldwide. Bringing together yoga researchers, AI engineers, clinicians and contemplative scientists.',
+  description: 'ICCHAI 2026 is the International Conference on Contemplative HealthTech and AI. October 22–23, 2026. Free, fully online event organised by the University of Central Florida, Notre Dame of Maryland University, and YogaXBiofeedback. Bringing together yoga researchers, AI engineers, clinicians and contemplative scientists.',
   keywords: [
     'contemplative healthtech', 'AI yoga conference', 'meditation neuroscience', 'digital health conference',
     'ICCHAI 2026', 'yoga therapy AI', 'biofeedback research', 'HRV contemplative science',
-    'IIT Delhi conference', 'mindfulness technology', 'Indian Knowledge Systems', 'digital therapeutics',
+    'online conference', 'mindfulness technology', 'Indian Knowledge Systems', 'digital therapeutics',
     'contemplative neuroscience conference', 'AI mental health', 'contemplative AI',
   ],
   authors: [{ name: 'Satyam Tiwari', url: 'https://www.dhyanly.com' }],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'ICCHAI 2026 | International Conference on Contemplative HealthTech and AI',
-    description: 'Free hybrid conference on AI, yoga, meditation and contemplative science. October 22–23, 2026. In-person at IIT Delhi and online worldwide.',
+    description: 'Free, fully online conference on AI, yoga, meditation and contemplative science. October 22–23, 2026. Organised by UCF, NDMU and YogaXBiofeedback.',
     type: 'website',
     url: 'https://icchai.com',
     siteName: 'ICCHAI 2026',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ICCHAI 2026 | International Conference on Contemplative HealthTech and AI',
-    description: 'Free hybrid conference on AI, yoga, meditation and contemplative science. October 22–23, 2026.',
+    description: 'Free, fully online conference on AI, yoga, meditation and contemplative science. October 22–23, 2026.',
     images: ['/images/og-image.svg'],
   },
   alternates: {
@@ -60,26 +60,14 @@ const jsonLd = {
       '@type': 'Event',
       '@id': 'https://icchai.com/#event',
       name: 'ICCHAI 2026: International Conference on Contemplative HealthTech and AI',
-      description: 'The inaugural International Conference on Contemplative HealthTech and AI, bringing together researchers, clinicians, and technologists at the intersection of yoga, meditation, AI, and digital health. Free hybrid event held in-person at IIT Delhi and online worldwide.',
+      description: 'The inaugural International Conference on Contemplative HealthTech and AI, bringing together researchers, clinicians, and technologists at the intersection of yoga, meditation, AI, and digital health. A free, fully online event open worldwide.',
       url: 'https://icchai.com',
       startDate: '2026-10-22T18:30:00+05:30',
       endDate: '2026-10-23T22:30:00+05:30',
       eventStatus: 'https://schema.org/EventScheduled',
-      eventAttendanceMode: 'https://schema.org/MixedEventAttendanceMode',
+      eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
       image: 'https://icchai.com/images/og-image.svg',
       location: [
-        {
-          '@type': 'Place',
-          name: 'IIT Delhi, National Resource Centre for Value Education in Engineering (NRCVEE)',
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: 'Hauz Khas',
-            addressLocality: 'New Delhi',
-            addressRegion: 'Delhi',
-            postalCode: '110016',
-            addressCountry: 'IN',
-          },
-        },
         {
           '@type': 'VirtualLocation',
           url: 'https://icchai.com',
@@ -96,6 +84,11 @@ const jsonLd = {
           name: 'The India Center, University of Central Florida',
           url: 'https://www.ucf.edu',
         },
+        {
+          '@type': 'Organization',
+          name: 'Notre Dame of Maryland University',
+          url: 'https://www.ndm.edu',
+        },
       ],
       performer: [
         { '@type': 'Person', name: 'Shri Akhilesh Mishra', jobTitle: 'Former Ambassador of India' },
@@ -103,10 +96,7 @@ const jsonLd = {
         { '@type': 'Person', name: 'Dr. Steve Haberlin', jobTitle: 'Assistant Professor, University of Central Florida' },
         { '@type': 'Person', name: 'Prof. Amy Wheeler-Mantoan', jobTitle: 'Professor, Notre Dame of Maryland University' },
         { '@type': 'Person', name: 'Satyam Tiwari', jobTitle: 'Founder, YogaXBiofeedback Pvt Ltd (Dhyanly)' },
-        { '@type': 'Person', name: 'Prof. James Gomes', jobTitle: 'Professor, IIT Delhi' },
         { '@type': 'Person', name: 'Dr. Amit Sethi', jobTitle: 'Associate Professor, University of Utah' },
-        { '@type': 'Person', name: 'Dr. Rohit Saluja', jobTitle: 'Assistant Professor, IIT Mandi' },
-        { '@type': 'Person', name: 'Dr. Kunal Mooley', jobTitle: 'Assistant Professor, IIT Kanpur' },
       ],
       isAccessibleForFree: true,
       offers: {
@@ -128,7 +118,7 @@ const jsonLd = {
         { '@type': 'Thing', name: 'Heart Rate Variability' },
       ],
       inLanguage: 'en',
-      keywords: 'contemplative healthtech, AI, yoga, meditation, mindfulness, digital health, neuroscience, biofeedback, IIT Delhi, Indian Knowledge Systems',
+      keywords: 'contemplative healthtech, AI, yoga, meditation, mindfulness, digital health, neuroscience, biofeedback, online conference, Indian Knowledge Systems',
     },
     {
       '@type': 'Organization',

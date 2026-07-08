@@ -28,8 +28,7 @@ export default function Footer() {
             </p>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: 3, fontSize: 11, fontWeight: 500, color: 'rgba(228,220,212,0.55)', letterSpacing: '0.02em' }}>Oct 22–23, 2026</span>
-              <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', borderRadius: 3, fontSize: 11, fontWeight: 500, color: 'rgba(228,220,212,0.55)', letterSpacing: '0.02em' }}>Hybrid</span>
-              <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', background: 'rgba(198,146,50,0.10)', border: '1px solid rgba(198,146,50,0.25)', borderRadius: 3, fontSize: 11, fontWeight: 500, color: 'rgba(198,146,50,0.80)', letterSpacing: '0.02em' }}>IIT Delhi + Online</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', background: 'rgba(198,146,50,0.10)', border: '1px solid rgba(198,146,50,0.25)', borderRadius: 3, fontSize: 11, fontWeight: 500, color: 'rgba(198,146,50,0.80)', letterSpacing: '0.02em' }}>Fully Online</span>
             </div>
             <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.40)', lineHeight: 1.6 }}>
               Contact: <a href="mailto:ceodhyanly@gmail.com" style={{ color: 'rgba(198,146,50,0.70)', textDecoration: 'none' }}>ceodhyanly@gmail.com</a>
@@ -54,7 +53,7 @@ export default function Footer() {
         <div style={{ height: 1, background: 'rgba(255,255,255,0.10)', marginBottom: 28 }} />
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16, paddingBottom: 32 }}>
-          <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.35)' }}>&copy; 2026 ICCHAI. Organised by YogaXBiofeedback Pvt Ltd (Dhyanly).</p>
+          <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.35)' }}>&copy; 2026 ICCHAI. Organised by YogaXBiofeedback Pvt Ltd (Dhyanly), University of Central Florida and Notre Dame of Maryland University.</p>
           <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.35)' }}>18:30–22:30 IST &nbsp;·&nbsp; 9:00 am–1:00 pm EST &nbsp;·&nbsp; 3:00–7:00 pm CET</p>
         </div>
       </div>

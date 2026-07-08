@@ -118,14 +118,6 @@ const mainPartners = [
     logo: '/images/ndmulogo.jpg',
     logoAlt: 'Notre Dame of Maryland University',
   },
-  {
-    name: 'IIT Delhi',
-    dept: 'National Resource Centre for Value Education in Engineering (NRCVEE)',
-    role: 'Conference Venue · Institutional Partner',
-    desc: 'New Delhi, India. In-person venue for ICCHAI 2026. The NRCVEE integrates ethics and value education into engineering curricula across India.',
-    logo: '/images/iidelhilogo.jpg',
-    logoAlt: 'National Resource Centre for Value Education in Engineering, IIT Delhi',
-  },
 ]
 
 const partnershipInProgress = {
@@ -137,12 +129,9 @@ const partnershipInProgress = {
 
 const speakerInstitutions = [
   { logo: '/images/utah.png', alt: 'University of Utah', name: 'University of Utah' },
-  { logo: '/images/iitkanpurlogo.jpg', alt: 'IIT Kanpur', name: 'IIT Kanpur' },
-  { logo: '/images/iitmandi.jpg', alt: 'IIT Mandi', name: 'IIT Mandi' },
   { logo: '/images/ucf.jpg', alt: 'University of Central Florida', name: 'UCF' },
   { logo: '/images/ndmulogo.jpg', alt: 'Notre Dame of Maryland University', name: 'NDMU' },
   { logo: '/images/lmulogo.webp', alt: 'Loyola Marymount University', name: 'LMU' },
-  { logo: '/images/iidelhilogo.jpg', alt: 'IIT Delhi — NRCVEE', name: 'IIT Delhi' },
 ]
 
 const organizers = [
@@ -150,7 +139,7 @@ const organizers = [
     name: 'Satyam Tiwari',
     role: 'Convener, ICCHAI 2026',
     subrole: 'Head of Program, Technology & Production',
-    affiliation: 'IIT Mandi · Founder, YogaXBiofeedback Pvt Ltd (Dhyanly)',
+    affiliation: 'Founder, YogaXBiofeedback Pvt Ltd (Dhyanly)',
     photo: '/organizers/satyam-tiwari.jpg',
     profileUrl: 'https://www.dhyanly.com',
   },
@@ -169,14 +158,6 @@ const organizers = [
     affiliation: 'Notre Dame of Maryland University',
     photo: '/organizers/amy-wheeler-mantoan.jpg',
     profileUrl: 'https://www.ndm.edu/directory/amy-wheeler-mantoan',
-  },
-  {
-    name: 'Aditya Pandey',
-    role: 'Head of Partnerships & Sponsorships India',
-    subrole: '',
-    affiliation: 'IIT Mandi',
-    photo: '/organizers/aditya-pandey.jpg',
-    profileUrl: 'https://www.linkedin.com/in/adithya-kumar-pandey',
   },
 ]
 
@@ -220,21 +201,11 @@ const speakers = [
   {
     name: 'Satyam Tiwari',
     title: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · Pioneer of Contemplative AI',
-    subrole: 'SRF, IKSMHA Centre, IIT Mandi',
-    affiliation: 'IIT Mandi',
-    affiliationUrl: 'https://www.iitmandi.ac.in',
+    affiliation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
+    affiliationUrl: 'https://www.dhyanly.com',
     profileUrl: 'https://www.dhyanly.com',
     photo: '/speakers/satyam-tiwari.jpg',
     bio: 'A practitioner of the Svara Yoga tradition for over two decades, academically trained in yoga, Indian Knowledge Systems, AI and technology. As founder of Dhyanly and pioneer of Contemplative AI, he builds clinical-grade biosignal and biofeedback platforms translating IKS into rigorous mind-body digital therapeutics.',
-  },
-  {
-    name: 'Prof. James Gomes',
-    title: 'Professor, Kusuma School of Biological Sciences · Chair, NRCVEE Research Committee',
-    affiliation: 'IIT Delhi',
-    affiliationUrl: 'https://home.iitd.ac.in',
-    profileUrl: 'https://bioschool.iitd.ac.in/faculty-profile/39',
-    photo: '/speakers/james-gomes.png',
-    bio: 'Applies systems-biology and computational methods to map disease networks at IIT Delhi, and as Chair of the NRCVEE Research Committee works to embed value education and ethical reasoning into the engineering curriculum.',
   },
   {
     name: 'Dr. Amit Sethi',
@@ -244,24 +215,6 @@ const speakers = [
     profileUrl: 'https://health.utah.edu/staff/amit-sethi',
     photo: '/speakers/amit-sethi.jpg',
     bio: 'Directs the NERD Lab at the University of Utah, applying transcranial brain stimulation and movement science to develop evidence-based rehabilitation protocols for stroke recovery and neuromodulation-driven motor learning.',
-  },
-  {
-    name: 'Dr. Rohit Saluja',
-    title: 'Assistant Professor, School of Computing & Electrical Engineering',
-    affiliation: 'IIT Mandi',
-    affiliationUrl: 'https://www.iitmandi.ac.in',
-    profileUrl: 'https://scee.iitmandi.ac.in/faculty_personal.php?id=4jqlmfy',
-    photo: '/speakers/rohit-saluja.jpg',
-    bio: 'Develops computer-vision and applied machine-learning systems for human-interactive environments at IIT Mandi. His work in automated pose estimation and activity recognition has direct application in AI-mediated movement and breath analysis.',
-  },
-  {
-    name: 'Dr. Kunal Mooley',
-    title: 'Assistant Professor, Department of Space, Planetary & Astronomical Sciences & Engineering',
-    affiliation: 'IIT Kanpur',
-    affiliationUrl: 'https://www.iitk.ac.in',
-    profileUrl: 'https://www.iitk.ac.in/kunal-prakash-mooley',
-    photo: '/speakers/kunal-mooley.png',
-    bio: 'Astrophysicist at IIT Kanpur whose gravitational-wave and radio-transient research, including landmark VLBI imaging of a neutron-star merger jet, is accompanied by co-founding an interdisciplinary institute at the intersection of physical science and consciousness studies.',
   },
 ]
 
@@ -306,7 +259,7 @@ export default function Home() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 48, alignItems: 'center' }}>
             <span className="hero-chip hero-chip-teal">Inaugural Edition</span>
             <span className="hero-chip">Oct 22–23, 2026</span>
-            <span className="hero-chip">Hybrid Conference</span>
+            <span className="hero-chip">Online Conference</span>
             <span className="hero-chip">Free to Attend</span>
           </div>
 
@@ -320,10 +273,10 @@ export default function Home() {
             International Conference on Contemplative HealthTech and AI. The first sustained dialogue between ancient contemplative science and modern technology.
           </p>
           <p style={{ fontSize: 13, color: 'rgba(228,232,241,0.6)', marginBottom: 8, letterSpacing: '0.01em' }}>
-            <span style={{ color: '#C69232', fontWeight: 600 }}>In-person venue:</span> IIT Delhi, New Delhi, India &nbsp;·&nbsp; Presenters and attendees welcome to join on-site
+            <span style={{ color: '#C69232', fontWeight: 600 }}>Fully online:</span> Open to presenters and attendees worldwide, no travel required
           </p>
           <p style={{ fontSize: 12, color: 'rgba(228,232,241,0.38)', marginBottom: 48, letterSpacing: '0.04em' }}>
-            Online attendance available worldwide &nbsp;·&nbsp; 18:30–22:30 IST &nbsp;·&nbsp; 9:00 am–1:00 pm EST &nbsp;·&nbsp; 3:00–7:00 pm CET
+            18:30–22:30 IST &nbsp;·&nbsp; 9:00 am–1:00 pm EST &nbsp;·&nbsp; 3:00–7:00 pm CET
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -337,6 +290,8 @@ export default function Home() {
             <span style={{ fontSize: 14, fontWeight: 600, color: 'rgba(228,232,241,0.65)' }}>YogaXBiofeedback Pvt Ltd (Dhyanly)</span>
             <span style={{ color: 'rgba(255,255,255,0.2)' }}>×</span>
             <span style={{ fontSize: 14, fontWeight: 600, color: 'rgba(228,232,241,0.65)' }}>The India Center, University of Central Florida</span>
+            <span style={{ color: 'rgba(255,255,255,0.2)' }}>×</span>
+            <span style={{ fontSize: 14, fontWeight: 600, color: 'rgba(228,232,241,0.65)' }}>Notre Dame of Maryland University</span>
           </div>
         </div>
       </section>
@@ -373,25 +328,6 @@ export default function Home() {
                 <p className="caption" style={{ lineHeight: 1.55 }}>{inst.desc}</p>
               </div>
             ))}
-          </div>
-
-          {/* IIT Delhi — full-width featured row (wide banner logo needs full horizontal space) */}
-          <div className="hover-cell" style={{ background: 'var(--surface)', padding: '44px 36px', display: 'flex', alignItems: 'center', gap: 48, flexWrap: 'wrap', marginBottom: 40, borderTop: '1px solid var(--border)' }}>
-            <div style={{ position: 'relative', flexShrink: 0, width: '100%', maxWidth: 700, height: 120 }}>
-              <Image
-                src={mainPartners[3].logo}
-                alt={mainPartners[3].logoAlt}
-                fill
-                style={{ objectFit: 'contain', objectPosition: 'left center' }}
-                unoptimized
-              />
-            </div>
-            <div style={{ flex: 1, minWidth: 220 }}>
-              <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>{mainPartners[3].role}</p>
-              <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--foreground)', marginBottom: 4, letterSpacing: '-0.01em' }}>{mainPartners[3].name}</h3>
-              <p style={{ fontSize: 13, color: 'var(--muted-light)', marginBottom: 10 }}>{mainPartners[3].dept}</p>
-              <p className="caption" style={{ lineHeight: 1.55 }}>{mainPartners[3].desc}</p>
-            </div>
           </div>
 
           {/* LMU — partnership in process */}
@@ -494,7 +430,7 @@ export default function Home() {
               { n: '2', label: 'Conference Days' },
               { n: '6', label: 'Research Pillars' },
               { n: '3', label: 'Parallel Tracks per Day' },
-              { n: '7', label: 'Partner Institutions' },
+              { n: '4', label: 'Partner Institutions' },
             ].map((s, i) => (
               <div key={s.label} style={{
                 padding: '40px 32px',
@@ -672,8 +608,7 @@ export default function Home() {
                   />
                 </div>
                 <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--foreground)', marginBottom: 6, letterSpacing: '-0.01em' }}>{sp.name}</h3>
-                <p style={{ fontSize: 12.5, color: 'var(--muted-light)', lineHeight: 1.5, marginBottom: sp.subrole ? 4 : 10 }}>{sp.title}</p>
-                {sp.subrole && <p style={{ fontSize: 11, color: 'var(--muted)', lineHeight: 1.4, marginBottom: 10, letterSpacing: '0.01em' }}>{sp.subrole}</p>}
+                <p style={{ fontSize: 12.5, color: 'var(--muted-light)', lineHeight: 1.5, marginBottom: 10 }}>{sp.title}</p>
                 <p style={{ fontSize: 12, fontWeight: 600, marginBottom: 14 }}>
                   {sp.affiliationUrl ? (
                     <a href={sp.affiliationUrl} target="_blank" rel="noopener noreferrer" className="speaker-link">{sp.affiliation}</a>
@@ -753,11 +688,11 @@ export default function Home() {
             {[
               {
                 q: 'What is ICCHAI 2026?',
-                a: 'ICCHAI 2026 is the International Conference on Contemplative HealthTech and AI, taking place on October 22 and 23, 2026. It is a free hybrid event held in-person at IIT Delhi, New Delhi and simultaneously online worldwide.',
+                a: 'ICCHAI 2026 is the International Conference on Contemplative HealthTech and AI, taking place on October 22 and 23, 2026. It is a free, fully online event organised by the University of Central Florida, Notre Dame of Maryland University, and YogaXBiofeedback (Dhyanly), open to participants worldwide.',
               },
               {
                 q: 'Is attendance free?',
-                a: 'Yes. Registration and attendance are completely free for all participants, whether joining in-person at IIT Delhi or online from anywhere in the world.',
+                a: 'Yes. Registration and attendance are completely free for all participants joining online from anywhere in the world.',
               },
               {
                 q: 'Who should attend?',
@@ -772,8 +707,8 @@ export default function Home() {
                 a: 'Yes. Researchers and practitioners are invited to submit work for consideration. Register on this site and watch for the formal call for abstracts announcement.',
               },
               {
-                q: 'Where is the in-person venue?',
-                a: 'The in-person sessions are hosted at IIT Delhi by the National Resource Centre for Value Education in Engineering (NRCVEE), Hauz Khas, New Delhi, India.',
+                q: 'How do I join the online sessions?',
+                a: 'ICCHAI 2026 runs entirely online. After registering, you will receive a confirmation with the link to join the live sessions on the conference dates.',
               },
               {
                 q: 'What time does the conference run?',
@@ -801,13 +736,13 @@ export default function Home() {
             Be part of a conversation<br />that is long overdue.
           </h2>
           <p className="body-lg" style={{ maxWidth: 520, margin: '0 auto 48px' }}>
-            Registration is free. Join neuroscientists, yoga therapists, AI researchers, clinicians and technologists from across seven institutions and multiple countries.
+            Registration is free. Join neuroscientists, yoga therapists, AI researchers, clinicians and technologists from across multiple institutions and countries.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/register" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register Free</Link>
             <Link href="/schedule" className="btn btn-outline" style={{ padding: '14px 36px', fontSize: 15 }}>View Programme</Link>
           </div>
-          <p className="caption" style={{ marginTop: 24 }}>Hybrid, in-person at IIT Delhi, New Delhi &nbsp;·&nbsp; Online worldwide &nbsp;·&nbsp; 18:30–22:30 IST &nbsp;·&nbsp; Free to attend</p>
+          <p className="caption" style={{ marginTop: 24 }}>Fully online worldwide &nbsp;·&nbsp; 18:30–22:30 IST &nbsp;·&nbsp; Free to attend</p>
         </div>
       </section>
     </>

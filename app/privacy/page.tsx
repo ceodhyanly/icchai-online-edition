@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
 
             <Block title="Who we are">
-              ICCHAI 2026 (International Conference on Contemplative HealthTech and AI) is organised by YogaXBiofeedback Pvt Ltd (Dhyanly) in partnership with The India Center, University of Central Florida. The conference takes place October 22–23, 2026, in-person at IIT Delhi and online worldwide. This website is operated at icchai.com.
+              ICCHAI 2026 (International Conference on Contemplative HealthTech and AI) is organised by YogaXBiofeedback Pvt Ltd (Dhyanly) in partnership with The India Center, University of Central Florida, and Notre Dame of Maryland University. The conference takes place October 22–23, 2026, fully online, worldwide. This website is operated at icchai.com.
             </Block>
 
             <Block title="What information we collect">

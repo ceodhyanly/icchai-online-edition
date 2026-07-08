@@ -26,7 +26,7 @@ export default function TermsPage() {
             </Block>
 
             <Block title="About the conference">
-              ICCHAI 2026 is a free academic conference on Contemplative HealthTech and AI, organised by YogaXBiofeedback Pvt Ltd (Dhyanly) and The India Center, University of Central Florida. All programme and speaker information on this site is provided in good faith and may change prior to the event.
+              ICCHAI 2026 is a free, fully online academic conference on Contemplative HealthTech and AI, organised by YogaXBiofeedback Pvt Ltd (Dhyanly), The India Center at the University of Central Florida, and Notre Dame of Maryland University. All programme and speaker information on this site is provided in good faith and may change prior to the event.
             </Block>
 
             <Block title="Registration">
@@ -42,7 +42,7 @@ export default function TermsPage() {
             </Block>
 
             <Block title="Conduct">
-              All attendees, speakers, and organisers are expected to engage with respect and in good faith. The organisers reserve the right to remove any participant, whether in-person or online, who engages in harassment, discrimination, or disruptive conduct.
+              All attendees, speakers, and organisers are expected to engage with respect and in good faith. The organisers reserve the right to remove any participant who engages in harassment, discrimination, or disruptive conduct.
             </Block>
 
             <Block title="Disclaimers">

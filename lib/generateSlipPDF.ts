@@ -45,7 +45,7 @@ export async function generateSlipPDF(user: SlipUser): Promise<Uint8Array> {
   page.drawText('International Conference on Contemplative HealthTech and AI', {
     x: 40, y: height - 80, font: regular, size: 9.5, color: rgb(0.78, 0.68, 0.60),
   })
-  page.drawText('October 22–23, 2026  ·  IIT Delhi, New Delhi  ·  Online Worldwide  ·  Free Hybrid Event', {
+  page.drawText('October 22–23, 2026  ·  Fully Online  ·  Free Event', {
     x: 40, y: height - 96, font: regular, size: 8.5, color: rgb(0.58, 0.50, 0.44),
   })
   page.drawText('icchai.com  ·  ceodhyanly@gmail.com', {
@@ -112,7 +112,7 @@ export async function generateSlipPDF(user: SlipUser): Promise<Uint8Array> {
   page.drawText('Congratulations! Your seat is confirmed at ICCHAI 2026.', {
     x: 40, y: boxY - 58, font: bold, size: 13, color: dark,
   })
-  page.drawText('Please present this pass at the venue registration desk or keep it for your records.', {
+  page.drawText('Please keep this pass for your records.', {
     x: 40, y: boxY - 78, font: regular, size: 9.5, color: muted,
   })
   page.drawText('The online session link will be emailed to you before the event begins.', {
@@ -137,9 +137,6 @@ export async function generateSlipPDF(user: SlipUser): Promise<Uint8Array> {
   })
   page.drawText('In partnership with Notre Dame of Maryland University – School of Integrative Health', {
     x: 40, y: 49, font: regular, size: 8, color: rgb(0.54, 0.46, 0.42),
-  })
-  page.drawText('IIT Delhi NRCVEE  ·  Hauz Khas, New Delhi 110016, India', {
-    x: 40, y: 32, font: regular, size: 8, color: rgb(0.48, 0.40, 0.37),
   })
   page.drawText('This is an automatically generated confirmation. No payment required – ICCHAI 2026 is free to attend.', {
     x: 40, y: 14, font: regular, size: 7.5, color: rgb(0.42, 0.35, 0.32),
