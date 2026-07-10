@@ -10,7 +10,7 @@ export default async function DashboardPage() {
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },
-    select: { id: true, email: true, firstName: true, lastName: true, institution: true, country: true, role: true, interests: true, attendance: true, registrationNumber: true, createdAt: true },
+    select: { id: true, email: true, firstName: true, lastName: true, institution: true, country: true, role: true, gender: true, interests: true, attendance: true, registrationNumber: true, createdAt: true },
   })
   if (!user) redirect('/login')
 
@@ -70,6 +70,7 @@ export default async function DashboardPage() {
                 ['Institution', user.institution ?? '—'],
                 ['Country', user.country ?? '—'],
                 ['Role', user.role ?? '—'],
+                ['Gender', user.gender ?? '—'],
               ].map(([label, value]) => (
                 <div key={label} style={{ display: 'flex', justifyContent: 'space-between', gap: 20, padding: '14px 0', borderBottom: '1px solid var(--border)', alignItems: 'start' }}>
                   <span style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 500, flexShrink: 0 }}>{label}</span>

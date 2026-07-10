@@ -22,6 +22,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   const byAttendance: Record<string, number> = {}
   const byRole: Record<string, number> = {}
   const byCountry: Record<string, number> = {}
+  const byGender: Record<string, number> = {}
 
   for (const u of users) {
     byAttendance[u.attendance] = (byAttendance[u.attendance] ?? 0) + 1
@@ -29,6 +30,8 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
     byRole[role] = (byRole[role] ?? 0) + 1
     const country = u.country ?? 'Not specified'
     byCountry[country] = (byCountry[country] ?? 0) + 1
+    const gender = u.gender ?? 'Not specified'
+    byGender[gender] = (byGender[gender] ?? 0) + 1
   }
 
   const statCards = [
@@ -60,7 +63,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
           ))}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, marginBottom: 48 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24, marginBottom: 48 }}>
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6, padding: '28px 28px' }}>
             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 20 }}>By Role</p>
             {Object.entries(byRole).sort((a, b) => b[1] - a[1]).map(([role, count]) => (
@@ -81,6 +84,17 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
               </div>
             ))}
             {Object.keys(byCountry).length === 0 && <p style={{ fontSize: 13, color: 'var(--muted)' }}>No registrations yet</p>}
+          </div>
+
+          <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6, padding: '28px 28px' }}>
+            <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 20 }}>By Gender</p>
+            {Object.entries(byGender).sort((a, b) => b[1] - a[1]).map(([gender, count]) => (
+              <div key={gender} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid var(--border)' }}>
+                <span style={{ fontSize: 13, color: 'var(--foreground)' }}>{gender}</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--teal)', minWidth: 32, textAlign: 'right' }}>{count}</span>
+              </div>
+            ))}
+            {Object.keys(byGender).length === 0 && <p style={{ fontSize: 13, color: 'var(--muted)' }}>No registrations yet</p>}
           </div>
         </div>
 

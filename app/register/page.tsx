@@ -7,6 +7,7 @@ const roles = [
   'Researcher / Academic', 'Clinician / Therapist', 'Technology / Industry',
   'Yoga / Meditation Practitioner', 'Student', 'Journalist / Media', 'Other',
 ]
+const genders = ['Male', 'Female', 'Other']
 const pillars = [
   'Contemplative Neuroscience & Self-Regulation',
   'Yoga, Ayurveda & Indian Knowledge Systems',
@@ -30,7 +31,7 @@ export default function RegisterPage() {
   const [success, setSuccess] = useState<{ name: string; regNumber: string } | null>(null)
   const [form, setForm] = useState({
     firstName: '', lastName: '', email: '', password: '', confirmPassword: '',
-    institution: '', country: '', role: '', interests: [] as string[], attendance: 'both',
+    institution: '', country: '', role: '', gender: '', interests: [] as string[], attendance: 'both',
   })
 
   const set = (k: string, v: string | string[]) => setForm(f => ({ ...f, [k]: v }))
@@ -164,6 +165,16 @@ export default function RegisterPage() {
                 <option value="">Select your role...</option>
                 {roles.map(r => <option key={r} value={r}>{r}</option>)}
               </select>
+            </Field>
+            <Field label="Gender">
+              <div style={{ display: 'flex', gap: 10 }}>
+                {genders.map(g => (
+                  <label key={g} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '12px 14px', background: form.gender === g ? 'rgba(164,28,48,0.06)' : 'var(--surface-3)', borderRadius: 6, border: `1px solid ${form.gender === g ? 'var(--teal-border)' : 'var(--border-mid)'}`, cursor: 'pointer', transition: 'all 0.15s' }}>
+                    <input type="radio" name="gender" value={g} checked={form.gender === g} onChange={e => set('gender', e.target.value)} style={{ accentColor: 'var(--teal)' }} />
+                    <span style={{ fontSize: 13, fontWeight: 600 }}>{g}</span>
+                  </label>
+                ))}
+              </div>
             </Field>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 8 }}>
               <button className="btn btn-outline" style={{ justifyContent: 'center' }} onClick={() => setStep(1)}>Back</button>

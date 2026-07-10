@@ -10,6 +10,7 @@ type User = {
   institution: string | null
   country: string | null
   role: string | null
+  gender: string | null
   attendance: string
   registrationNumber: string | null
   createdAt: Date
@@ -153,7 +154,7 @@ export default function AdminTable({ users }: { users: User[] }) {
                     style={{ cursor: 'pointer', accentColor: 'var(--teal)', width: 15, height: 15 }}
                   />
                 </th>
-                {['#', 'Name', 'Email', 'Institution', 'Country', 'Role', 'Attendance', 'Reg No.', 'Registered', 'Pass PDF'].map(h => (
+                {['#', 'Name', 'Email', 'Institution', 'Country', 'Role', 'Gender', 'Attendance', 'Reg No.', 'Registered', 'Pass PDF'].map(h => (
                   <th key={h} style={{ padding: '12px 14px', textAlign: 'left', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', whiteSpace: 'nowrap', borderBottom: '1px solid var(--border)' }}>
                     {h}
                   </th>
@@ -182,6 +183,7 @@ export default function AdminTable({ users }: { users: User[] }) {
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.institution ?? '—'}</td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)', whiteSpace: 'nowrap' }}>{u.country ?? '—'}</td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.role ?? '—'}</td>
+                  <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.gender ?? '—'}</td>
                   <td style={{ padding: '12px 14px', whiteSpace: 'nowrap' }}>
                     <span style={{ display: 'inline-flex', alignItems: 'center', padding: '3px 10px', background: 'var(--teal-dim)', border: '1px solid var(--teal-border)', borderRadius: 3, fontSize: 11, fontWeight: 600, color: 'var(--teal)' }}>
                       {attLabel[u.attendance] ?? u.attendance}
@@ -213,7 +215,7 @@ export default function AdminTable({ users }: { users: User[] }) {
               ))}
               {users.length === 0 && (
                 <tr>
-                  <td colSpan={11} style={{ padding: '48px 16px', textAlign: 'center', color: 'var(--muted)' }}>
+                  <td colSpan={12} style={{ padding: '48px 16px', textAlign: 'center', color: 'var(--muted)' }}>
                     No registrations yet
                   </td>
                 </tr>

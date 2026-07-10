@@ -29,6 +29,7 @@ const ALLOWED_ROLES = [
   'Yoga / Meditation Practitioner', 'Student', 'Journalist / Media', 'Other',
 ]
 const ALLOWED_ATTENDANCE = ['both', 'day1', 'day2']
+const ALLOWED_GENDERS = ['Male', 'Female', 'Other']
 
 export async function POST(req: NextRequest) {
   try {
@@ -53,6 +54,7 @@ export async function POST(req: NextRequest) {
     const institution = sanitizeString(body.institution, 200)
     const country    = sanitizeString(body.country, 100)
     const role       = sanitizeString(body.role, 100)
+    const gender     = sanitizeString(body.gender, 20)
     const attendance = sanitizeString(body.attendance, 10) || 'both'
 
     if (!email || !password || !firstName || !lastName) {
@@ -66,6 +68,9 @@ export async function POST(req: NextRequest) {
 
     if (role && !ALLOWED_ROLES.includes(role)) {
       return NextResponse.json({ error: 'Invalid role selection.' }, { status: 400 })
+    }
+    if (gender && !ALLOWED_GENDERS.includes(gender)) {
+      return NextResponse.json({ error: 'Invalid gender selection.' }, { status: 400 })
     }
     if (!ALLOWED_ATTENDANCE.includes(attendance)) {
       return NextResponse.json({ error: 'Invalid attendance selection.' }, { status: 400 })
@@ -93,7 +98,7 @@ export async function POST(req: NextRequest) {
     const user = await prisma.user.create({
       data: { email, password: hashed, firstName, lastName,
         institution: institution || null, country: country || null,
-        role: role || null, interests: interestsStr, attendance },
+        role: role || null, gender: gender || null, interests: interestsStr, attendance },
     })
 
     // Generate unique registration number from user ID (no race condition)
