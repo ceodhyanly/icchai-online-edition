@@ -621,6 +621,17 @@ export default function Home() {
                 <p style={{ fontSize: 13, color: 'var(--muted-light)', lineHeight: 1.65 }}>{sp.bio}</p>
               </div>
             ))}
+
+            {/* More speakers to be announced */}
+            <div style={{
+              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+              textAlign: 'center', padding: '32px 24px', borderRadius: 8,
+              border: '1px dashed var(--border-mid)', background: 'var(--surface-2)', minHeight: 240,
+            }}>
+              <span className="chip" style={{ fontSize: 10.5, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 16 }}>Coming Soon</span>
+              <p style={{ fontSize: 14, fontWeight: 700, color: 'var(--foreground)', marginBottom: 8, letterSpacing: '-0.01em' }}>More speakers to be announced</p>
+              <p style={{ fontSize: 13, color: 'var(--muted-light)', lineHeight: 1.6 }}>Additional researchers, clinicians and technologists will be added to the lineup as ICCHAI 2026 approaches.</p>
+            </div>
           </div>
         </div>
       </section>
