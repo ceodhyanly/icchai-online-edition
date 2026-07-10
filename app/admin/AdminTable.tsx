@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 type User = {
   id: number
@@ -37,6 +38,17 @@ async function downloadPDF(userId: number, name: string) {
   URL.revokeObjectURL(a.href)
 }
 
+async function deleteUsers(userIds: number[]): Promise<number | null> {
+  const res = await fetch('/api/admin/users', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ adminKey: ADMIN_KEY, userIds }),
+  })
+  if (!res.ok) return null
+  const data = await res.json()
+  return data.deleted ?? 0
+}
+
 async function downloadBulkZip(userIds: number[] | 'all', filename: string) {
   const body = userIds === 'all'
     ? { adminKey: ADMIN_KEY, all: true }
@@ -59,9 +71,12 @@ async function downloadBulkZip(userIds: number[] | 'all', filename: string) {
 }
 
 export default function AdminTable({ users }: { users: User[] }) {
+  const router = useRouter()
   const [selected, setSelected] = useState<Set<number>>(new Set())
   const [loading, setLoading] = useState<number | null>(null)
   const [bulkLoading, setBulkLoading] = useState(false)
+  const [deleting, setDeleting] = useState<number | null>(null)
+  const [bulkDeleting, setBulkDeleting] = useState(false)
 
   const allChecked = users.length > 0 && selected.size === users.length
   const toggleAll = () => setSelected(allChecked ? new Set() : new Set(users.map(u => u.id)))
@@ -86,6 +101,27 @@ export default function AdminTable({ users }: { users: User[] }) {
       await downloadBulkZip(Array.from(selected), `ICCHAI-2026-Selected-${selected.size}-Passes.zip`)
     }
     setBulkLoading(false)
+  }
+
+  const handleDeleteOne = async (u: User) => {
+    if (!confirm(`Delete registration for ${u.firstName} ${u.lastName} (${u.email})? This cannot be undone.`)) return
+    setDeleting(u.id)
+    const deleted = await deleteUsers([u.id])
+    setDeleting(null)
+    if (deleted === null) { alert('Failed to delete. Try again.'); return }
+    setSelected(s => { const next = new Set(s); next.delete(u.id); return next })
+    router.refresh()
+  }
+
+  const handleDeleteSelected = async () => {
+    if (selected.size === 0) return
+    if (!confirm(`Delete ${selected.size} selected registration(s)? This cannot be undone.`)) return
+    setBulkDeleting(true)
+    const deleted = await deleteUsers(Array.from(selected))
+    setBulkDeleting(false)
+    if (deleted === null) { alert('Failed to delete. Try again.'); return }
+    setSelected(new Set())
+    router.refresh()
   }
 
   return (
@@ -132,6 +168,21 @@ export default function AdminTable({ users }: { users: User[] }) {
             Clear Selection
           </button>
         )}
+
+        <button
+          onClick={handleDeleteSelected}
+          disabled={bulkDeleting || selected.size === 0}
+          style={{
+            padding: '8px 16px',
+            marginLeft: 'auto',
+            background: selected.size > 0 ? '#B91C1C' : 'var(--surface-3)',
+            color: selected.size > 0 ? '#fff' : 'var(--muted)',
+            border: 'none', borderRadius: 5, fontSize: 12, fontWeight: 700,
+            cursor: selected.size > 0 && !bulkDeleting ? 'pointer' : 'not-allowed',
+          }}
+        >
+          {bulkDeleting ? 'Deleting...' : `Delete Selected (${selected.size})`}
+        </button>
       </div>
 
       {/* Table */}
@@ -196,20 +247,37 @@ export default function AdminTable({ users }: { users: User[] }) {
                     {new Date(u.createdAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}
                   </td>
                   <td style={{ padding: '12px 14px' }}>
-                    <button
-                      onClick={() => handleSingleDownload(u)}
-                      disabled={loading === u.id}
-                      style={{
-                        padding: '6px 14px',
-                        background: loading === u.id ? 'var(--surface-3)' : 'var(--teal)',
-                        color: loading === u.id ? 'var(--muted)' : '#fff',
-                        border: 'none', borderRadius: 4, fontSize: 11, fontWeight: 700,
-                        cursor: loading === u.id ? 'not-allowed' : 'pointer',
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      {loading === u.id ? '...' : 'Download PDF'}
-                    </button>
+                    <div style={{ display: 'flex', gap: 6 }}>
+                      <button
+                        onClick={() => handleSingleDownload(u)}
+                        disabled={loading === u.id}
+                        style={{
+                          padding: '6px 14px',
+                          background: loading === u.id ? 'var(--surface-3)' : 'var(--teal)',
+                          color: loading === u.id ? 'var(--muted)' : '#fff',
+                          border: 'none', borderRadius: 4, fontSize: 11, fontWeight: 700,
+                          cursor: loading === u.id ? 'not-allowed' : 'pointer',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        {loading === u.id ? '...' : 'Download PDF'}
+                      </button>
+                      <button
+                        onClick={() => handleDeleteOne(u)}
+                        disabled={deleting === u.id}
+                        style={{
+                          padding: '6px 14px',
+                          background: 'transparent',
+                          color: deleting === u.id ? 'var(--muted)' : '#B91C1C',
+                          border: '1px solid #B91C1C',
+                          borderRadius: 4, fontSize: 11, fontWeight: 700,
+                          cursor: deleting === u.id ? 'not-allowed' : 'pointer',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        {deleting === u.id ? '...' : 'Delete'}
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}

@@ -57,7 +57,7 @@ export async function generateSlipPDF(user: SlipUser): Promise<Uint8Array> {
   page.drawText('REGISTRATION PASS', {
     x: 50, y: height - 163, font: bold, size: 9, color: white,
   })
-  page.drawText('✓ CONFIRMED', {
+  page.drawText('CONFIRMED', {
     x: 248, y: height - 163, font: bold, size: 9, color: red,
   })
 

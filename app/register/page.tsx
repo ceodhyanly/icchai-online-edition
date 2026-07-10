@@ -24,6 +24,14 @@ const attendance = [
 
 const stepLabels = ['Personal Info', 'Background', 'Preferences']
 
+function passwordError(password: string): string {
+  if (password.length < 8) return 'Password must be at least 8 characters.'
+  if (!/[A-Z]/.test(password)) return 'Password must contain at least one uppercase letter.'
+  if (!/[a-z]/.test(password)) return 'Password must contain at least one lowercase letter.'
+  if (!/[0-9]/.test(password)) return 'Password must contain at least one number.'
+  return ''
+}
+
 export default function RegisterPage() {
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
@@ -42,12 +50,18 @@ export default function RegisterPage() {
     for (const f of requiredFields) {
       if (!form[f]) { setError('Please fill in all required fields'); return }
     }
+    if (requiredFields.includes('password')) {
+      const pwErr = passwordError(form.password)
+      if (pwErr) { setError(pwErr); return }
+      if (form.password !== form.confirmPassword) { setError('Passwords do not match'); return }
+    }
     setError(''); setStep(s => s + 1)
   }
 
   const submit = async () => {
-    if (form.password !== form.confirmPassword) { setError('Passwords do not match'); return }
-    if (form.password.length < 8) { setError('Password must be at least 8 characters'); return }
+    const pwErr = passwordError(form.password)
+    if (pwErr) { setError(pwErr); setStep(1); return }
+    if (form.password !== form.confirmPassword) { setError('Passwords do not match'); setStep(1); return }
     setLoading(true); setError('')
     const res = await fetch('/api/auth/register', {
       method: 'POST',
@@ -56,7 +70,11 @@ export default function RegisterPage() {
     })
     const data = await res.json()
     setLoading(false)
-    if (!res.ok) { setError(data.error ?? 'Registration failed'); return }
+    if (!res.ok) {
+      setError(data.error ?? 'Registration failed')
+      if (/password/i.test(data.error ?? '')) setStep(1)
+      return
+    }
     setSuccess({ name: form.firstName, regNumber: data.registrationNumber })
   }
 
@@ -144,7 +162,10 @@ export default function RegisterPage() {
               <Field label="Last Name *"><input className="field-input" placeholder="Smith" value={form.lastName} onChange={e => set('lastName', e.target.value)} /></Field>
             </div>
             <Field label="Email Address *"><input className="field-input" type="email" placeholder="jane@example.com" value={form.email} onChange={e => set('email', e.target.value)} /></Field>
-            <Field label="Password *"><input className="field-input" type="password" placeholder="Min 8 chars, uppercase, lowercase, number" value={form.password} onChange={e => set('password', e.target.value)} /></Field>
+            <Field label="Password *">
+              <input className="field-input" type="password" placeholder="Min 8 chars, uppercase, lowercase, number" value={form.password} onChange={e => set('password', e.target.value)} />
+              <p className="caption" style={{ marginTop: 6 }}>Must be 8+ characters with an uppercase letter, a lowercase letter, and a number.</p>
+            </Field>
             <Field label="Confirm Password *"><input className="field-input" type="password" placeholder="Repeat your password" value={form.confirmPassword} onChange={e => set('confirmPassword', e.target.value)} /></Field>
             <button className="btn btn-teal" style={{ width: '100%', justifyContent: 'center', marginTop: 8 }} onClick={() => next(['firstName', 'lastName', 'email', 'password'])}>
               Continue
