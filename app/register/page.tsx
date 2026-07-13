@@ -1,7 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import EmailVerifyStep from '@/components/EmailVerifyStep'
 
 const roles = [
   'Researcher / Academic', 'Clinician / Therapist', 'Technology / Industry',
@@ -22,46 +24,53 @@ const attendance = [
   { value: 'day2', label: 'Day 2 Only', sub: 'October 23: AI and Digital Therapeutics' },
 ]
 
-const stepLabels = ['Personal Info', 'Background', 'Preferences']
-
-function passwordError(password: string): string {
-  if (password.length < 8) return 'Password must be at least 8 characters.'
-  if (!/[A-Z]/.test(password)) return 'Password must contain at least one uppercase letter.'
-  if (!/[a-z]/.test(password)) return 'Password must contain at least one lowercase letter.'
-  if (!/[0-9]/.test(password)) return 'Password must contain at least one number.'
-  return ''
-}
+const stepLabels = ['Verify Email', 'Personal Info', 'Background', 'Preferences']
 
 export default function RegisterPage() {
+  const router = useRouter()
+  const [checkingPending, setCheckingPending] = useState(true)
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState<{ name: string; regNumber: string } | null>(null)
   const [form, setForm] = useState({
-    firstName: '', lastName: '', email: '', password: '', confirmPassword: '',
+    email: '', firstName: '', lastName: '',
     institution: '', country: '', role: '', gender: '', interests: [] as string[], attendance: 'both',
   })
+
+  // If arriving already-verified (e.g. redirected from /login), skip the email step.
+  useEffect(() => {
+    fetch('/api/auth/pending')
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (data?.email) { set('email', data.email); setStep(2) }
+      })
+      .finally(() => setCheckingPending(false))
+  }, [])
 
   const set = (k: string, v: string | string[]) => setForm(f => ({ ...f, [k]: v }))
   const toggle = (pillar: string) => set('interests', form.interests.includes(pillar)
     ? form.interests.filter(p => p !== pillar) : [...form.interests, pillar])
 
+  const handleEmailVerified = (status: 'login' | 'new', email: string) => {
+    if (status === 'login') {
+      // Already registered with this email — send them to sign in instead.
+      router.push('/dashboard')
+      return
+    }
+    set('email', email)
+    setError('')
+    setStep(2)
+  }
+
   const next = (requiredFields: (keyof typeof form)[]) => {
     for (const f of requiredFields) {
       if (!form[f]) { setError('Please fill in all required fields'); return }
-    }
-    if (requiredFields.includes('password')) {
-      const pwErr = passwordError(form.password)
-      if (pwErr) { setError(pwErr); return }
-      if (form.password !== form.confirmPassword) { setError('Passwords do not match'); return }
     }
     setError(''); setStep(s => s + 1)
   }
 
   const submit = async () => {
-    const pwErr = passwordError(form.password)
-    if (pwErr) { setError(pwErr); setStep(1); return }
-    if (form.password !== form.confirmPassword) { setError('Passwords do not match'); setStep(1); return }
     setLoading(true); setError('')
     const res = await fetch('/api/auth/register', {
       method: 'POST',
@@ -72,11 +81,13 @@ export default function RegisterPage() {
     setLoading(false)
     if (!res.ok) {
       setError(data.error ?? 'Registration failed')
-      if (/password/i.test(data.error ?? '')) setStep(1)
+      if (res.status === 401) setStep(1)
       return
     }
     setSuccess({ name: form.firstName, regNumber: data.registrationNumber })
   }
+
+  if (checkingPending) return null
 
   if (success) {
     return (
@@ -156,24 +167,25 @@ export default function RegisterPage() {
         )}
 
         {step === 1 && (
+          <EmailVerifyStep onVerified={handleEmailVerified} />
+        )}
+
+        {step === 2 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+            <Field label="Email Address">
+              <input className="field-input" value={form.email} disabled style={{ opacity: 0.7 }} />
+            </Field>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <Field label="First Name *"><input className="field-input" placeholder="Jane" value={form.firstName} onChange={e => set('firstName', e.target.value)} /></Field>
               <Field label="Last Name *"><input className="field-input" placeholder="Smith" value={form.lastName} onChange={e => set('lastName', e.target.value)} /></Field>
             </div>
-            <Field label="Email Address *"><input className="field-input" type="email" placeholder="jane@example.com" value={form.email} onChange={e => set('email', e.target.value)} /></Field>
-            <Field label="Password *">
-              <input className="field-input" type="password" placeholder="Min 8 chars, uppercase, lowercase, number" value={form.password} onChange={e => set('password', e.target.value)} />
-              <p className="caption" style={{ marginTop: 6 }}>Must be 8+ characters with an uppercase letter, a lowercase letter, and a number.</p>
-            </Field>
-            <Field label="Confirm Password *"><input className="field-input" type="password" placeholder="Repeat your password" value={form.confirmPassword} onChange={e => set('confirmPassword', e.target.value)} /></Field>
-            <button className="btn btn-teal" style={{ width: '100%', justifyContent: 'center', marginTop: 8 }} onClick={() => next(['firstName', 'lastName', 'email', 'password'])}>
+            <button className="btn btn-teal" style={{ width: '100%', justifyContent: 'center', marginTop: 8 }} onClick={() => next(['firstName', 'lastName'])}>
               Continue
             </button>
           </div>
         )}
 
-        {step === 2 && (
+        {step === 3 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             <Field label="Institution / Organisation">
               <input className="field-input" placeholder="University, Hospital, Company..." value={form.institution} onChange={e => set('institution', e.target.value)} />
@@ -198,13 +210,13 @@ export default function RegisterPage() {
               </div>
             </Field>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 8 }}>
-              <button className="btn btn-outline" style={{ justifyContent: 'center' }} onClick={() => setStep(1)}>Back</button>
-              <button className="btn btn-teal" style={{ justifyContent: 'center' }} onClick={() => { setError(''); setStep(3) }}>Continue</button>
+              <button className="btn btn-outline" style={{ justifyContent: 'center' }} onClick={() => setStep(2)}>Back</button>
+              <button className="btn btn-teal" style={{ justifyContent: 'center' }} onClick={() => { setError(''); setStep(4) }}>Continue</button>
             </div>
           </div>
         )}
 
-        {step === 3 && (
+        {step === 4 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
             <div>
               <label className="field-label" style={{ marginBottom: 12 }}>Attendance</label>
@@ -237,7 +249,7 @@ export default function RegisterPage() {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 12 }}>
-              <button className="btn btn-outline" style={{ justifyContent: 'center' }} onClick={() => setStep(2)}>Back</button>
+              <button className="btn btn-outline" style={{ justifyContent: 'center' }} onClick={() => setStep(3)}>Back</button>
               <button className="btn btn-teal" style={{ justifyContent: 'center', opacity: loading ? 0.7 : 1 }} onClick={submit} disabled={loading}>
                 {loading ? 'Registering...' : 'Complete Registration'}
               </button>

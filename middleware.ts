@@ -41,7 +41,7 @@ export function middleware(request: NextRequest) {
   }
 
   // ── Aggressive rate limit on auth endpoints ──────────────────────────
-  if (pathname.startsWith('/api/auth/login') || pathname.startsWith('/api/auth/register')) {
+  if (pathname.startsWith('/api/auth/')) {
     if (!check(`auth:${ip}`, 10, 15 * 60 * 1000)) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again in 15 minutes.' },
