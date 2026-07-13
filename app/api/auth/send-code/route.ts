@@ -40,7 +40,8 @@ export async function POST(req: NextRequest) {
     await sendVerificationCodeEmail(email, code)
 
     return NextResponse.json({ message: 'Verification code sent.' })
-  } catch {
+  } catch (e) {
+    console.error('SEND_CODE_FAILED', e)
     return NextResponse.json(
       { error: 'Email verification is temporarily unavailable. Please try again shortly.' },
       { status: 503 }
