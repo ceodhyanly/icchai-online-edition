@@ -53,12 +53,13 @@ export async function generateMembershipCardPDF(user: MemberUser): Promise<Uint8
 
   page.drawText(`${user.firstName} ${user.lastName}`, { x: 14, y: height - 90, font: bold, size: 13, color: white })
 
-  page.drawText('MEMBERSHIP ID', { x: 14, y: height - 112, font: bold, size: 6, color: muted })
-  page.drawText(user.membershipNumber, { x: 14, y: height - 124, font: bold, size: 14, color: gold })
+  page.drawText('PROVISIONAL MEMBERSHIP ID', { x: 14, y: height - 111, font: bold, size: 6, color: muted })
+  page.drawText(user.membershipNumber, { x: 14, y: height - 124, font: bold, size: 13, color: gold })
 
   const issued = user.createdAt.toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })
-  page.drawText(`Founding cohort · ${issued}`, { x: 14, y: 12, font: regular, size: 6.5, color: muted })
-  page.drawText('icchai.com', { x: width - 14 - regular.widthOfTextAtSize('icchai.com', 6.5), y: 12, font: regular, size: 6.5, color: red })
+  page.drawText(`Founding cohort · ${issued}`, { x: 14, y: 15, font: regular, size: 6, color: muted })
+  page.drawText('icchai.com', { x: width - 14 - regular.widthOfTextAtSize('icchai.com', 6), y: 15, font: regular, size: 6, color: red })
+  page.drawText('Provisional — not a legal ID. Full ISCHT registration opens post-conference.', { x: 14, y: 6, font: regular, size: 4.5, color: rgb(0.5, 0.44, 0.4) })
 
   return await doc.save()
 }

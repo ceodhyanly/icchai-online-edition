@@ -23,6 +23,15 @@ function sanitizeString(val: unknown, maxLen: number): string {
   return val.trim().slice(0, maxLen)
 }
 
+function isValidPhone(phone: string): boolean {
+  const digits = phone.replace(/[^\d]/g, '')
+  return digits.length >= 7 && digits.length <= 15 && /^[\d\s+().-]+$/.test(phone)
+}
+
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && email.length <= 254
+}
+
 const ALLOWED_ROLES = [
   'Researcher / Academic', 'Clinician / Therapist', 'Technology / Industry',
   'Yoga / Meditation Practitioner', 'Student', 'Journalist / Media', 'Other',
@@ -60,6 +69,9 @@ export async function POST(req: NextRequest) {
     const country    = sanitizeString(body.country, 100)
     const role       = sanitizeString(body.role, 100)
     const gender     = sanitizeString(body.gender, 20)
+    const phone      = sanitizeString(body.phone, 25)
+    const secondaryEmail = sanitizeString(body.secondaryEmail, 254).toLowerCase()
+    const hasWhatsapp = typeof body.hasWhatsapp === 'boolean' ? body.hasWhatsapp : true
     const attendance = sanitizeString(body.attendance, 10) || 'both'
 
     if (!firstName || !lastName) {
@@ -73,6 +85,12 @@ export async function POST(req: NextRequest) {
     }
     if (!gender || !ALLOWED_GENDERS.includes(gender)) {
       return NextResponse.json({ error: 'Please select a valid gender.' }, { status: 400 })
+    }
+    if (!phone || !isValidPhone(phone)) {
+      return NextResponse.json({ error: 'Please enter a valid mobile number.' }, { status: 400 })
+    }
+    if (secondaryEmail && !isValidEmail(secondaryEmail)) {
+      return NextResponse.json({ error: 'Please enter a valid secondary email address.' }, { status: 400 })
     }
     if (!ALLOWED_ATTENDANCE.includes(attendance)) {
       return NextResponse.json({ error: 'Invalid attendance selection.' }, { status: 400 })
@@ -106,6 +124,7 @@ export async function POST(req: NextRequest) {
     const user = await prisma.user.create({
       data: { email, firstName, lastName, photo,
         institution, country, role, gender, interests: interestsStr, attendance,
+        phone, hasWhatsapp, secondaryEmail: secondaryEmail || null,
         ischtInterest: body.joinSociety },
     })
 

@@ -145,6 +145,12 @@ export default function SocietyPage() {
               </ul>
             </div>
           </div>
+
+          <div style={{ marginTop: 28, padding: '18px 22px', borderRadius: 6, background: 'var(--surface-2)', border: '1px solid var(--border)' }}>
+            <p className="caption" style={{ lineHeight: 1.7 }}>
+              <strong style={{ color: 'var(--foreground)' }}>A note on the IDs issued now:</strong> these are provisional Founding Member listings, not legal membership credentials. ISCHT is not yet a formally constituted society — full registration, verification and legal membership formalities will open once it is, after the conference. Founding members who join now simply hold an early, honoured place in that process.
+            </p>
+          </div>
         </div>
       </section>
 

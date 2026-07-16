@@ -12,6 +12,9 @@ type User = {
   country: string | null
   role: string | null
   gender: string | null
+  phone: string | null
+  hasWhatsapp: boolean
+  secondaryEmail: string | null
   attendance: string
   registrationNumber: string | null
   ischtInterest: boolean
@@ -207,7 +210,7 @@ export default function AdminTable({ users }: { users: User[] }) {
                     style={{ cursor: 'pointer', accentColor: 'var(--teal)', width: 15, height: 15 }}
                   />
                 </th>
-                {['#', 'Name', 'Email', 'Institution', 'Country', 'Role', 'Gender', 'Attendance', 'ISCHT', 'Reg No.', 'Registered', 'Pass PDF'].map(h => (
+                {['#', 'Name', 'Email', 'Secondary Email', 'Phone', 'Institution', 'Country', 'Role', 'Gender', 'Attendance', 'ISCHT', 'Reg No.', 'Registered', 'Pass PDF'].map(h => (
                   <th key={h} style={{ padding: '12px 14px', textAlign: 'left', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', whiteSpace: 'nowrap', borderBottom: '1px solid var(--border)' }}>
                     {h}
                   </th>
@@ -233,6 +236,10 @@ export default function AdminTable({ users }: { users: User[] }) {
                     {u.firstName} {u.lastName}
                   </td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.email}</td>
+                  <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.secondaryEmail ?? '—'}</td>
+                  <td style={{ padding: '12px 14px', color: 'var(--muted-light)', whiteSpace: 'nowrap' }}>
+                    {u.phone ? `${u.phone}${u.hasWhatsapp ? ' (WA)' : ''}` : '—'}
+                  </td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.institution ?? '—'}</td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)', whiteSpace: 'nowrap' }}>{u.country ?? '—'}</td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.role ?? '—'}</td>
@@ -290,7 +297,7 @@ export default function AdminTable({ users }: { users: User[] }) {
               ))}
               {users.length === 0 && (
                 <tr>
-                  <td colSpan={13} style={{ padding: '48px 16px', textAlign: 'center', color: 'var(--muted)' }}>
+                  <td colSpan={15} style={{ padding: '48px 16px', textAlign: 'center', color: 'var(--muted)' }}>
                     No registrations yet
                   </td>
                 </tr>

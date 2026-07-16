@@ -35,7 +35,8 @@ export default function RegisterPage() {
   const [success, setSuccess] = useState<{ name: string; regNumber: string; membershipNumber: string | null } | null>(null)
   const [form, setForm] = useState({
     email: '', firstName: '', lastName: '', photo: '',
-    institution: '', country: '', role: '', gender: '', interests: [] as string[], attendance: 'both',
+    institution: '', country: '', role: '', gender: '', phone: '', hasWhatsapp: true, secondaryEmail: '',
+    interests: [] as string[], attendance: 'both',
     joinSociety: '' as '' | 'yes' | 'no',
   })
   const [photoError, setPhotoError] = useState('')
@@ -159,8 +160,11 @@ export default function RegisterPage() {
                 <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#B07C1E', marginBottom: 8 }}>
                   ISCHT Founding Membership
                 </p>
-                <p style={{ fontSize: 20, fontWeight: 800, color: '#B07C1E', letterSpacing: '0.02em', fontFamily: 'monospace', marginBottom: 0 }}>
+                <p style={{ fontSize: 20, fontWeight: 800, color: '#B07C1E', letterSpacing: '0.02em', fontFamily: 'monospace', marginBottom: 8 }}>
                   {success.membershipNumber}
+                </p>
+                <p style={{ fontSize: 11.5, color: 'var(--muted)', lineHeight: 1.6, marginBottom: 0 }}>
+                  This is a provisional Founding Member ID, not a legal membership credential. Full ISCHT registration opens once the society is formally constituted, after the conference.
                 </p>
               </div>
               <a
@@ -276,9 +280,20 @@ export default function RegisterPage() {
                 ))}
               </div>
             </Field>
+            <Field label="Mobile Number (WhatsApp preferred) *">
+              <input className="field-input" type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={e => set('phone', e.target.value)} />
+              <label style={{ display: 'flex', gap: 8, alignItems: 'center', marginTop: 10, cursor: 'pointer' }}>
+                <input type="checkbox" checked={form.hasWhatsapp} onChange={e => setForm(f => ({ ...f, hasWhatsapp: e.target.checked }))} style={{ accentColor: 'var(--teal)' }} />
+                <span style={{ fontSize: 13, color: 'var(--muted-light)' }}>This number has WhatsApp</span>
+              </label>
+              <p className="caption" style={{ marginTop: 6 }}>If this number isn&apos;t on WhatsApp, uncheck the box — any mobile number works, we&apos;ll call or SMS instead.</p>
+            </Field>
+            <Field label="Secondary Email (optional)">
+              <input className="field-input" type="email" placeholder="An alternate email, in case we can't reach your primary" value={form.secondaryEmail} onChange={e => set('secondaryEmail', e.target.value)} />
+            </Field>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 8 }} className="stack-mobile">
               <button className="btn btn-outline" style={{ justifyContent: 'center' }} onClick={() => setStep(2)}>Back</button>
-              <button className="btn btn-teal" style={{ justifyContent: 'center' }} onClick={() => next(['institution', 'country', 'role', 'gender'])}>Continue</button>
+              <button className="btn btn-teal" style={{ justifyContent: 'center' }} onClick={() => next(['institution', 'country', 'role', 'gender', 'phone'])}>Continue</button>
             </div>
           </div>
         )}
@@ -324,6 +339,9 @@ export default function RegisterPage() {
               <a href="/society" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5, color: 'var(--teal)', fontWeight: 600, textDecoration: 'none' }}>
                 Learn more about ISCHT →
               </a>
+              <p className="caption" style={{ marginTop: 10, fontStyle: 'italic' }}>
+                Note: the ID issued now is a provisional Founding Member listing, not a legal membership credential. Full ISCHT registration opens once the society is formally constituted, after the conference.
+              </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 16 }}>
                 {[
                   { value: 'yes', label: 'Yes — count me in as a Founding Member', sub: 'Free during this registration' },

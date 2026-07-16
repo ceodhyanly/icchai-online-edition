@@ -69,7 +69,8 @@ export async function sendConfirmationEmail(user: {
     <div style="background:#F7F4F2;border:1px solid #e8e2df;border-top:3px solid #C69232;border-radius:6px;padding:20px 24px;">
       <div style="font-size:9px;font-weight:700;letter-spacing:0.12em;color:#9a8a84;text-transform:uppercase;margin-bottom:6px;">ISCHT Founding Membership</div>
       <div style="font-size:13px;color:#1a0a0a;line-height:1.7;margin-bottom:10px;">You're in as a founding member of the International Society for Contemplative HealthTech. Your membership card (PDF) is attached separately.</div>
-      <div style="font-size:20px;font-weight:900;color:#C69232;letter-spacing:0.02em;">${user.ischtMembershipNumber}</div>
+      <div style="font-size:20px;font-weight:900;color:#C69232;letter-spacing:0.02em;margin-bottom:10px;">${user.ischtMembershipNumber}</div>
+      <div style="font-size:11.5px;color:#9a8a84;line-height:1.6;">This is a provisional Founding Member ID, not a legal membership credential. Full ISCHT registration opens once the society is formally constituted, after the conference.</div>
     </div>` : ''}
   </div>
 

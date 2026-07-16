@@ -10,7 +10,7 @@ export default async function DashboardPage() {
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },
-    select: { id: true, email: true, firstName: true, lastName: true, institution: true, country: true, role: true, gender: true, interests: true, attendance: true, registrationNumber: true, ischtMembershipNumber: true, createdAt: true },
+    select: { id: true, email: true, firstName: true, lastName: true, institution: true, country: true, role: true, gender: true, phone: true, hasWhatsapp: true, secondaryEmail: true, interests: true, attendance: true, registrationNumber: true, ischtMembershipNumber: true, createdAt: true },
   })
   if (!user) redirect('/login')
 
@@ -75,6 +75,9 @@ export default async function DashboardPage() {
                   Download Membership Card (PDF)
                 </a>
               </div>
+              <p style={{ fontSize: 11.5, color: 'var(--muted)', lineHeight: 1.6, marginTop: 14, marginBottom: 0 }}>
+                This is a provisional Founding Member ID, not a legal membership credential. Full ISCHT registration opens once the society is formally constituted, after the conference.
+              </p>
             </div>
           </div>
         )}
@@ -87,6 +90,8 @@ export default async function DashboardPage() {
               {[
                 ['Name', `${user.firstName} ${user.lastName}`],
                 ['Email', user.email],
+                ['Secondary Email', user.secondaryEmail ?? '—'],
+                ['Mobile', user.phone ? `${user.phone}${user.hasWhatsapp ? ' (WhatsApp)' : ''}` : '—'],
                 ['Institution', user.institution ?? '—'],
                 ['Country', user.country ?? '—'],
                 ['Role', user.role ?? '—'],
