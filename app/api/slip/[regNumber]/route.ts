@@ -7,7 +7,7 @@ const ADMIN_KEY = process.env.ADMIN_KEY ?? '19977991'
 
 async function ensureRegNumber(user: { id: number; registrationNumber: string | null }) {
   if (user.registrationNumber) return user.registrationNumber
-  const regNum = `ICCHAI-2026-${1000 + user.id}`
+  const regNum = `ICCH-AI-2026-${1000 + user.id}`
   await prisma.user.update({ where: { id: user.id }, data: { registrationNumber: regNum } })
   return regNum
 }
@@ -50,7 +50,7 @@ export async function GET(
     return new NextResponse(new Blob([new Uint8Array(pdfBytes)]), {
       headers: {
         'Content-Type': 'application/pdf',
-        'Content-Disposition': `attachment; filename="ICCHAI-2026-Pass-${regNum}.pdf"`,
+        'Content-Disposition': `attachment; filename="ICCH-AI-2026-Pass-${regNum}.pdf"`,
       },
     })
   } catch {

@@ -7,7 +7,7 @@ export default function GlobalError({ error, reset }: { error: Error; reset: () 
   useEffect(() => {
     // Log to error monitoring service in production
     if (process.env.NODE_ENV === 'production') {
-      console.error('[ICCHAI Error]', error.message)
+      console.error('[ICCH-AI Error]', error.message)
     }
   }, [error])
 

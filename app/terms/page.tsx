@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Terms of Use',
-  description: 'Terms of use for ICCHAI 2026, the International Conference on Contemplative HealthTech and AI.',
+  description: 'Terms of use for ICCH-AI 2026, the International Conference on Contemplative HealthTech and AI.',
 }
 
 export default function TermsPage() {
@@ -22,11 +22,11 @@ export default function TermsPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
 
             <Block title="Acceptance">
-              By accessing or using the ICCHAI 2026 website (icchai.com) you agree to these terms. If you do not agree, please do not use the site.
+              By accessing or using the ICCH-AI 2026 website (icchai.com) you agree to these terms. If you do not agree, please do not use the site.
             </Block>
 
             <Block title="About the conference">
-              ICCHAI 2026 is a free, fully online academic conference on Contemplative HealthTech and AI, organised by YogaXBiofeedback Pvt Ltd (Dhyanly), The India Center at the University of Central Florida, and Notre Dame of Maryland University. All programme and speaker information on this site is provided in good faith and may change prior to the event.
+              ICCH-AI 2026 is a free, fully online academic conference on Contemplative HealthTech and AI, organised by YogaXBiofeedback Pvt Ltd (Dhyanly), The India Center at the University of Central Florida, and Notre Dame of Maryland University. All programme and speaker information on this site is provided in good faith and may change prior to the event.
             </Block>
 
             <Block title="Registration">

@@ -37,7 +37,7 @@ export default async function DashboardPage() {
         <div style={{ padding: '28px 36px', background: 'rgba(0,184,181,0.04)', border: '1px solid var(--teal-border)', borderRadius: 8, marginBottom: 40, display: 'flex', gap: 24, alignItems: 'flex-start', flexWrap: 'wrap' }}>
           <div style={{ width: 3, background: 'var(--teal)', borderRadius: 2, alignSelf: 'stretch', flexShrink: 0 }} />
           <div>
-            <p style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>Registration confirmed for ICCHAI 2026</p>
+            <p style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>Registration confirmed for ICCH-AI 2026</p>
             <p className="body" style={{ fontSize: 14, marginBottom: 16 }}>
               October 22–23, 2026 &nbsp;·&nbsp; Fully Online &nbsp;·&nbsp; 18:30–22:30 IST / 9:00 am–1:00 pm EST
             </p>

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy policy for ICCHAI 2026, the International Conference on Contemplative HealthTech and AI.',
+  description: 'Privacy policy for ICCH-AI 2026, the International Conference on Contemplative HealthTech and AI.',
 }
 
 export default function PrivacyPage() {
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
 
             <Block title="Who we are">
-              ICCHAI 2026 (International Conference on Contemplative HealthTech and AI) is organised by YogaXBiofeedback Pvt Ltd (Dhyanly) in partnership with The India Center, University of Central Florida, and Notre Dame of Maryland University. The conference takes place October 22–23, 2026, fully online, worldwide. This website is operated at icchai.com.
+              ICCH-AI 2026 (International Conference on Contemplative HealthTech and AI) is organised by YogaXBiofeedback Pvt Ltd (Dhyanly) in partnership with The India Center, University of Central Florida, and Notre Dame of Maryland University. The conference takes place October 22–23, 2026, fully online, worldwide. This website is operated at icchai.com.
             </Block>
 
             <Block title="What information we collect">

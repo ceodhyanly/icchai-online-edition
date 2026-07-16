@@ -17,7 +17,7 @@ export default function Footer() {
           <div>
             <div style={{ marginBottom: 16 }}>
               <div style={{ fontSize: 18, fontWeight: 800, letterSpacing: '-0.02em', color: '#FFFFFF', marginBottom: 3 }}>
-                ICCHAI <span style={{ color: '#A41C30' }}>2026</span>
+                ICCH-AI <span style={{ color: '#A41C30' }}>2026</span>
               </div>
               <div style={{ fontSize: 9.5, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(228,220,212,0.38)' }}>
                 Contemplative HealthTech and AI
@@ -53,7 +53,7 @@ export default function Footer() {
         <div style={{ height: 1, background: 'rgba(255,255,255,0.10)', marginBottom: 28 }} />
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16, paddingBottom: 32 }}>
-          <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.35)' }}>&copy; 2026 ICCHAI. Organised by YogaXBiofeedback Pvt Ltd (Dhyanly), University of Central Florida and Notre Dame of Maryland University.</p>
+          <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.35)' }}>&copy; 2026 ICCH-AI. Organised by YogaXBiofeedback Pvt Ltd (Dhyanly), University of Central Florida and Notre Dame of Maryland University.</p>
           <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.35)' }}>18:30–22:30 IST &nbsp;·&nbsp; 9:00 am–1:00 pm EST &nbsp;·&nbsp; 3:00–7:00 pm CET</p>
         </div>
       </div>

@@ -110,7 +110,7 @@ export async function POST(req: NextRequest) {
     })
 
     // Generate unique registration number (and, if applicable, membership number) from user ID — no race condition
-    const registrationNumber = `ICCHAI-2026-${1000 + user.id}`
+    const registrationNumber = `ICCH-AI-2026-${1000 + user.id}`
     const ischtMembershipNumber = body.joinSociety ? `ISCHT-2026-${1000 + user.id}` : null
     await prisma.user.update({ where: { id: user.id }, data: { registrationNumber, ischtMembershipNumber } })
 

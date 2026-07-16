@@ -6,7 +6,7 @@ const ADMIN_KEY = process.env.ADMIN_KEY ?? '19977991'
 function AccessDenied() {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--background)', flexDirection: 'column', gap: 16, padding: 24 }}>
-      <div style={{ fontSize: 32, fontWeight: 800, color: 'var(--teal)', letterSpacing: '-0.02em' }}>ICCHAI Admin</div>
+      <div style={{ fontSize: 32, fontWeight: 800, color: 'var(--teal)', letterSpacing: '-0.02em' }}>ICCH-AI Admin</div>
       <p style={{ color: 'var(--muted)', fontSize: 14 }}>Access this page at <code style={{ background: 'var(--surface-3)', padding: '2px 8px', borderRadius: 3, fontFamily: 'monospace' }}>/admin?key=YOUR_ADMIN_KEY</code></p>
     </div>
   )
@@ -49,7 +49,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
       <div className="container">
 
         <div style={{ marginBottom: 48, paddingBottom: 32, borderBottom: '1px solid var(--border)' }}>
-          <p className="label" style={{ marginBottom: 12 }}>ICCHAI 2026</p>
+          <p className="label" style={{ marginBottom: 12 }}>ICCH-AI 2026</p>
           <h1 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--foreground)', marginBottom: 8 }}>
             Admin Dashboard
           </h1>

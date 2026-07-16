@@ -25,7 +25,7 @@ export default function LoginPage() {
         <div style={{ marginBottom: 48 }}>
           <Link href="/" style={{ textDecoration: 'none' }}>
             <span style={{ fontSize: 14, fontWeight: 800, letterSpacing: '-0.01em', color: 'var(--foreground)' }}>
-              ICCHAI <span style={{ color: 'var(--teal)' }}>2026</span>
+              ICCH-AI <span style={{ color: 'var(--teal)' }}>2026</span>
             </span>
           </Link>
           <h1 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 800, letterSpacing: '-0.025em', marginTop: 24, marginBottom: 8 }}>

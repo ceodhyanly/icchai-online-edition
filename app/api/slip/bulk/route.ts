@@ -7,7 +7,7 @@ const ADMIN_KEY = process.env.ADMIN_KEY ?? '19977991'
 
 async function getOrAssignRegNum(user: { id: number; registrationNumber: string | null }) {
   if (user.registrationNumber) return user.registrationNumber
-  const regNum = `ICCHAI-2026-${1000 + user.id}`
+  const regNum = `ICCH-AI-2026-${1000 + user.id}`
   await prisma.user.update({ where: { id: user.id }, data: { registrationNumber: regNum } })
   return regNum
 }
@@ -56,8 +56,8 @@ export async function POST(req: NextRequest) {
 
     const zipBytes = await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' })
     const filename = body.all
-      ? 'ICCHAI-2026-All-Registration-Passes.zip'
-      : `ICCHAI-2026-Selected-${users.length}-Passes.zip`
+      ? 'ICCH-AI-2026-All-Registration-Passes.zip'
+      : `ICCH-AI-2026-Selected-${users.length}-Passes.zip`
 
     return new NextResponse(new Blob([new Uint8Array(zipBytes)]), {
       headers: {

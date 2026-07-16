@@ -130,7 +130,7 @@ export default function RegisterPage() {
             Welcome, {success.name}!
           </h1>
           <p className="body" style={{ marginBottom: 40 }}>
-            Your seat at ICCHAI 2026 is confirmed. A confirmation email with your registration pass has been sent to your inbox.
+            Your seat at ICCH-AI 2026 is confirmed. A confirmation email with your registration pass has been sent to your inbox.
           </p>
 
           {/* Registration number box */}
@@ -192,7 +192,7 @@ export default function RegisterPage() {
         <div style={{ marginBottom: 48 }}>
           <p className="label" style={{ marginBottom: 16 }}>Free Registration</p>
           <h1 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 8 }}>
-            Register for ICCHAI 2026
+            Register for ICCH-AI 2026
           </h1>
           <p className="body">October 22–23, 2026 · Fully online worldwide · Free to attend</p>
         </div>
@@ -240,7 +240,7 @@ export default function RegisterPage() {
                     <input type="file" accept="image/*" onChange={handlePhotoChange} style={{ display: 'none' }} />
                   </label>
                   <p className="caption" style={{ marginTop: 8, maxWidth: 260 }}>
-                    Used on your ICCHAI registration pass (and your ISCHT membership card, if you join). Resized automatically.
+                    Used on your ICCH-AI registration pass (and your ISCHT membership card, if you join). Resized automatically.
                   </p>
                 </div>
               </div>

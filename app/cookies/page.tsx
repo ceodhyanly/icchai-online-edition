@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy',
-  description: 'Cookie policy for ICCHAI 2026, the International Conference on Contemplative HealthTech and AI.',
+  description: 'Cookie policy for ICCH-AI 2026, the International Conference on Contemplative HealthTech and AI.',
 }
 
 export default function CookiesPage() {

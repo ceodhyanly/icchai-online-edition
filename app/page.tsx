@@ -107,7 +107,7 @@ const mainPartners = [
     name: 'University of Central Florida',
     dept: 'The India Center',
     role: 'Convening Institution',
-    desc: "UCF's dedicated centre for India-focused research, education and cultural engagement. Convening academic home for ICCHAI 2026.",
+    desc: "UCF's dedicated centre for India-focused research, education and cultural engagement. Convening academic home for ICCH-AI 2026.",
     logo: '/images/ucf.jpg',
     logoAlt: 'University of Central Florida',
     wide: false,
@@ -125,7 +125,7 @@ const mainPartners = [
     name: 'Indian Institute of Technology Delhi',
     dept: 'National Resource Centre for Value Education in Engineering (NRCVEE)',
     role: 'Anchor Institution (India)',
-    desc: "Established by India's Ministry of Education to integrate value education and professional ethics into engineering, NRCVEE brings two decades of work in wellness, self-awareness and value-based curricula to ICCHAI 2026. The event is fully online, with a possible hybrid track at IIT Delhi.",
+    desc: "Established by India's Ministry of Education to integrate value education and professional ethics into engineering, NRCVEE brings two decades of work in wellness, self-awareness and value-based curricula to ICCH-AI 2026. The event is fully online, with a possible hybrid track at IIT Delhi.",
     logo: '/images/iidelhilogo.jpg',
     logoAlt: 'Indian Institute of Technology Delhi',
     wide: true,
@@ -162,7 +162,7 @@ const speakerInstitutions = [
 const organizers = [
   {
     name: 'Satyam Tiwari',
-    role: 'Convener, ICCHAI 2026',
+    role: 'Convener, ICCH-AI 2026',
     subrole: 'Head of Program, Technology & Production',
     affiliation: 'Founder, YogaXBiofeedback Pvt Ltd (Dhyanly)',
     photo: '/organizers/satyamtiwaripic.png',
@@ -170,7 +170,7 @@ const organizers = [
   },
   {
     name: 'Dr. Steve Haberlin',
-    role: 'Co-Convener, ICCHAI 2026',
+    role: 'Co-Convener, ICCH-AI 2026',
     subrole: 'Head of Global Outreach',
     affiliation: 'University of Central Florida',
     photo: '/organizers/steve-haberlin.jpg',
@@ -330,14 +330,14 @@ export default function Home() {
               Convened with leading institutions
             </h2>
             <p className="body" style={{ maxWidth: 380 }}>
-              ICCHAI 2026 is organised and academically anchored by partners spanning India and the United States.
+              ICCH-AI 2026 is organised and academically anchored by partners spanning India and the United States.
             </p>
           </div>
 
           {/* Main partner cards — equal columns */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 1, background: 'var(--border)', marginBottom: 64 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: 1, background: 'var(--border)', marginBottom: 64 }}>
             {mainPartners.map(inst => (
-              <div key={inst.name} className="hover-cell" style={{ background: 'var(--surface)', padding: '44px 36px', display: 'flex', flexDirection: 'column', gridColumn: inst.wide ? 'span 2' : undefined }}>
+              <div key={inst.name} className={`hover-cell${inst.wide ? ' partner-card-wide' : ''}`} style={{ background: 'var(--surface)', padding: '44px 36px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ position: 'relative', width: '100%', height: 140, marginBottom: 28 }}>
                   <Image
                     src={inst.logo}
@@ -389,14 +389,14 @@ export default function Home() {
       {/* ─── ABOUT ──────────────────────────────────────────── */}
       <section id="about" className="section" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 80, alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: 80, alignItems: 'start' }}>
             <div>
-              <p className="label" style={{ marginBottom: 20 }}>About ICCHAI 2026</p>
+              <p className="label" style={{ marginBottom: 20 }}>About ICCH-AI 2026</p>
               <h2 className="headline" style={{ marginBottom: 28 }}>
                 Three worlds.<br />One conversation.
               </h2>
               <p className="body" style={{ marginBottom: 20 }}>
-                ICCHAI 2026 is the inaugural edition of what is intended to become an annual gathering, a space where Indian Knowledge Systems and Western empirical science meet as equal partners in inquiry.
+                ICCH-AI 2026 is the inaugural edition of what is intended to become an annual gathering, a space where Indian Knowledge Systems and Western empirical science meet as equal partners in inquiry.
               </p>
               <p className="body" style={{ marginBottom: 20 }}>
                 Not as tradition waiting to be validated by science, or science imposing itself on tradition. Yoga, meditation and mindfulness carry centuries of lived, experiential knowledge about regulating the breath, the nervous system, and the mind.
@@ -459,7 +459,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(330px, 1fr))', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(330px, 100%), 1fr))', gap: 16 }}>
             {pillars.map(p => (
               <div key={p.n} style={{ background: 'var(--surface-3)', padding: '36px 32px', borderRadius: 8, borderLeft: '3px solid var(--teal)' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', color: 'var(--muted)', textTransform: 'uppercase', display: 'block', marginBottom: 14 }}>Pillar {p.n}</span>
@@ -491,7 +491,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))', gap: 24 }}>
             {[
               {
                 day: 'Day 1', date: 'October 22, 2026',
@@ -541,7 +541,7 @@ export default function Home() {
           <p className="label" style={{ marginBottom: 20 }}>Organizing Committee</p>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, flexWrap: 'wrap', gap: 24 }}>
             <h2 className="headline" style={{ maxWidth: 480 }}>
-              The team behind ICCHAI 2026
+              The team behind ICCH-AI 2026
             </h2>
             <p className="body" style={{ maxWidth: 380 }}>
               Scholars, practitioners and technologists who have convened this conference and are responsible for its programme, partnerships and global reach.
@@ -631,7 +631,7 @@ export default function Home() {
             }}>
               <span className="chip" style={{ fontSize: 10.5, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 16 }}>Coming Soon</span>
               <p style={{ fontSize: 14, fontWeight: 700, color: 'var(--foreground)', marginBottom: 8, letterSpacing: '-0.01em' }}>More speakers to be announced</p>
-              <p style={{ fontSize: 13, color: 'var(--muted-light)', lineHeight: 1.6 }}>Additional researchers, clinicians and technologists will be added to the lineup as ICCHAI 2026 approaches.</p>
+              <p style={{ fontSize: 13, color: 'var(--muted-light)', lineHeight: 1.6 }}>Additional researchers, clinicians and technologists will be added to the lineup as ICCH-AI 2026 approaches.</p>
             </div>
           </div>
         </div>
@@ -640,10 +640,10 @@ export default function Home() {
       {/* ─── BOOK LAUNCHES ──────────────────────────────────── */}
       <section className="section" style={{ background: 'var(--background)', borderTop: '1px solid var(--border)' }}>
         <div className="container">
-          <p className="label" style={{ marginBottom: 20 }}>Featured at ICCHAI 2026</p>
+          <p className="label" style={{ marginBottom: 20 }}>Featured at ICCH-AI 2026</p>
           <h2 className="headline" style={{ marginBottom: 48 }}>Book Launches</h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(380px, 100%), 1fr))', gap: 24 }}>
             {[
               {
                 title: 'Meta-Meditation for Mental Health Routage',
@@ -696,11 +696,11 @@ export default function Home() {
             <h2 className="headline" style={{ maxWidth: 480 }}>Frequently Asked Questions</h2>
             <p className="body" style={{ maxWidth: 380 }}>Everything you need to know before you register.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 2, background: 'var(--border)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))', gap: 2, background: 'var(--border)' }}>
             {[
               {
-                q: 'What is ICCHAI 2026?',
-                a: 'ICCHAI 2026 is the International Conference on Contemplative HealthTech and AI, taking place on October 22 and 23, 2026. It is a free, fully online event organised by the University of Central Florida, Notre Dame of Maryland University, and YogaXBiofeedback (Dhyanly), open to participants worldwide.',
+                q: 'What is ICCH-AI 2026?',
+                a: 'ICCH-AI 2026 is the International Conference on Contemplative HealthTech and AI, taking place on October 22 and 23, 2026. It is a free, fully online event organised by the University of Central Florida, Notre Dame of Maryland University, and YogaXBiofeedback (Dhyanly), open to participants worldwide.',
               },
               {
                 q: 'Is attendance free?',
@@ -715,12 +715,12 @@ export default function Home() {
                 a: 'Six research pillars: Contemplative Neuroscience and Self-Regulation; Yoga, Ayurveda and Indian Knowledge Systems; AI and Digital Therapeutics; Biofeedback, Wearables and Biosignal Science; Clinical Translation and Digital Health Delivery; Ethics, Responsibility and the Future of the Field.',
               },
               {
-                q: 'Can I present research at ICCHAI 2026?',
+                q: 'Can I present research at ICCH-AI 2026?',
                 a: 'Yes. Researchers and practitioners are invited to submit work for consideration. Register on this site and watch for the formal call for abstracts announcement.',
               },
               {
                 q: 'How do I join the online sessions?',
-                a: 'ICCHAI 2026 runs entirely online. After registering, you will receive a confirmation with the link to join the live sessions on the conference dates.',
+                a: 'ICCH-AI 2026 runs entirely online. After registering, you will receive a confirmation with the link to join the live sessions on the conference dates.',
               },
               {
                 q: 'What time does the conference run?',

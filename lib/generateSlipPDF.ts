@@ -40,8 +40,8 @@ export async function generateSlipPDF(user: SlipUser): Promise<Uint8Array> {
   page.drawRectangle({ x: 0, y: height - 128, width, height: 128, color: darkBg })
   page.drawRectangle({ x: 0, y: height - 131, width, height: 3, color: red })
 
-  page.drawText('ICCHAI', { x: 40, y: height - 54, font: bold, size: 42, color: white })
-  page.drawText('2026', { x: 182, y: height - 54, font: bold, size: 42, color: red })
+  page.drawText('ICCH-AI', { x: 40, y: height - 54, font: bold, size: 42, color: white })
+  page.drawText('2026', { x: 40 + bold.widthOfTextAtSize('ICCH-AI ', 42), y: height - 54, font: bold, size: 42, color: red })
 
   page.drawText('International Conference on Contemplative HealthTech and AI', {
     x: 40, y: height - 80, font: regular, size: 9.5, color: rgb(0.78, 0.68, 0.60),
@@ -129,7 +129,7 @@ export async function generateSlipPDF(user: SlipUser): Promise<Uint8Array> {
   })
 
   // ── Congratulations ──────────────────────────────────────────────────────
-  page.drawText('Congratulations! Your seat is confirmed at ICCHAI 2026.', {
+  page.drawText('Congratulations! Your seat is confirmed at ICCH-AI 2026.', {
     x: 40, y: boxY - 58, font: bold, size: 13, color: dark,
   })
   page.drawText('Please keep this pass for your records.', {
@@ -138,7 +138,7 @@ export async function generateSlipPDF(user: SlipUser): Promise<Uint8Array> {
   page.drawText('The online session link will be emailed to you before the event begins.', {
     x: 40, y: boxY - 96, font: regular, size: 9.5, color: muted,
   })
-  page.drawText('You are now subscribed to ICCHAI updates and newsletter.', {
+  page.drawText('You are now subscribed to ICCH-AI updates and newsletter.', {
     x: 40, y: boxY - 114, font: regular, size: 9.5, color: muted,
   })
 
@@ -158,7 +158,7 @@ export async function generateSlipPDF(user: SlipUser): Promise<Uint8Array> {
   page.drawText('In partnership with Notre Dame of Maryland University – School of Integrative Health', {
     x: 40, y: 49, font: regular, size: 8, color: rgb(0.54, 0.46, 0.42),
   })
-  page.drawText('This is an automatically generated confirmation. No payment required – ICCHAI 2026 is free to attend.', {
+  page.drawText('This is an automatically generated confirmation. No payment required – ICCH-AI 2026 is free to attend.', {
     x: 40, y: 14, font: regular, size: 7.5, color: rgb(0.42, 0.35, 0.32),
   })
 

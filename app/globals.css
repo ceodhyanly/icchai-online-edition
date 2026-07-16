@@ -352,6 +352,11 @@ select.field-input { cursor: pointer; }
   .stack-mobile { grid-template-columns: 1fr !important; }
 }
 
+/* Only span 2 grid tracks once there's room for 2 tracks to exist */
+@media (min-width: 700px) {
+  .partner-card-wide { grid-column: span 2; }
+}
+
 /* ── Mobile container/type tightening ── */
 @media (max-width: 480px) {
   .container { padding: 0 18px; }

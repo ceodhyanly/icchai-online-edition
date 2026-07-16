@@ -54,7 +54,7 @@ export default function Navbar() {
             color: wordmarkPrimary, lineHeight: 1,
             transition: 'color 0.35s',
           }}>
-            ICCHAI <span style={{ color: wordmarkAccent }}>2026</span>
+            ICCH-AI <span style={{ color: wordmarkAccent }}>2026</span>
           </span>
           <span style={{
             fontSize: 9.5, fontWeight: 500, letterSpacing: '0.1em',

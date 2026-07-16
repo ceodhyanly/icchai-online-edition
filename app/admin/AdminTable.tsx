@@ -33,7 +33,7 @@ async function downloadPDF(userId: number, name: string) {
   const blob = await res.blob()
   const a = document.createElement('a')
   a.href = URL.createObjectURL(blob)
-  a.download = `ICCHAI-2026-Pass-${name.replace(/\s+/g, '-')}.pdf`
+  a.download = `ICCH-AI-2026-Pass-${name.replace(/\s+/g, '-')}.pdf`
   document.body.appendChild(a)
   a.click()
   document.body.removeChild(a)
@@ -97,10 +97,10 @@ export default function AdminTable({ users }: { users: User[] }) {
   const handleBulk = async (mode: 'selected' | 'all') => {
     setBulkLoading(true)
     if (mode === 'all') {
-      await downloadBulkZip('all', 'ICCHAI-2026-All-Registration-Passes.zip')
+      await downloadBulkZip('all', 'ICCH-AI-2026-All-Registration-Passes.zip')
     } else {
       if (selected.size === 0) { setBulkLoading(false); return }
-      await downloadBulkZip(Array.from(selected), `ICCHAI-2026-Selected-${selected.size}-Passes.zip`)
+      await downloadBulkZip(Array.from(selected), `ICCH-AI-2026-Selected-${selected.size}-Passes.zip`)
     }
     setBulkLoading(false)
   }
@@ -248,7 +248,7 @@ export default function AdminTable({ users }: { users: User[] }) {
                       : <span style={{ color: 'var(--muted)' }}>—</span>}
                   </td>
                   <td style={{ padding: '12px 14px', fontFamily: 'monospace', fontSize: 11, color: 'var(--teal)', whiteSpace: 'nowrap' }}>
-                    {u.registrationNumber ?? `ICCHAI-2026-${1000 + u.id}`}
+                    {u.registrationNumber ?? `ICCH-AI-2026-${1000 + u.id}`}
                   </td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted)', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums' }}>
                     {new Date(u.createdAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}
