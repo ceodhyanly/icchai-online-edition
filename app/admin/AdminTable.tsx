@@ -14,6 +14,7 @@ type User = {
   gender: string | null
   attendance: string
   registrationNumber: string | null
+  ischtInterest: boolean
   createdAt: Date
 }
 
@@ -205,7 +206,7 @@ export default function AdminTable({ users }: { users: User[] }) {
                     style={{ cursor: 'pointer', accentColor: 'var(--teal)', width: 15, height: 15 }}
                   />
                 </th>
-                {['#', 'Name', 'Email', 'Institution', 'Country', 'Role', 'Gender', 'Attendance', 'Reg No.', 'Registered', 'Pass PDF'].map(h => (
+                {['#', 'Name', 'Email', 'Institution', 'Country', 'Role', 'Gender', 'Attendance', 'ISCHT', 'Reg No.', 'Registered', 'Pass PDF'].map(h => (
                   <th key={h} style={{ padding: '12px 14px', textAlign: 'left', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', whiteSpace: 'nowrap', borderBottom: '1px solid var(--border)' }}>
                     {h}
                   </th>
@@ -239,6 +240,11 @@ export default function AdminTable({ users }: { users: User[] }) {
                     <span style={{ display: 'inline-flex', alignItems: 'center', padding: '3px 10px', background: 'var(--teal-dim)', border: '1px solid var(--teal-border)', borderRadius: 3, fontSize: 11, fontWeight: 600, color: 'var(--teal)' }}>
                       {attLabel[u.attendance] ?? u.attendance}
                     </span>
+                  </td>
+                  <td style={{ padding: '12px 14px', whiteSpace: 'nowrap' }}>
+                    {u.ischtInterest
+                      ? <span style={{ display: 'inline-flex', alignItems: 'center', padding: '3px 10px', background: 'rgba(198,146,50,0.12)', border: '1px solid rgba(198,146,50,0.35)', borderRadius: 3, fontSize: 11, fontWeight: 600, color: 'var(--gold)' }}>Founding</span>
+                      : <span style={{ color: 'var(--muted)' }}>—</span>}
                   </td>
                   <td style={{ padding: '12px 14px', fontFamily: 'monospace', fontSize: 11, color: 'var(--teal)', whiteSpace: 'nowrap' }}>
                     {u.registrationNumber ?? `ICCHAI-2026-${1000 + u.id}`}
@@ -283,7 +289,7 @@ export default function AdminTable({ users }: { users: User[] }) {
               ))}
               {users.length === 0 && (
                 <tr>
-                  <td colSpan={12} style={{ padding: '48px 16px', textAlign: 'center', color: 'var(--muted)' }}>
+                  <td colSpan={13} style={{ padding: '48px 16px', textAlign: 'center', color: 'var(--muted)' }}>
                     No registrations yet
                   </td>
                 </tr>

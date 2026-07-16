@@ -62,6 +62,9 @@ export async function POST(req: NextRequest) {
     if (!ALLOWED_ATTENDANCE.includes(attendance)) {
       return NextResponse.json({ error: 'Invalid attendance selection.' }, { status: 400 })
     }
+    if (typeof body.joinSociety !== 'boolean') {
+      return NextResponse.json({ error: 'Please let us know whether you would like to join ISCHT.' }, { status: 400 })
+    }
 
     const rawInterests = body.interests
     let interestsStr: string | null = null
@@ -84,7 +87,8 @@ export async function POST(req: NextRequest) {
     const user = await prisma.user.create({
       data: { email, firstName, lastName,
         institution: institution || null, country: country || null,
-        role: role || null, gender: gender || null, interests: interestsStr, attendance },
+        role: role || null, gender: gender || null, interests: interestsStr, attendance,
+        ischtInterest: body.joinSociety },
     })
 
     // Generate unique registration number from user ID (no race condition)

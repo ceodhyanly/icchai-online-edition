@@ -36,6 +36,7 @@ export default function RegisterPage() {
   const [form, setForm] = useState({
     email: '', firstName: '', lastName: '',
     institution: '', country: '', role: '', gender: '', interests: [] as string[], attendance: 'both',
+    joinSociety: '' as '' | 'yes' | 'no',
   })
 
   // If arriving already-verified (e.g. redirected from /login), skip the email step.
@@ -71,11 +72,12 @@ export default function RegisterPage() {
   }
 
   const submit = async () => {
+    if (!form.joinSociety) { setError('Please let us know whether you would like to join ISCHT.'); return }
     setLoading(true); setError('')
     const res = await fetch('/api/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...form }),
+      body: JSON.stringify({ ...form, joinSociety: form.joinSociety === 'yes' }),
     })
     const data = await res.json()
     setLoading(false)
@@ -243,6 +245,31 @@ export default function RegisterPage() {
                       <span style={{ color: 'var(--teal)', fontWeight: 700, marginRight: 8 }}>P{i + 1}</span>
                       {pillar}
                     </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ padding: '22px 24px', background: 'var(--surface-2)', borderRadius: 8, border: '1px solid var(--border)' }}>
+              <p className="label" style={{ marginBottom: 10 }}>One More Thing</p>
+              <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Become a Founding Member of ISCHT</h3>
+              <p style={{ fontSize: 13, color: 'var(--muted-light)', lineHeight: 1.7, marginBottom: 6 }}>
+                The International Society for Contemplative HealthTech (ISCHT) is opening its doors to early members here, ahead of its launch at ICCH-AI 2026. Say yes today and it&apos;s free — with early access to society resources and $100 worth of launch-year benefits. Full enrolment follows after the conference.
+              </p>
+              <a href="/society" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5, color: 'var(--teal)', fontWeight: 600, textDecoration: 'none' }}>
+                Learn more about ISCHT →
+              </a>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 16 }}>
+                {[
+                  { value: 'yes', label: 'Yes — count me in as a Founding Member', sub: 'Free during this registration' },
+                  { value: 'no', label: 'Not right now', sub: '' },
+                ].map(opt => (
+                  <label key={opt.value} style={{ display: 'flex', gap: 12, alignItems: 'center', padding: '12px 14px', background: form.joinSociety === opt.value ? 'rgba(164,28,48,0.06)' : 'var(--surface)', borderRadius: 6, border: `1px solid ${form.joinSociety === opt.value ? 'var(--teal-border)' : 'var(--border-mid)'}`, cursor: 'pointer', transition: 'all 0.15s' }}>
+                    <input type="radio" name="joinSociety" value={opt.value} checked={form.joinSociety === opt.value} onChange={e => set('joinSociety', e.target.value)} style={{ accentColor: 'var(--teal)' }} />
+                    <div>
+                      <div style={{ fontWeight: 600, fontSize: 13.5 }}>{opt.label}</div>
+                      {opt.sub && <div className="caption" style={{ marginTop: 1 }}>{opt.sub}</div>}
+                    </div>
                   </label>
                 ))}
               </div>

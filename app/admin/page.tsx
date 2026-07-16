@@ -34,11 +34,14 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
     byGender[gender] = (byGender[gender] ?? 0) + 1
   }
 
+  const ischtInterested = users.filter(u => u.ischtInterest).length
+
   const statCards = [
     { label: 'Total Registrants', value: total, accent: 'var(--teal)' },
     { label: 'Both Days', value: byAttendance['both'] ?? 0, accent: '#C69232' },
     { label: 'Day 1 Only', value: byAttendance['day1'] ?? 0, accent: 'var(--muted)' },
     { label: 'Day 2 Only', value: byAttendance['day2'] ?? 0, accent: 'var(--muted)' },
+    { label: 'ISCHT Founding Members', value: ischtInterested, accent: 'var(--gold)' },
   ]
 
   return (
@@ -54,7 +57,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
         </div>
 
         {/* Stat cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 48 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16, marginBottom: 48 }}>
           {statCards.map(s => (
             <div key={s.label} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6, padding: '28px 24px', borderTop: `3px solid ${s.accent}` }}>
               <div style={{ fontSize: 40, fontWeight: 800, color: s.accent, lineHeight: 1, letterSpacing: '-0.04em', marginBottom: 8 }}>{s.value}</div>

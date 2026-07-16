@@ -10,6 +10,7 @@ const links = [
   { href: '/schedule', label: 'Schedule' },
   { href: '/#organizers', label: 'Team' },
   { href: '/#speakers', label: 'Speakers' },
+  { href: '/society', label: 'Society' },
 ]
 
 export default function Navbar() {
