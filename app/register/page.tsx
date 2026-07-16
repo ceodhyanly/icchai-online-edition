@@ -32,12 +32,13 @@ export default function RegisterPage() {
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [success, setSuccess] = useState<{ name: string; regNumber: string } | null>(null)
+  const [success, setSuccess] = useState<{ name: string; regNumber: string; membershipNumber: string | null } | null>(null)
   const [form, setForm] = useState({
-    email: '', firstName: '', lastName: '',
+    email: '', firstName: '', lastName: '', photo: '',
     institution: '', country: '', role: '', gender: '', interests: [] as string[], attendance: 'both',
     joinSociety: '' as '' | 'yes' | 'no',
   })
+  const [photoError, setPhotoError] = useState('')
 
   // If arriving already-verified (e.g. redirected from /login), skip the email step.
   useEffect(() => {
@@ -52,6 +53,30 @@ export default function RegisterPage() {
   const set = (k: string, v: string | string[]) => setForm(f => ({ ...f, [k]: v }))
   const toggle = (pillar: string) => set('interests', form.interests.includes(pillar)
     ? form.interests.filter(p => p !== pillar) : [...form.interests, pillar])
+
+  const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    setPhotoError('')
+    if (!file.type.startsWith('image/')) { setPhotoError('Please choose an image file.'); return }
+    const reader = new FileReader()
+    reader.onload = () => {
+      const img = new window.Image()
+      img.onload = () => {
+        const maxDim = 480
+        let w = img.width, h = img.height
+        if (w > h && w > maxDim) { h = Math.round(h * (maxDim / w)); w = maxDim }
+        else if (h > maxDim) { w = Math.round(w * (maxDim / h)); h = maxDim }
+        const canvas = document.createElement('canvas')
+        canvas.width = w; canvas.height = h
+        const ctx = canvas.getContext('2d')
+        ctx?.drawImage(img, 0, 0, w, h)
+        set('photo', canvas.toDataURL('image/jpeg', 0.85))
+      }
+      img.src = reader.result as string
+    }
+    reader.readAsDataURL(file)
+  }
 
   const handleEmailVerified = (status: 'login' | 'new', email: string) => {
     if (status === 'login') {
@@ -86,7 +111,7 @@ export default function RegisterPage() {
       if (res.status === 401) setStep(1)
       return
     }
-    setSuccess({ name: form.firstName, regNumber: data.registrationNumber })
+    setSuccess({ name: form.firstName, regNumber: data.registrationNumber, membershipNumber: data.ischtMembershipNumber ?? null })
   }
 
   if (checkingPending) return null
@@ -127,6 +152,27 @@ export default function RegisterPage() {
           >
             Download Your Registration Pass (PDF)
           </a>
+
+          {success.membershipNumber && (
+            <>
+              <div style={{ padding: '20px 24px', background: 'rgba(198,146,50,0.06)', border: '1px solid rgba(198,146,50,0.3)', borderRadius: 8, marginTop: 16, marginBottom: 12, textAlign: 'left' }}>
+                <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#B07C1E', marginBottom: 8 }}>
+                  ISCHT Founding Membership
+                </p>
+                <p style={{ fontSize: 20, fontWeight: 800, color: '#B07C1E', letterSpacing: '0.02em', fontFamily: 'monospace', marginBottom: 0 }}>
+                  {success.membershipNumber}
+                </p>
+              </div>
+              <a
+                href={`/api/membership-card/${success.membershipNumber}`}
+                download
+                className="btn btn-outline"
+                style={{ display: 'flex', justifyContent: 'center', marginBottom: 12, padding: '14px 28px', fontSize: 14 }}
+              >
+                Download Your ISCHT Membership Card (PDF)
+              </a>
+            </>
+          )}
 
           <Link href="/dashboard" className="btn btn-outline" style={{ display: 'flex', justifyContent: 'center', marginBottom: 40, padding: '14px 28px' }}>
             Go to My Dashboard
@@ -177,11 +223,30 @@ export default function RegisterPage() {
             <Field label="Email Address">
               <input className="field-input" value={form.email} disabled style={{ opacity: 0.7 }} />
             </Field>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }} className="stack-mobile">
               <Field label="First Name *"><input className="field-input" placeholder="Jane" value={form.firstName} onChange={e => set('firstName', e.target.value)} /></Field>
               <Field label="Last Name *"><input className="field-input" placeholder="Smith" value={form.lastName} onChange={e => set('lastName', e.target.value)} /></Field>
             </div>
-            <button className="btn btn-teal" style={{ width: '100%', justifyContent: 'center', marginTop: 8 }} onClick={() => next(['firstName', 'lastName'])}>
+            <Field label="Passport-Size Photo *">
+              <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+                <div style={{ width: 84, height: 84, borderRadius: 8, overflow: 'hidden', background: 'var(--surface-3)', border: '1px solid var(--border-mid)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  {form.photo
+                    ? <img src={form.photo} alt="Your photo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    : <span style={{ fontSize: 10, color: 'var(--muted)', textAlign: 'center', padding: 4 }}>No photo yet</span>}
+                </div>
+                <div>
+                  <label className="btn btn-outline" style={{ cursor: 'pointer', fontSize: 13, padding: '9px 18px' }}>
+                    {form.photo ? 'Change Photo' : 'Upload Photo'}
+                    <input type="file" accept="image/*" onChange={handlePhotoChange} style={{ display: 'none' }} />
+                  </label>
+                  <p className="caption" style={{ marginTop: 8, maxWidth: 260 }}>
+                    Used on your ICCHAI registration pass (and your ISCHT membership card, if you join). Resized automatically.
+                  </p>
+                </div>
+              </div>
+              {photoError && <p style={{ color: '#EF4444', fontSize: 12.5, marginTop: 8 }}>{photoError}</p>}
+            </Field>
+            <button className="btn btn-teal" style={{ width: '100%', justifyContent: 'center', marginTop: 8 }} onClick={() => next(['firstName', 'lastName', 'photo'])}>
               Continue
             </button>
           </div>
@@ -189,19 +254,19 @@ export default function RegisterPage() {
 
         {step === 3 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <Field label="Institution / Organisation">
+            <Field label="Institution / Organisation *">
               <input className="field-input" placeholder="University, Hospital, Company..." value={form.institution} onChange={e => set('institution', e.target.value)} />
             </Field>
-            <Field label="Country">
+            <Field label="Country *">
               <input className="field-input" placeholder="e.g. India, United States, United Kingdom" value={form.country} onChange={e => set('country', e.target.value)} />
             </Field>
-            <Field label="Your Role">
+            <Field label="Your Role *">
               <select className="field-input" value={form.role} onChange={e => set('role', e.target.value)}>
                 <option value="">Select your role...</option>
                 {roles.map(r => <option key={r} value={r}>{r}</option>)}
               </select>
             </Field>
-            <Field label="Gender">
+            <Field label="Gender *">
               <div style={{ display: 'flex', gap: 10 }}>
                 {genders.map(g => (
                   <label key={g} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '12px 14px', background: form.gender === g ? 'rgba(164,28,48,0.06)' : 'var(--surface-3)', borderRadius: 6, border: `1px solid ${form.gender === g ? 'var(--teal-border)' : 'var(--border-mid)'}`, cursor: 'pointer', transition: 'all 0.15s' }}>
@@ -211,9 +276,9 @@ export default function RegisterPage() {
                 ))}
               </div>
             </Field>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 8 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 8 }} className="stack-mobile">
               <button className="btn btn-outline" style={{ justifyContent: 'center' }} onClick={() => setStep(2)}>Back</button>
-              <button className="btn btn-teal" style={{ justifyContent: 'center' }} onClick={() => { setError(''); setStep(4) }}>Continue</button>
+              <button className="btn btn-teal" style={{ justifyContent: 'center' }} onClick={() => next(['institution', 'country', 'role', 'gender'])}>Continue</button>
             </div>
           </div>
         )}

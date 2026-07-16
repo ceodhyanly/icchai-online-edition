@@ -426,7 +426,7 @@ export default function Home() {
       {/* ─── STATS ──────────────────────────────────────────── */}
       <section style={{ padding: '56px 0', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', background: 'var(--background)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0 }}>
+          <div className="grid-stat-4">
             {[
               { n: '2', label: 'Conference Days' },
               { n: '6', label: 'Research Pillars' },

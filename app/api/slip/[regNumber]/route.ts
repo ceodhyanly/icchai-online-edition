@@ -44,6 +44,7 @@ export async function GET(
       firstName: user.firstName, lastName: user.lastName, email: user.email,
       institution: user.institution, country: user.country, role: user.role,
       attendance: user.attendance, registrationNumber: regNum, createdAt: user.createdAt,
+      photo: user.photo,
     })
 
     return new NextResponse(new Blob([new Uint8Array(pdfBytes)]), {

@@ -66,7 +66,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
           ))}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 24, marginBottom: 48 }}>
+        <div className="grid-3-col" style={{ marginBottom: 48 }}>
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6, padding: '28px 28px' }}>
             <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 20 }}>By Role</p>
             {Object.entries(byRole).sort((a, b) => b[1] - a[1]).map(([role, count]) => (

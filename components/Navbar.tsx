@@ -10,8 +10,9 @@ const links = [
   { href: '/schedule', label: 'Schedule' },
   { href: '/#organizers', label: 'Team' },
   { href: '/#speakers', label: 'Speakers' },
-  { href: '/society', label: 'Society' },
 ]
+
+const societyLink = { href: '/society', label: 'Society' }
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -75,6 +76,16 @@ export default function Navbar() {
               onMouseLeave={e => (e.currentTarget.style.color = linkColor)}
             >{l.label}</Link>
           ))}
+          <Link href={societyLink.href} style={{
+            fontSize: 13, fontWeight: 700, letterSpacing: '0.02em',
+            color: '#C69232', textDecoration: 'none', transition: 'all 0.2s',
+            padding: '6px 14px', borderRadius: 20,
+            background: scrolled ? 'rgba(198,146,50,0.10)' : 'rgba(198,146,50,0.16)',
+            border: '1px solid rgba(198,146,50,0.45)',
+          }}
+            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(198,146,50,0.24)' }}
+            onMouseLeave={e => { e.currentTarget.style.background = scrolled ? 'rgba(198,146,50,0.10)' : 'rgba(198,146,50,0.16)' }}
+          >{societyLink.label}</Link>
         </nav>
 
         {/* Desktop CTA */}
@@ -126,6 +137,11 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+          <Link href={societyLink.href} onClick={() => setOpen(false)} style={{
+            display: 'inline-flex', alignSelf: 'flex-start', fontSize: 15, fontWeight: 700,
+            color: '#B07C1E', textDecoration: 'none', padding: '8px 16px', borderRadius: 20,
+            background: 'rgba(198,146,50,0.14)', border: '1px solid rgba(198,146,50,0.45)',
+          }}>{societyLink.label}</Link>
           <hr style={{ border: 'none', borderTop: '1px solid rgba(26,12,8,0.09)' }} />
           <Link href="/login" className="btn btn-outline" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Sign in</Link>
           <Link href="/register" className="btn btn-teal" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Register Free</Link>

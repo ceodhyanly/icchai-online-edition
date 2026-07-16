@@ -3,7 +3,8 @@ export async function sendConfirmationEmail(user: {
   email: string
   registrationNumber: string
   attendance: string
-}, pdfBytes: Uint8Array): Promise<void> {
+  ischtMembershipNumber?: string | null
+}, pdfBytes: Uint8Array, membershipCardBytes?: Uint8Array | null): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) return // Email is optional — add RESEND_API_KEY to enable
 
@@ -61,9 +62,15 @@ export async function sendConfirmationEmail(user: {
     <p style="font-size:13px;color:#6b5f5a;line-height:1.75;margin:0 0 10px;">
       Your registration pass (PDF) is attached to this email — keep it for your records.
     </p>
-    <p style="font-size:13px;color:#6b5f5a;line-height:1.75;margin:0;">
+    <p style="font-size:13px;color:#6b5f5a;line-height:1.75;margin:0 0 ${user.ischtMembershipNumber ? '18' : '0'}px;">
       You are now subscribed to ICCHAI 2026 updates. We will send the online session link before the event.
     </p>
+    ${user.ischtMembershipNumber ? `
+    <div style="background:#F7F4F2;border:1px solid #e8e2df;border-top:3px solid #C69232;border-radius:6px;padding:20px 24px;">
+      <div style="font-size:9px;font-weight:700;letter-spacing:0.12em;color:#9a8a84;text-transform:uppercase;margin-bottom:6px;">ISCHT Founding Membership</div>
+      <div style="font-size:13px;color:#1a0a0a;line-height:1.7;margin-bottom:10px;">You're in as a founding member of the International Society for Contemplative HealthTech. Your membership card (PDF) is attached separately.</div>
+      <div style="font-size:20px;font-weight:900;color:#C69232;letter-spacing:0.02em;">${user.ischtMembershipNumber}</div>
+    </div>` : ''}
   </div>
 
   <div style="padding:24px 40px;background:#F7F4F2;">
@@ -79,6 +86,16 @@ export async function sendConfirmationEmail(user: {
 </html>`
 
   const b64 = Buffer.from(pdfBytes).toString('base64')
+  const attachments = [{
+    filename: `ICCHAI-2026-Pass-${user.registrationNumber}.pdf`,
+    content: b64,
+  }]
+  if (membershipCardBytes && user.ischtMembershipNumber) {
+    attachments.push({
+      filename: `ISCHT-Membership-Card-${user.ischtMembershipNumber}.pdf`,
+      content: Buffer.from(membershipCardBytes).toString('base64'),
+    })
+  }
 
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -92,10 +109,7 @@ export async function sendConfirmationEmail(user: {
       to: user.email,
       subject: `Registration Confirmed — ICCHAI 2026 (${user.registrationNumber})`,
       html,
-      attachments: [{
-        filename: `ICCHAI-2026-Pass-${user.registrationNumber}.pdf`,
-        content: b64,
-      }],
+      attachments,
     }),
   })
 

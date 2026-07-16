@@ -15,6 +15,7 @@ type User = {
   attendance: string
   registrationNumber: string | null
   ischtInterest: boolean
+  ischtMembershipNumber: string | null
   createdAt: Date
 }
 
@@ -242,8 +243,8 @@ export default function AdminTable({ users }: { users: User[] }) {
                     </span>
                   </td>
                   <td style={{ padding: '12px 14px', whiteSpace: 'nowrap' }}>
-                    {u.ischtInterest
-                      ? <span style={{ display: 'inline-flex', alignItems: 'center', padding: '3px 10px', background: 'rgba(198,146,50,0.12)', border: '1px solid rgba(198,146,50,0.35)', borderRadius: 3, fontSize: 11, fontWeight: 600, color: 'var(--gold)' }}>Founding</span>
+                    {u.ischtMembershipNumber
+                      ? <span style={{ fontFamily: 'monospace', fontSize: 11, fontWeight: 700, color: '#B07C1E' }}>{u.ischtMembershipNumber}</span>
                       : <span style={{ color: 'var(--muted)' }}>—</span>}
                   </td>
                   <td style={{ padding: '12px 14px', fontFamily: 'monospace', fontSize: 11, color: 'var(--teal)', whiteSpace: 'nowrap' }}>

@@ -48,6 +48,7 @@ export async function POST(req: NextRequest) {
           firstName: user.firstName, lastName: user.lastName, email: user.email,
           institution: user.institution, country: user.country, role: user.role,
           attendance: user.attendance, registrationNumber: regNum, createdAt: user.createdAt,
+          photo: user.photo,
         })
         zip.file(`${regNum}-${user.firstName}-${user.lastName}.pdf`, pdfBytes)
       })

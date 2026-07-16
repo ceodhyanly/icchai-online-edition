@@ -10,7 +10,7 @@ export default async function DashboardPage() {
 
   const user = await prisma.user.findUnique({
     where: { id: session.userId },
-    select: { id: true, email: true, firstName: true, lastName: true, institution: true, country: true, role: true, gender: true, interests: true, attendance: true, registrationNumber: true, createdAt: true },
+    select: { id: true, email: true, firstName: true, lastName: true, institution: true, country: true, role: true, gender: true, interests: true, attendance: true, registrationNumber: true, ischtMembershipNumber: true, createdAt: true },
   })
   if (!user) redirect('/login')
 
@@ -58,6 +58,26 @@ export default async function DashboardPage() {
             </div>
           </div>
         </div>
+
+        {/* ISCHT membership */}
+        {user.ischtMembershipNumber && (
+          <div style={{ padding: '28px 36px', background: 'rgba(198,146,50,0.05)', border: '1px solid rgba(198,146,50,0.3)', borderRadius: 8, marginBottom: 40, display: 'flex', gap: 24, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+            <div style={{ width: 3, background: '#C69232', borderRadius: 2, alignSelf: 'stretch', flexShrink: 0 }} />
+            <div>
+              <p style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>ISCHT Founding Member</p>
+              <p className="body" style={{ fontSize: 14, marginBottom: 16 }}>
+                International Society for Contemplative HealthTech
+              </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
+                <span style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Member ID</span>
+                <span style={{ fontSize: 15, fontWeight: 800, color: '#B07C1E', fontFamily: 'monospace' }}>{user.ischtMembershipNumber}</span>
+                <a href={`/api/membership-card/${user.ischtMembershipNumber}`} style={{ fontSize: 13, fontWeight: 700, color: '#fff', textDecoration: 'none', padding: '8px 18px', background: '#C69232', borderRadius: 5 }}>
+                  Download Membership Card (PDF)
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 32 }}>
           {/* Profile */}

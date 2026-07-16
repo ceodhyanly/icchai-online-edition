@@ -10,6 +10,7 @@ type SlipUser = {
   attendance: string
   registrationNumber: string
   createdAt: Date
+  photo?: string | null // raw base64 JPEG, no data: prefix
 }
 
 function attLabel(a: string) {
@@ -51,6 +52,25 @@ export async function generateSlipPDF(user: SlipUser): Promise<Uint8Array> {
   page.drawText('icchai.com  ·  ceodhyanly@gmail.com', {
     x: 40, y: height - 112, font: regular, size: 8, color: rgb(0.46, 0.38, 0.35),
   })
+
+  // ── Attendee photo ─────────────────────────────────────────────────────
+  if (user.photo) {
+    try {
+      const photoBytes = Buffer.from(user.photo, 'base64')
+      const photoImg = await doc.embedJpg(photoBytes)
+      const boxW = 88, boxH = 100
+      const boxX = width - 40 - boxW, boxY = height - 20 - boxH
+      page.drawRectangle({ x: boxX - 3, y: boxY - 3, width: boxW + 6, height: boxH + 6, color: white })
+      // Contain-fit (never exceeds the box, so no clipping is needed)
+      const scale = Math.min(boxW / photoImg.width, boxH / photoImg.height)
+      const drawW = photoImg.width * scale, drawH = photoImg.height * scale
+      page.drawImage(photoImg, {
+        x: boxX + (boxW - drawW) / 2, y: boxY + (boxH - drawH) / 2, width: drawW, height: drawH,
+      })
+    } catch {
+      // Malformed photo data — skip silently, pass still generates without it
+    }
+  }
 
   // ── REGISTRATION PASS badge ──────────────────────────────────────────────
   page.drawRectangle({ x: 40, y: height - 172, width: 194, height: 26, color: red })

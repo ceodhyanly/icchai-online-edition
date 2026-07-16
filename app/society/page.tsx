@@ -3,39 +3,39 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ISCHT — International Society for Contemplative HealthTech',
-  description: 'The International Society for Contemplative HealthTech (ISCHT) is opening its doors to founding members at ICCH-AI 2026 — a professional home for researchers, clinicians and technologists working at the intersection of contemplative science and health technology.',
+  description: 'ISCHT is opening its doors to founding members at ICCH-AI 2026, building Contemplative HealthTech as a distinct field — integrating contemplative science with AI, biosignal engineering and digital health to address human suffering.',
 }
 
 const pillars = [
   {
     n: '01',
     name: 'Research & Evidence',
-    desc: 'Supporting and sharing rigorous research at the intersection of contemplative neuroscience, Indian Knowledge Systems, and digital health.',
+    desc: 'Correlating biosignal markers — HRV, respiratory variability, EEG band power, electrodermal activity — against traditional practice taxonomies (pranayama ratios, dhyana stages, asana sequencing), building a shared empirical vocabulary instead of treating "meditation" as one undifferentiated variable.',
   },
   {
     n: '02',
     name: 'Standards & Ethics',
-    desc: 'Developing guidelines for responsible AI use in contemplative care, and cultural-authenticity standards for technology built on traditional practices.',
+    desc: 'Naming concrete failure modes before they scale at consumer volume: LLMs simulating guru or teacher authority without lineage or accountability, biofeedback devices marketing unvalidated therapeutic claims, "personalised practice" that strips out the relational core of transmission. Governance sized to those specific risks, not generic AI-ethics boilerplate.',
   },
   {
     n: '03',
     name: 'Education & Training',
-    desc: 'Courses and certification pathways for researchers, clinicians, and practitioners working in contemplative healthtech.',
+    desc: 'A curriculum spine that assumes fluency in both worlds at once — signal processing and applied statistics alongside classical textual study (Yoga Sutra, Hatha Pradipika, Ayurvedic constitution theory) — producing practitioners who can read an HRV trace and a Sanskrit commentary with equal rigor.',
   },
   {
     n: '04',
     name: 'Clinical & Policy Translation',
-    desc: 'Bridging research into clinical practice and engaging with health-policy bodies on integrative and contemplative care.',
+    desc: "Moving validated contemplative-AI tools out of pilot studies and into reimbursable clinical pathways, engaging bodies like AYUSH, WHO's traditional-medicine strategy, and digital-therapeutics regulators — so what works in a lab doesn't stall at the clinic door.",
   },
   {
     n: '05',
     name: 'Community & Convening',
-    desc: 'An annual gathering starting with ICCH-AI, regional chapters, and working groups connecting members across disciplines and geographies.',
+    desc: 'An annual gathering starting with ICCH-AI, regional chapters, and standing working groups — the connective tissue between a biosignal engineer, a yoga therapist, and an AI safety researcher who otherwise have no shared venue to be in the same room.',
   },
   {
     n: '06',
     name: 'Tools & Resources',
-    desc: 'A shared library of research, biofeedback and wearable evaluations, and member access to contemplative healthtech tools.',
+    desc: 'A living library of biofeedback and wearable device evaluations, open datasets linking traditional practice labels to physiological measurement, and reference implementations — the infrastructure a field needs before it can be taught as one.',
   },
 ]
 
@@ -50,7 +50,7 @@ export default function SocietyPage() {
             International Society for<br />Contemplative HealthTech
           </h1>
           <p className="body-lg" style={{ maxWidth: 620, marginBottom: 32 }}>
-            The professional home carrying ICCH-AI&apos;s conversation forward between conferences — for researchers, clinicians and technologists working where contemplative traditions, neuroscience and health technology meet.
+            ISCHT exists to establish <strong>Contemplative HealthTech</strong> as a distinct field of inquiry — the deliberate integration of contemplative science (yoga, prāṇāyāma, meditation, Indian Knowledge Systems) with AI, biosignal engineering and digital health, aimed at a very old problem: human suffering, chronic stress, embodied trauma, burnout. Not a conference add-on — a discipline being built in the open, carrying ICCH-AI&apos;s conversation forward between conferences.
           </p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             <span className="chip chip-teal">Founding Members Welcome</span>
@@ -63,7 +63,7 @@ export default function SocietyPage() {
       {/* Stats */}
       <section style={{ padding: '0', borderBottom: '1px solid var(--border)', background: 'var(--background)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0 }}>
+          <div className="grid-stat-4">
             {[
               { n: '6', label: 'Focus Areas' },
               { n: '$0', label: 'Founding Membership' },
@@ -79,13 +79,21 @@ export default function SocietyPage() {
         </div>
       </section>
 
-      {/* Coming together */}
+      {/* Why now */}
       <section className="section" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="container">
-          <p className="label" style={{ marginBottom: 16 }}>Founding Team</p>
-          <h2 className="headline" style={{ marginBottom: 16, maxWidth: 560 }}>A team is coming together</h2>
-          <p className="body" style={{ maxWidth: 620 }}>
-            The founding board and leadership roles for ISCHT are taking shape alongside ICCH-AI 2026. If you join as a founding member now, you&apos;ll be among the first to know as this comes together.
+          <p className="label" style={{ marginBottom: 16 }}>Why Now</p>
+          <h2 className="headline" style={{ marginBottom: 24, maxWidth: 620 }}>Two things converged recently</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 32, marginBottom: 32 }}>
+            <p className="body" style={{ maxWidth: 480 }}>
+              Consumer and research-grade biosignal hardware — HRV, EEG, respiration — has become cheap and continuous enough to observe contemplative states as they unfold, not just self-reported afterward. And language models have gotten capable enough to scaffold practice, translate traditional texts, and personalise training at a scale no single teacher ever could.
+            </p>
+            <p className="body" style={{ maxWidth: 480 }}>
+              Meanwhile, contemplative traditions carry centuries of applied technique for regulating exactly the states modern medicine is still building coarse instruments to measure. ISCHT exists at that specific intersection — building the shared vocabulary, methods and ethics a field needs before it can be cited, taught and funded as one.
+            </p>
+          </div>
+          <p className="caption" style={{ maxWidth: 620, fontStyle: 'italic' }}>
+            The founding board and leadership roles are taking shape alongside ICCH-AI 2026. Join as a founding member now and you&apos;ll be among the first to know as this comes together.
           </p>
         </div>
       </section>
