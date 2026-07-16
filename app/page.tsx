@@ -101,6 +101,7 @@ const mainPartners = [
     desc: 'AI-powered software and hardware for mind-body and biofeedback sciences. Developer of wearable biosignal platforms and digital health tools for contemplative practice.',
     logo: '/images/dhyanlylogo.jpg',
     logoAlt: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
+    wide: false,
   },
   {
     name: 'University of Central Florida',
@@ -109,6 +110,7 @@ const mainPartners = [
     desc: "UCF's dedicated centre for India-focused research, education and cultural engagement. Convening academic home for ICCHAI 2026.",
     logo: '/images/ucf.jpg',
     logoAlt: 'University of Central Florida',
+    wide: false,
   },
   {
     name: 'Notre Dame of Maryland University',
@@ -117,21 +119,44 @@ const mainPartners = [
     desc: 'Baltimore, MD. Graduate home of accredited yoga therapy and integrative health programs within a liberal-arts tradition.',
     logo: '/images/ndmulogo.jpg',
     logoAlt: 'Notre Dame of Maryland University',
+    wide: false,
+  },
+  {
+    name: 'Indian Institute of Technology Delhi',
+    dept: 'National Resource Centre for Value Education in Engineering (NRCVEE)',
+    role: 'Anchor Institution (India)',
+    desc: "Established by India's Ministry of Education to integrate value education and professional ethics into engineering, NRCVEE brings two decades of work in wellness, self-awareness and value-based curricula to ICCHAI 2026. The event is fully online, with a possible hybrid track at IIT Delhi.",
+    logo: '/images/iidelhilogo.jpg',
+    logoAlt: 'Indian Institute of Technology Delhi',
+    wide: true,
+  },
+  {
+    name: 'Loyola Marymount University',
+    dept: 'Bellarmine College of Liberal Arts, MA in Yoga Studies',
+    role: 'Academic Partner — USA',
+    desc: 'Los Angeles, CA. Home to the MA in Yoga Studies and the Doshi Professorship in Indic and Comparative Theology within a Jesuit liberal-arts tradition.',
+    logo: '/images/lmulogo.webp',
+    logoAlt: 'Loyola Marymount University',
+    wide: false,
+  },
+  {
+    name: 'South Asian Studies Association',
+    dept: 'SASA',
+    role: 'Scholarly Partner — USA',
+    desc: "A scholarly and cultural association dedicated to understanding South Asia's cultures, histories, issues and opportunities — hosting annual conferences, peer-reviewed journals and recognition programs across the field.",
+    logo: '/images/sasalogo.png',
+    logoAlt: 'South Asian Studies Association (SASA)',
+    wide: false,
   },
 ]
-
-const partnershipInProgress = {
-  name: 'Loyola Marymount University',
-  dept: 'Bellarmine College of Liberal Arts, MA in Yoga Studies',
-  logo: '/images/lmulogo.webp',
-  logoAlt: 'Loyola Marymount University',
-}
 
 const speakerInstitutions = [
   { logo: '/images/utah.png', alt: 'University of Utah', name: 'University of Utah' },
   { logo: '/images/ucf.jpg', alt: 'University of Central Florida', name: 'UCF' },
   { logo: '/images/ndmulogo.jpg', alt: 'Notre Dame of Maryland University', name: 'NDMU' },
   { logo: '/images/lmulogo.webp', alt: 'Loyola Marymount University', name: 'LMU' },
+  { logo: '/images/iidelhilogo.jpg', alt: 'Indian Institute of Technology Delhi', name: 'IIT Delhi' },
+  { logo: '/images/sasalogo.png', alt: 'South Asian Studies Association', name: 'SASA' },
 ]
 
 const organizers = [
@@ -140,7 +165,7 @@ const organizers = [
     role: 'Convener, ICCHAI 2026',
     subrole: 'Head of Program, Technology & Production',
     affiliation: 'Founder, YogaXBiofeedback Pvt Ltd (Dhyanly)',
-    photo: '/organizers/satyam-tiwari.jpg',
+    photo: '/organizers/satyamtiwaripic.png',
     profileUrl: 'https://www.dhyanly.com',
   },
   {
@@ -273,7 +298,7 @@ export default function Home() {
             International Conference on Contemplative HealthTech and AI. The first sustained dialogue between ancient contemplative science and modern technology.
           </p>
           <p style={{ fontSize: 13, color: 'rgba(228,232,241,0.6)', marginBottom: 8, letterSpacing: '0.01em' }}>
-            <span style={{ color: '#C69232', fontWeight: 600 }}>Fully online:</span> Open to presenters and attendees worldwide, no travel required
+            <span style={{ color: '#C69232', fontWeight: 600 }}>Virtual Globally:</span> India offline venue for hybrid mode to be announced soon
           </p>
           <p style={{ fontSize: 12, color: 'rgba(228,232,241,0.38)', marginBottom: 48, letterSpacing: '0.04em' }}>
             18:30–22:30 IST &nbsp;·&nbsp; 9:00 am–1:00 pm EST &nbsp;·&nbsp; 3:00–7:00 pm CET
@@ -309,10 +334,10 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Main partner cards — top 3 in equal columns */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 1, background: 'var(--border)', marginBottom: 1 }}>
-            {mainPartners.slice(0, 3).map(inst => (
-              <div key={inst.name} className="hover-cell" style={{ background: 'var(--surface)', padding: '44px 36px', display: 'flex', flexDirection: 'column' }}>
+          {/* Main partner cards — equal columns */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 1, background: 'var(--border)', marginBottom: 64 }}>
+            {mainPartners.map(inst => (
+              <div key={inst.name} className="hover-cell" style={{ background: 'var(--surface)', padding: '44px 36px', display: 'flex', flexDirection: 'column', gridColumn: inst.wide ? 'span 2' : undefined }}>
                 <div style={{ position: 'relative', width: '100%', height: 140, marginBottom: 28 }}>
                   <Image
                     src={inst.logo}
@@ -328,30 +353,6 @@ export default function Home() {
                 <p className="caption" style={{ lineHeight: 1.55 }}>{inst.desc}</p>
               </div>
             ))}
-          </div>
-
-          {/* LMU — partnership in process */}
-          <div style={{
-            display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap',
-            padding: '24px 32px', borderRadius: 8,
-            border: '1px dashed var(--border-mid)', background: 'var(--surface-2)',
-            marginBottom: 64,
-          }}>
-            <div style={{ height: 56, flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-              <Image
-                src={partnershipInProgress.logo}
-                alt={partnershipInProgress.logoAlt}
-                width={180}
-                height={52}
-                style={{ width: 'auto', height: '100%', maxWidth: '100%', objectFit: 'contain', objectPosition: 'left center', opacity: 0.75 }}
-                unoptimized
-              />
-            </div>
-            <div style={{ flex: 1, minWidth: 220 }}>
-              <h3 style={{ fontSize: 14, fontWeight: 700, color: 'var(--foreground)', marginBottom: 2 }}>{partnershipInProgress.name}</h3>
-              <p className="caption">{partnershipInProgress.dept}</p>
-            </div>
-            <span className="chip" style={{ fontSize: 10.5, letterSpacing: '0.08em', textTransform: 'uppercase', flexShrink: 0 }}>Partnership in Process</span>
           </div>
 
           {/* Speaker institutions logo strip — auto-scrolling marquee */}
@@ -430,7 +431,7 @@ export default function Home() {
               { n: '2', label: 'Conference Days' },
               { n: '6', label: 'Research Pillars' },
               { n: '3', label: 'Parallel Tracks per Day' },
-              { n: '4', label: 'Partner Institutions' },
+              { n: '6', label: 'Partner Institutions' },
             ].map((s, i) => (
               <div key={s.label} style={{
                 padding: '40px 32px',
