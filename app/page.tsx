@@ -99,7 +99,7 @@ const mainPartners = [
     dept: 'Dhyanly',
     role: 'Primary Organiser',
     desc: 'AI-powered software and hardware for mind-body and biofeedback sciences. Developer of wearable biosignal platforms and digital health tools for contemplative practice.',
-    logo: '/images/dhyanlylogo.jpg',
+    logo: '/images/dhyanlylogo-removebg-preview.png',
     logoAlt: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
     wide: false,
   },
@@ -108,7 +108,7 @@ const mainPartners = [
     dept: 'The India Center',
     role: 'Convening Institution',
     desc: "UCF's dedicated centre for India-focused research, education and cultural engagement. Convening academic home for ICCH-AI 2026.",
-    logo: '/images/ucf.jpg',
+    logo: '/images/ucf-removebg-preview.png',
     logoAlt: 'University of Central Florida',
     wide: false,
   },
@@ -117,7 +117,7 @@ const mainPartners = [
     dept: 'School of Integrative Health (SOIH)',
     role: 'Institutional Partner',
     desc: 'Baltimore, MD. Graduate home of accredited yoga therapy and integrative health programs within a liberal-arts tradition.',
-    logo: '/images/ndmulogo.jpg',
+    logo: '/images/ndmulogo-removebg-preview.png',
     logoAlt: 'Notre Dame of Maryland University',
     wide: false,
   },
@@ -126,7 +126,7 @@ const mainPartners = [
     dept: 'National Resource Centre for Value Education in Engineering (NRCVEE)',
     role: 'Anchor Institution (India)',
     desc: "Established by India's Ministry of Education to integrate value education and professional ethics into engineering, NRCVEE brings two decades of work in wellness, self-awareness and value-based curricula to ICCH-AI 2026. The event is fully online, with a possible hybrid track at IIT Delhi.",
-    logo: '/images/iidelhilogo.jpg',
+    logo: '/images/iidelhilogo-removebg-preview.png',
     logoAlt: 'Indian Institute of Technology Delhi',
     wide: true,
   },
@@ -146,6 +146,15 @@ const mainPartners = [
     desc: "A scholarly and cultural association dedicated to understanding South Asia's cultures, histories, issues and opportunities — hosting annual conferences, peer-reviewed journals and recognition programs across the field.",
     logo: '/images/sasalogo.png',
     logoAlt: 'South Asian Studies Association (SASA)',
+    wide: false,
+  },
+  {
+    name: 'Bṛhat',
+    dept: 'A Culture Engine for Bhārata',
+    role: 'IKS Knowledge Partner',
+    desc: 'An education and culture platform advancing Indian Knowledge Systems through courses, research and cultural programs. Joining ICCH-AI 2026 in person for the launch, with academic outreach, event coverage and sponsor engagement alongside it.',
+    logo: '/images/brihatlogo.png',
+    logoAlt: 'Bṛhat',
     wide: false,
   },
 ]
@@ -229,7 +238,7 @@ const speakers = [
     affiliation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
     affiliationUrl: 'https://www.dhyanly.com',
     profileUrl: 'https://www.dhyanly.com',
-    photo: '/speakers/satyam-tiwari.jpg',
+    photo: '/organizers/satyamtiwaripic.png',
     bio: 'A practitioner of the Svara Yoga tradition for over two decades, academically trained in yoga, Indian Knowledge Systems, AI and technology. As founder of Dhyanly and pioneer of Contemplative AI, he builds clinical-grade biosignal and biofeedback platforms translating IKS into rigorous mind-body digital therapeutics.',
   },
   {
@@ -334,10 +343,13 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Main partner cards — equal columns */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: 1, background: 'var(--border)', marginBottom: 64 }}>
+          {/* Main partner cards — equal columns. Bordered per-card (rather than a
+              shared-background gap trick) since a mixed-span grid like this one
+              can leave an unfilled cell in the last row at various widths;
+              per-card borders avoid that showing up as a stray solid block. */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: 16, marginBottom: 64 }}>
             {mainPartners.map(inst => (
-              <div key={inst.name} className={`hover-cell${inst.wide ? ' partner-card-wide' : ''}`} style={{ background: 'var(--surface)', padding: '44px 36px', display: 'flex', flexDirection: 'column' }}>
+              <div key={inst.name} className={`hover-cell${inst.wide ? ' partner-card-wide' : ''}`} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6, padding: '44px 36px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ position: 'relative', width: '100%', height: 140, marginBottom: 28 }}>
                   <Image
                     src={inst.logo}
@@ -431,7 +443,7 @@ export default function Home() {
               { n: '2', label: 'Conference Days' },
               { n: '6', label: 'Research Pillars' },
               { n: '3', label: 'Parallel Tracks per Day' },
-              { n: '6', label: 'Partner Institutions' },
+              { n: '7', label: 'Partner Institutions' },
             ].map((s, i) => (
               <div key={s.label} style={{
                 padding: '40px 32px',
