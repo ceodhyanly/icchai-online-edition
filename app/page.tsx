@@ -161,10 +161,10 @@ const mainPartners = [
 
 const speakerInstitutions = [
   { logo: '/images/utah.png', alt: 'University of Utah', name: 'University of Utah' },
-  { logo: '/images/ucf.jpg', alt: 'University of Central Florida', name: 'UCF' },
-  { logo: '/images/ndmulogo.jpg', alt: 'Notre Dame of Maryland University', name: 'NDMU' },
+  { logo: '/images/ucf-removebg-preview.png', alt: 'University of Central Florida', name: 'UCF' },
+  { logo: '/images/ndmulogo-removebg-preview.png', alt: 'Notre Dame of Maryland University', name: 'NDMU' },
   { logo: '/images/lmulogo.webp', alt: 'Loyola Marymount University', name: 'LMU' },
-  { logo: '/images/iidelhilogo.jpg', alt: 'Indian Institute of Technology Delhi', name: 'IIT Delhi' },
+  { logo: '/images/iidelhilogo-removebg-preview.png', alt: 'Indian Institute of Technology Delhi', name: 'IIT Delhi' },
   { logo: '/images/sasalogo.png', alt: 'South Asian Studies Association', name: 'SASA' },
 ]
 
@@ -355,7 +355,7 @@ export default function Home() {
                     src={inst.logo}
                     alt={inst.logoAlt}
                     fill
-                    style={{ objectFit: 'contain', objectPosition: 'left center' }}
+                    style={{ objectFit: 'contain', objectPosition: 'center' }}
                     unoptimized
                   />
                 </div>
