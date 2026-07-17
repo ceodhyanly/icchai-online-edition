@@ -183,7 +183,7 @@ export default function RegisterPage() {
           </Link>
 
           <div style={{ padding: '20px 24px', background: 'var(--surface-3)', borderRadius: 6, fontSize: 13, color: 'var(--muted-light)', lineHeight: 1.7 }}>
-            October 22–23, 2026 &nbsp;·&nbsp; Fully Online &nbsp;·&nbsp; 18:30–22:30 IST
+            October 22–23, 2026 &nbsp;·&nbsp; Fully Online &nbsp;·&nbsp; 17:30–21:30 IST
           </div>
         </div>
       </div>

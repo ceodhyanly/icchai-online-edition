@@ -39,7 +39,7 @@ export default async function DashboardPage() {
           <div>
             <p style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>Registration confirmed for ICCH-AI 2026</p>
             <p className="body" style={{ fontSize: 14, marginBottom: 16 }}>
-              October 22–23, 2026 &nbsp;·&nbsp; Fully Online &nbsp;·&nbsp; 18:30–22:30 IST / 9:00 am–1:00 pm EST
+              October 22–23, 2026 &nbsp;·&nbsp; Fully Online &nbsp;·&nbsp; 17:30–21:30 IST / 8:00 am–12:00 pm EST
             </p>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
               <span className="chip chip-teal" style={{ fontSize: 11 }}>Registered</span>
@@ -111,7 +111,7 @@ export default async function DashboardPage() {
               <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 20 }}>Attendance</p>
               <div style={{ padding: '16px 20px', background: 'var(--surface-3)', borderRadius: 6, borderLeft: '2px solid var(--teal)' }}>
                 <p style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{attendanceLabel}</p>
-                <p className="caption">18:30–22:30 IST per day</p>
+                <p className="caption">17:30–21:30 IST per day</p>
               </div>
             </div>
 
@@ -146,9 +146,9 @@ export default async function DashboardPage() {
             {[
               { label: 'Format', value: 'Fully Online' },
               { label: 'Dates', value: 'October 22–23, 2026' },
-              { label: 'Time (IST)', value: '18:30–22:30' },
-              { label: 'Time (EST)', value: '9:00 am–1:00 pm' },
-              { label: 'Time (CET)', value: '3:00–7:00 pm' },
+              { label: 'Time (IST)', value: '17:30–21:30' },
+              { label: 'Time (EST)', value: '8:00 am–12:00 pm' },
+              { label: 'Time (CET)', value: '2:00–6:00 pm' },
               { label: 'Organiser', value: 'YogaXBiofeedback × UCF × NDMU' },
             ].map(item => (
               <div key={item.label}>

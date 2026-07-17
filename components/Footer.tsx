@@ -54,7 +54,7 @@ export default function Footer() {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 16, paddingBottom: 32 }}>
           <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.35)' }}>&copy; 2026 ICCH-AI. Organised by YogaXBiofeedback Pvt Ltd (Dhyanly), University of Central Florida and Notre Dame of Maryland University.</p>
-          <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.35)' }}>18:30–22:30 IST &nbsp;·&nbsp; 9:00 am–1:00 pm EST &nbsp;·&nbsp; 3:00–7:00 pm CET</p>
+          <p style={{ fontSize: 12, color: 'rgba(228,220,212,0.35)' }}>17:30–21:30 IST &nbsp;·&nbsp; 8:00 am–12:00 pm EST &nbsp;·&nbsp; 2:00–6:00 pm CET</p>
         </div>
       </div>
 

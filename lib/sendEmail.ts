@@ -55,7 +55,7 @@ export async function sendConfirmationEmail(user: {
       </tr>
       <tr>
         <td style="padding:11px 0;color:#9a8a84;">Time</td>
-        <td style="padding:11px 0;font-weight:600;color:#1a0a0a;">18:30–22:30 IST</td>
+        <td style="padding:11px 0;font-weight:600;color:#1a0a0a;">17:30–21:30 IST</td>
       </tr>
     </table>
 

@@ -1,24 +1,24 @@
 import Link from 'next/link'
 
 const day1 = [
-  { time: '18:30–18:45 IST', session: 'Opening Practice', detail: 'Guided slow-paced breathing with live HRV biofeedback', type: 'practice' },
-  { time: '18:45–19:45 IST', session: 'Spotlight Talks', detail: '3 talks of 20 min each, confirmed speakers to be announced', type: 'main' },
-  { time: '19:45–20:15 IST', session: 'Plenary Panel', detail: 'Opening day panel discussion, topic to be announced', type: 'main' },
-  { time: '20:15–20:25 IST', session: 'Break', detail: '', type: 'break' },
-  { time: '20:25–21:40 IST', session: 'Parallel Breakout Tracks', detail: 'Research / Clinical / Traditional, 75 min each (simultaneous)', type: 'breakout' },
-  { time: '21:40–22:00 IST', session: 'Book Launches', detail: 'Meta-Meditation for Mental Health Routage (Steve Haberlin) and Sutra to Sensor: HealthTech in IKS (Satyam Tiwari)', type: 'special' },
-  { time: '22:00–22:20 IST', session: 'Demo Session', detail: 'AI models for health technology, yoga and contemplative neuroscience. Google for Developers India (TBC)', type: 'demo' },
-  { time: '22:20–22:30 IST', session: 'Closing and Mindfulness Practice', detail: 'Day 1 wrap-up', type: 'close' },
+  { time: '17:30–17:45 IST', session: 'Opening Practice', detail: 'Guided slow-paced breathing with live HRV biofeedback', type: 'practice' },
+  { time: '17:45–18:45 IST', session: 'Spotlight Talks', detail: '3 talks of 20 min each, confirmed speakers to be announced', type: 'main' },
+  { time: '18:45–19:15 IST', session: 'Plenary Panel', detail: 'Opening day panel discussion, topic to be announced', type: 'main' },
+  { time: '19:15–19:25 IST', session: 'Break', detail: '', type: 'break' },
+  { time: '19:25–20:40 IST', session: 'Parallel Breakout Tracks', detail: 'Research / Clinical / Traditional, 75 min each (simultaneous)', type: 'breakout' },
+  { time: '20:40–21:00 IST', session: 'Book Launches', detail: 'Meta-Meditation for Mental Health Routage (Steve Haberlin) and Sutra to Sensor: HealthTech in IKS (Satyam Tiwari)', type: 'special' },
+  { time: '21:00–21:20 IST', session: 'Demo Session', detail: 'AI models for health technology, yoga and contemplative neuroscience. Google for Developers India (TBC)', type: 'demo' },
+  { time: '21:20–21:30 IST', session: 'Closing and Mindfulness Practice', detail: 'Day 1 wrap-up', type: 'close' },
 ]
 
 const day2 = [
-  { time: '18:30–18:45 IST', session: 'Opening Practice', detail: 'AI-Assisted Mindfulness Practice', type: 'practice' },
-  { time: '18:45–19:45 IST', session: 'Spotlight Talks', detail: '3 talks of 20 min each, confirmed speakers to be announced', type: 'main' },
-  { time: '19:45–20:15 IST', session: 'Plenary Panel', detail: 'Can AI Deliver Contemplative Care Responsibly?', type: 'main' },
-  { time: '20:15–20:25 IST', session: 'Break', detail: '', type: 'break' },
-  { time: '20:25–21:40 IST', session: 'Parallel Breakout Tracks', detail: 'Research / Clinical / Technology, 75 min each (simultaneous)', type: 'breakout' },
-  { time: '21:40–22:10 IST', session: 'Demo Session', detail: 'Dhyanly / YogaXBiofeedback, AI-powered software and hardware for mind-body sciences', type: 'demo' },
-  { time: '22:10–22:30 IST', session: 'Closing Synthesis', detail: 'Partnership announcements and closing meditation', type: 'close' },
+  { time: '17:30–17:45 IST', session: 'Opening Practice', detail: 'AI-Assisted Mindfulness Practice', type: 'practice' },
+  { time: '17:45–18:45 IST', session: 'Spotlight Talks', detail: '3 talks of 20 min each, confirmed speakers to be announced', type: 'main' },
+  { time: '18:45–19:15 IST', session: 'Plenary Panel', detail: 'Can AI Deliver Contemplative Care Responsibly?', type: 'main' },
+  { time: '19:15–19:25 IST', session: 'Break', detail: '', type: 'break' },
+  { time: '19:25–20:40 IST', session: 'Parallel Breakout Tracks', detail: 'Research / Clinical / Technology, 75 min each (simultaneous)', type: 'breakout' },
+  { time: '20:40–21:10 IST', session: 'Demo Session', detail: 'Dhyanly / YogaXBiofeedback, AI-powered software and hardware for mind-body sciences', type: 'demo' },
+  { time: '21:10–21:30 IST', session: 'Closing Synthesis', detail: 'Partnership announcements and closing meditation', type: 'close' },
 ]
 
 const day1Tracks = [
@@ -79,9 +79,9 @@ export default function SchedulePage() {
             October 22–23, 2026 &nbsp;·&nbsp; Fully online, worldwide &nbsp;·&nbsp; Four hours per day across all time zones
           </p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <span className="chip chip-teal">18:30 IST</span>
-            <span className="chip">9:00 am EST</span>
-            <span className="chip">3:00 pm CET</span>
+            <span className="chip chip-teal">17:30 IST</span>
+            <span className="chip">8:00 am EST</span>
+            <span className="chip">2:00 pm CET</span>
             <span className="chip">3 Parallel Tracks</span>
           </div>
         </div>
@@ -165,7 +165,7 @@ function DayBlock({ label, date, theme, sub, sessions, tracks, bg }: {
         {/* Breakout tracks */}
         <div>
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 20 }}>
-            Parallel Breakout Tracks, 20:25–21:40 IST (75 min each, simultaneous)
+            Parallel Breakout Tracks, 19:25–20:40 IST (75 min each, simultaneous)
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 1, background: 'var(--border)' }}>
             {tracks.map(t => (

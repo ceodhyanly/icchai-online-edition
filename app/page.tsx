@@ -310,7 +310,7 @@ export default function Home() {
             <span style={{ color: '#C69232', fontWeight: 600 }}>Virtual Globally:</span> India offline venue for hybrid mode to be announced soon
           </p>
           <p style={{ fontSize: 12, color: 'rgba(228,232,241,0.38)', marginBottom: 48, letterSpacing: '0.04em' }}>
-            18:30–22:30 IST &nbsp;·&nbsp; 9:00 am–1:00 pm EST &nbsp;·&nbsp; 3:00–7:00 pm CET
+            17:30–21:30 IST &nbsp;·&nbsp; 8:00 am–12:00 pm EST &nbsp;·&nbsp; 2:00–6:00 pm CET
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
@@ -736,7 +736,7 @@ export default function Home() {
               },
               {
                 q: 'What time does the conference run?',
-                a: 'Each day runs from 18:30 to 22:30 IST, which is 9:00 am to 1:00 pm EST and 3:00 pm to 7:00 pm CET. The schedule is designed to be accessible across major international time zones.',
+                a: 'Each day runs from 17:30 to 21:30 IST, which is 8:00 am to 12:00 pm EST and 2:00 pm to 6:00 pm CET. The schedule is designed to be accessible across major international time zones.',
               },
               {
                 q: 'How do I register?',
@@ -766,7 +766,7 @@ export default function Home() {
             <Link href="/register" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register Free</Link>
             <Link href="/schedule" className="btn btn-outline" style={{ padding: '14px 36px', fontSize: 15 }}>View Programme</Link>
           </div>
-          <p className="caption" style={{ marginTop: 24 }}>Fully online worldwide &nbsp;·&nbsp; 18:30–22:30 IST &nbsp;·&nbsp; Free to attend</p>
+          <p className="caption" style={{ marginTop: 24 }}>Fully online worldwide &nbsp;·&nbsp; 17:30–21:30 IST &nbsp;·&nbsp; Free to attend</p>
         </div>
       </section>
     </>
