@@ -171,7 +171,7 @@ const speakerInstitutions = [
 const organizers = [
   {
     name: 'Satyam Tiwari',
-    role: 'Convener, ICCH-AI 2026',
+    role: 'Founder and Convener, ICCH-AI 2026',
     subrole: 'Head of Program, Technology & Production',
     affiliation: 'Founder, YogaXBiofeedback Pvt Ltd (Dhyanly)',
     photo: '/organizers/satyamtiwaripic.png',
@@ -179,8 +179,8 @@ const organizers = [
   },
   {
     name: 'Dr. Steve Haberlin',
-    role: 'Co-Convener, ICCH-AI 2026',
-    subrole: 'Head of Global Outreach',
+    role: 'Co-Convener and Head of Global Outreach, ICCH-AI 2026',
+    subrole: '',
     affiliation: 'University of Central Florida',
     photo: '/organizers/steve-haberlin.jpg',
     profileUrl: 'https://ccie.ucf.edu/person/steve-haberlin/',

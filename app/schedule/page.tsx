@@ -1,63 +1,42 @@
 import Link from 'next/link'
 
 const day1 = [
+  { time: '14:00–16:00 IST', session: 'Pre-Conference Workshops', detail: 'Details to be announced', type: 'pre' },
+  { time: '16:00–17:00 IST', session: 'Pre-Conference Workshops', detail: 'Details to be announced', type: 'pre' },
   { time: '17:30–17:45 IST', session: 'Opening Practice', detail: 'Guided slow-paced breathing with live HRV biofeedback', type: 'practice' },
-  { time: '17:45–18:45 IST', session: 'Spotlight Talks', detail: '3 talks of 20 min each, confirmed speakers to be announced', type: 'main' },
-  { time: '18:45–19:15 IST', session: 'Plenary Panel', detail: 'Opening day panel discussion, topic to be announced', type: 'main' },
-  { time: '19:15–19:25 IST', session: 'Break', detail: '', type: 'break' },
-  { time: '19:25–20:40 IST', session: 'Parallel Breakout Tracks', detail: 'Research / Clinical / Traditional, 75 min each (simultaneous)', type: 'breakout' },
-  { time: '20:40–21:00 IST', session: 'Book Launches', detail: 'Meta-Meditation for Mental Health Routage (Steve Haberlin) and Sutra to Sensor: HealthTech in IKS (Satyam Tiwari)', type: 'special' },
-  { time: '21:00–21:20 IST', session: 'Demo Session', detail: 'AI models for health technology, yoga and contemplative neuroscience. Google for Developers India (TBC)', type: 'demo' },
-  { time: '21:20–21:30 IST', session: 'Closing and Mindfulness Practice', detail: 'Day 1 wrap-up', type: 'close' },
+  { time: '17:45–18:55 IST', session: 'Spotlight Talks', detail: '3 talks, confirmed speakers to be announced', type: 'main' },
+  { time: '~19:00–19:30 IST', session: 'Plenary Panel', detail: 'Opening day panel discussion, topic to be announced', type: 'main' },
+  { time: '~19:30–19:35 IST', session: 'Break', detail: '', type: 'break' },
+  { time: '~19:35–21:00 IST', session: 'Parallel Breakout Sessions', detail: 'Research / Applied / Technology & Ethics tracks, simultaneous', type: 'breakout' },
+  { time: '~21:00–21:30 IST', session: 'Book Launches, Demo & Closing', detail: 'Meta-Meditation for Mental Health (Steve Haberlin) and Sutra to Sensor: HealthTech in IKS (Satyam Tiwari), plus closing practice', type: 'close' },
 ]
 
 const day2 = [
+  { time: '14:00–16:00 IST', session: 'Pre-Conference Programme', detail: 'Details to be announced', type: 'pre' },
+  { time: '16:00–17:00 IST', session: 'Pre-Conference Programme', detail: 'Details to be announced', type: 'pre' },
   { time: '17:30–17:45 IST', session: 'Opening Practice', detail: 'AI-Assisted Mindfulness Practice', type: 'practice' },
-  { time: '17:45–18:45 IST', session: 'Spotlight Talks', detail: '3 talks of 20 min each, confirmed speakers to be announced', type: 'main' },
-  { time: '18:45–19:15 IST', session: 'Plenary Panel', detail: 'Can AI Deliver Contemplative Care Responsibly?', type: 'main' },
-  { time: '19:15–19:25 IST', session: 'Break', detail: '', type: 'break' },
-  { time: '19:25–20:40 IST', session: 'Parallel Breakout Tracks', detail: 'Research / Clinical / Technology, 75 min each (simultaneous)', type: 'breakout' },
-  { time: '20:40–21:10 IST', session: 'Demo Session', detail: 'Dhyanly / YogaXBiofeedback, AI-powered software and hardware for mind-body sciences', type: 'demo' },
-  { time: '21:10–21:30 IST', session: 'Closing Synthesis', detail: 'Partnership announcements and closing meditation', type: 'close' },
+  { time: '17:45–18:55 IST', session: 'Spotlight Talks', detail: '3 talks, confirmed speakers to be announced', type: 'main' },
+  { time: '~19:00–19:30 IST', session: 'Plenary Panel', detail: 'Can AI Deliver Contemplative Care Responsibly?', type: 'main' },
+  { time: '~19:30–19:35 IST', session: 'Break', detail: '', type: 'break' },
+  { time: '~19:35–21:00 IST', session: 'Parallel Breakout Sessions', detail: 'Research / Scholarship / Practitioner / Ayurveda tracks, simultaneous', type: 'breakout' },
+  { time: '~21:00–21:30 IST', session: 'Demo & Closing Synthesis', detail: 'Partnership announcements and closing meditation', type: 'close' },
 ]
 
 const day1Tracks = [
-  {
-    name: 'Research Track',
-    title: 'HealthTech in Mind-Body Practices: EEG to Wearables',
-    debate: 'Is meditation-related brain change durable, or does it reflect a temporary state?',
-  },
-  {
-    name: 'Clinical Track',
-    title: 'Digital Therapeutics and Mental Health through Contemplative Practices',
-    debate: 'Should yoga and mindfulness interventions be standardized like a drug protocol, or remain individualized like traditional teaching?',
-  },
-  {
-    name: 'Traditional Track',
-    title: 'Mindfulness and Meditation in the Age of AI and LLMs',
-    debate: 'Are consumer HRV wearables clinically meaningful, or expensive feedback toys?',
-  },
+  { name: 'Research Track', title: 'HealthTech in Mind-Body Practices: EEG to Wearables' },
+  { name: 'Applied Track', title: 'Digital Therapeutics & the Human Teacher' },
+  { name: 'Technology & Ethics Track', title: 'Responsible AI, LLM Safety and Data Ethics' },
 ]
 
 const day2Tracks = [
-  {
-    name: 'Research Track',
-    title: 'IKS-Based Mind-Body Practices in the Era of AI and Health Tech',
-    debate: 'Can AI actually detect a meditative state, or only physiological proxies for one?',
-  },
-  {
-    name: 'Clinical Track',
-    title: 'Clinical Therapeutics to Digital Therapeutics',
-    debate: 'Can a digital therapeutic ever replace a human yoga therapist, or only extend their reach?',
-  },
-  {
-    name: 'Technology Track',
-    title: 'Responsible AI, LLM Safety and Data Ethics in Mental Health Apps',
-    debate: 'Should mental health AI be regulated like medical devices, or does that slow beneficial innovation?',
-  },
+  { name: 'Research Track', title: 'IKS-Based Mind-Body Practices in the AI Era' },
+  { name: 'Scholarship Track', title: 'Traditions of Contemplative Studies in the AI Era' },
+  { name: 'Practitioner Track', title: 'Contemplative Practitioners: Future & Guidance' },
+  { name: 'Ayurveda Track', title: 'Ayurveda: Traditional Science Meets AI' },
 ]
 
 const typeColor: Record<string, string> = {
+  pre: 'var(--muted)',
   practice: 'var(--teal)',
   main: 'var(--foreground)',
   break: 'var(--muted)',
@@ -82,7 +61,7 @@ export default function SchedulePage() {
             <span className="chip chip-teal">17:30 IST</span>
             <span className="chip">8:00 am EST</span>
             <span className="chip">2:00 pm CET</span>
-            <span className="chip">3 Parallel Tracks</span>
+            <span className="chip">Parallel Tracks</span>
           </div>
         </div>
       </section>
@@ -92,9 +71,9 @@ export default function SchedulePage() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
             {[
+              'Programme is provisional and subject to change. Full details and complete speaker list to be announced.',
               'Opening practice rotates: Day 1 is breathing and HRV (measurement-led), Day 2 is Yoga Nidra and movement (embodiment-led).',
-              'Breakout tracks run simultaneously. Attendees self-select one track for the 75-minute block.',
-              'Each breakout has 3 talks of 15 min each, followed by a 15-min moderated debate and 15-min open audience Q&A.',
+              'Breakout sessions run simultaneously. Attendees self-select one track per day.',
               'All speaker names are pending confirmation and not yet final.',
             ].map((note, i) => (
               <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
@@ -102,6 +81,21 @@ export default function SchedulePage() {
                 <p className="caption" style={{ lineHeight: 1.7 }}>{note}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Global Hackathon */}
+      <section style={{ padding: '28px 0', background: 'var(--surface)', borderBottom: '1px solid var(--border)' }}>
+        <div className="container">
+          <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap', padding: '20px 24px', background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 8 }}>
+            <span className="chip chip-teal" style={{ flexShrink: 0 }}>Also Running Alongside</span>
+            <div>
+              <p style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>Global Hackathon</p>
+              <p className="caption" style={{ lineHeight: 1.65 }}>
+                A worldwide, fully virtual hackathon on Contemplative HealthTech and AI, running in the days leading up to the conference. Full details to be announced.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -165,27 +159,13 @@ function DayBlock({ label, date, theme, sub, sessions, tracks, bg }: {
         {/* Breakout tracks */}
         <div>
           <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 20 }}>
-            Parallel Breakout Tracks, 19:25–20:40 IST (75 min each, simultaneous)
+            Parallel Breakout Sessions, ~19:35–21:00 IST (simultaneous)
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 1, background: 'var(--border)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: 16 }}>
             {tracks.map(t => (
-              <div key={t.name} style={{ background: bg === 'var(--surface)' ? 'var(--surface-2)' : 'var(--surface)', padding: '32px 28px' }}>
+              <div key={t.name} style={{ background: bg === 'var(--surface)' ? 'var(--surface-2)' : 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6, padding: '32px 28px' }}>
                 <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 12 }}>{t.name}</p>
-                <h4 style={{ fontSize: 15, fontWeight: 700, lineHeight: 1.4, color: 'var(--foreground)', marginBottom: 20 }}>{t.title}</h4>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
-                  {['Talk 1 (to be announced)', 'Talk 2 (to be announced)', 'Talk 3 (to be announced)', 'Moderated Debate', 'Open Q&A'].map((item, i) => (
-                    <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                      <span style={{ fontSize: 11, color: 'var(--teal)', fontWeight: 600, minWidth: 48 }}>{['0–15','15–30','30–45','45–60','60–75'][i]} min</span>
-                      <span style={{ fontSize: 13, color: 'var(--muted-light)' }}>{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div style={{ padding: '14px 16px', background: 'var(--surface-3)', borderRadius: 6, borderLeft: '2px solid var(--teal)' }}>
-                  <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: 8 }}>Debate Prompt</p>
-                  <p style={{ fontSize: 12, color: 'var(--muted-light)', fontStyle: 'italic', lineHeight: 1.65 }}>&ldquo;{t.debate}&rdquo;</p>
-                </div>
+                <h4 style={{ fontSize: 15, fontWeight: 700, lineHeight: 1.4, color: 'var(--foreground)' }}>{t.title}</h4>
               </div>
             ))}
           </div>
