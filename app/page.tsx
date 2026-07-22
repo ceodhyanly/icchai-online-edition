@@ -122,15 +122,6 @@ const mainPartners = [
     wide: false,
   },
   {
-    name: 'Indian Institute of Technology Delhi',
-    dept: 'National Resource Centre for Value Education in Engineering (NRCVEE)',
-    role: 'Anchor Institution (India)',
-    desc: "Established by India's Ministry of Education to integrate value education and professional ethics into engineering, NRCVEE brings two decades of work in wellness, self-awareness and value-based curricula to ICCH-AI 2026. The event is fully online, with a possible hybrid track at IIT Delhi.",
-    logo: '/images/iidelhilogo-removebg-preview.png',
-    logoAlt: 'Indian Institute of Technology Delhi',
-    wide: true,
-  },
-  {
     name: 'Loyola Marymount University',
     dept: 'Bellarmine College of Liberal Arts, MA in Yoga Studies',
     role: 'Academic Partner — USA',
@@ -164,7 +155,6 @@ const speakerInstitutions = [
   { logo: '/images/ucf-removebg-preview.png', alt: 'University of Central Florida', name: 'UCF' },
   { logo: '/images/ndmulogo-removebg-preview.png', alt: 'Notre Dame of Maryland University', name: 'NDMU' },
   { logo: '/images/lmulogo.webp', alt: 'Loyola Marymount University', name: 'LMU' },
-  { logo: '/images/iidelhilogo-removebg-preview.png', alt: 'Indian Institute of Technology Delhi', name: 'IIT Delhi' },
   { logo: '/images/sasalogo.png', alt: 'South Asian Studies Association', name: 'SASA' },
 ]
 

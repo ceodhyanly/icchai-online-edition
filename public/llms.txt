@@ -4,14 +4,13 @@
 
 ## What is ICCHAI 2026?
 
-ICCHAI 2026 is the International Conference on Contemplative HealthTech and AI, held October 22–23, 2026 as a free hybrid event. In-person sessions take place at the National Resource Centre for Value Education in Engineering (NRCVEE), IIT Delhi, New Delhi, India. Online attendance is available worldwide at the same times: 18:30–22:30 IST / 9:00 am–1:00 pm EST / 3:00–7:00 pm CET.
+ICCHAI 2026 is the International Conference on Contemplative HealthTech and AI, held October 22–23, 2026 as a free hybrid event. Online attendance is available worldwide at the same times: 18:30–22:30 IST / 9:00 am–1:00 pm EST / 3:00–7:00 pm CET. An in-person venue in India for the hybrid track will be announced soon.
 
 ## Organizers
 
 - Primary Organiser: YogaXBiofeedback Pvt Ltd (Dhyanly) — https://www.dhyanly.com
 - Convening Institution: The India Center, University of Central Florida (UCF) — https://www.ucf.edu
 - Institutional Partner: Notre Dame of Maryland University, School of Integrative Health (SOIH)
-- Venue and Partner: IIT Delhi, NRCVEE, New Delhi, India
 
 ## Conveners
 
@@ -27,7 +26,6 @@ ICCHAI 2026 is the International Conference on Contemplative HealthTech and AI, 
 - Dr. Steve Haberlin — University of Central Florida
 - Prof. Amy Wheeler-Mantoan — Notre Dame of Maryland University
 - Satyam Tiwari — Founder, YogaXBiofeedback Pvt Ltd (Dhyanly); IIT Mandi
-- Prof. James Gomes — Professor, IIT Delhi; Chair, NRCVEE Research Committee
 - Dr. Amit Sethi — Director, NERD Lab, University of Utah
 - Dr. Rohit Saluja — Assistant Professor, IIT Mandi
 - Dr. Kunal Mooley — Assistant Professor, IIT Kanpur
@@ -60,7 +58,7 @@ Each conference day runs four hours in the evening IST (accessible globally). Th
 ## Key Facts
 
 - Dates: October 22–23, 2026
-- Format: Hybrid (in-person at IIT Delhi + online worldwide)
+- Format: Hybrid (in-person venue in India to be announced + online worldwide)
 - Cost: Free to attend
 - Registration: https://icchai.com/register
 - Schedule: https://icchai.com/schedule
