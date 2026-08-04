@@ -297,7 +297,7 @@ export default function Home() {
             International Conference on Contemplative HealthTech and AI. The first sustained dialogue between ancient contemplative science and modern technology.
           </p>
           <p style={{ fontSize: 13, color: 'rgba(228,232,241,0.6)', marginBottom: 8, letterSpacing: '0.01em' }}>
-            <span style={{ color: '#C69232', fontWeight: 600 }}>Virtual Globally:</span> India offline venue for hybrid mode to be announced soon
+            <span style={{ color: '#C69232', fontWeight: 600 }}>Virtual Globally:</span> In-person hybrid venue confirmed at IIT Delhi, India
           </p>
           <p style={{ fontSize: 12, color: 'rgba(228,232,241,0.38)', marginBottom: 48, letterSpacing: '0.04em' }}>
             17:30–21:30 IST &nbsp;·&nbsp; 8:00 am–12:00 pm EST &nbsp;·&nbsp; 2:00–6:00 pm CET
