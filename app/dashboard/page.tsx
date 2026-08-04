@@ -66,7 +66,7 @@ export default async function DashboardPage() {
             <div>
               <p style={{ fontWeight: 700, fontSize: 16, marginBottom: 6 }}>ISCHT Founding Member</p>
               <p className="body" style={{ fontSize: 14, marginBottom: 16 }}>
-                International Society for Contemplative HealthTech
+                International Society for Contemplative Technology
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
                 <span style={{ fontSize: 12, color: 'var(--muted)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Member ID</span>

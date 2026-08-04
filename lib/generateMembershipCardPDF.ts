@@ -30,7 +30,7 @@ export async function generateMembershipCardPDF(user: MemberUser): Promise<Uint8
   page.drawText('ISCHT', { x: 14, y: height - 24, font: bold, size: 17, color: white })
   page.drawText('FOUNDING MEMBER', { x: 14, y: height - 38, font: bold, size: 6.5, color: gold })
   page.drawText('International Society for', { x: 14, y: height - 52, font: regular, size: 6, color: muted })
-  page.drawText('Contemplative HealthTech', { x: 14, y: height - 61, font: regular, size: 6, color: muted })
+  page.drawText('Contemplative Technology', { x: 14, y: height - 61, font: regular, size: 6, color: muted })
 
   // Photo box (contain-fit, top-right)
   const boxW = 54, boxH = 62

@@ -2,8 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ISCHT — International Society for Contemplative HealthTech',
-  description: 'ISCHT is opening its doors to founding members at ICCH-AI 2026, building Contemplative HealthTech as a distinct field — integrating contemplative science with AI, biosignal engineering and digital health to address human suffering.',
+  title: 'ISCHT — International Society for Contemplative Technology',
+  description: 'ISCHT is opening its doors to founding members at ICCH-AI 2026, building Contemplative Technology as a distinct field — integrating contemplative science with AI, biosignal engineering and digital health to address human suffering.',
 }
 
 const pillars = [
@@ -47,10 +47,10 @@ export default function SocietyPage() {
         <div className="container">
           <p className="label" style={{ marginBottom: 20 }}>A Society, Not Just a Conference</p>
           <h1 className="display" style={{ marginBottom: 20, maxWidth: 780 }}>
-            International Society for<br />Contemplative HealthTech
+            International Society for<br />Contemplative Technology
           </h1>
           <p className="body-lg" style={{ maxWidth: 620, marginBottom: 32 }}>
-            ISCHT exists to establish <strong>Contemplative HealthTech</strong> as a distinct field of inquiry — the deliberate integration of contemplative science (yoga, prāṇāyāma, meditation, Indian Knowledge Systems) with AI, biosignal engineering and digital health, aimed at a very old problem: human suffering, chronic stress, embodied trauma, burnout. Not a conference add-on — a discipline being built in the open, carrying ICCH-AI&apos;s conversation forward between conferences.
+            ISCHT exists to establish <strong>Contemplative Technology</strong> as a distinct field of inquiry — the deliberate integration of contemplative science (yoga, prāṇāyāma, meditation, Indian Knowledge Systems) with AI, biosignal engineering and digital health, aimed at a very old problem: human suffering, chronic stress, embodied trauma, burnout. Not a conference add-on — a discipline being built in the open, carrying ICCH-AI&apos;s conversation forward between conferences.
           </p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             <span className="chip chip-teal">Founding Members Welcome</span>
@@ -170,7 +170,7 @@ export default function SocietyPage() {
       </section>
 
       <p style={{ textAlign: 'center', padding: '24px 24px', fontSize: 12, color: 'var(--muted)' }}>
-        International Society for Contemplative HealthTech &middot; Opening to founding members at ICCH-AI 2026 &middot; icchai.com
+        International Society for Contemplative Technology &middot; Opening to founding members at ICCH-AI 2026 &middot; icchai.com
       </p>
     </div>
   )

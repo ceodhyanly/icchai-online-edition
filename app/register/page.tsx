@@ -334,7 +334,7 @@ export default function RegisterPage() {
               <p className="label" style={{ marginBottom: 10 }}>One More Thing</p>
               <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Become a Founding Member of ISCHT</h3>
               <p style={{ fontSize: 13, color: 'var(--muted-light)', lineHeight: 1.7, marginBottom: 6 }}>
-                The International Society for Contemplative HealthTech (ISCHT) is opening its doors to early members here, ahead of its launch at ICCH-AI 2026. Say yes today and it&apos;s free — with early access to society resources and $100 worth of launch-year benefits. Full enrolment follows after the conference.
+                The International Society for Contemplative Technology (ISCHT) is opening its doors to early members here, ahead of its launch at ICCH-AI 2026. Say yes today and it&apos;s free — with early access to society resources and $100 worth of launch-year benefits. Full enrolment follows after the conference.
               </p>
               <a href="/society" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5, color: 'var(--teal)', fontWeight: 600, textDecoration: 'none' }}>
                 Learn more about ISCHT →
