@@ -240,6 +240,15 @@ const speakers = [
     photo: '/speakers/amit-sethi.jpg',
     bio: 'Directs the NERD Lab at the University of Utah, applying transcranial brain stimulation and movement science to develop evidence-based rehabilitation protocols for stroke recovery and neuromodulation-driven motor learning.',
   },
+  {
+    name: 'Dr. Evan Lewis-Healey',
+    title: 'Postdoctoral Researcher, Department of Psychiatry',
+    affiliation: 'University of Oxford',
+    affiliationUrl: 'https://www.psych.ox.ac.uk',
+    profileUrl: 'https://www.linkedin.com/in/evan-lewis-healey-4770b1136',
+    photo: '/speakers/evan-lewis-healey.jpeg',
+    bio: 'Cognitive neuroscientist studying the neurophenomenology of altered states of consciousness — breathwork, meditation and psychedelics. His Cambridge PhD traced the neural and experiential dynamics of breathwork and DMT, with findings published in Cerebral Cortex and the Journal of Cognitive Neuroscience.',
+  },
 ]
 
 export default function Home() {
