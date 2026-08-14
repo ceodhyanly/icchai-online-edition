@@ -156,6 +156,7 @@ const speakerInstitutions = [
   { logo: '/images/ndmulogo-removebg-preview.png', alt: 'Notre Dame of Maryland University', name: 'NDMU' },
   { logo: '/images/lmulogo.webp', alt: 'Loyola Marymount University', name: 'LMU' },
   { logo: '/images/sasalogo.png', alt: 'South Asian Studies Association', name: 'SASA' },
+  { logo: '/images/University_of_Oxford-Logo.wine.png', alt: 'University of Oxford', name: 'University of Oxford' },
 ]
 
 const organizers = [
