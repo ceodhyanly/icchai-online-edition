@@ -157,6 +157,10 @@ const speakerInstitutions = [
   { logo: '/images/lmulogo.webp', alt: 'Loyola Marymount University', name: 'LMU' },
   { logo: '/images/sasalogo.png', alt: 'South Asian Studies Association', name: 'SASA' },
   { logo: '/images/oxfordlogo.png', alt: 'University of Oxford', name: 'University of Oxford' },
+  { logo: '/images/uva-logo.png', alt: 'University of Virginia', name: 'University of Virginia' },
+  { logo: '/images/otago-logo.jpg', alt: 'University of Otago', name: 'University of Otago' },
+  { logo: '/images/bar-ilan-logo.png', alt: 'Bar-Ilan University', name: 'Bar-Ilan University' },
+  { logo: '/images/lleida-logo.webp', alt: 'Universitat de Lleida', name: 'Universitat de Lleida' },
 ]
 
 const organizers = [
@@ -249,6 +253,42 @@ const speakers = [
     profileUrl: 'https://www.linkedin.com/in/evan-lewis-healey-4770b1136',
     photo: '/speakers/evan-lewis-healey.jpeg',
     bio: 'Cognitive neuroscientist studying the neurophenomenology of altered states of consciousness — breathwork, meditation and psychedelics. His Cambridge PhD traced the neural and experiential dynamics of breathwork and DMT, with findings published in Cerebral Cortex and the Journal of Cognitive Neuroscience.',
+  },
+  {
+    name: 'Dr. Michael R. Sheehy',
+    title: 'Research Associate Professor, Department of Religious Studies · Director of Research, Contemplative Sciences Center',
+    affiliation: 'University of Virginia',
+    affiliationUrl: 'https://religiousstudies.as.virginia.edu',
+    profileUrl: 'https://religiousstudies.as.virginia.edu/michael-sheehy',
+    photo: '/speakers/michael-sheehy.jpg',
+    bio: "Specialist in Tibetan Buddhism and the phenomenology of contemplative practice. As Director of Research at UVA's Contemplative Sciences Center he founded the CIRCL Contemplative Innovation + Research Co-Lab, a transdisciplinary lab studying contemplation through cultural, historical, phenomenological and neurophysiological lenses, and is Editor-in-Chief of the Journal of Contemplative Studies.",
+  },
+  {
+    name: 'Assoc. Prof. Ramakrishnan Mani',
+    title: 'Associate Professor & Associate Dean (Research), School of Physiotherapy · Director, Pain@Otago Research Theme',
+    affiliation: 'University of Otago',
+    affiliationUrl: 'https://www.otago.ac.nz',
+    profileUrl: 'https://www.otago.ac.nz/healthsciences/expertise/profile?id=1281',
+    photo: '/speakers/ram-mani.jpg',
+    bio: 'Leads the Otago Pain Mechanisms and Neuromodulation research group, using quantitative sensory testing, EEG and clinical trials to phenotype acute and chronic musculoskeletal pain. His work tests non-invasive neuromodulation, neurofeedback and self-regulatory interventions, and he is a co-investigator on the Dunedin Multidisciplinary Health and Development Study.',
+  },
+  {
+    name: 'Prof. Ithamar Theodor',
+    title: 'Professor of Hindu and Indian Studies, Department of Asian Studies',
+    affiliation: 'Bar-Ilan University',
+    affiliationUrl: 'https://www.biu.ac.il/en',
+    profileUrl: 'https://barav.biu.ac.il/en/IthamarTheodor',
+    photo: '/speakers/ithamar-theodor.jpg',
+    bio: 'Scholar of the Bhagavad-gītā and Bhāgavata Purāṇa and of comparative Hindu–Jewish and Indian–Chinese philosophy. A graduate of the Theology Faculty at Oxford and Life Member of Clare Hall, Cambridge, he founded the Jewish–Asian annual conference in 2012 and has authored six books, including The Bhagavad-gita: A Critical Introduction (2021).',
+  },
+  {
+    name: 'Dr. Kilian Abellaneda-Pérez',
+    title: 'Researcher in Cognitive Neuroscience & Non-Invasive Brain Stimulation',
+    affiliation: 'University of Lleida · Institut Guttmann, Spain',
+    affiliationUrl: 'https://www.udl.cat/en/',
+    profileUrl: 'https://portalrecerca.udl.cat/investigadores/2389314/colaboracion/organizaciones/386?lang=en_US',
+    photo: '/speakers/kilian-abellaneda-perez.jpg',
+    bio: "Cognitive neuroscientist working between the University of Lleida and Institut Guttmann, using TMS-EEG, fMRI and non-invasive brain stimulation to study neuroplasticity, cognitive reserve and 'prehabilitation' before brain-tumour surgery, linking brain-network reorganisation to cognition, resilience and plasma biomarkers of ageing.",
   },
 ]
 
@@ -367,32 +407,22 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Speaker institutions logo strip — auto-scrolling marquee */}
+          {/* Speaker institutions — static logo grid */}
           <div style={{ borderTop: '1px solid var(--border)', paddingTop: 48 }}>
             <p className="label" style={{ marginBottom: 32 }}>Speakers represent institutions including</p>
-            <div className="logo-marquee-wrap">
-              <div className="logo-marquee-track">
-                {[...speakerInstitutions, ...speakerInstitutions].map((si, i) => (
-                  <div key={`${si.name}-${i}`} style={{
-                    width: 300,
-                    height: 160,
-                    flexShrink: 0,
-                    marginRight: 80,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}>
-                    <Image
-                      src={si.logo}
-                      alt={si.alt}
-                      width={300}
-                      height={160}
-                      style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }}
-                      unoptimized
-                    />
-                  </div>
-                ))}
-              </div>
+            <div className="logo-grid">
+              {speakerInstitutions.map(si => (
+                <div key={si.name} className="logo-grid-item">
+                  <Image
+                    src={si.logo}
+                    alt={si.alt}
+                    width={180}
+                    height={100}
+                    style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center' }}
+                    unoptimized
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -540,53 +570,6 @@ export default function Home() {
                       <span style={{ fontSize: 13, color: 'var(--muted-light)' }}>{t}</span>
                     </div>
                   ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── ORGANIZING TEAM ────────────────────────────────── */}
-      <section id="organizers" className="section" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
-        <div className="container">
-          <p className="label" style={{ marginBottom: 20 }}>Organizing Committee</p>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, flexWrap: 'wrap', gap: 24 }}>
-            <h2 className="headline" style={{ maxWidth: 480 }}>
-              The team behind ICCH-AI 2026
-            </h2>
-            <p className="body" style={{ maxWidth: 380 }}>
-              Scholars, practitioners and technologists who have convened this conference and are responsible for its programme, partnerships and global reach.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 28 }}>
-            {organizers.map((org, i) => (
-              <div key={org.name} className={`organizer-card${i === 0 ? ' organizer-card--featured' : ''}`}>
-                {/* Photo */}
-                <div style={{ position: 'relative', width: '100%', aspectRatio: '1 / 1', background: 'var(--surface-3)', overflow: 'hidden' }}>
-                  <Image
-                    src={org.photo}
-                    alt={org.name}
-                    fill
-                    sizes="(max-width: 768px) 90vw, 300px"
-                    style={{ objectFit: 'cover', objectPosition: 'center 15%', filter: 'grayscale(40%) sepia(5%) saturate(0.9) contrast(1.03)' }}
-                    unoptimized
-                  />
-                  {i === 0 && (
-                    <div style={{ position: 'absolute', top: 12, left: 12, padding: '3px 10px', background: 'var(--teal)', borderRadius: 3, fontSize: 9.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff' }}>
-                      Convener
-                    </div>
-                  )}
-                </div>
-
-                {/* Info */}
-                <div style={{ padding: '22px 24px 26px' }}>
-                  <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--foreground)', marginBottom: 4, letterSpacing: '-0.01em', lineHeight: 1.3 }}>{org.name}</h3>
-                  <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--teal)', letterSpacing: '0.01em', marginBottom: org.subrole ? 2 : 8, lineHeight: 1.45 }}>{org.role}</p>
-                  {org.subrole && <p style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 8, lineHeight: 1.4 }}>{org.subrole}</p>}
-                  <p style={{ fontSize: 12, color: 'var(--muted-light)', marginBottom: 14, lineHeight: 1.5 }}>{org.affiliation}</p>
-                  <a href={org.profileUrl} target="_blank" rel="noopener noreferrer" className="speaker-link" style={{ fontSize: 12, fontWeight: 600 }}>Profile →</a>
                 </div>
               </div>
             ))}
@@ -752,8 +735,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── ORGANIZING TEAM ────────────────────────────────── */}
+      <section id="organizers" className="section" style={{ background: 'var(--background)', borderTop: '1px solid var(--border)' }}>
+        <div className="container">
+          <p className="label" style={{ marginBottom: 20 }}>Organizing Committee</p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 40, flexWrap: 'wrap', gap: 20 }}>
+            <h2 className="headline" style={{ maxWidth: 480 }}>
+              The team behind ICCH-AI 2026
+            </h2>
+            <p className="body" style={{ maxWidth: 380 }}>
+              Scholars, practitioners and technologists who have convened this conference and are responsible for its programme, partnerships and global reach.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: 20, maxWidth: 640 }}>
+            {organizers.map((org, i) => (
+              <div key={org.name} className={`organizer-card${i === 0 ? ' organizer-card--featured' : ''}`}>
+                {/* Photo */}
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '1 / 1', background: 'var(--surface-3)', overflow: 'hidden' }}>
+                  <Image
+                    src={org.photo}
+                    alt={org.name}
+                    fill
+                    sizes="(max-width: 768px) 45vw, 200px"
+                    style={{ objectFit: 'cover', objectPosition: 'center 15%', filter: 'grayscale(40%) sepia(5%) saturate(0.9) contrast(1.03)' }}
+                    unoptimized
+                  />
+                  {i === 0 && (
+                    <div style={{ position: 'absolute', top: 10, left: 10, padding: '2px 8px', background: 'var(--teal)', borderRadius: 3, fontSize: 8.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff' }}>
+                      Convener
+                    </div>
+                  )}
+                </div>
+
+                {/* Info */}
+                <div style={{ padding: '16px 18px 20px' }}>
+                  <h3 style={{ fontSize: 14, fontWeight: 700, color: 'var(--foreground)', marginBottom: 3, letterSpacing: '-0.01em', lineHeight: 1.3 }}>{org.name}</h3>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--teal)', letterSpacing: '0.01em', marginBottom: org.subrole ? 2 : 6, lineHeight: 1.4 }}>{org.role}</p>
+                  {org.subrole && <p style={{ fontSize: 10, color: 'var(--muted)', marginBottom: 6, lineHeight: 1.4 }}>{org.subrole}</p>}
+                  <p style={{ fontSize: 11, color: 'var(--muted-light)', marginBottom: 10, lineHeight: 1.5 }}>{org.affiliation}</p>
+                  <a href={org.profileUrl} target="_blank" rel="noopener noreferrer" className="speaker-link" style={{ fontSize: 11, fontWeight: 600 }}>Profile →</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── FINAL CTA ──────────────────────────────────────── */}
-      <section className="section-lg" style={{ background: 'var(--background)' }}>
+      <section className="section-lg" style={{ background: 'var(--background)', borderTop: '1px solid var(--border)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <p className="label" style={{ marginBottom: 24 }}>October 22–23, 2026</p>
           <h2 className="headline" style={{ marginBottom: 24, maxWidth: 640, margin: '0 auto 24px' }}>
