@@ -517,7 +517,7 @@ export default function Home() {
             {[
               { n: '2', label: 'Conference Days' },
               { n: '6', label: 'Research Pillars' },
-              { n: '3', label: 'Parallel Tracks per Day' },
+              { n: '4', label: 'Parallel Tracks, Day 2' },
               { n: '7', label: 'Partner Institutions' },
             ].map((s, i) => (
               <div key={s.label} style={{
@@ -571,7 +571,7 @@ export default function Home() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, gap: 24, flexWrap: 'wrap' }}>
             <div>
               <p className="label" style={{ marginBottom: 16 }}>Programme</p>
-              <h2 className="headline">Two days. Two themes.</h2>
+              <h2 className="headline">Three days. Two conference days, one dialogue.</h2>
             </div>
             <Link href="/schedule" className="btn btn-ghost" style={{ fontSize: 14, color: 'var(--teal)' }}>
               Full schedule &rarr;
@@ -584,17 +584,25 @@ export default function Home() {
                 day: 'Day 1', date: 'October 22, 2026',
                 theme: 'The Science of Self-Regulation',
                 sub: 'Mindfulness, HRV, Biofeedback and the Nervous System',
-                plenary: 'Guided slow-paced breathing with live HRV biofeedback',
-                tracks: ['Research: EEG to Wearables', 'Clinical: Digital Therapeutics', 'Traditional: Mindfulness and AI'],
+                plenary: 'Hybrid day — in-person and virtual',
+                tracks: ['Pre-conference workshops', 'Inauguration & spotlight talks', 'Panel · book launch · tech demo'],
                 accent: 'var(--teal)',
               },
               {
                 day: 'Day 2', date: 'October 23, 2026',
                 theme: 'AI & Digital Therapeutics',
                 sub: 'In Yoga, Meditation and Contemplative Practice',
-                plenary: 'Can AI Deliver Contemplative Care Responsibly?',
-                tracks: ['Research: IKS and AI', 'Clinical: Digital Therapeutics', 'Technology: Responsible AI'],
+                plenary: 'Fully online — four parallel tracks',
+                tracks: ['Yoga, Mindfulness & Dharma in the AI era', 'Indian Knowledge Systems, ethics & AI', 'Contemplative neuroscience (fMRI, EEG)', 'Contemplative tech innovation (HaaS, SaaS)'],
                 accent: 'var(--muted-light)',
+              },
+              {
+                day: 'Day 3', date: 'October 24, 2026',
+                theme: 'Manana: Contemplative Futures Roundtable',
+                sub: 'A post-conference dialogue on contemplative research in the age of AI',
+                plenary: 'Fully online — post-conference roundtable',
+                tracks: ['3-hour roundtable', 'Faculty heads & scientists', "For UG, master's & PhD scholars"],
+                accent: 'var(--gold)',
               },
             ].map(d => (
               <div key={d.day} className="card" style={{ padding: '40px', position: 'relative', overflow: 'hidden' }}>
