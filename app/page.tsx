@@ -210,6 +210,33 @@ const speakers = [
     bio: 'Holds the Doshi Chair in Indic and Comparative Theology at LMU and has authored more than twenty books tracing yoga, Jainism and Buddhism from classical textual sources through to contemporary practice and ecology.',
   },
   {
+    name: 'Dr. Michael R. Sheehy',
+    title: 'Research Associate Professor, Department of Religious Studies · Director of Research, Contemplative Sciences Center',
+    affiliation: 'University of Virginia',
+    affiliationUrl: 'https://religiousstudies.as.virginia.edu',
+    profileUrl: 'https://religiousstudies.as.virginia.edu/michael-sheehy',
+    photo: '/speakers/michael-sheehy.jpg',
+    bio: "Specialist in Tibetan Buddhism and the phenomenology of contemplative practice. As Director of Research at UVA's Contemplative Sciences Center he founded the CIRCL Contemplative Innovation + Research Co-Lab, a transdisciplinary lab studying contemplation through cultural, historical, phenomenological and neurophysiological lenses, and is Editor-in-Chief of the Journal of Contemplative Studies.",
+  },
+  {
+    name: 'Prof. Ithamar Theodor',
+    title: 'Professor of Hindu and Indian Studies, Department of Asian Studies',
+    affiliation: 'Bar-Ilan University',
+    affiliationUrl: 'https://www.biu.ac.il/en',
+    profileUrl: 'https://barav.biu.ac.il/en/IthamarTheodor',
+    photo: '/speakers/ithamar-theodor.jpg',
+    bio: 'Scholar of the Bhagavad-gītā and Bhāgavata Purāṇa and of comparative Hindu–Jewish and Indian–Chinese philosophy. A graduate of the Theology Faculty at Oxford and Life Member of Clare Hall, Cambridge, he founded the Jewish–Asian annual conference in 2012 and has authored six books, including The Bhagavad-gita: A Critical Introduction (2021).',
+  },
+  {
+    name: 'Assoc. Prof. Ramakrishnan Mani',
+    title: 'Associate Professor & Associate Dean (Research), School of Physiotherapy · Director, Pain@Otago Research Theme',
+    affiliation: 'University of Otago',
+    affiliationUrl: 'https://www.otago.ac.nz',
+    profileUrl: 'https://www.otago.ac.nz/healthsciences/expertise/profile?id=1281',
+    photo: '/speakers/ram-mani.jpg',
+    bio: 'Leads the Otago Pain Mechanisms and Neuromodulation research group, using quantitative sensory testing, EEG and clinical trials to phenotype acute and chronic musculoskeletal pain. His work tests non-invasive neuromodulation, neurofeedback and self-regulatory interventions, and he is a co-investigator on the Dunedin Multidisciplinary Health and Development Study.',
+  },
+  {
     name: 'Dr. Steve Haberlin',
     title: 'Assistant Professor, Curriculum & Instruction · College of Community Innovation and Education',
     affiliation: 'University of Central Florida',
@@ -228,13 +255,13 @@ const speakers = [
     bio: 'Chairs the Yoga Therapy Department at Notre Dame of Maryland University and brings over two decades of clinical experience translating yoga into evidence-based therapeutic and sport-psychology practice, including work with national Olympic teams.',
   },
   {
-    name: 'Satyam Tiwari',
-    title: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · Pioneer of Contemplative AI',
-    affiliation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
-    affiliationUrl: 'https://www.dhyanly.com',
-    profileUrl: 'https://www.dhyanly.com',
-    photo: '/organizers/satyamtiwaripic.png',
-    bio: 'A practitioner of the Svara Yoga tradition for over two decades, academically trained in yoga, Indian Knowledge Systems, AI and technology. As founder of Dhyanly and pioneer of Contemplative AI, he builds clinical-grade biosignal and biofeedback platforms translating IKS into rigorous mind-body digital therapeutics.',
+    name: 'Dr. Evan Lewis-Healey',
+    title: 'Postdoctoral Researcher, Department of Psychiatry',
+    affiliation: 'University of Oxford',
+    affiliationUrl: 'https://www.psych.ox.ac.uk',
+    profileUrl: 'https://www.linkedin.com/in/evan-lewis-healey-4770b1136',
+    photo: '/speakers/evan-lewis-healey.jpeg',
+    bio: 'Cognitive neuroscientist studying the neurophenomenology of altered states of consciousness — breathwork, meditation and psychedelics. His Cambridge PhD traced the neural and experiential dynamics of breathwork and DMT, with findings published in Cerebral Cortex and the Journal of Cognitive Neuroscience.',
   },
   {
     name: 'Dr. Amit Sethi',
@@ -246,42 +273,6 @@ const speakers = [
     bio: 'Directs the NERD Lab at the University of Utah, applying transcranial brain stimulation and movement science to develop evidence-based rehabilitation protocols for stroke recovery and neuromodulation-driven motor learning.',
   },
   {
-    name: 'Dr. Evan Lewis-Healey',
-    title: 'Postdoctoral Researcher, Department of Psychiatry',
-    affiliation: 'University of Oxford',
-    affiliationUrl: 'https://www.psych.ox.ac.uk',
-    profileUrl: 'https://www.linkedin.com/in/evan-lewis-healey-4770b1136',
-    photo: '/speakers/evan-lewis-healey.jpeg',
-    bio: 'Cognitive neuroscientist studying the neurophenomenology of altered states of consciousness — breathwork, meditation and psychedelics. His Cambridge PhD traced the neural and experiential dynamics of breathwork and DMT, with findings published in Cerebral Cortex and the Journal of Cognitive Neuroscience.',
-  },
-  {
-    name: 'Dr. Michael R. Sheehy',
-    title: 'Research Associate Professor, Department of Religious Studies · Director of Research, Contemplative Sciences Center',
-    affiliation: 'University of Virginia',
-    affiliationUrl: 'https://religiousstudies.as.virginia.edu',
-    profileUrl: 'https://religiousstudies.as.virginia.edu/michael-sheehy',
-    photo: '/speakers/michael-sheehy.jpg',
-    bio: "Specialist in Tibetan Buddhism and the phenomenology of contemplative practice. As Director of Research at UVA's Contemplative Sciences Center he founded the CIRCL Contemplative Innovation + Research Co-Lab, a transdisciplinary lab studying contemplation through cultural, historical, phenomenological and neurophysiological lenses, and is Editor-in-Chief of the Journal of Contemplative Studies.",
-  },
-  {
-    name: 'Assoc. Prof. Ramakrishnan Mani',
-    title: 'Associate Professor & Associate Dean (Research), School of Physiotherapy · Director, Pain@Otago Research Theme',
-    affiliation: 'University of Otago',
-    affiliationUrl: 'https://www.otago.ac.nz',
-    profileUrl: 'https://www.otago.ac.nz/healthsciences/expertise/profile?id=1281',
-    photo: '/speakers/ram-mani.jpg',
-    bio: 'Leads the Otago Pain Mechanisms and Neuromodulation research group, using quantitative sensory testing, EEG and clinical trials to phenotype acute and chronic musculoskeletal pain. His work tests non-invasive neuromodulation, neurofeedback and self-regulatory interventions, and he is a co-investigator on the Dunedin Multidisciplinary Health and Development Study.',
-  },
-  {
-    name: 'Prof. Ithamar Theodor',
-    title: 'Professor of Hindu and Indian Studies, Department of Asian Studies',
-    affiliation: 'Bar-Ilan University',
-    affiliationUrl: 'https://www.biu.ac.il/en',
-    profileUrl: 'https://barav.biu.ac.il/en/IthamarTheodor',
-    photo: '/speakers/ithamar-theodor.jpg',
-    bio: 'Scholar of the Bhagavad-gītā and Bhāgavata Purāṇa and of comparative Hindu–Jewish and Indian–Chinese philosophy. A graduate of the Theology Faculty at Oxford and Life Member of Clare Hall, Cambridge, he founded the Jewish–Asian annual conference in 2012 and has authored six books, including The Bhagavad-gita: A Critical Introduction (2021).',
-  },
-  {
     name: 'Dr. Kilian Abellaneda-Pérez',
     title: 'Researcher in Cognitive Neuroscience & Non-Invasive Brain Stimulation',
     affiliation: 'University of Lleida · Institut Guttmann, Spain',
@@ -289,6 +280,15 @@ const speakers = [
     profileUrl: 'https://portalrecerca.udl.cat/investigadores/2389314/colaboracion/organizaciones/386?lang=en_US',
     photo: '/speakers/kilian-abellaneda-perez.jpg',
     bio: "Cognitive neuroscientist working between the University of Lleida and Institut Guttmann, using TMS-EEG, fMRI and non-invasive brain stimulation to study neuroplasticity, cognitive reserve and 'prehabilitation' before brain-tumour surgery, linking brain-network reorganisation to cognition, resilience and plasma biomarkers of ageing.",
+  },
+  {
+    name: 'Satyam Tiwari',
+    title: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · Pioneer of Contemplative AI',
+    affiliation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
+    affiliationUrl: 'https://www.dhyanly.com',
+    profileUrl: 'https://www.dhyanly.com',
+    photo: '/organizers/satyamtiwaripic.png',
+    bio: 'A practitioner of the Svara Yoga tradition for over two decades, academically trained in yoga, Indian Knowledge Systems, AI and technology. As founder of Dhyanly and pioneer of Contemplative AI, he builds clinical-grade biosignal and biofeedback platforms translating IKS into rigorous mind-body digital therapeutics.',
   },
 ]
 
@@ -367,6 +367,51 @@ export default function Home() {
             <span style={{ color: 'rgba(255,255,255,0.2)' }}>×</span>
             <span style={{ fontSize: 14, fontWeight: 600, color: 'rgba(228,232,241,0.65)' }}>Notre Dame of Maryland University</span>
           </div>
+        </div>
+      </section>
+
+      {/* ─── WHAT IT IS — contemplative × technology ───────── */}
+      <section style={{ background: '#16040A', borderTop: '1px solid rgba(255,255,255,0.06)', padding: 'clamp(72px, 10vw, 112px) 24px' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(228,232,241,0.4)', marginBottom: 'clamp(32px, 5vw, 52px)' }}>
+            Where two worlds meet
+          </p>
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 'clamp(28px, 5vw, 64px)' }}>
+            {/* Contemplative side */}
+            <div style={{ flex: '1 1 300px', maxWidth: 420 }}>
+              <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#C69232', marginBottom: 14 }}>
+                Contemplative Practice
+              </p>
+              <p style={{ fontSize: 'clamp(21px, 2.6vw, 29px)', fontWeight: 700, lineHeight: 1.35, color: '#FFFFFF', letterSpacing: '-0.02em' }}>
+                Yoga, Mindfulness, Meditation &amp; mind&ndash;body practices
+              </p>
+            </div>
+
+            {/* Connector */}
+            <div style={{ flex: '0 0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
+              <span style={{
+                width: 54, height: 54, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                border: '1px solid rgba(198,146,50,0.45)', background: 'radial-gradient(circle, rgba(198,146,50,0.20) 0%, transparent 70%)',
+                fontSize: 22, fontWeight: 300, color: '#C69232', lineHeight: 1,
+              }}>+</span>
+              <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(228,232,241,0.35)' }}>meets</span>
+            </div>
+
+            {/* Technology side */}
+            <div style={{ flex: '1 1 300px', maxWidth: 420 }}>
+              <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#C4122F', marginBottom: 14 }}>
+                Science &amp; Technology
+              </p>
+              <p style={{ fontSize: 'clamp(21px, 2.6vw, 29px)', fontWeight: 700, lineHeight: 1.35, color: '#FFFFFF', letterSpacing: '-0.02em' }}>
+                Artificial Intelligence &amp; Health Technology
+              </p>
+            </div>
+          </div>
+
+          <p style={{ fontSize: 16, lineHeight: 1.75, color: 'rgba(228,232,241,0.6)', maxWidth: 680, margin: 'clamp(36px, 5vw, 52px) auto 0' }}>
+            ICCH-AI 2026 is the meeting point where the lived, experiential knowledge of yoga, breath and meditation is brought together with AI, biosignal science and digital health &mdash; to measure it, personalise it, and deliver it at a scale no single teacher or clinic could reach.
+          </p>
         </div>
       </section>
 
