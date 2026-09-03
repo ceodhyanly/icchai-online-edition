@@ -582,16 +582,16 @@ export default function Home() {
             {[
               {
                 day: 'Day 1', date: 'October 22, 2026',
-                theme: 'The Science of Self-Regulation',
-                sub: 'Mindfulness, HRV, Biofeedback and the Nervous System',
+                theme: 'Opening the Dialogue',
+                sub: 'Inauguration, headline talks and the opening panel',
                 plenary: 'Hybrid day — in-person and virtual',
                 tracks: ['Pre-conference workshops', 'Inauguration & spotlight talks', 'Panel · book launch · tech demo'],
                 accent: 'var(--teal)',
               },
               {
                 day: 'Day 2', date: 'October 23, 2026',
-                theme: 'AI & Digital Therapeutics',
-                sub: 'In Yoga, Meditation and Contemplative Practice',
+                theme: 'Four Tracks, One Field',
+                sub: 'Research across practice, IKS, neuroscience and contemplative tech',
                 plenary: 'Fully online — four parallel tracks',
                 tracks: ['Yoga, Mindfulness & Dharma in the AI era', 'Indian Knowledge Systems, ethics & AI', 'Contemplative neuroscience (fMRI, EEG)', 'Contemplative tech innovation (HaaS, SaaS)'],
                 accent: 'var(--muted-light)',

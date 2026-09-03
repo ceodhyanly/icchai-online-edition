@@ -101,12 +101,12 @@ export default function SchedulePage() {
 
       {/* Day 1 */}
       <DayBlock label="Day 1" date="October 22, 2026" format="Hybrid — in-person + virtual"
-        theme="The Science of Self-Regulation" sub="Mindfulness, HRV, Biofeedback and the Nervous System"
+        theme="Opening the Dialogue" sub="Inauguration, headline spotlight talks and the opening panel — the contemplative traditions and the sciences in one room"
         sessions={day1} bg="var(--surface)" />
 
       {/* Day 2 */}
       <DayBlock label="Day 2" date="October 23, 2026" format="Fully online"
-        theme="AI & Digital Therapeutics" sub="In Yoga, Meditation and Contemplative Practice"
+        theme="Four Tracks, One Field" sub="Practice and dharma, Indian Knowledge Systems, contemplative neuroscience, and contemplative-tech innovation — running in parallel"
         sessions={day2} bg="var(--background)" />
 
       {/* Day 3 */}
