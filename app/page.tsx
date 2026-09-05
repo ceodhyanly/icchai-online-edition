@@ -517,7 +517,7 @@ export default function Home() {
             {[
               { n: '2', label: 'Conference Days' },
               { n: '6', label: 'Research Pillars' },
-              { n: '4', label: 'Parallel Tracks, Day 2' },
+              { n: '5', label: 'Parallel Tracks, Day 2' },
               { n: '7', label: 'Partner Institutions' },
             ].map((s, i) => (
               <div key={s.label} style={{
@@ -592,8 +592,8 @@ export default function Home() {
                 day: 'Day 2', date: 'October 23, 2026',
                 theme: 'Four Tracks, One Field',
                 sub: 'Research across practice, IKS, neuroscience and contemplative tech',
-                plenary: 'Fully online — four parallel tracks',
-                tracks: ['Yoga, Mindfulness & Dharma in the AI era', 'Indian Knowledge Systems, ethics & AI', 'Contemplative neuroscience (fMRI, EEG)', 'Contemplative tech innovation (HaaS, SaaS)'],
+                plenary: 'Fully online — five parallel tracks',
+                tracks: ['Yoga, Mindfulness & Dharma in the AI era', 'Indian Knowledge Systems, ethics & AI', 'Ayurveda & AI: diagnostics, dosha profiling', 'Contemplative neuroscience (fMRI, EEG)', 'Contemplative tech innovation (HaaS, SaaS)'],
                 accent: 'var(--muted-light)',
               },
               {

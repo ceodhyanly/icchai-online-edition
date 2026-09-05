@@ -29,8 +29,9 @@ const day2: Session[] = [
   { time: '5:30 – 6:30 PM', session: 'Opening & Spotlight Talks', type: 'main' },
   { time: '6:30 – 8:00 PM', session: 'Parallel Track 1', detail: 'Yoga, Mindfulness, Meditation and Dharma in the Era of AI and HealthTech', type: 'breakout', parallel: true },
   { time: '6:30 – 8:00 PM', session: 'Parallel Track 2', detail: 'Indian Knowledge Systems: Research, Ethics and Convergence with AI', type: 'breakout', parallel: true },
-  { time: '8:00 – 9:00 PM', session: 'Parallel Track 3', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true },
-  { time: '8:00 – 9:00 PM', session: 'Parallel Track 4', detail: 'Contemplative Tech Innovation (HaaS, SaaS based on Contemplative Sciences)', type: 'breakout', parallel: true },
+  { time: '6:30 – 8:00 PM', session: 'Parallel Track 3', detail: 'Ayurveda and AI: Diagnostics, Dosha Profiling and Personalised Digital Health', type: 'breakout', parallel: true },
+  { time: '8:00 – 9:00 PM', session: 'Parallel Track 4', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true },
+  { time: '8:00 – 9:00 PM', session: 'Parallel Track 5', detail: 'Contemplative Tech Innovation (HaaS, SaaS based on Contemplative Sciences)', type: 'breakout', parallel: true },
   { time: '9:00 – 9:10 PM', session: 'Hackathon Winners: Tech Demo', type: 'demo' },
   { time: '9:10 – 9:30 PM', session: 'Conclusion', detail: 'Vote of Thanks & Announcement of Society', type: 'close' },
 ]
