@@ -122,6 +122,15 @@ const mainPartners = [
     wide: false,
   },
   {
+    name: 'IHFC, IIT Delhi',
+    dept: 'I-Hub Foundation for Cobotics',
+    role: 'Tech Partner',
+    desc: "IIT Delhi's Technology Innovation Hub under India's National Mission on Interdisciplinary Cyber-Physical Systems (NM-ICPS), advancing cobotics, AI and applied deep-tech across healthcare and assistive technology.",
+    logo: '/images/ihfc-iit-delhi-logo.png',
+    logoAlt: 'IHFC, IIT Delhi',
+    wide: false,
+  },
+  {
     name: 'Loyola Marymount University',
     dept: 'Bellarmine College of Liberal Arts, MA in Yoga Studies',
     role: 'Academic Partner — USA',
