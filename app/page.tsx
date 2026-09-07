@@ -366,7 +366,7 @@ export default function Home() {
             International Conference on Contemplative HealthTech and AI. The first sustained dialogue between ancient contemplative science and modern technology.
           </p>
           <p style={{ fontSize: 13, color: 'rgba(228,232,241,0.6)', marginBottom: 8, letterSpacing: '0.01em' }}>
-            <span style={{ color: '#C69232', fontWeight: 600 }}>Virtual Globally:</span> Tentative offline venue for hybrid mode is IIT Delhi, India
+            <span style={{ color: '#C69232', fontWeight: 600 }}>Virtual Globally:</span> Day 1 is hybrid — offline venue is IIT Delhi, New Delhi, India
           </p>
           <p style={{ fontSize: 12, color: 'rgba(228,232,241,0.38)', marginBottom: 48, letterSpacing: '0.04em' }}>
             17:30–21:30 IST &nbsp;·&nbsp; 8:00 am–12:00 pm EST &nbsp;·&nbsp; 2:00–6:00 pm CET
@@ -603,7 +603,7 @@ export default function Home() {
                 day: 'Day 1', date: 'October 22, 2026',
                 theme: 'Opening the Dialogue',
                 sub: 'Inauguration, headline talks and the opening panel',
-                plenary: 'Hybrid day — in-person and virtual',
+                plenary: 'Hybrid — IIT Delhi, New Delhi + online worldwide',
                 tracks: ['Pre-conference workshops', 'Inauguration & spotlight talks', 'Panel · book launch · tech demo'],
                 accent: 'var(--teal)',
               },
@@ -611,7 +611,7 @@ export default function Home() {
                 day: 'Day 2', date: 'October 23, 2026',
                 theme: 'Four Tracks, One Field',
                 sub: 'Research across practice, IKS, neuroscience and contemplative tech',
-                plenary: 'Fully online — five parallel tracks',
+                plenary: 'Online only — five parallel tracks',
                 tracks: ['Yoga, Mindfulness & Dharma in the AI era', 'Indian Knowledge Systems, ethics & AI', 'Ayurveda & AI: diagnostics, dosha profiling', 'Contemplative neuroscience (fMRI, EEG)', 'Contemplative tech innovation (HaaS, SaaS)'],
                 accent: 'var(--muted-light)',
               },

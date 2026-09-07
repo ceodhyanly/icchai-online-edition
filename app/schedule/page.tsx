@@ -72,7 +72,7 @@ export default function SchedulePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
             {[
               'Programme is provisional and subject to change. Full details and the complete speaker list will be announced.',
-              'Day 1 is hybrid — in-person and virtual. Days 2 and 3 are fully online.',
+              'Day 1 is hybrid — on-site at IIT Delhi, New Delhi and streamed live worldwide. Days 2 and 3 are online only.',
               'Day 2 breakout tracks run simultaneously. Attendees self-select one track per slot.',
               'All speaker names are indicative and pending final confirmation.',
             ].map((note, i) => (
@@ -101,12 +101,12 @@ export default function SchedulePage() {
       </section>
 
       {/* Day 1 */}
-      <DayBlock label="Day 1" date="October 22, 2026" format="Hybrid — in-person + virtual"
+      <DayBlock label="Day 1" date="October 22, 2026" format="Hybrid — IIT Delhi, New Delhi + online worldwide"
         theme="Opening the Dialogue" sub="Inauguration, headline spotlight talks and the opening panel — the contemplative traditions and the sciences in one room"
         sessions={day1} bg="var(--surface)" />
 
       {/* Day 2 */}
-      <DayBlock label="Day 2" date="October 23, 2026" format="Fully online"
+      <DayBlock label="Day 2" date="October 23, 2026" format="Online only — worldwide"
         theme="Four Tracks, One Field" sub="Practice and dharma, Indian Knowledge Systems, contemplative neuroscience, and contemplative-tech innovation — running in parallel"
         sessions={day2} bg="var(--background)" />
 
@@ -117,7 +117,7 @@ export default function SchedulePage() {
             <span className="chip chip-teal" style={{ fontSize: 11 }}>Day 3</span>
             <span className="caption">October 24, 2026</span>
             <span className="caption">·</span>
-            <span className="caption">Fully online</span>
+            <span className="caption">Online only</span>
           </div>
           <h2 style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 750, letterSpacing: '-0.025em', marginBottom: 6 }}>
             Manana: The Contemplative Futures Roundtable
