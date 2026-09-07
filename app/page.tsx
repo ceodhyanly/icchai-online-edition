@@ -157,6 +157,7 @@ const speakerInstitutions = [
   { logo: '/images/lmulogo.webp', alt: 'Loyola Marymount University', name: 'LMU' },
   { logo: '/images/sasalogo.png', alt: 'South Asian Studies Association', name: 'SASA' },
   { logo: '/images/oxfordlogo.png', alt: 'University of Oxford', name: 'University of Oxford' },
+  { logo: '/images/harvard-medical-school-logo.png', alt: 'Harvard Medical School', name: 'Harvard Medical School' },
   { logo: '/images/uva-logo.png', alt: 'University of Virginia', name: 'University of Virginia' },
   { logo: '/images/otago-logo.jpg', alt: 'University of Otago', name: 'University of Otago' },
   { logo: '/images/bar-ilan-logo.png', alt: 'Bar-Ilan University', name: 'Bar-Ilan University' },
@@ -199,6 +200,15 @@ const speakers = [
     profileUrl: 'https://ie.linkedin.com/in/akhilesh-mishra-002456b6',
     photo: '/speakers/akhilesh-mishra.jpeg',
     bio: "Three decades of senior diplomacy followed by independent study of Sanskrit philosophical texts. His close reading of the Yoga Sutra and Upanishads situates India's contemplative heritage at the centre of a living intellectual tradition.",
+  },
+  {
+    name: 'Dr. Sat Bir Singh Khalsa',
+    title: 'Corresponding Member of the Faculty of Medicine · Lead Investigator, Division of Sleep and Circadian Medicine, Brigham and Women’s Hospital',
+    affiliation: 'Harvard Medical School',
+    affiliationUrl: 'https://hms.harvard.edu',
+    profileUrl: 'https://sleep.hms.harvard.edu/faculty-staff/sat-bir-singh-khalsa',
+    photo: '/speakers/sat-bir-khalsa.jpg',
+    bio: 'A leading researcher on the science of yoga and meditation for over four decades. He is Editor-in-Chief of the International Journal of Yoga Therapy, lead editor of The Principles and Practice of Yoga in Health Care, and Director of Research at the Kripalu Center and the Kundalini Research Institute, with clinical trials on yoga for anxiety, insomnia and occupational stress.',
   },
   {
     name: 'Prof. Christopher Key Chapple',
