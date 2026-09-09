@@ -38,6 +38,7 @@ const ALLOWED_ROLES = [
 ]
 const ALLOWED_ATTENDANCE = ['both', 'day1', 'day2']
 const ALLOWED_GENDERS = ['Male', 'Female', 'Other']
+const ALLOWED_MODES = ['online', 'offline']
 
 export async function POST(req: NextRequest) {
   try {
@@ -73,6 +74,8 @@ export async function POST(req: NextRequest) {
     const secondaryEmail = sanitizeString(body.secondaryEmail, 254).toLowerCase()
     const hasWhatsapp = typeof body.hasWhatsapp === 'boolean' ? body.hasWhatsapp : true
     const attendance = sanitizeString(body.attendance, 10) || 'both'
+    const mode = sanitizeString(body.mode, 10) || 'online'
+    const offlineCommitment = mode === 'offline' && body.offlineCommitment === true
 
     if (!firstName || !lastName) {
       return NextResponse.json({ error: 'First name and last name are required.' }, { status: 400 })
@@ -94,6 +97,12 @@ export async function POST(req: NextRequest) {
     }
     if (!ALLOWED_ATTENDANCE.includes(attendance)) {
       return NextResponse.json({ error: 'Invalid attendance selection.' }, { status: 400 })
+    }
+    if (!ALLOWED_MODES.includes(mode)) {
+      return NextResponse.json({ error: 'Please choose how you would like to attend.' }, { status: 400 })
+    }
+    if (mode === 'offline' && !offlineCommitment) {
+      return NextResponse.json({ error: 'For in-person attendance, please confirm the commitment to attend at IIT Delhi.' }, { status: 400 })
     }
     if (typeof body.joinSociety !== 'boolean') {
       return NextResponse.json({ error: 'Please let us know whether you would like to join ISCHT.' }, { status: 400 })
@@ -124,6 +133,7 @@ export async function POST(req: NextRequest) {
     const user = await prisma.user.create({
       data: { email, firstName, lastName, photo,
         institution, country, role, gender, interests: interestsStr, attendance,
+        mode, offlineCommitment,
         phone, hasWhatsapp, secondaryEmail: secondaryEmail || null,
         ischtInterest: body.joinSociety },
     })
@@ -161,6 +171,7 @@ export async function POST(req: NextRequest) {
       message: 'Registration successful',
       registrationNumber,
       ischtMembershipNumber,
+      mode,
       user: { id: user.id, email: user.email, firstName: user.firstName, lastName: user.lastName },
     })
     response.cookies.set('icchai_token', token, {

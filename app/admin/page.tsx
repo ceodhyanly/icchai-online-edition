@@ -35,9 +35,11 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   }
 
   const ischtInterested = users.filter(u => u.ischtInterest).length
+  const offlineCount = users.filter(u => u.mode === 'offline').length
 
   const statCards = [
     { label: 'Total Registrants', value: total, accent: 'var(--teal)' },
+    { label: 'In-person (IIT Delhi)', value: offlineCount, accent: '#B07C1E' },
     { label: 'Both Days', value: byAttendance['both'] ?? 0, accent: '#C69232' },
     { label: 'Day 1 Only', value: byAttendance['day1'] ?? 0, accent: 'var(--muted)' },
     { label: 'Day 2 Only', value: byAttendance['day2'] ?? 0, accent: 'var(--muted)' },

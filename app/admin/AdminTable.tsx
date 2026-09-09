@@ -15,6 +15,8 @@ type User = {
   phone: string | null
   hasWhatsapp: boolean
   secondaryEmail: string | null
+  mode: string
+  offlineCommitment: boolean
   attendance: string
   registrationNumber: string | null
   ischtInterest: boolean
@@ -210,7 +212,7 @@ export default function AdminTable({ users }: { users: User[] }) {
                     style={{ cursor: 'pointer', accentColor: 'var(--teal)', width: 15, height: 15 }}
                   />
                 </th>
-                {['#', 'Name', 'Email', 'Secondary Email', 'Phone', 'Institution', 'Country', 'Role', 'Gender', 'Attendance', 'ISCHT', 'Reg No.', 'Registered', 'Pass PDF'].map(h => (
+                {['#', 'Name', 'Email', 'Secondary Email', 'Phone', 'Institution', 'Country', 'Role', 'Gender', 'Mode', 'Attendance', 'ISCHT', 'Reg No.', 'Registered', 'Pass PDF'].map(h => (
                   <th key={h} style={{ padding: '12px 14px', textAlign: 'left', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', whiteSpace: 'nowrap', borderBottom: '1px solid var(--border)' }}>
                     {h}
                   </th>
@@ -244,6 +246,13 @@ export default function AdminTable({ users }: { users: User[] }) {
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)', whiteSpace: 'nowrap' }}>{u.country ?? '—'}</td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.role ?? '—'}</td>
                   <td style={{ padding: '12px 14px', color: 'var(--muted-light)' }}>{u.gender ?? '—'}</td>
+                  <td style={{ padding: '12px 14px', whiteSpace: 'nowrap' }}>
+                    {u.mode === 'offline'
+                      ? <span style={{ display: 'inline-flex', alignItems: 'center', padding: '3px 10px', background: 'rgba(198,146,50,0.10)', border: '1px solid rgba(198,146,50,0.35)', borderRadius: 3, fontSize: 11, fontWeight: 700, color: '#B07C1E' }}>
+                          In person{u.offlineCommitment ? ' ✓' : ' (no commit)'}
+                        </span>
+                      : <span style={{ color: 'var(--muted-light)', fontSize: 12 }}>Online</span>}
+                  </td>
                   <td style={{ padding: '12px 14px', whiteSpace: 'nowrap' }}>
                     <span style={{ display: 'inline-flex', alignItems: 'center', padding: '3px 10px', background: 'var(--teal-dim)', border: '1px solid var(--teal-border)', borderRadius: 3, fontSize: 11, fontWeight: 600, color: 'var(--teal)' }}>
                       {attLabel[u.attendance] ?? u.attendance}

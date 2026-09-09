@@ -17,6 +17,8 @@ model User {
   role        String?
   gender      String?
   interests   String?
+  mode               String   @default("online")
+  offlineCommitment  Boolean  @default(false)
   attendance         String   @default("both")
   registrationNumber String?  @unique
   ischtInterest      Boolean  @default(false)

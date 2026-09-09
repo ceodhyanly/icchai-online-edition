@@ -20,8 +20,8 @@ const pillars = [
 ]
 const attendance = [
   { value: 'both', label: 'Both Days', sub: 'October 22–23, 2026' },
-  { value: 'day1', label: 'Day 1 Only', sub: 'October 22: The Science of Self-Regulation' },
-  { value: 'day2', label: 'Day 2 Only', sub: 'October 23: AI and Digital Therapeutics' },
+  { value: 'day1', label: 'Day 1 Only', sub: 'October 22: Opening the Dialogue' },
+  { value: 'day2', label: 'Day 2 Only', sub: 'October 23: Four Tracks, One Field' },
 ]
 
 const stepLabels = ['Verify Email', 'Personal Info', 'Background', 'Preferences']
@@ -32,11 +32,12 @@ export default function RegisterPage() {
   const [step, setStep] = useState(1)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [success, setSuccess] = useState<{ name: string; regNumber: string; membershipNumber: string | null } | null>(null)
+  const [success, setSuccess] = useState<{ name: string; regNumber: string; membershipNumber: string | null; mode: string } | null>(null)
   const [form, setForm] = useState({
     email: '', firstName: '', lastName: '', photo: '',
     institution: '', country: '', role: '', gender: '', phone: '', hasWhatsapp: true, secondaryEmail: '',
     interests: [] as string[], attendance: 'both',
+    mode: '' as '' | 'online' | 'offline', offlineCommitment: false,
     joinSociety: '' as '' | 'yes' | 'no',
   })
   const [photoError, setPhotoError] = useState('')
@@ -98,6 +99,10 @@ export default function RegisterPage() {
   }
 
   const submit = async () => {
+    if (!form.mode) { setError('Please choose how you would like to attend.'); return }
+    if (form.mode === 'offline' && !form.offlineCommitment) {
+      setError('For in-person attendance, please tick the commitment checkbox.'); return
+    }
     if (!form.joinSociety) { setError('Please let us know whether you would like to join ISCHT.'); return }
     setLoading(true); setError('')
     const res = await fetch('/api/auth/register', {
@@ -112,7 +117,7 @@ export default function RegisterPage() {
       if (res.status === 401) setStep(1)
       return
     }
-    setSuccess({ name: form.firstName, regNumber: data.registrationNumber, membershipNumber: data.ischtMembershipNumber ?? null })
+    setSuccess({ name: form.firstName, regNumber: data.registrationNumber, membershipNumber: data.ischtMembershipNumber ?? null, mode: data.mode ?? form.mode })
   }
 
   if (checkingPending) return null
@@ -130,9 +135,20 @@ export default function RegisterPage() {
           <h1 style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 12 }}>
             Welcome, {success.name}!
           </h1>
-          <p className="body" style={{ marginBottom: 40 }}>
-            Your seat at ICCH-AI 2026 is confirmed. A confirmation email with your registration pass has been sent to your inbox.
+          <p className="body" style={{ marginBottom: success.mode === 'offline' ? 20 : 40 }}>
+            Your registration for ICCH-AI 2026 is confirmed. A confirmation email with your registration pass has been sent to your inbox.
           </p>
+
+          {success.mode === 'offline' && (
+            <div style={{ padding: '18px 22px', background: 'rgba(198,146,50,0.06)', border: '1px solid rgba(198,146,50,0.3)', borderRadius: 8, marginBottom: 40, textAlign: 'left' }}>
+              <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#B07C1E', marginBottom: 8 }}>
+                In-person seat — pending confirmation
+              </p>
+              <p style={{ fontSize: 12.5, color: 'var(--muted-light)', lineHeight: 1.65, marginBottom: 0 }}>
+                Your registration is complete and you can join online. Your in-person seat at IIT Delhi on 22 October 2026 is provisional and subject to confirmation by the conference authorities. We will contact you with the outcome; if it cannot be confirmed, you will still be able to attend online.
+              </p>
+            </div>
+          )}
 
           {/* Registration number box */}
           <div style={{ padding: '28px 32px', background: 'var(--surface)', border: '1px solid var(--border)', borderTop: '3px solid var(--teal)', borderRadius: 8, marginBottom: 28, textAlign: 'left' }}>
@@ -198,7 +214,7 @@ export default function RegisterPage() {
           <h1 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 8 }}>
             Register for ICCH-AI 2026
           </h1>
-          <p className="body">October 22–23, 2026 · Fully online worldwide · Free to attend</p>
+          <p className="body">October 22–24, 2026 · Online worldwide, with an in-person option at IIT Delhi on Day 1 · Free to attend</p>
         </div>
 
         {/* Step indicator */}
@@ -300,6 +316,38 @@ export default function RegisterPage() {
 
         {step === 4 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+            <div>
+              <label className="field-label" style={{ marginBottom: 12 }}>Mode of Attendance *</label>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {[
+                  { value: 'online', label: 'Online', sub: 'Join live from anywhere in the world (all three days)' },
+                  { value: 'offline', label: 'In person at IIT Delhi', sub: 'Attend Day 1 on-site in New Delhi on 22 October 2026 (Days 2–3 remain online)' },
+                ].map(m => (
+                  <label key={m.value} style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '16px 18px', background: form.mode === m.value ? 'rgba(164,28,48,0.06)' : 'var(--surface-3)', borderRadius: 6, border: `1px solid ${form.mode === m.value ? 'var(--teal-border)' : 'var(--border-mid)'}`, cursor: 'pointer', transition: 'all 0.15s' }}>
+                    <input type="radio" name="mode" value={m.value} checked={form.mode === m.value} onChange={e => setForm(f => ({ ...f, mode: e.target.value as 'online' | 'offline', offlineCommitment: e.target.value === 'offline' ? f.offlineCommitment : false }))} style={{ accentColor: 'var(--teal)' }} />
+                    <div>
+                      <div style={{ fontWeight: 600, fontSize: 14 }}>{m.label}</div>
+                      <div className="caption" style={{ marginTop: 2 }}>{m.sub}</div>
+                    </div>
+                  </label>
+                ))}
+              </div>
+
+              {form.mode === 'offline' && (
+                <div style={{ marginTop: 12, padding: '18px 20px', background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 8 }}>
+                  <p style={{ fontSize: 12.5, color: 'var(--muted-light)', lineHeight: 1.7, marginBottom: 14 }}>
+                    In-person places at IIT Delhi are limited. Registering for in-person attendance records your intent — your seat is <strong>not</strong> confirmed at this stage. The conference authorities will review in-person registrations and contact you with the outcome closer to the event. If your seat cannot be confirmed, you will still be able to attend online. Please choose this option only if you are reasonably confident you can travel to New Delhi for Day 1.
+                  </p>
+                  <label style={{ display: 'flex', gap: 10, alignItems: 'flex-start', cursor: 'pointer' }}>
+                    <input type="checkbox" checked={form.offlineCommitment} onChange={e => setForm(f => ({ ...f, offlineCommitment: e.target.checked }))} style={{ accentColor: 'var(--teal)', marginTop: 3, flexShrink: 0 }} />
+                    <span style={{ fontSize: 13, color: 'var(--foreground)', lineHeight: 1.6 }}>
+                      I commit to attending Day 1 in person at IIT Delhi, New Delhi on 22 October 2026, and I understand my in-person seat is provisional and subject to confirmation by the conference authorities, who will contact me with the outcome.
+                    </span>
+                  </label>
+                </div>
+              )}
+            </div>
+
             <div>
               <label className="field-label" style={{ marginBottom: 12 }}>Attendance</label>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
