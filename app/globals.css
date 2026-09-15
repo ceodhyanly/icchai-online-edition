@@ -271,6 +271,9 @@ select.field-input { cursor: pointer; }
   background: var(--surface-2);
   border-color: var(--teal-border);
 }
+.organizer-card--compact {
+  border-radius: 8px;
+}
 .organizer-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 32px rgba(26,12,8,0.10);

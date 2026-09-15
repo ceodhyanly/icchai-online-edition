@@ -198,6 +198,52 @@ const organizers = [
     photo: '/organizers/amy-wheeler-mantoan.jpg',
     profileUrl: 'https://www.ndm.edu/directory/amy-wheeler-mantoan',
   },
+  {
+    name: 'Raghava Krishna',
+    role: 'Head of Indian Outreach, ICCH-AI 2026',
+    subrole: '',
+    affiliation: 'Founder & CEO, Bṛhat',
+    photo: '/organizers/raghava-krishna.jpeg',
+    profileUrl: 'https://www.brhat.in',
+  },
+]
+
+const extendedTeam = [
+  {
+    name: 'Rudrakshi Tomar',
+    role: 'Head of Communications, ICCH-AI 2026',
+    affiliation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
+    photo: '/organizers/rudrakshi-tomar.png',
+    profileUrl: 'https://www.dhyanly.com',
+  },
+  {
+    name: 'Aditya Pandey',
+    role: 'Head of International Operations, ICCH-AI 2026',
+    affiliation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
+    photo: '/organizers/aditya-pandey.jpg',
+    profileUrl: 'https://www.dhyanly.com',
+  },
+  {
+    name: 'Kavita Krishna Meegama',
+    role: 'Director, University Relations, ICCH-AI 2026',
+    affiliation: 'Bṛhat',
+    photo: '/organizers/kavita-krishna-meegama.png',
+    profileUrl: 'https://www.brhat.in',
+  },
+  {
+    name: 'Sai Priya Chodavarapu',
+    role: 'Programme Documentation Lead, ICCH-AI 2026',
+    affiliation: 'Senior Research Fellow, Bṛhat',
+    photo: '/organizers/sai-priya-chodavarapu.jpg',
+    profileUrl: 'https://www.brhat.in',
+  },
+  {
+    name: 'Tanya Fransz',
+    role: 'Media & Promotion Lead, ICCH-AI 2026',
+    affiliation: 'Assistant Manager - Content, Bṛhat',
+    photo: '/organizers/tanya-fransz.jpg',
+    profileUrl: 'https://www.brhat.in',
+  },
 ]
 
 const speakers = [
@@ -209,6 +255,15 @@ const speakers = [
     profileUrl: 'https://ie.linkedin.com/in/akhilesh-mishra-002456b6',
     photo: '/speakers/akhilesh-mishra.jpeg',
     bio: "Three decades of senior diplomacy followed by independent study of Sanskrit philosophical texts. His close reading of the Yoga Sutra and Upanishads situates India's contemplative heritage at the centre of a living intellectual tradition.",
+  },
+  {
+    name: 'Prof. Rajeev Ahuja',
+    title: 'Director, IIT Ropar · Professor of Computational Materials Science, Uppsala University',
+    affiliation: 'Indian Institute of Technology Ropar',
+    affiliationUrl: 'https://www.iitrpr.ac.in',
+    profileUrl: 'https://www.iitrpr.ac.in/director',
+    photo: '/speakers/rajeev-ahuja.jpg',
+    bio: 'Director of IIT Ropar since 2021 and, for over three decades, Professor of Computational Materials Science at Uppsala University, Sweden. A globally cited researcher in energy-storage materials and high-pressure condensed-matter physics, he is a Fellow of the Royal Society of Chemistry and the American Physical Society, with more than 1,200 peer-reviewed papers to his name.',
   },
   {
     name: 'Dr. Sat Bir Singh Khalsa',
@@ -829,7 +884,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: 20, maxWidth: 640 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: 20, maxWidth: 800 }}>
             {organizers.map((org, i) => (
               <div key={org.name} className={`organizer-card${i === 0 ? ' organizer-card--featured' : ''}`}>
                 {/* Photo */}
@@ -856,6 +911,34 @@ export default function Home() {
                   {org.subrole && <p style={{ fontSize: 10, color: 'var(--muted)', marginBottom: 6, lineHeight: 1.4 }}>{org.subrole}</p>}
                   <p style={{ fontSize: 11, color: 'var(--muted-light)', marginBottom: 10, lineHeight: 1.5 }}>{org.affiliation}</p>
                   <a href={org.profileUrl} target="_blank" rel="noopener noreferrer" className="speaker-link" style={{ fontSize: 11, fontWeight: 600 }}>Profile →</a>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Extended team — smaller cards */}
+          <p className="label" style={{ margin: '48px 0 20px' }}>Extended Team</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 16, maxWidth: 900 }}>
+            {extendedTeam.map(person => (
+              <div key={person.name} className="organizer-card organizer-card--compact">
+                {/* Photo */}
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '1 / 1', background: 'var(--surface-3)', overflow: 'hidden' }}>
+                  <Image
+                    src={person.photo}
+                    alt={person.name}
+                    fill
+                    sizes="(max-width: 768px) 30vw, 150px"
+                    style={{ objectFit: 'cover', objectPosition: 'center 15%', filter: 'grayscale(40%) sepia(5%) saturate(0.9) contrast(1.03)' }}
+                    unoptimized
+                  />
+                </div>
+
+                {/* Info */}
+                <div style={{ padding: '12px 14px 14px' }}>
+                  <h3 style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--foreground)', marginBottom: 3, letterSpacing: '-0.01em', lineHeight: 1.3 }}>{person.name}</h3>
+                  <p style={{ fontSize: 9.5, fontWeight: 700, color: 'var(--teal)', letterSpacing: '0.01em', marginBottom: 5, lineHeight: 1.4 }}>{person.role}</p>
+                  <p style={{ fontSize: 9.5, color: 'var(--muted-light)', marginBottom: 8, lineHeight: 1.5 }}>{person.affiliation}</p>
+                  <a href={person.profileUrl} target="_blank" rel="noopener noreferrer" className="speaker-link" style={{ fontSize: 9.5, fontWeight: 600 }}>Profile →</a>
                 </div>
               </div>
             ))}
