@@ -232,7 +232,7 @@ const extendedTeam = [
   },
   {
     name: 'Kavita Krishna Meegama',
-    role: 'Director, University Relations, ICCH-AI 2026',
+    role: 'Head, University Relations, ICCH-AI 2026',
     affiliation: 'Bṛhat',
     photo: '/organizers/kavita-krishna-meegama.png',
     profileUrl: 'https://www.brhat.in',
