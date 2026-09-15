@@ -239,14 +239,14 @@ const extendedTeam = [
   },
   {
     name: 'Sai Priya Chodavarapu',
-    role: 'Programme Documentation Lead, ICCH-AI 2026',
+    role: 'Head of Programme Documentation, ICCH-AI 2026',
     affiliation: 'Senior Research Fellow, Bṛhat',
     photo: '/organizers/sai-priya-chodavarapu.jpg',
     profileUrl: 'https://www.brhat.in',
   },
   {
     name: 'Tanya Fransz',
-    role: 'Media & Promotion Lead, ICCH-AI 2026',
+    role: 'Head of Media & Promotion, ICCH-AI 2026',
     affiliation: 'Assistant Manager - Content, Bṛhat',
     photo: '/organizers/tanya-fransz.jpg',
     profileUrl: 'https://www.brhat.in',
