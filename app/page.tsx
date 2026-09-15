@@ -225,7 +225,7 @@ const extendedTeam = [
   },
   {
     name: 'Dr. Roushani Kalia',
-    role: 'Ayurveda Programme Director, ICCH-AI 2026',
+    role: 'Ayurveda Programme Head, ICCH-AI 2026',
     affiliation: 'MD (Dravyaguna Vigyana) · Asst. Professor, Shri Dhanwantry Ayurvedic College & Hospital, Chandigarh',
     photo: '/organizers/roushani-kalia.jpg',
     profileUrl: 'https://www.sdach.ac.in',
