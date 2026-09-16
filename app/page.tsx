@@ -117,7 +117,7 @@ const mainPartners = [
     dept: 'Centre of Excellence on Indian (Indigenous) Knowledge Systems (CoE-IKS)',
     role: 'Institutional Partner',
     desc: "IIT Ropar's dedicated centre advancing interdisciplinary research and scholarship on India's classical and contemporary knowledge traditions.",
-    logo: '/images/iit-ropar-logo.jpg',
+    logo: '/images/iit-ropar-logo-trimmed.png',
     logoAlt: 'IIT Ropar',
     wide: false,
   },
@@ -552,12 +552,12 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: 16, marginBottom: 64 }}>
             {mainPartners.map(inst => (
               <div key={inst.name} className={`hover-cell${inst.wide ? ' partner-card-wide' : ''}`} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6, padding: '32px 32px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ position: 'relative', width: '100%', height: 88, marginBottom: 18 }}>
+                <div style={{ position: 'relative', width: '100%', height: 96, marginBottom: 20 }}>
                   <Image
                     src={inst.logo}
                     alt={inst.logoAlt}
                     fill
-                    style={{ objectFit: 'contain', objectPosition: 'left center' }}
+                    style={{ objectFit: 'contain', objectPosition: 'center' }}
                     unoptimized
                   />
                 </div>
