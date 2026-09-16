@@ -113,6 +113,15 @@ const mainPartners = [
     wide: false,
   },
   {
+    name: 'IIT Ropar',
+    dept: 'Centre of Excellence on Indian (Indigenous) Knowledge Systems (CoE-IKS)',
+    role: 'Institutional Partner',
+    desc: "IIT Ropar's dedicated centre advancing interdisciplinary research and scholarship on India's classical and contemporary knowledge traditions.",
+    logo: '/images/iit-ropar-logo.jpg',
+    logoAlt: 'IIT Ropar',
+    wide: false,
+  },
+  {
     name: 'Notre Dame of Maryland University',
     dept: 'School of Integrative Health (SOIH)',
     role: 'Institutional Partner',
@@ -289,6 +298,24 @@ const speakers = [
     profileUrl: 'https://researchers.mgh.harvard.edu/profile/186188/Sara-Lazar',
     photo: '/speakers/sara-lazar.jpg',
     bio: 'A pioneer of the neuroscience of meditation. Her MRI studies at Massachusetts General Hospital were among the first to show that mindfulness and yoga practice are associated with measurable changes in brain structure — cortical thickness, grey-matter density in the hippocampus, and amygdala volume — reshaping how the field understands neuroplasticity and contemplative training.',
+  },
+  {
+    name: 'Dr. Eric Garland',
+    title: 'Endowed Professor in Health Sciences, T. Denny Sanford Institute for Empathy and Compassion · Director, UCSD ONEMIND',
+    affiliation: 'University of California San Diego',
+    affiliationUrl: 'https://www.ucsd.edu',
+    profileUrl: 'https://www.drericgarland.com',
+    photo: '/speakers/eric-garland.jpg',
+    bio: 'Developer of Mindfulness-Oriented Recovery Enhancement (MORE), a neuroscience-informed therapy for addiction, chronic pain and emotional distress validated across more than 16 clinical trials and over $90 million in NIH funding. Appointed by NIH Director Francis Collins to the HEAL Initiative’s Multi-Disciplinary Working Group, he has been identified as the most prolific author of mindfulness research in the world.',
+  },
+  {
+    name: 'Dr. Winson Yang',
+    title: 'Research Fellow, Meditation Research Program',
+    affiliation: 'Massachusetts General Hospital · Harvard Medical School',
+    affiliationUrl: 'https://meditation.mgh.harvard.edu/',
+    profileUrl: 'https://meditation.mgh.harvard.edu/',
+    photo: '/speakers/winson-yang.jpeg',
+    bio: 'Develops methods for characterising the mechanisms and outcomes of advanced meditation with Matthew Sacchet’s Meditation Research Program at Massachusetts General Hospital and Harvard Medical School, using high-field neuroimaging to map brain reorganisation during advanced meditative states. His work also spans electrophysiological body–brain coupling and new psychometric instruments for the phenomenology of advanced practice.',
   },
   {
     name: 'Prof. Christopher Key Chapple',
@@ -524,13 +551,13 @@ export default function Home() {
               per-card borders avoid that showing up as a stray solid block. */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(320px, 100%), 1fr))', gap: 16, marginBottom: 64 }}>
             {mainPartners.map(inst => (
-              <div key={inst.name} className={`hover-cell${inst.wide ? ' partner-card-wide' : ''}`} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6, padding: '44px 36px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ position: 'relative', width: '100%', height: 140, marginBottom: 28 }}>
+              <div key={inst.name} className={`hover-cell${inst.wide ? ' partner-card-wide' : ''}`} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6, padding: '32px 32px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'relative', width: '100%', height: 88, marginBottom: 18 }}>
                   <Image
                     src={inst.logo}
                     alt={inst.logoAlt}
                     fill
-                    style={{ objectFit: 'contain', objectPosition: 'center' }}
+                    style={{ objectFit: 'contain', objectPosition: 'left center' }}
                     unoptimized
                   />
                 </div>
