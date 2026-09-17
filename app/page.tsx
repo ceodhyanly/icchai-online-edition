@@ -260,6 +260,13 @@ const extendedTeam = [
     photo: '/organizers/tanya-fransz.jpg',
     profileUrl: 'https://www.brhat.in',
   },
+  {
+    name: 'Shivangi Sharma',
+    role: 'Social Media Lead, ICCH-AI 2026',
+    affiliation: 'PhD Research Scholar, Yoga, Shoolini University · Gold Medalist, B.Sc. & M.Sc. Yoga',
+    photo: '/organizers/shivangi-sharma.jpeg',
+    profileUrl: 'https://shooliniuniversity.com',
+  },
 ]
 
 const speakers = [
