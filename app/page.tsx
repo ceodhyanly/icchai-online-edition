@@ -978,13 +978,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── ORGANIZING TEAM ────────────────────────────────── */}
+      {/* ─── ORGANIZERS ─────────────────────────────────────── */}
       <section id="organizers" className="section" style={{ background: 'var(--background)', borderTop: '1px solid var(--border)' }}>
         <div className="container">
           <p className="label" style={{ marginBottom: 20 }}>Organizing Committee</p>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 40, flexWrap: 'wrap', gap: 20 }}>
             <h2 className="headline" style={{ maxWidth: 480 }}>
-              The team behind ICCH-AI 2026
+              The organizers behind ICCH-AI 2026
             </h2>
             <p className="body" style={{ maxWidth: 380 }}>
               Scholars, practitioners and technologists who have convened this conference and are responsible for its programme, partnerships and global reach.
@@ -1026,8 +1026,8 @@ export default function Home() {
             })}
           </div>
 
-          {/* Extended team — smaller cards */}
-          <p className="label" style={{ margin: '48px 0 20px' }}>Extended Team</p>
+          {/* Extended organizers — smaller cards */}
+          <p className="label" style={{ margin: '48px 0 20px' }}>Extended Organizers</p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: 16, maxWidth: 900 }}>
             {extendedTeam.map(person => (
               <div key={person.name} className="organizer-card organizer-card--compact">

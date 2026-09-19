@@ -9,7 +9,7 @@ const links = [
   { href: '/#pillars', label: 'Pillars' },
   { href: '/schedule', label: 'Schedule' },
   { href: '/#speakers', label: 'Speakers' },
-  { href: '/#organizers', label: 'Team' },
+  { href: '/#organizers', label: 'Organizers' },
 ]
 
 const societyLink = { href: '/society', label: 'Society' }
