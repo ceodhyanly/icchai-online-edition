@@ -184,36 +184,28 @@ const speakerInstitutions = [
 
 const organizers = [
   {
-    name: 'Satyam Tiwari',
-    role: 'Founder and Convener, ICCH-AI 2026',
-    subrole: 'Head of Program, Technology & Production',
-    affiliation: 'Founder, YogaXBiofeedback Pvt Ltd (Dhyanly)',
-    photo: '/organizers/satyamtiwaripic.png',
-    profileUrl: 'https://www.dhyanly.com',
+    name: 'Shri Akhilesh Mishra',
+    role: 'Patron, ICCH-AI 2026',
+    subrole: 'Former Ambassador of India to Ireland · High Commissioner to the Maldives',
+    affiliation: 'Indian Foreign Service (Retd.)',
+    photo: '/speakers/akhilesh-mishra.jpeg',
+    profileUrl: 'https://ie.linkedin.com/in/akhilesh-mishra-002456b6',
   },
   {
-    name: 'Dr. Steve Haberlin',
-    role: 'Co-Convener and Head of Global Outreach, ICCH-AI 2026',
-    subrole: '',
-    affiliation: 'University of Central Florida',
-    photo: '/organizers/steve-haberlin.jpg',
-    profileUrl: 'https://ccie.ucf.edu/person/steve-haberlin/',
+    name: 'Prof. Christopher Key Chapple',
+    role: 'Mentor, ICCH-AI 2026',
+    subrole: 'Doshi Professor of Indic and Comparative Theology',
+    affiliation: 'Loyola Marymount University',
+    photo: '/speakers/christopher-key-chapple.jpg',
+    profileUrl: 'https://scholars.lmu.edu/en/persons/christopher-chapple/',
   },
   {
-    name: 'Prof. Amy Wheeler-Mantoan',
-    role: 'Chair, Academic Programme Committee',
-    subrole: '',
-    affiliation: 'Notre Dame of Maryland University',
-    photo: '/organizers/amy-wheeler-mantoan.jpg',
-    profileUrl: 'https://www.ndm.edu/directory/amy-wheeler-mantoan',
-  },
-  {
-    name: 'Raghava Krishna',
-    role: 'Head of Indian Outreach, ICCH-AI 2026',
-    subrole: '',
-    affiliation: 'Founder & CEO, Bṛhat',
-    photo: '/organizers/raghava-krishna.jpeg',
-    profileUrl: 'https://www.brhat.in',
+    name: 'Dr. Ishwar V. Basavaraddi',
+    role: 'Mentor, ICCH-AI 2026',
+    subrole: 'Director & Professor, Centre for Yoga, Wellness and Integrative Medicine, MGUMST Jaipur · Former Director, Morarji Desai National Institute of Yoga',
+    affiliation: 'Ministry of AYUSH, Government of India (Former)',
+    photo: '/organizers/ishwar-basavaraddi.jpg',
+    profileUrl: 'http://www.yogaiya.in/profile/dr-ishwar-v-basavaraddi/',
   },
   {
     name: 'Prof. Subir Kumar Saha',
@@ -224,12 +216,44 @@ const organizers = [
     profileUrl: 'https://mech.iitd.ac.in/faculty-profile/152',
   },
   {
+    name: 'Prof. Amy Wheeler-Mantoan',
+    role: 'Chair, Academic Programme Committee',
+    subrole: '',
+    affiliation: 'Notre Dame of Maryland University',
+    photo: '/organizers/amy-wheeler-mantoan.jpg',
+    profileUrl: 'https://www.ndm.edu/directory/amy-wheeler-mantoan',
+  },
+  {
     name: 'Dr. Sangita Garg',
     role: 'Institutional Advisor, ICCH-AI 2026',
     subrole: 'Vice President & Head of R&D, IHFC, IIT Delhi',
     affiliation: 'I-Hub Foundation for Cobotics (IHFC), IIT Delhi',
     photo: '/organizers/sangita-garg.png',
     profileUrl: 'https://in.linkedin.com/in/dr-sangita-garg-69448711',
+  },
+  {
+    name: 'Dr. Steve Haberlin',
+    role: 'Co-Convener and Head of Global Outreach, ICCH-AI 2026',
+    subrole: '',
+    affiliation: 'University of Central Florida',
+    photo: '/organizers/steve-haberlin.jpg',
+    profileUrl: 'https://ccie.ucf.edu/person/steve-haberlin/',
+  },
+  {
+    name: 'Satyam Tiwari',
+    role: 'Founder and Convener, ICCH-AI 2026',
+    subrole: 'Head of Program, Technology & Production',
+    affiliation: 'Founder, YogaXBiofeedback Pvt Ltd (Dhyanly)',
+    photo: '/organizers/satyamtiwaripic.png',
+    profileUrl: 'https://www.dhyanly.com',
+  },
+  {
+    name: 'Raghava Krishna',
+    role: 'Head of Indian Outreach, ICCH-AI 2026',
+    subrole: '',
+    affiliation: 'Founder & CEO, Bṛhat',
+    photo: '/organizers/raghava-krishna.jpeg',
+    profileUrl: 'https://www.brhat.in',
   },
 ]
 
@@ -333,12 +357,12 @@ const speakers = [
   },
   {
     name: 'Dr. Winson Yang',
-    title: 'Research Fellow, Meditation Research Program',
+    title: 'Instructor, Meditation Research Program',
     affiliation: 'Massachusetts General Hospital · Harvard Medical School',
     affiliationUrl: 'https://meditation.mgh.harvard.edu/',
     profileUrl: 'https://meditation.mgh.harvard.edu/',
     photo: '/speakers/winson-yang.jpeg',
-    bio: 'Develops methods for characterising the mechanisms and outcomes of advanced meditation with Matthew Sacchet’s Meditation Research Program at Massachusetts General Hospital and Harvard Medical School, using high-field neuroimaging to map brain reorganisation during advanced meditative states. His work also spans electrophysiological body–brain coupling and new psychometric instruments for the phenomenology of advanced practice.',
+    bio: 'An instructor in the Meditation Research Program at Massachusetts General Hospital and Harvard Medical School, working with Matthew Sacchet. His research develops methods for understanding the mechanisms and outcomes of advanced meditation, using high-field neuroimaging to characterise brain reorganisation during advanced meditation. He is also interested in electrophysiological mechanisms and body-brain coupling during advanced meditation, alongside developing psychometric instruments that capture the phenomenology and outcomes of advanced meditation.',
   },
   {
     name: 'Prof. Christopher Key Chapple',
@@ -942,8 +966,10 @@ export default function Home() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: 20, maxWidth: 1120 }}>
-            {organizers.map((org, i) => (
-              <div key={org.name} className={`organizer-card${i === 0 ? ' organizer-card--featured' : ''}`}>
+            {organizers.map((org) => {
+              const isConvener = org.name === 'Satyam Tiwari'
+              return (
+              <div key={org.name} className={`organizer-card${isConvener ? ' organizer-card--featured' : ''}`}>
                 {/* Photo */}
                 <div style={{ position: 'relative', width: '100%', aspectRatio: '1 / 1', background: 'var(--surface-3)', overflow: 'hidden' }}>
                   <Image
@@ -954,7 +980,7 @@ export default function Home() {
                     style={{ objectFit: 'cover', objectPosition: 'center 15%', filter: 'grayscale(40%) sepia(5%) saturate(0.9) contrast(1.03)' }}
                     unoptimized
                   />
-                  {i === 0 && (
+                  {isConvener && (
                     <div style={{ position: 'absolute', top: 10, left: 10, padding: '2px 8px', background: 'var(--teal)', borderRadius: 3, fontSize: 8.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff' }}>
                       Convener
                     </div>
@@ -970,7 +996,8 @@ export default function Home() {
                   <a href={org.profileUrl} target="_blank" rel="noopener noreferrer" className="speaker-link" style={{ fontSize: 11, fontWeight: 600 }}>Profile →</a>
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
 
           {/* Extended team — smaller cards */}
