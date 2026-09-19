@@ -209,7 +209,7 @@ const organizers = [
   },
   {
     name: 'Prof. Subir Kumar Saha',
-    role: 'Institutional Advisor, ICCH-AI 2026',
+    role: 'Mentor, ICCH-AI 2026',
     subrole: 'Project Director, IHFC, IIT Delhi',
     affiliation: 'I-Hub Foundation for Cobotics (IHFC), IIT Delhi',
     photo: '/organizers/subir-kumar-saha.png',
@@ -479,6 +479,15 @@ const speakers = [
     profileUrl: 'https://www.dhyanly.com',
     photo: '/organizers/satyamtiwaripic.png',
     bio: 'A practitioner of the Svara Yoga tradition for over two decades, academically trained in yoga, Indian Knowledge Systems, AI and technology. As founder of Dhyanly and pioneer of Contemplative AI, he builds clinical-grade biosignal and biofeedback platforms translating IKS into rigorous mind-body digital therapeutics.',
+  },
+  {
+    name: 'Dr. Aditya Rajput',
+    title: 'Assistant Professor, Civil Engineering · Centre of Excellence on Indian Knowledge Systems (CoE-IKS)',
+    affiliation: 'IIT Ropar',
+    affiliationUrl: 'https://www.iitrpr.ac.in',
+    profileUrl: 'https://www.iitrpr.ac.in/node/3535',
+    photo: '/organizers/aditya-rajput.png',
+    bio: "Assistant Professor of Civil Engineering at IIT Ropar, working on durability and seismic retrofitting of reinforced concrete structures. Through IIT Ropar's Centre of Excellence on Indian Knowledge Systems (CoE-IKS), he coordinates Manana: The Contemplative Futures Roundtable, ICCH-AI 2026's day-3 dialogue between IKS researchers and contemplative-science centres.",
   },
 ]
 
