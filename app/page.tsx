@@ -228,7 +228,7 @@ const organizers = [
     role: 'Institutional Advisor, ICCH-AI 2026',
     subrole: 'Vice President & Head of R&D, IHFC, IIT Delhi',
     affiliation: 'I-Hub Foundation for Cobotics (IHFC), IIT Delhi',
-    photo: '/organizers/sangita-garg.png',
+    photo: '/organizers/sangita-garg.jpg',
     profileUrl: 'https://in.linkedin.com/in/dr-sangita-garg-69448711',
   },
   {
@@ -254,6 +254,14 @@ const organizers = [
     affiliation: 'Founder & CEO, Bṛhat',
     photo: '/organizers/raghava-krishna.jpeg',
     profileUrl: 'https://www.brhat.in',
+  },
+  {
+    name: 'Dr. Aditya Rajput',
+    role: 'Head of IKS Outreach, ICCH-AI 2026',
+    subrole: 'Coordinator, Manana: The Contemplative Futures Roundtable',
+    affiliation: 'Assistant Professor, Civil Engineering · Centre of Excellence on Indian Knowledge Systems (CoE-IKS), IIT Ropar',
+    photo: '/organizers/aditya-rajput.png',
+    profileUrl: 'https://www.iitrpr.ac.in/node/3535',
   },
 ]
 
@@ -390,6 +398,24 @@ const speakers = [
     profileUrl: 'https://barav.biu.ac.il/en/IthamarTheodor',
     photo: '/speakers/ithamar-theodor.jpg',
     bio: 'Scholar of the Bhagavad-gītā and Bhāgavata Purāṇa and of comparative Hindu–Jewish and Indian–Chinese philosophy. A graduate of the Theology Faculty at Oxford and Life Member of Clare Hall, Cambridge, he founded the Jewish–Asian annual conference in 2012 and has authored six books, including The Bhagavad-gita: A Critical Introduction (2021).',
+  },
+  {
+    name: 'Dr. Ishwar V. Basavaraddi',
+    title: 'Director & Professor, Centre for Yoga, Wellness and Integrative Medicine · Former Director, Morarji Desai National Institute of Yoga',
+    affiliation: 'Mahatma Gandhi University of Medical Sciences and Technology, Jaipur',
+    affiliationUrl: '',
+    profileUrl: 'http://www.yogaiya.in/profile/dr-ishwar-v-basavaraddi/',
+    photo: '/organizers/ishwar-basavaraddi.jpg',
+    bio: "A principal architect of India's national and international yoga policy, credited for his role in developing the Common Yoga Protocol adopted for the UN International Day of Yoga. He led the Morarji Desai National Institute of Yoga (MDNIY), Ministry of AYUSH, for over two decades before moving to MGUMST, Jaipur, where he now trains postgraduate scholars in evidence-based yoga therapy.",
+  },
+  {
+    name: 'Ami Ganatra',
+    title: 'Author · Management Consultant · Certified Yoga Instructor',
+    affiliation: 'IIM Ahmedabad · VJTI Mumbai',
+    affiliationUrl: '',
+    profileUrl: 'https://www.goodreads.com/author/show/21627009.Ami_Ganatra',
+    photo: '/speakers/ami-ganatra.jpg',
+    bio: 'Author of the bestselling "Unravelled" series — Mahabharata Unravelled (Volumes I and II) and Ramayana Unravelled — praised for analysing character and ethics through original Sanskrit texts rather than creative adaptation. An IIM Ahmedabad and VJTI Mumbai alumna and certified yoga instructor, her latest book, Why Are We This Way (2026), is a modern guide to the framework and practical philosophy of Hindu Shastras.',
   },
   {
     name: 'Assoc. Prof. Ramakrishnan Mani',
