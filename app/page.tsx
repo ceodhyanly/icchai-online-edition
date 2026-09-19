@@ -473,7 +473,7 @@ const speakers = [
   },
   {
     name: 'Satyam Tiwari',
-    title: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · Pioneer of Contemplative AI',
+    title: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi',
     affiliation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
     affiliationUrl: 'https://www.dhyanly.com',
     profileUrl: 'https://www.dhyanly.com',
