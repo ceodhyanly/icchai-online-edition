@@ -215,6 +215,22 @@ const organizers = [
     photo: '/organizers/raghava-krishna.jpeg',
     profileUrl: 'https://www.brhat.in',
   },
+  {
+    name: 'Prof. Subir Kumar Saha',
+    role: 'Institutional Advisor, ICCH-AI 2026',
+    subrole: 'Project Director, IHFC, IIT Delhi',
+    affiliation: 'I-Hub Foundation for Cobotics (IHFC), IIT Delhi',
+    photo: '/organizers/subir-kumar-saha.png',
+    profileUrl: 'https://mech.iitd.ac.in/faculty-profile/152',
+  },
+  {
+    name: 'Dr. Sangita Garg',
+    role: 'Institutional Advisor, ICCH-AI 2026',
+    subrole: 'Vice President & Head of R&D, IHFC, IIT Delhi',
+    affiliation: 'I-Hub Foundation for Cobotics (IHFC), IIT Delhi',
+    photo: '/organizers/sangita-garg.png',
+    profileUrl: 'https://in.linkedin.com/in/dr-sangita-garg-69448711',
+  },
 ]
 
 const extendedTeam = [
@@ -925,7 +941,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: 20, maxWidth: 800 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: 20, maxWidth: 1120 }}>
             {organizers.map((org, i) => (
               <div key={org.name} className={`organizer-card${i === 0 ? ' organizer-card--featured' : ''}`}>
                 {/* Photo */}
