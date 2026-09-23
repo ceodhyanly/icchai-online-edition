@@ -19,6 +19,7 @@ model User {
   interests   String?
   mode               String   @default("online")
   offlineCommitment  Boolean  @default(false)
+  mananInterest      Boolean  @default(false)
   attendance         String   @default("both")
   registrationNumber String?  @unique
   ischtInterest      Boolean  @default(false)

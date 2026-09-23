@@ -38,6 +38,7 @@ export default function RegisterPage() {
     institution: '', country: '', role: '', gender: '', phone: '', hasWhatsapp: true, secondaryEmail: '',
     interests: [] as string[], attendance: 'both',
     mode: '' as '' | 'online' | 'offline', offlineCommitment: false,
+    mananInterest: false,
     joinSociety: '' as '' | 'yes' | 'no',
   })
   const [photoError, setPhotoError] = useState('')
@@ -361,6 +362,18 @@ export default function RegisterPage() {
                   </label>
                 ))}
               </div>
+            </div>
+
+            <div style={{ padding: '16px 18px', background: form.mananInterest ? 'rgba(164,28,48,0.06)' : 'var(--surface-3)', borderRadius: 6, border: `1px solid ${form.mananInterest ? 'var(--teal-border)' : 'var(--border-mid)'}` }}>
+              <label style={{ display: 'flex', gap: 14, alignItems: 'flex-start', cursor: 'pointer' }}>
+                <input type="checkbox" checked={form.mananInterest} onChange={e => setForm(f => ({ ...f, mananInterest: e.target.checked }))} style={{ accentColor: 'var(--teal)', marginTop: 3, flexShrink: 0 }} />
+                <div>
+                  <div style={{ fontWeight: 600, fontSize: 14 }}>I&apos;d like to attend Manana: The Contemplative Futures Roundtable</div>
+                  <div className="caption" style={{ marginTop: 4, lineHeight: 1.6 }}>
+                    Pre-conference, October 21, 2026 &middot; Virtual, 2&ndash;3 hours &middot; A researcher-level dialogue for IKS, Yoga, Mindfulness &amp; Meditation departments &mdash; HoDs, PhD, Master&apos;s &amp; Bachelor&apos;s students &mdash; on collaboration, accelerating research, and mutual grant writing.
+                  </div>
+                </div>
+              </label>
             </div>
 
             <div>

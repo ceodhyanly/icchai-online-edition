@@ -55,7 +55,7 @@ export default function SchedulePage() {
           <p className="label" style={{ marginBottom: 20 }}>Programme</p>
           <h1 className="display" style={{ marginBottom: 20 }}>Conference Schedule</h1>
           <p className="body-lg" style={{ maxWidth: 600, marginBottom: 32 }}>
-            October 22–24, 2026 &nbsp;·&nbsp; Two conference days and a post-conference roundtable &nbsp;·&nbsp; Times shown in IST
+            October 21–23, 2026 &nbsp;·&nbsp; A pre-conference roundtable and two conference days &nbsp;·&nbsp; Times shown in IST
           </p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             <span className="chip chip-teal">17:30 IST</span>
@@ -72,7 +72,7 @@ export default function SchedulePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
             {[
               'Programme is provisional and subject to change. Full details and the complete speaker list will be announced.',
-              'Day 1 is hybrid — on-site at IIT Delhi, New Delhi and streamed live worldwide. Days 2 and 3 are online only.',
+              'Day 1 is hybrid — on-site at IIT Delhi, New Delhi and streamed live worldwide. The Manana pre-conference roundtable and Day 2 are online only.',
               'Day 2 breakout tracks run simultaneously. Attendees self-select one track per slot.',
               'All speaker names are indicative and pending final confirmation.',
             ].map((note, i) => (
@@ -100,22 +100,12 @@ export default function SchedulePage() {
         </div>
       </section>
 
-      {/* Day 1 */}
-      <DayBlock label="Day 1" date="October 22, 2026" format="Hybrid — IIT Delhi, New Delhi + online worldwide"
-        theme="Opening the Dialogue" sub="Inauguration, headline spotlight talks and the opening panel — the contemplative traditions and the sciences in one room"
-        sessions={day1} bg="var(--surface)" />
-
-      {/* Day 2 */}
-      <DayBlock label="Day 2" date="October 23, 2026" format="Online only — worldwide"
-        theme="Four Tracks, One Field" sub="Practice and dharma, Indian Knowledge Systems, contemplative neuroscience, and contemplative-tech innovation — running in parallel"
-        sessions={day2} bg="var(--background)" />
-
-      {/* Day 3 */}
+      {/* Pre-Conference: Manana */}
       <section style={{ padding: '80px 0', background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
         <div className="container">
           <div style={{ display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap', marginBottom: 12 }}>
-            <span className="chip chip-teal" style={{ fontSize: 11 }}>Day 3</span>
-            <span className="caption">October 24, 2026</span>
+            <span className="chip chip-teal" style={{ fontSize: 11 }}>Pre-Conference</span>
+            <span className="caption">October 21, 2026</span>
             <span className="caption">·</span>
             <span className="caption">Online only</span>
           </div>
@@ -123,15 +113,16 @@ export default function SchedulePage() {
             Manana: The Contemplative Futures Roundtable
           </h2>
           <p className="body" style={{ marginBottom: 40, maxWidth: 720 }}>
-            A post-conference dialogue bringing together IKS researchers, university departments, and mindfulness,
-            meditation and contemplative research centres to discuss the present and future of contemplative research
-            in the age of AI and health-tech.
+            A virtual, researcher-level roundtable bringing together IKS, Yoga, Mindfulness and Meditation research
+            departments — heads of department, PhD, Master&apos;s and Bachelor&apos;s students — to discuss ongoing
+            research work, cross-institutional collaboration, accelerating research, mutual grant writing, and
+            guidance in the field.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: 16 }}>
             {[
-              { k: 'Duration', v: '3 hours' },
-              { k: 'Speakers', v: 'Faculty heads and scientists' },
-              { k: 'Audience', v: "Undergraduate, master's and PhD scholars" },
+              { k: 'Duration', v: '2–3 hours' },
+              { k: 'Format', v: 'Virtual' },
+              { k: 'Audience', v: "IKS, Yoga, Mindfulness & Meditation departments — HoDs, PhD, Master's & Bachelor's students" },
             ].map(x => (
               <div key={x.k} style={{ background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 6, padding: '28px 26px' }}>
                 <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>{x.k}</p>
@@ -141,6 +132,16 @@ export default function SchedulePage() {
           </div>
         </div>
       </section>
+
+      {/* Day 1 */}
+      <DayBlock label="Day 1" date="October 22, 2026" format="Hybrid — IIT Delhi, New Delhi + online worldwide"
+        theme="Opening the Dialogue" sub="Inauguration, headline spotlight talks and the opening panel — the contemplative traditions and the sciences in one room"
+        sessions={day1} bg="var(--background)" />
+
+      {/* Day 2 */}
+      <DayBlock label="Day 2" date="October 23, 2026" format="Online only — worldwide"
+        theme="Four Tracks, One Field" sub="Practice and dharma, Indian Knowledge Systems, contemplative neuroscience, and contemplative-tech innovation — running in parallel"
+        sessions={day2} bg="var(--surface)" />
 
       {/* CTA */}
       <section className="section" style={{ background: 'var(--background)', borderTop: '1px solid var(--border)', textAlign: 'center' }}>

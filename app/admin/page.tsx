@@ -36,6 +36,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
 
   const ischtInterested = users.filter(u => u.ischtInterest).length
   const offlineCount = users.filter(u => u.mode === 'offline').length
+  const mananInterested = users.filter(u => u.mananInterest).length
 
   const statCards = [
     { label: 'Total Registrants', value: total, accent: 'var(--teal)' },
@@ -44,6 +45,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
     { label: 'Day 1 Only', value: byAttendance['day1'] ?? 0, accent: 'var(--muted)' },
     { label: 'Day 2 Only', value: byAttendance['day2'] ?? 0, accent: 'var(--muted)' },
     { label: 'ISCHT Founding Members', value: ischtInterested, accent: 'var(--gold)' },
+    { label: 'Manana Interested', value: mananInterested, accent: 'var(--gold)' },
   ]
 
   return (

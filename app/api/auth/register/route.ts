@@ -76,6 +76,7 @@ export async function POST(req: NextRequest) {
     const attendance = sanitizeString(body.attendance, 10) || 'both'
     const mode = sanitizeString(body.mode, 10) || 'online'
     const offlineCommitment = mode === 'offline' && body.offlineCommitment === true
+    const mananInterest = body.mananInterest === true
 
     if (!firstName || !lastName) {
       return NextResponse.json({ error: 'First name and last name are required.' }, { status: 400 })
@@ -133,7 +134,7 @@ export async function POST(req: NextRequest) {
     const user = await prisma.user.create({
       data: { email, firstName, lastName, photo,
         institution, country, role, gender, interests: interestsStr, attendance,
-        mode, offlineCommitment,
+        mode, offlineCommitment, mananInterest,
         phone, hasWhatsapp, secondaryEmail: secondaryEmail || null,
         ischtInterest: body.joinSociety },
     })

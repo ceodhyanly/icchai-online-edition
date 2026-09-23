@@ -487,7 +487,7 @@ const speakers = [
     affiliationUrl: 'https://www.iitrpr.ac.in',
     profileUrl: 'https://www.iitrpr.ac.in/node/3535',
     photo: '/organizers/aditya-rajput.png',
-    bio: "Assistant Professor of Civil Engineering at IIT Ropar, working on durability and seismic retrofitting of reinforced concrete structures. Through IIT Ropar's Centre of Excellence on Indian Knowledge Systems (CoE-IKS), he coordinates Manana: The Contemplative Futures Roundtable, ICCH-AI 2026's day-3 dialogue between IKS researchers and contemplative-science centres.",
+    bio: "Assistant Professor of Civil Engineering at IIT Ropar, working on durability and seismic retrofitting of reinforced concrete structures. Through IIT Ropar's Centre of Excellence on Indian Knowledge Systems (CoE-IKS), he coordinates Manana: The Contemplative Futures Roundtable, ICCH-AI 2026's pre-conference dialogue between IKS researchers and contemplative-science centres.",
   },
 ]
 
@@ -770,7 +770,7 @@ export default function Home() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, gap: 24, flexWrap: 'wrap' }}>
             <div>
               <p className="label" style={{ marginBottom: 16 }}>Programme</p>
-              <h2 className="headline">Three days. Two conference days, one dialogue.</h2>
+              <h2 className="headline">Three days. One dialogue, two conference days.</h2>
             </div>
             <Link href="/schedule" className="btn btn-ghost" style={{ fontSize: 14, color: 'var(--teal)' }}>
               Full schedule &rarr;
@@ -779,6 +779,14 @@ export default function Home() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))', gap: 24 }}>
             {[
+              {
+                day: 'Pre-Conference', date: 'October 21, 2026',
+                theme: 'Manana: Contemplative Futures Roundtable',
+                sub: 'A researcher-level dialogue on contemplative research, collaboration and grant writing',
+                plenary: 'Fully online — 2–3 hour roundtable',
+                tracks: ['IKS, Yoga, Mindfulness & Meditation departments', 'HoDs, PhD, Master’s & Bachelor’s students', 'Collaboration, accelerating research & mutual grant writing'],
+                accent: 'var(--gold)',
+              },
               {
                 day: 'Day 1', date: 'October 22, 2026',
                 theme: 'Opening the Dialogue',
@@ -794,14 +802,6 @@ export default function Home() {
                 plenary: 'Online only — five parallel tracks',
                 tracks: ['Yoga, Mindfulness & Dharma in the AI era', 'Indian Knowledge Systems, ethics & AI', 'Ayurveda & AI: diagnostics, dosha profiling', 'Contemplative neuroscience (fMRI, EEG)', 'Contemplative tech innovation (HaaS, SaaS)'],
                 accent: 'var(--muted-light)',
-              },
-              {
-                day: 'Day 3', date: 'October 24, 2026',
-                theme: 'Manana: Contemplative Futures Roundtable',
-                sub: 'A post-conference dialogue on contemplative research in the age of AI',
-                plenary: 'Fully online — post-conference roundtable',
-                tracks: ['3-hour roundtable', 'Faculty heads & scientists', "For UG, master's & PhD scholars"],
-                accent: 'var(--gold)',
               },
             ].map(d => (
               <div key={d.day} className="card" style={{ padding: '40px', position: 'relative', overflow: 'hidden' }}>
