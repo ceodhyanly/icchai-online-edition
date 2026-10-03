@@ -138,9 +138,18 @@ export default function SchedulePage() {
             <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>Audience</p>
             <p style={{ fontSize: 15, fontWeight: 650, lineHeight: 1.45, color: 'var(--foreground)' }}>HoDs, faculty, PhD, Master&apos;s and Bachelor&apos;s students from IKS, Yoga, Mindfulness and Meditation departments</p>
           </div>
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 32 }}>
+          <div style={{ marginTop: 32, background: 'var(--surface-2)', border: '1px solid var(--teal-border)', borderTop: '3px solid var(--teal)', borderRadius: 6, padding: '32px 32px' }}>
+            <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>Manana registration</p>
+            <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>Separate from conference registration</h3>
+            <p className="body" style={{ maxWidth: 680, marginBottom: 20 }}>
+              Speakers, heads of department, faculty, and PhD, Master&apos;s and Bachelor&apos;s students from IKS, Yoga, Mindfulness and Meditation departments register for Manana through its own form. You do not need to register for the conference to join Manana.
+            </p>
             <a href="https://forms.gle/ffjtMPo7oteYAhgTA" target="_blank" rel="noopener noreferrer" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register for Manana</a>
-            <Link href="/register" className="btn btn-outline" style={{ padding: '14px 36px', fontSize: 15 }}>Register Free for the Conference</Link>
+          </div>
+          <div style={{ marginTop: 20, padding: '24px 32px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6 }}>
+            <p style={{ fontSize: 15, fontWeight: 650, marginBottom: 10 }}>Attending the conference on 22–23 October?</p>
+            <p className="caption" style={{ marginBottom: 16 }}>Conference attendee registration is a separate form, with its own details and attendance options.</p>
+            <Link href="/register" className="btn btn-outline" style={{ padding: '12px 28px', fontSize: 14 }}>Register Free for the Conference</Link>
           </div>
         </div>
       </section>
