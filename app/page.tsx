@@ -515,15 +515,6 @@ const speakers = [
     bio: 'Works on consciousness studies and cognitive science, teaching courses on consciousness and holistic well-being alongside graduate theories of consciousness at IIT Mandi. Trained in applied physics at Stanford University, he brings a physical-sciences perspective to questions of awareness, cognition and contemplative experience.',
   },
   {
-    name: 'Dr. Evan Lewis-Healey',
-    title: 'Postdoctoral Researcher, Department of Psychiatry',
-    affiliation: 'University of Oxford',
-    affiliationUrl: 'https://www.psych.ox.ac.uk',
-    profileUrl: 'https://www.linkedin.com/in/evan-lewis-healey-4770b1136',
-    photo: '/speakers/evan-lewis-healey.jpeg',
-    bio: 'Cognitive neuroscientist studying the neurophenomenology of altered states of consciousness — breathwork, meditation and psychedelics. His Cambridge PhD traced the neural and experiential dynamics of breathwork and DMT, with findings published in Cerebral Cortex and the Journal of Cognitive Neuroscience.',
-  },
-  {
     name: 'Dr. Amit Sethi',
     title: 'Associate Professor, Department of Occupational & Recreational Therapies · Director, NERD Lab',
     affiliation: 'University of Utah',
@@ -558,6 +549,15 @@ const speakers = [
     profileUrl: 'https://www.iitrpr.ac.in/node/3535',
     photo: '/organizers/aditya-rajput.png',
     bio: "Assistant Professor of Civil Engineering at IIT Ropar, working on durability and seismic retrofitting of reinforced concrete structures. Through IIT Ropar's Centre of Excellence on Indian Knowledge Systems (CoE-IKS), he coordinates Manana: The Contemplative Futures Roundtable, ICCH-AI 2026's pre-conference dialogue between IKS researchers and contemplative-science centres.",
+  },
+  {
+    name: 'Dr. Evan Lewis-Healey',
+    title: 'Postdoctoral Researcher, Department of Psychiatry',
+    affiliation: 'University of Oxford',
+    affiliationUrl: 'https://www.psych.ox.ac.uk',
+    profileUrl: 'https://www.linkedin.com/in/evan-lewis-healey-4770b1136',
+    photo: '/speakers/evan-lewis-healey.jpeg',
+    bio: 'Cognitive neuroscientist studying the neurophenomenology of altered states of consciousness — breathwork, meditation and psychedelics. His Cambridge PhD traced the neural and experiential dynamics of breathwork and DMT, with findings published in Cerebral Cortex and the Journal of Cognitive Neuroscience.',
   },
   {
     name: 'Satyam Tiwari',
