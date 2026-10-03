@@ -113,22 +113,32 @@ export default function SchedulePage() {
             Manana: The Contemplative Futures Roundtable
           </h2>
           <p className="body" style={{ marginBottom: 40, maxWidth: 720 }}>
-            A virtual, researcher-level roundtable bringing together IKS, Yoga, Mindfulness and Meditation research
-            departments — heads of department, PhD, Master&apos;s and Bachelor&apos;s students — to discuss ongoing
-            research work, cross-institutional collaboration, accelerating research, mutual grant writing, and
+            A virtual, researcher-level roundtable for IKS, Yoga, Mindfulness and Meditation departments. It covers
+            ongoing research, cross-institutional collaboration, accelerating research, mutual grant writing and
             guidance in the field.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: 16 }}>
             {[
+              { k: 'Date', v: 'Wednesday, October 21, 2026' },
+              { k: 'Time', v: '6:00 PM IST · 8:30 AM ET · 2:30 PM CEST' },
               { k: 'Duration', v: '2–3 hours' },
-              { k: 'Format', v: 'Virtual' },
-              { k: 'Audience', v: "IKS, Yoga, Mindfulness & Meditation departments — HoDs, PhD, Master's & Bachelor's students" },
+              { k: 'Format', v: 'Virtual (link sent on registration)' },
+              { k: 'Coordinated by', v: 'Dr. Aditya Rajput, CoE-IKS, IIT Ropar' },
+              { k: 'Cost', v: 'Free' },
             ].map(x => (
               <div key={x.k} style={{ background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 6, padding: '28px 26px' }}>
                 <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>{x.k}</p>
                 <p style={{ fontSize: 15, fontWeight: 650, lineHeight: 1.45, color: 'var(--foreground)' }}>{x.v}</p>
               </div>
             ))}
+          </div>
+          <div style={{ marginTop: 16, background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 6, padding: '28px 26px' }}>
+            <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>Audience</p>
+            <p style={{ fontSize: 15, fontWeight: 650, lineHeight: 1.45, color: 'var(--foreground)' }}>HoDs, faculty, PhD, Master&apos;s and Bachelor&apos;s students from IKS, Yoga, Mindfulness and Meditation departments</p>
+          </div>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 32 }}>
+            <Link href="/register" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register Free</Link>
+            <a href="https://forms.gle/ffjtMPo7oteYAhgTA" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '14px 36px', fontSize: 15 }}>Express Institutional Interest / Speak</a>
           </div>
         </div>
       </section>

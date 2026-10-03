@@ -858,7 +858,7 @@ export default function Home() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, gap: 24, flexWrap: 'wrap' }}>
             <div>
               <p className="label" style={{ marginBottom: 16 }}>Programme</p>
-              <h2 className="headline">Three days. One dialogue, two conference days.</h2>
+              <h2 className="headline">Three days. One dialogue.</h2>
             </div>
             <Link href="/schedule" className="btn btn-ghost" style={{ fontSize: 14, color: 'var(--teal)' }}>
               Full schedule &rarr;
@@ -868,10 +868,10 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(340px, 100%), 1fr))', gap: 24 }}>
             {[
               {
-                day: 'Pre-Conference', date: 'October 21, 2026',
+                day: 'Pre-Conference', date: 'Oct 21 · 6:00 PM IST · 8:30 AM ET',
                 theme: 'Manana: Contemplative Futures Roundtable',
                 sub: 'A researcher-level dialogue on contemplative research, collaboration and grant writing',
-                plenary: 'Fully online — 2–3 hour roundtable',
+                plenary: 'Fully online, 2–3 hour roundtable',
                 tracks: ['IKS, Yoga, Mindfulness & Meditation departments', 'HoDs, PhD, Master’s & Bachelor’s students', 'Collaboration, accelerating research & mutual grant writing'],
                 accent: 'var(--gold)',
               },
