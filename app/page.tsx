@@ -275,7 +275,7 @@ const extendedTeam = [
   },
   {
     name: 'Deokrishna Kumar Choudhary',
-    role: 'Head of Enabling Technologies, ICCH-AI 2026',
+    role: 'Head of Programme Engagement, ICCH-AI 2026',
     affiliation: 'Doctoral Researcher, IIT Mandi · Founder, Circular Bioinnovation',
     photo: '/organizers/deokrishna-kumar-choudhary.png',
     profileUrl: 'https://in.linkedin.com/in/deokrishna-kumar-choudhary-31a46b189',
