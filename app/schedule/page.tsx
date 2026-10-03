@@ -139,8 +139,8 @@ export default function SchedulePage() {
             <p style={{ fontSize: 15, fontWeight: 650, lineHeight: 1.45, color: 'var(--foreground)' }}>HoDs, faculty, PhD, Master&apos;s and Bachelor&apos;s students from IKS, Yoga, Mindfulness and Meditation departments</p>
           </div>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 32 }}>
-            <Link href="/register" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register Free</Link>
-            <a href="https://forms.gle/ffjtMPo7oteYAhgTA" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '14px 36px', fontSize: 15 }}>Express Institutional Interest / Speak</a>
+            <a href="https://forms.gle/ffjtMPo7oteYAhgTA" target="_blank" rel="noopener noreferrer" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register for Manana</a>
+            <Link href="/register" className="btn btn-outline" style={{ padding: '14px 36px', fontSize: 15 }}>Register Free for the Conference</Link>
           </div>
         </div>
       </section>
