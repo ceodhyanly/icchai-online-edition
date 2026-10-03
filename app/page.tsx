@@ -871,7 +871,7 @@ export default function Home() {
                 day: 'Pre-Conference', date: 'Oct 21 · 6:00 PM IST · 8:30 AM ET',
                 theme: 'Manana: Contemplative Futures Roundtable',
                 sub: 'A researcher-level dialogue on contemplative research, collaboration and grant writing',
-                plenary: 'Fully online, 2–3 hour roundtable',
+                plenary: 'Fully online, 3 hour roundtable',
                 tracks: ['IKS, Yoga, Mindfulness & Meditation departments', 'HoDs, PhD, Master’s & Bachelor’s students', 'Collaboration, accelerating research & mutual grant writing'],
                 accent: 'var(--gold)',
               },

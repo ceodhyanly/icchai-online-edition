@@ -121,7 +121,7 @@ export default function SchedulePage() {
             {[
               { k: 'Date', v: 'Wednesday, October 21, 2026' },
               { k: 'Time', v: '6:00 PM IST · 8:30 AM ET · 2:30 PM CEST' },
-              { k: 'Duration', v: '2–3 hours' },
+              { k: 'Duration', v: '3 hours' },
               { k: 'Format', v: 'Virtual (link sent on registration)' },
               { k: 'Chair', v: 'Prof. Amy Wheeler-Mantoan, Notre Dame of Maryland University' },
               { k: 'Co-Chair', v: 'Satyam Tiwari, YogaXBiofeedback (Dhyanly)' },
