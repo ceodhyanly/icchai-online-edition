@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const links = [
   { href: '/#partners', label: 'Partners' },
@@ -18,6 +18,15 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [regOpen, setRegOpen] = useState(false)
+  const regRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const close = (e: MouseEvent) => {
+      if (regRef.current && !regRef.current.contains(e.target as Node)) setRegOpen(false)
+    }
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [])
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 48)
@@ -99,7 +108,7 @@ export default function Navbar() {
             onMouseEnter={e => (e.currentTarget.style.color = linkHoverColor)}
             onMouseLeave={e => (e.currentTarget.style.color = linkColor)}
           >Sign in</Link>
-          <div style={{ position: 'relative' }} onMouseLeave={() => setRegOpen(false)}>
+          <div ref={regRef} style={{ position: 'relative' }}>
             <button
               onClick={() => setRegOpen(o => !o)}
               className="btn btn-teal"
