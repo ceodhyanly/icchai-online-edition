@@ -123,7 +123,9 @@ export default function SchedulePage() {
               { k: 'Time', v: '6:00 PM IST · 8:30 AM ET · 2:30 PM CEST' },
               { k: 'Duration', v: '2–3 hours' },
               { k: 'Format', v: 'Virtual (link sent on registration)' },
-              { k: 'Coordinated by', v: 'Dr. Aditya Rajput, CoE-IKS, IIT Ropar' },
+              { k: 'Chair', v: 'Prof. Amy Wheeler-Mantoan, Notre Dame of Maryland University' },
+              { k: 'Co-Chair', v: 'Satyam Tiwari, YogaXBiofeedback (Dhyanly)' },
+              { k: 'Coordinator', v: 'Dr. Aditya Rajput, CoE-IKS, IIT Ropar' },
               { k: 'Cost', v: 'Free' },
             ].map(x => (
               <div key={x.k} style={{ background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 6, padding: '28px 26px' }}>
