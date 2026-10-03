@@ -368,9 +368,9 @@ export default function RegisterPage() {
               <label style={{ display: 'flex', gap: 14, alignItems: 'flex-start', cursor: 'pointer' }}>
                 <input type="checkbox" checked={form.mananInterest} onChange={e => setForm(f => ({ ...f, mananInterest: e.target.checked }))} style={{ accentColor: 'var(--teal)', marginTop: 3, flexShrink: 0 }} />
                 <div>
-                  <div style={{ fontWeight: 600, fontSize: 14 }}>I&apos;d like to attend Manana: The Contemplative Futures Roundtable</div>
+                  <div style={{ fontWeight: 600, fontSize: 14 }}>Yes, I will attend the pre-conference on 21 October 2026: Manana, The Contemplative Futures Roundtable</div>
                   <div className="caption" style={{ marginTop: 4, lineHeight: 1.6 }}>
-                    Pre-conference, October 21, 2026 &middot; Virtual, 2&ndash;3 hours &middot; A researcher-level dialogue for IKS, Yoga, Mindfulness &amp; Meditation departments &mdash; HoDs, PhD, Master&apos;s &amp; Bachelor&apos;s students &mdash; on collaboration, accelerating research, and mutual grant writing.
+                    Virtual, 2&ndash;3 hours &middot; A researcher-level dialogue for IKS, Yoga, Mindfulness &amp; Meditation departments &mdash; HoDs, PhD, Master&apos;s &amp; Bachelor&apos;s students &mdash; on collaboration, accelerating research, and mutual grant writing.
                   </div>
                 </div>
               </label>
