@@ -390,8 +390,8 @@ const speakers = [
   },
   {
     name: 'Dr. Winson Yang',
-    title: 'Instructor, Meditation Research Program',
-    affiliation: 'Massachusetts General Hospital · Harvard Medical School',
+    title: 'Junior Faculty and Instructor, Harvard Medical School · Massachusetts General Hospital',
+    affiliation: 'Harvard Medical School',
     affiliationUrl: 'https://meditation.mgh.harvard.edu/',
     profileUrl: 'https://meditation.mgh.harvard.edu/',
     photo: '/speakers/winson-yang.jpeg',
