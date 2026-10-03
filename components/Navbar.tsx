@@ -17,6 +17,7 @@ const societyLink = { href: '/society', label: 'Society' }
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [regOpen, setRegOpen] = useState(false)
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 48)
@@ -98,9 +99,32 @@ export default function Navbar() {
             onMouseEnter={e => (e.currentTarget.style.color = linkHoverColor)}
             onMouseLeave={e => (e.currentTarget.style.color = linkColor)}
           >Sign in</Link>
-          <Link href="/register" className="btn btn-teal" style={{ padding: '10px 20px', fontSize: 13 }}>
-            Register
-          </Link>
+          <div style={{ position: 'relative' }} onMouseLeave={() => setRegOpen(false)}>
+            <button
+              onClick={() => setRegOpen(o => !o)}
+              className="btn btn-teal"
+              style={{ padding: '10px 20px', fontSize: 13, border: 'none', cursor: 'pointer' }}
+              aria-expanded={regOpen}
+            >
+              Register
+            </button>
+            {regOpen && (
+              <div style={{
+                position: 'absolute', right: 0, top: 'calc(100% + 10px)', width: 340,
+                background: '#ffffff', border: '1px solid rgba(26,12,8,0.12)', borderRadius: 8,
+                boxShadow: '0 12px 36px rgba(26,12,8,0.14)', padding: 10, display: 'flex', flexDirection: 'column', gap: 6,
+              }}>
+                <Link href="/register" onClick={() => setRegOpen(false)} style={{ display: 'block', padding: '14px 16px', borderRadius: 6, textDecoration: 'none', color: '#1A0C08' }}>
+                  <div style={{ fontWeight: 700, fontSize: 14 }}>Attend the conference</div>
+                  <div style={{ fontSize: 12.5, color: '#6E5A4E', marginTop: 4, lineHeight: 1.5 }}>Open to all. Free. 22–23 October 2026.</div>
+                </Link>
+                <a href="https://forms.gle/ffjtMPo7oteYAhgTA" target="_blank" rel="noopener noreferrer" onClick={() => setRegOpen(false)} style={{ display: 'block', padding: '14px 16px', borderRadius: 6, textDecoration: 'none', color: '#1A0C08' }}>
+                  <div style={{ fontWeight: 700, fontSize: 14 }}>Manana: speakers and research faculty</div>
+                  <div style={{ fontSize: 12.5, color: '#6E5A4E', marginTop: 4, lineHeight: 1.5 }}>For professors, scientists, departments, IKS and research centres. Pre-conference, 21 October 2026, online.</div>
+                </a>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile hamburger */}
@@ -144,7 +168,8 @@ export default function Navbar() {
           }}>{societyLink.label}</Link>
           <hr style={{ border: 'none', borderTop: '1px solid rgba(26,12,8,0.09)' }} />
           <Link href="/login" className="btn btn-outline" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Sign in</Link>
-          <Link href="/register" className="btn btn-teal" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Register Free</Link>
+          <Link href="/register" className="btn btn-teal" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Attend the conference (open to all)</Link>
+          <a href="https://forms.gle/ffjtMPo7oteYAhgTA" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Manana: speakers and research faculty</a>
         </div>
       )}
 
