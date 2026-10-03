@@ -568,6 +568,15 @@ const speakers = [
     photo: '/organizers/satyamtiwaripic.png',
     bio: 'A practitioner of the Svara Yoga tradition for over two decades, academically trained in yoga, Indian Knowledge Systems, AI and technology. As founder of Dhyanly and pioneer of Contemplative AI, he builds clinical-grade biosignal and biofeedback platforms translating IKS into rigorous mind-body digital therapeutics.',
   },
+  {
+    name: 'Mihir Nath',
+    title: 'Research Assistant, Flourishing Intelligence Program · University of Oxford',
+    affiliation: 'University of Oxford',
+    affiliationUrl: 'https://www.ox.ac.uk',
+    profileUrl: 'https://www.ox.ac.uk',
+    photo: '/speakers/mihir-nath.jpeg',
+    bio: 'A neuroscientist building human-AI interfaces that track real-time brain-body signals to respond to subtle shifts in subjective experience. He is currently testing whether meditation training can make neural activity more stable and decodable, combining EEG and cardiac signals in closed-loop, human-centred neurotechnology.',
+  },
 ]
 
 export default function Home() {
