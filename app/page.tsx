@@ -488,6 +488,24 @@ const speakers = [
     bio: 'Chairs the Yoga Therapy Department at Notre Dame of Maryland University and brings over two decades of clinical experience translating yoga into evidence-based therapeutic and sport-psychology practice, including work with national Olympic teams.',
   },
   {
+    name: 'Prof. Subir Kumar Saha',
+    title: 'Project Director, IHFC, IIT Delhi',
+    affiliation: 'I-Hub Foundation for Cobotics (IHFC), IIT Delhi',
+    affiliationUrl: 'https://www.ihfc.co.in',
+    profileUrl: 'https://mech.iitd.ac.in/faculty-profile/152',
+    photo: '/organizers/subir-kumar-saha.png',
+    bio: 'Founded the Mechatronics Laboratory at IIT Delhi in 2001 and is the author of Introduction to Robotics, a standard text in the field, and of the RoboAnalyzer software. A Vice-President (Academic) of The Robotics Society and a national judge of the DD-Robocom competitions since 2005, he also serves on the judging panel of the international ABU Robocon.',
+  },
+  {
+    name: 'Dr. Sangita Garg',
+    title: 'Vice President & Head of R&D, IHFC, IIT Delhi',
+    affiliation: 'I-Hub Foundation for Cobotics (IHFC), IIT Delhi',
+    affiliationUrl: 'https://www.ihfc.co.in',
+    profileUrl: 'https://in.linkedin.com/in/dr-sangita-garg-69448711',
+    photo: '/organizers/sangita-garg.jpg',
+    bio: 'Leads research and development at IHFC, the Technology Innovation Hub of IIT Delhi, bringing over three decades of experience from shop-floor management to advanced research and innovation mentoring. Her work bridges laboratory research and commercial markets through the Lab to Market workshops and industry-academia collaborations in healthcare robotics and cyber-physical systems.',
+  },
+  {
     name: 'Dr. Venkatesh Hanumant Rao Chembrolu',
     title: 'Associate Professor · Indian Institute of Technology, Mandi',
     affiliation: 'Indian Institute of Technology, Mandi',
@@ -533,15 +551,6 @@ const speakers = [
     bio: 'Assistant Professor of Sanskrit at MDNIY, working on Sanskrit language, yoga philosophy and practice, Indian philosophy and positive psychology. He played a key role in introducing the M.Sc. Yoga and PG Diploma in Yoga Therapy programmes at the institute, and serves on the UGC committee for yoga education.',
   },
   {
-    name: 'Satyam Tiwari',
-    title: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi',
-    affiliation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
-    affiliationUrl: 'https://www.dhyanly.com',
-    profileUrl: 'https://www.dhyanly.com',
-    photo: '/organizers/satyamtiwaripic.png',
-    bio: 'A practitioner of the Svara Yoga tradition for over two decades, academically trained in yoga, Indian Knowledge Systems, AI and technology. As founder of Dhyanly and pioneer of Contemplative AI, he builds clinical-grade biosignal and biofeedback platforms translating IKS into rigorous mind-body digital therapeutics.',
-  },
-  {
     name: 'Dr. Aditya Rajput',
     title: 'Assistant Professor, Civil Engineering · Centre of Excellence on Indian Knowledge Systems (CoE-IKS)',
     affiliation: 'IIT Ropar',
@@ -549,6 +558,15 @@ const speakers = [
     profileUrl: 'https://www.iitrpr.ac.in/node/3535',
     photo: '/organizers/aditya-rajput.png',
     bio: "Assistant Professor of Civil Engineering at IIT Ropar, working on durability and seismic retrofitting of reinforced concrete structures. Through IIT Ropar's Centre of Excellence on Indian Knowledge Systems (CoE-IKS), he coordinates Manana: The Contemplative Futures Roundtable, ICCH-AI 2026's pre-conference dialogue between IKS researchers and contemplative-science centres.",
+  },
+  {
+    name: 'Satyam Tiwari',
+    title: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi',
+    affiliation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
+    affiliationUrl: 'https://www.dhyanly.com',
+    profileUrl: 'https://www.dhyanly.com',
+    photo: '/organizers/satyamtiwaripic.png',
+    bio: 'A practitioner of the Svara Yoga tradition for over two decades, academically trained in yoga, Indian Knowledge Systems, AI and technology. As founder of Dhyanly and pioneer of Contemplative AI, he builds clinical-grade biosignal and biofeedback platforms translating IKS into rigorous mind-body digital therapeutics.',
   },
 ]
 
