@@ -274,6 +274,13 @@ const extendedTeam = [
     profileUrl: 'https://www.dhyanly.com',
   },
   {
+    name: 'Deokrishna Kumar Choudhary',
+    role: 'Head of Enabling Technologies, ICCH-AI 2026',
+    affiliation: 'Doctoral Researcher, IIT Mandi · Founder, Circular Bioinnovation',
+    photo: '/organizers/deokrishna-kumar-choudhary.png',
+    profileUrl: 'https://in.linkedin.com/in/deokrishna-kumar-choudhary-31a46b189',
+  },
+  {
     name: 'Aditya Pandey',
     role: 'Head of International Operations, ICCH-AI 2026',
     affiliation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)',
