@@ -488,6 +488,15 @@ const speakers = [
     bio: 'Works at the intersection of neuroimaging, machine learning and yogic neuroscience, with a research record that includes fMRI studies of yoga nidra and yoga for managing lockdown stress. Previously VP Analytics at Opera Solutions and a researcher at IBM T. J. Watson Research Center, he applies high-performance computing and machine learning to brain imaging data.',
   },
   {
+    name: 'Dr. Marieke van Vugt',
+    title: 'Associate Professor, Department of Artificial Intelligence (ALICE)',
+    affiliation: 'University of Groningen',
+    affiliationUrl: 'https://www.rug.nl',
+    profileUrl: 'https://www.rug.nl/staff/m.k.van.vugt/cv',
+    photo: '/speakers/marieke-van-vugt.jpg',
+    bio: 'Studies the cognitive and neural processes behind decision-making, mind-wandering and meditation, comparing Western practitioners and Tibetan monks. Using computational modelling alongside scalp and intracranial EEG and fMRI, she builds formal cognitive models of how meditation practice changes the mind. She earned her PhD in neuroscience at the University of Pennsylvania, working on brain oscillations in recognition memory.',
+  },
+  {
     name: 'Prof. Ramakrishnan Mani',
     title: 'Associate Professor & Associate Dean (Research), School of Physiotherapy · Director, Pain@Otago Research Theme',
     affiliation: 'University of Otago',
