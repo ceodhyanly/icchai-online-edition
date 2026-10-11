@@ -560,6 +560,15 @@ const speakers = [
     bio: 'Works on consciousness studies and cognitive science, teaching courses on consciousness and holistic well-being alongside graduate theories of consciousness at IIT Mandi. Trained in applied physics at Stanford University, he brings a physical-sciences perspective to questions of awareness, cognition and contemplative experience.',
   },
   {
+    name: 'Dr. Hemant Bhargav',
+    title: 'Associate Professor, Department of Integrative Medicine · Visiting Faculty, Harvard Medical School',
+    affiliation: 'National Institute of Mental Health and Neurosciences (NIMHANS), Bengaluru',
+    affiliationUrl: 'https://nimhans.ac.in',
+    profileUrl: 'https://sites.google.com/view/dr-hemant-bhargav/home',
+    photo: '/speakers/hemant-bhargav.png',
+    bio: 'Researches yoga-based interventions for psychiatric conditions at NIMHANS, with a focus on substance use disorders, autonomic regulation and neuroimaging biomarkers, and is a Visiting Faculty member at the Massachusetts Mental Health Center and Beth Israel Deaconess Medical Center, Harvard Medical School. A recipient of the DBT/Wellcome Trust India Alliance Early Career Fellowship, he leads funded trials on yoga for opioid dependence and for type 2 diabetes, with more than 86 peer-reviewed publications.',
+  },
+  {
     name: 'Dr. Amit Sethi',
     title: 'Associate Professor, Department of Occupational & Recreational Therapies · Director, NERD Lab',
     affiliation: 'University of Utah',
