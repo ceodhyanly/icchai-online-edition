@@ -32,8 +32,7 @@ const day2: Session[] = [
   { time: '6:30 – 8:00 PM', session: 'Parallel Track 3', detail: 'Ayurveda and AI: Diagnostics, Dosha Profiling and Personalised Digital Health', type: 'breakout', parallel: true },
   { time: '8:00 – 9:00 PM', session: 'Parallel Track 4', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true },
   { time: '8:00 – 9:00 PM', session: 'Parallel Track 5', detail: 'Contemplative Tech Innovation (HaaS, SaaS based on Contemplative Sciences)', type: 'breakout', parallel: true },
-  { time: '9:00 – 9:10 PM', session: 'Hackathon Winners: Tech Demo', type: 'demo' },
-  { time: '9:10 – 9:30 PM', session: 'Conclusion', detail: 'Vote of Thanks & Announcement of Society', type: 'close' },
+  { time: '9:00 – 9:30 PM', session: 'Conclusion', detail: 'Vote of Thanks & Announcement of Society', type: 'close' },
 ]
 
 const typeColor: Record<string, string> = {
@@ -81,21 +80,6 @@ export default function SchedulePage() {
                 <p className="caption" style={{ lineHeight: 1.7 }}>{note}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Global Hackathon */}
-      <section style={{ padding: '28px 0', background: 'var(--surface)', borderBottom: '1px solid var(--border)' }}>
-        <div className="container">
-          <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap', padding: '20px 24px', background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 8 }}>
-            <span className="chip chip-teal" style={{ flexShrink: 0 }}>Also Running Alongside</span>
-            <div>
-              <p style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>Global Hackathon</p>
-              <p className="caption" style={{ lineHeight: 1.65 }}>
-                A worldwide, fully virtual hackathon on Contemplative HealthTech and AI, running in the days leading up to the conference. Winners present a tech demo on Day 2. Full details to be announced.
-              </p>
-            </div>
           </div>
         </div>
       </section>
