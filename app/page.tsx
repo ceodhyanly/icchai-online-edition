@@ -462,12 +462,12 @@ const speakers = [
   },
   {
     name: 'Dr. Varun Dutt',
-    title: 'Associate Professor, School of Computing and Electrical Engineering · Chair, IKSMHA Centre',
+    title: 'Professor, School of Computing and Electrical Engineering · Dean of Resource Generation and Alumni Relations',
     affiliation: 'Indian Institute of Technology, Mandi',
     affiliationUrl: 'https://www.iitmandi.ac.in',
     profileUrl: 'https://faculty.iitmandi.ac.in/~varun/',
     photo: '/speakers/varun-dutt.jpg',
-    bio: 'Principal Investigator of the Applied Cognitive Science Lab and Chair of the Indian Knowledge System and Mental Health Applications (IKSMHA) Centre at IIT Mandi. Trained at Carnegie Mellon University, his research applies cognitive science, AI and human-computer interaction to decision-making on social, managerial and environmental problems, with over 220 papers and more than 4,500 citations.',
+    bio: 'Dean of Resource Generation and Alumni Relations at IIT Mandi, Principal Investigator of the Applied Cognitive Science Lab, Project Director at the IIT Mandi iHub and HCI Foundation, and former Chair of the Indian Knowledge System and Mental Health Applications (IKSMHA) Centre. Trained at Carnegie Mellon University, his research applies cognitive science, AI and human-computer interaction to decision-making on social, managerial and environmental problems, with over 220 papers and more than 4,500 citations.',
   },
   {
     name: 'Dr. Shubhajit Roy Chowdhury',
