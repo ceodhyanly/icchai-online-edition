@@ -8,7 +8,7 @@ type Session = {
   parallel?: boolean
   subItems?: { time: string; session: string; detail?: string }[]
   table?: { role: string; name: string; designation?: string }[]
-  sequence?: { time: string; name: string; role?: string }[]
+  sequence?: { time: string; name: string; role?: string; designation?: string }[]
 }
 
 const inauguralTable: Session['table'] = [
@@ -37,16 +37,16 @@ const day1: Session[] = [
   {
     time: '5:30 – 8:50 PM', session: 'Hybrid Spotlight Talks & Panel', type: 'main',
     sequence: [
-      { time: '5:30 – 5:40 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Chair / Opening Meditation' },
-      { time: '5:45 – 6:05 PM', name: 'Dr. Bala Subramaniam', role: 'Spotlight Talk 1' },
-      { time: '6:05 – 6:25 PM', name: 'Dr. Sara Lazar', role: 'Spotlight Talk 2' },
-      { time: '6:30 – 6:45 PM', name: 'Dr. Sat Bir Singh Khalsa', role: 'Spotlight Talk 3' },
-      { time: '6:50 – 7:05 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Spotlight Talk 4' },
-      { time: '7:05 – 7:20 PM', name: 'Satyam Tiwari', role: 'Spotlight Talk 5' },
-      { time: '7:20 – 7:30 PM', name: 'Dhyanly Team', role: 'Contemplative Tech Demo' },
-      { time: '7:45 – 8:00 PM', name: 'Prof. Christopher Key Chapple', role: 'Spotlight Talk 7' },
-      { time: '8:00 – 8:50 PM', name: 'Chapple · Wheeler-Mantoan · Haberlin · Tiwari', role: 'Panel Discussion' },
-      { time: '8:45 – 9:10 PM', name: 'Dr. Steve Haberlin', role: 'Spotlight Talk 6' },
+      { time: '5:30 – 5:40 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Chair / Opening Meditation', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
+      { time: '5:45 – 6:05 PM', name: 'Dr. Bala Subramaniam', role: 'Spotlight Talk 1', designation: 'Professor of Anesthesiology, Harvard Medical School · Beth Israel Deaconess Medical Center' },
+      { time: '6:05 – 6:25 PM', name: 'Dr. Sara Lazar', role: 'Spotlight Talk 2', designation: 'Associate Researcher, Psychiatry, Massachusetts General Hospital · Harvard Medical School' },
+      { time: '6:30 – 6:45 PM', name: 'Dr. Sat Bir Singh Khalsa', role: 'Spotlight Talk 3', designation: 'Harvard Medical School' },
+      { time: '6:50 – 7:05 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Spotlight Talk 4', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
+      { time: '7:05 – 7:20 PM', name: 'Satyam Tiwari', role: 'Spotlight Talk 5', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
+      { time: '7:20 – 7:30 PM', name: 'Dhyanly Team', role: 'Contemplative Tech Demo', designation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)' },
+      { time: '7:45 – 8:00 PM', name: 'Prof. Christopher Key Chapple', role: 'Spotlight Talk 7', designation: 'Doshi Professor of Indic and Comparative Theology, Loyola Marymount University' },
+      { time: '8:00 – 8:50 PM', name: 'Chapple · Wheeler-Mantoan · Haberlin · Tiwari', role: 'Panel Discussion', designation: 'Loyola Marymount University · Notre Dame of Maryland University · University of Central Florida · YogaXBiofeedback (Dhyanly)' },
+      { time: '8:45 – 9:10 PM', name: 'Dr. Steve Haberlin', role: 'Spotlight Talk 6', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
     ],
   },
 ]
@@ -55,56 +55,56 @@ const day2: Session[] = [
   {
     time: '5:30 – 6:50 PM', session: 'Opening & Spotlight Talks', type: 'main',
     sequence: [
-      { time: '5:30 – 5:50 PM', name: 'Dr. Michael R. Sheehy', role: 'Spotlight Talk 1' },
-      { time: '5:50 – 6:10 PM', name: 'Dr. Marieke van Vugt', role: 'Spotlight Talk 2' },
-      { time: '6:30 – 6:50 PM', name: 'Dr. Sat Bir Singh Khalsa', role: 'Spotlight Talk 4' },
+      { time: '5:30 – 5:50 PM', name: 'Dr. Michael R. Sheehy', role: 'Spotlight Talk 1', designation: 'Research Associate Professor, Department of Religious Studies, University of Virginia' },
+      { time: '5:50 – 6:10 PM', name: 'Dr. Marieke van Vugt', role: 'Spotlight Talk 2', designation: 'Associate Professor, Department of Artificial Intelligence (ALICE), University of Groningen' },
+      { time: '6:30 – 6:50 PM', name: 'Dr. Sat Bir Singh Khalsa', role: 'Spotlight Talk 4', designation: 'Harvard Medical School' },
     ],
   },
   {
     time: '6:50 – 8:00 PM', session: 'Track 1', detail: 'Yoga, Mindfulness, Meditation and Dharma in the Era of AI and HealthTech', type: 'breakout', parallel: true,
     sequence: [
-      { time: '6:50 – 8:00 PM', name: 'Satyam Tiwari', role: 'Chair' },
-      { time: '6:50 – 8:00 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair' },
-      { time: '6:50 – 7:05 PM', name: 'Prof. Ithamar Theodor', role: 'Speaker' },
-      { time: '7:05 – 7:20 PM', name: 'Dr. Ishwar V. Basavaraddi', role: 'Speaker' },
-      { time: '7:20 – 7:30 PM', name: 'Dr. Yikai Xu', role: 'Speaker' },
-      { time: '7:30 – 7:45 PM', name: 'Prof. Akshay Anand · Dr. Arnav Bhavsar', role: 'Speaker' },
-      { time: '7:45 – 8:00 PM', name: 'Prof. Christopher Key Chapple', role: 'Speaker' },
+      { time: '6:50 – 8:00 PM', name: 'Satyam Tiwari', role: 'Chair', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
+      { time: '6:50 – 8:00 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
+      { time: '6:50 – 7:05 PM', name: 'Prof. Ithamar Theodor', role: 'Speaker', designation: 'Professor of Hindu and Indian Studies, Bar-Ilan University' },
+      { time: '7:05 – 7:20 PM', name: 'Dr. Ishwar V. Basavaraddi', role: 'Speaker', designation: 'Director & Professor, Centre for Yoga, Wellness and Integrative Medicine, MGUMST Jaipur' },
+      { time: '7:20 – 7:30 PM', name: 'Dr. Yikai Xu', role: 'Speaker', designation: 'New York University' },
+      { time: '7:30 – 7:45 PM', name: 'Dr. Arnav Bhavsar', role: 'Speaker', designation: 'Indian Institute of Technology, Mandi' },
+      { time: '7:45 – 8:00 PM', name: 'Prof. Christopher Key Chapple', role: 'Speaker', designation: 'Doshi Professor of Indic and Comparative Theology, Loyola Marymount University' },
     ],
   },
   {
     time: '6:50 – 7:50 PM', session: 'Track 2', detail: 'Indian Knowledge Systems & AI, including Ayurveda: Diagnostics, Dosha Profiling and Personalised Digital Health', type: 'breakout', parallel: true,
     sequence: [
-      { time: '6:50 – 7:50 PM', name: 'Dr. Amy Wheeler-Mantoan', role: 'Chair' },
-      { time: '6:50 – 7:50 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair' },
-      { time: '6:50 – 7:05 PM', name: 'Dr. Varun Dutt', role: 'Speaker' },
-      { time: '7:05 – 7:20 PM', name: 'Dr. Hemant Bhargav', role: 'Speaker' },
-      { time: '7:20 – 7:35 PM', name: 'Dr. Prathosh A P', role: 'Speaker' },
-      { time: '7:35 – 7:50 PM', name: 'Dr. Mrittunjoy Guha Majumdar', role: 'Speaker' },
+      { time: '6:50 – 7:50 PM', name: 'Dr. Amy Wheeler-Mantoan', role: 'Chair', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
+      { time: '6:50 – 7:50 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
+      { time: '6:50 – 7:05 PM', name: 'Dr. Varun Dutt', role: 'Speaker', designation: 'Professor, School of Computing and Electrical Engineering, IIT Mandi' },
+      { time: '7:05 – 7:20 PM', name: 'Dr. Hemant Bhargav', role: 'Speaker', designation: 'Associate Professor, Department of Integrative Medicine, NIMHANS' },
+      { time: '7:20 – 7:35 PM', name: 'Dr. Prathosh A P', role: 'Speaker', designation: 'Assistant Professor, Department of Electrical Communication Engineering, IISc Bengaluru' },
+      { time: '7:35 – 7:50 PM', name: 'Dr. Mrittunjoy Guha Majumdar', role: 'Speaker', designation: 'Assistant Professor, NIAS Bengaluru' },
     ],
   },
   {
     time: '8:00 – 9:15 PM', session: 'Track 3', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true,
     sequence: [
-      { time: '8:00 – 9:15 PM', name: 'Dr. Steve Haberlin', role: 'Chair' },
-      { time: '8:00 – 9:15 PM', name: 'Dr. Amy Wheeler-Mantoan', role: 'Co-Chair' },
-      { time: '8:00 – 8:15 PM', name: 'Dr. Evan Lewis-Healey', role: 'Speaker' },
-      { time: '8:15 – 8:30 PM', name: 'Dr. Winson Yang', role: 'Speaker' },
-      { time: '8:30 – 8:45 PM', name: 'Dr. Kilian Abellaneda-Pérez', role: 'Speaker' },
-      { time: '8:45 – 9:00 PM', name: 'Dr. Manish Saggar', role: 'Speaker' },
-      { time: '9:00 – 9:15 PM', name: 'Prof. Ramakrishnan Mani', role: 'Speaker' },
+      { time: '8:00 – 9:15 PM', name: 'Dr. Steve Haberlin', role: 'Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
+      { time: '8:00 – 9:15 PM', name: 'Dr. Amy Wheeler-Mantoan', role: 'Co-Chair', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
+      { time: '8:00 – 8:15 PM', name: 'Dr. Evan Lewis-Healey', role: 'Speaker', designation: 'Postdoctoral Researcher, Department of Psychiatry, University of Oxford' },
+      { time: '8:15 – 8:30 PM', name: 'Dr. Winson Yang', role: 'Speaker', designation: 'Junior Faculty and Instructor, Harvard Medical School · Massachusetts General Hospital' },
+      { time: '8:30 – 8:45 PM', name: 'Dr. Kilian Abellaneda-Pérez', role: 'Speaker', designation: 'University of Lleida · Institut Guttmann, Spain' },
+      { time: '8:45 – 9:00 PM', name: 'Dr. Manish Saggar', role: 'Speaker', designation: 'Associate Professor of Psychiatry & Behavioral Sciences, Stanford University' },
+      { time: '9:00 – 9:15 PM', name: 'Prof. Ramakrishnan Mani', role: 'Speaker', designation: 'Associate Professor & Associate Dean (Research), University of Otago' },
     ],
   },
   {
     time: '8:00 – 9:30 PM', session: 'Track 4', detail: 'Contemplative Tech Innovation (HaaS, SaaS based on Contemplative Sciences)', type: 'breakout', parallel: true,
     sequence: [
-      { time: '8:00 – 9:30 PM', name: 'Satyam Tiwari', role: 'Chair' },
-      { time: '8:00 – 9:30 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair' },
-      { time: '8:00 – 8:15 PM', name: 'Mihir Nath', role: 'Speaker' },
-      { time: '8:15 – 8:30 PM', name: 'Dr. Venkatesh Hanumant Rao Chembrolu', role: 'Speaker' },
-      { time: '8:30 – 8:45 PM', name: 'Satyam Tiwari', role: 'Speaker' },
-      { time: '8:45 – 9:00 PM', name: 'Dr. Shubhajit Roy Chowdhury', role: 'Speaker' },
-      { time: '9:00 – 9:20 PM', name: 'Dr. Eric Garland', role: 'Speaker' },
+      { time: '8:00 – 9:30 PM', name: 'Satyam Tiwari', role: 'Chair', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
+      { time: '8:00 – 9:30 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
+      { time: '8:00 – 8:15 PM', name: 'Mihir Nath', role: 'Speaker', designation: 'Research Assistant, Flourishing Intelligence Program, University of Oxford' },
+      { time: '8:15 – 8:30 PM', name: 'Dr. Venkatesh Hanumant Rao Chembrolu', role: 'Speaker', designation: 'Associate Professor, Indian Institute of Technology, Mandi' },
+      { time: '8:30 – 8:45 PM', name: 'Satyam Tiwari', role: 'Speaker', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
+      { time: '8:45 – 9:00 PM', name: 'Dr. Shubhajit Roy Chowdhury', role: 'Speaker', designation: 'Professor, School of Computing and Electrical Engineering, IIT Mandi' },
+      { time: '9:00 – 9:20 PM', name: 'Dr. Eric Garland', role: 'Speaker', designation: 'Endowed Professor in Health Sciences, University of California San Diego' },
     ],
   },
   { time: '9:20 – 9:30 PM', session: 'Conclusion', detail: 'Vote of Thanks & Announcement of Society', type: 'close' },
@@ -312,7 +312,10 @@ function DayBlock({ label, date, format, theme, sub, sessions, bg }: {
                             {s.sequence.map((row, k) => (
                               <tr key={k} style={{ borderBottom: k < s.sequence!.length - 1 ? '1px solid var(--border)' : 'none' }}>
                                 <td style={{ padding: '10px 16px', color: 'var(--teal)', fontWeight: 600, whiteSpace: 'nowrap' }}>{row.time}</td>
-                                <td style={{ padding: '10px 16px', fontWeight: 650, color: 'var(--foreground)' }}>{row.name}</td>
+                                <td style={{ padding: '10px 16px' }}>
+                                  <span style={{ fontWeight: 650, color: 'var(--foreground)', display: 'block' }}>{row.name}</span>
+                                  {row.designation && <span style={{ fontSize: 12, color: 'var(--muted-light)', display: 'block', marginTop: 2 }}>{row.designation}</span>}
+                                </td>
                                 <td style={{ padding: '10px 16px', color: 'var(--muted-light)', whiteSpace: 'nowrap' }}>{row.role}</td>
                               </tr>
                             ))}
