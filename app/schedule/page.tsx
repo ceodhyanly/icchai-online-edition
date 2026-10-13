@@ -68,7 +68,7 @@ const day2: Session[] = [
       { time: '6:50 – 7:05 PM', name: 'Prof. Ithamar Theodor', role: 'Speaker', designation: 'Professor of Hindu and Indian Studies, Bar-Ilan University' },
       { time: '7:05 – 7:20 PM', name: 'Dr. Ishwar V. Basavaraddi', role: 'Speaker', designation: 'Director & Professor, Centre for Yoga, Wellness and Integrative Medicine, MGUMST Jaipur' },
       { time: '7:20 – 7:30 PM', name: 'Dr. Yikai Xu', role: 'Speaker', designation: 'New York University' },
-      { time: '7:30 – 7:45 PM', name: 'Dr. Arnav Bhavsar', role: 'Speaker', designation: 'Indian Institute of Technology, Mandi' },
+      { time: '7:30 – 7:45 PM', name: 'Dr. Arnav Bhavsar', role: 'Speaker', designation: 'Chair, IKSMHA Centre, IIT Mandi' },
       { time: '7:45 – 8:00 PM', name: 'Prof. Christopher Key Chapple', role: 'Speaker', designation: 'Doshi Professor of Indic and Comparative Theology, Loyola Marymount University' },
     ],
   },
