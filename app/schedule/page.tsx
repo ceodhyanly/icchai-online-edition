@@ -40,7 +40,7 @@ const day1: Session[] = [
       { time: '5:30 – 5:40 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Chair / Opening Meditation', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
       { time: '5:45 – 6:05 PM', name: 'Dr. Bala Subramaniam', role: 'Spotlight Talk 1', designation: 'Professor of Anesthesiology, Harvard Medical School · Beth Israel Deaconess Medical Center' },
       { time: '6:05 – 6:25 PM', name: 'Dr. Sara Lazar', role: 'Spotlight Talk 2', designation: 'Associate Researcher, Psychiatry, Massachusetts General Hospital · Harvard Medical School' },
-      { time: '6:25 – 6:45 PM', name: 'Dr. Sanjay Mishra, IAS', role: 'Spotlight Talk 3', designation: 'Ministry of AYUSH, Government of India' },
+      { time: '6:25 – 6:45 PM', name: 'Dr. Sanjay Mishra, IAS', role: 'Spotlight Talk 3', designation: 'Government of Madhya Pradesh · AYUSH & Wellness Policy' },
       { time: '6:50 – 7:05 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Spotlight Talk 4', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
       { time: '7:05 – 7:20 PM', name: 'Satyam Tiwari', role: 'Spotlight Talk 5', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
       { time: '7:20 – 7:30 PM', name: 'Dhyanly Team', role: 'Contemplative Tech Demo', designation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)' },

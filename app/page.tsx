@@ -399,12 +399,12 @@ const speakers = [
   },
   {
     name: 'Dr. Sanjay Mishra, IAS',
-    title: '',
-    affiliation: 'Ministry of AYUSH, Government of India',
-    affiliationUrl: 'https://ayush.gov.in',
-    profileUrl: '',
+    title: 'IAS Officer · AYUSH & Wellness Policy, Governance Reforms and Citizen-Centric Innovation',
+    affiliation: 'Government of Madhya Pradesh',
+    affiliationUrl: '',
+    profileUrl: 'https://www.linkedin.com/in/dr-sanjay-mishra-ias-17a19526b',
     photo: '/speakers/sanjay-mishra.webp',
-    bio: '',
+    bio: 'An IAS officer of the Madhya Pradesh cadre working on public policy, governance reforms and sustainable development, with a particular focus on AYUSH and wellness policy and citizen-centric innovation. Trained at the Lal Bahadur Shastri National Academy of Administration (LBSNAA), with further fellowships and programmes at the United Nations, the Korea Development Institute, the National University of Singapore and Syracuse University.',
   },
   {
     name: 'Dr. Swayam Bagaria',
