@@ -7,20 +7,29 @@ type Session = {
   type: string
   parallel?: boolean
   subItems?: { time: string; session: string; detail?: string }[]
+  table?: { role: string; name: string; designation?: string }[]
 }
+
+const inauguralTable: Session['table'] = [
+  { role: 'Welcome', name: 'Organising Team', designation: 'Lamp Lighting & Welcome' },
+  { role: 'Plenary Address (Online)', name: 'Prof. Rajeev Ahuja', designation: 'Director, IIT Ropar' },
+  { role: 'Chief Guest', name: 'Prof. (Dr.) Tankeshwar Kumar', designation: 'Hon’ble Vice-Chancellor, Central University of Haryana' },
+  { role: 'Guest of Honour', name: 'Shri Akhilesh Mishra', designation: 'Former Ambassador of India to Ireland' },
+  { role: 'Inaugural Keynote Address', name: 'Prof. (Dr.) Prerna Gaur', designation: 'Former Director, NSUT West Campus; IEEE Leader' },
+  { role: 'Distinguished Speaker', name: 'Prof. (Dr.) Vijay Kumar', designation: 'Hon’ble Vice-Chancellor, GJUST & CDLU, Hisar' },
+  { role: 'Talk', name: 'Dr. Swayam Bagaria', designation: 'Assistant Professor of Hindu Studies, Harvard Divinity School' },
+  { role: 'Talk', name: 'Prof. Rahul Garg', designation: 'Department of Computer Science and Engineering, IIT Delhi' },
+  { role: 'Talk', name: 'Dr. James Gomes', designation: 'Kusuma School of Biological Sciences, IIT Delhi' },
+  { role: 'Talk', name: 'Prof. Subir Kumar Saha', designation: 'Project Director, IHFC, IIT Delhi' },
+  { role: 'Talk', name: 'Dr. Sangita Garg', designation: 'VP & Head of R&D, IHFC, IIT Delhi' },
+  { role: 'Talk', name: 'Dr. Arpit Kumar Dubey', designation: 'Morarji Desai National Institute of Yoga (MDNIY)' },
+  { role: 'Convenor', name: 'Satyam Tiwari', designation: 'ICCHAI 2026' },
+]
 
 const day1: Session[] = [
   {
     time: '2:00 – 3:46 PM', session: 'Inaugural Session (In-Person, IIT Delhi)', type: 'main',
-    subItems: [
-      { time: '2:00 PM', session: 'Lamp Lighting & Welcome' },
-      { time: 'Following', session: 'Plenary Address (Online)', detail: 'Prof. Rajeev Ahuja, Director, IIT Ropar' },
-      { time: 'Following', session: 'Chief Guest Address', detail: 'Prof. (Dr.) Tankeshwar Kumar, Hon’ble Vice-Chancellor, Central University of Haryana' },
-      { time: 'Following', session: 'Guest of Honour Address', detail: 'Shri Akhilesh Mishra, Former Ambassador of India to Ireland' },
-      { time: 'Following', session: 'Inaugural Keynote Address', detail: 'Prof. (Dr.) Prerna Gaur, Former Director, NSUT West Campus; IEEE Leader' },
-      { time: 'Following', session: 'Distinguished Speaker Address', detail: 'Prof. (Dr.) Vijay Kumar, Hon’ble Vice-Chancellor, Guru Jambheshwar University of Science & Technology (GJUST) and Chaudhary Devi Lal University (CDLU), Hisar' },
-      { time: 'Following', session: 'Talks', detail: 'Dr. Swayam Bagaria · Prof. Rahul Garg · Dr. James Gomes · Prof. Subir Kumar Saha · Dr. Sangita Garg · Dr. Arpit Kumar Dubey' },
-    ],
+    table: inauguralTable,
   },
   { time: '4:10 – 5:00 PM', session: 'Tech Demo', type: 'demo' },
   { time: '5:00 – 5:30 PM', session: 'Refreshment & Networking', type: 'break' },
@@ -229,6 +238,28 @@ function DayBlock({ label, date, format, theme, sub, sessions, bg }: {
                             {si.detail && <p style={{ fontSize: 12.5, color: 'var(--muted-light)', marginTop: 3, lineHeight: 1.55 }}>{si.detail}</p>}
                           </div>
                         ))}
+                      </div>
+                    )}
+                    {s.table && (
+                      <div style={{ marginTop: 16, overflowX: 'auto', border: '1px solid var(--border)', borderRadius: 6 }}>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13.5 }}>
+                          <thead>
+                            <tr style={{ background: 'var(--surface-2)' }}>
+                              <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Role</th>
+                              <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Name</th>
+                              <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Designation</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {s.table.map((row, k) => (
+                              <tr key={k} style={{ borderBottom: k < s.table!.length - 1 ? '1px solid var(--border)' : 'none' }}>
+                                <td style={{ padding: '10px 16px', color: 'var(--teal)', fontWeight: 600, whiteSpace: 'nowrap' }}>{row.role}</td>
+                                <td style={{ padding: '10px 16px', fontWeight: 650, color: 'var(--foreground)', whiteSpace: 'nowrap' }}>{row.name}</td>
+                                <td style={{ padding: '10px 16px', color: 'var(--muted-light)' }}>{row.designation}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
                       </div>
                     )}
                   </div>
