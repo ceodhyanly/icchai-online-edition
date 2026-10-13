@@ -19,7 +19,7 @@ const day1: Session[] = [
       { time: 'Following', session: 'Guest of Honour Address', detail: 'Shri Akhilesh Mishra, Former Ambassador of India to Ireland' },
       { time: 'Following', session: 'Inaugural Keynote Address', detail: 'Prof. (Dr.) Prerna Gaur, Former Director, NSUT West Campus; IEEE Leader' },
       { time: 'Following', session: 'Distinguished Speaker Address', detail: 'Prof. (Dr.) Vijay Kumar, Hon’ble Vice-Chancellor, Guru Jambheshwar University of Science & Technology (GJUST) and Chaudhary Devi Lal University (CDLU), Hisar' },
-      { time: 'Following', session: 'Talks', detail: 'Invited talks from the organising institutions' },
+      { time: 'Following', session: 'Talks', detail: 'Dr. Swayam Bagaria · Prof. Rahul Garg · Dr. James Gomes · Prof. Subir Kumar Saha · Dr. Sangita Garg · Dr. Arpit Kumar Dubey' },
     ],
   },
   { time: '4:10 – 5:00 PM', session: 'Tech Demo', type: 'demo' },
@@ -142,6 +142,20 @@ export default function SchedulePage() {
             <p style={{ fontSize: 15, fontWeight: 650, marginBottom: 10 }}>Attending the conference on 22–23 October?</p>
             <p className="caption" style={{ marginBottom: 16 }}>Conference attendee registration is a separate form, with its own details and attendance options.</p>
             <Link href="/register" className="btn btn-outline" style={{ padding: '12px 28px', fontSize: 14 }}>Register Free for the Conference</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* In-Person Inaugural Registration */}
+      <section style={{ padding: '56px 0', background: 'var(--background)', borderTop: '1px solid var(--border)' }}>
+        <div className="container">
+          <div style={{ background: 'var(--surface-2)', border: '1px solid var(--teal-border)', borderTop: '3px solid var(--teal)', borderRadius: 6, padding: '32px 32px' }}>
+            <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>In-Person Registration</p>
+            <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>Attending the Inaugural in person at IIT Delhi?</h3>
+            <p className="body" style={{ maxWidth: 680, marginBottom: 20 }}>
+              The in-person Inaugural Gathering on 22 October 2026 (check-in 1:30 PM, programme 2:00–7:30 PM, RNA Park Auditorium, IIT Delhi) is capped at 100 participants, with priority given to attendees based in Delhi-NCR and nearby areas. Registration is first-come, first-served and subject to review — submitting the form does not confirm a place; confirmation and entry passes are sent separately by email or WhatsApp. The registration deadline is 17 October 2026, 3:00 PM IST.
+            </p>
+            <a href="https://forms.gle/xY2goeQCzn3YrNJx6" target="_blank" rel="noopener noreferrer" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register for In-Person Attendance</a>
           </div>
         </div>
       </section>
