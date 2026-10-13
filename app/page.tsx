@@ -398,6 +398,15 @@ const speakers = [
     bio: "Directs the Brain Dynamics Lab at Stanford, developing computational methods — using fMRI, EEG and fNIRS — that anchor psychiatric diagnosis in biological features such as neural circuits and spatiotemporal brain dynamics. His NIH Director's New Innovator Award-funded research also examines brain dynamics underlying learning, creativity and team performance.",
   },
   {
+    name: 'Dr. Sanjay Mishra, IAS',
+    title: '',
+    affiliation: 'Ministry of AYUSH, Government of India',
+    affiliationUrl: 'https://ayush.gov.in',
+    profileUrl: '',
+    photo: '/speakers/sanjay-mishra.webp',
+    bio: '',
+  },
+  {
     name: 'Dr. Swayam Bagaria',
     title: 'Assistant Professor of Hindu Studies',
     affiliation: 'Harvard Divinity School',
@@ -1032,8 +1041,12 @@ export default function Home() {
                   ) : (
                     <span style={{ color: 'var(--muted)' }}>{sp.affiliation}</span>
                   )}
-                  <span style={{ color: 'var(--border-mid)', margin: '0 8px' }}>·</span>
-                  <a href={sp.profileUrl} target="_blank" rel="noopener noreferrer" className="speaker-link">Profile</a>
+                  {sp.profileUrl && (
+                    <>
+                      <span style={{ color: 'var(--border-mid)', margin: '0 8px' }}>·</span>
+                      <a href={sp.profileUrl} target="_blank" rel="noopener noreferrer" className="speaker-link">Profile</a>
+                    </>
+                  )}
                 </p>
                 <p style={{ fontSize: 13, color: 'var(--muted-light)', lineHeight: 1.65 }}>{sp.bio}</p>
               </div>
