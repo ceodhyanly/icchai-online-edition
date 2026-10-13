@@ -10,29 +10,37 @@ type Session = {
 }
 
 const day1: Session[] = [
-  { time: '2:00 – 5:00 PM', session: 'Pre-Conference Workshops', detail: 'Hands-on sessions ahead of the main programme', type: 'pre' },
-  { time: '5:00 – 5:30 PM', session: 'High Tea & Networking Break', type: 'break' },
   {
-    time: '5:30 – 8:00 PM', session: 'Inauguration & Spotlight Talks', type: 'main',
+    time: '2:00 – 3:46 PM', session: 'Inaugural Session (In-Person, IIT Delhi)', type: 'main',
     subItems: [
-      { time: '5:30 PM', session: 'Opening Meditation', detail: '10-minute guided practice, led by Dr. Amy Wheeler' },
-      { time: 'Following', session: 'Inaugural Addresses', detail: '3–4 speakers, 5 minutes each' },
-      { time: 'Following', session: 'Spotlight Talks', detail: '20 minutes each, curated headline speakers' },
+      { time: '2:00 PM', session: 'Lamp Lighting & Welcome' },
+      { time: 'Following', session: 'Plenary Address (Online)', detail: 'Prof. Rajeev Ahuja, Director, IIT Ropar' },
+      { time: 'Following', session: 'Chief Guest Address', detail: 'Prof. (Dr.) Tankeshwar Kumar, Hon’ble Vice-Chancellor, Central University of Haryana' },
+      { time: 'Following', session: 'Guest of Honour Address', detail: 'Shri Akhilesh Mishra, Former Ambassador of India to Ireland' },
+      { time: 'Following', session: 'Inaugural Keynote Address', detail: 'Prof. (Dr.) Prerna Gaur, Former Director, NSUT West Campus; IEEE Leader' },
+      { time: 'Following', session: 'Distinguished Speaker Address', detail: 'Prof. (Dr.) Vijay Kumar, Hon’ble Vice-Chancellor, Guru Jambheshwar University of Science & Technology (GJUST) and Chaudhary Devi Lal University (CDLU), Hisar' },
+      { time: 'Following', session: 'Talks', detail: 'Invited talks from the organising institutions' },
     ],
   },
-  { time: '8:00 – 9:00 PM', session: 'Panel Discussion', type: 'main' },
-  { time: '9:00 – 9:30 PM', session: 'Book Launch & Tech Demo', type: 'demo' },
-  { time: '9:30 PM onward', session: 'Closing Practice', type: 'close' },
+  { time: '4:10 – 5:00 PM', session: 'Tech Demo', type: 'demo' },
+  { time: '5:00 – 5:30 PM', session: 'Refreshment & Networking', type: 'break' },
+  {
+    time: '5:30 – 8:50 PM', session: 'Hybrid Spotlight Talks & Panel', type: 'main',
+    subItems: [
+      { time: '5:30 PM', session: 'Opening Meditation', detail: '10-minute guided practice, led by Prof. Amy Wheeler-Mantoan' },
+      { time: 'Following', session: 'Spotlight Talks', detail: '7 curated headline speakers' },
+      { time: '8:00 – 8:50 PM', session: 'Panel Discussion' },
+    ],
+  },
 ]
 
 const day2: Session[] = [
-  { time: '5:30 – 6:30 PM', session: 'Opening & Spotlight Talks', type: 'main' },
-  { time: '6:30 – 8:00 PM', session: 'Parallel Track 1', detail: 'Yoga, Mindfulness, Meditation and Dharma in the Era of AI and HealthTech', type: 'breakout', parallel: true },
-  { time: '6:30 – 8:00 PM', session: 'Parallel Track 2', detail: 'Indian Knowledge Systems: Research, Ethics and Convergence with AI', type: 'breakout', parallel: true },
-  { time: '6:30 – 8:00 PM', session: 'Parallel Track 3', detail: 'Ayurveda and AI: Diagnostics, Dosha Profiling and Personalised Digital Health', type: 'breakout', parallel: true },
-  { time: '8:00 – 9:00 PM', session: 'Parallel Track 4', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true },
-  { time: '8:00 – 9:00 PM', session: 'Parallel Track 5', detail: 'Contemplative Tech Innovation (HaaS, SaaS based on Contemplative Sciences)', type: 'breakout', parallel: true },
-  { time: '9:00 – 9:30 PM', session: 'Conclusion', detail: 'Vote of Thanks & Announcement of Society', type: 'close' },
+  { time: '5:30 – 6:50 PM', session: 'Opening & Spotlight Talks', type: 'main' },
+  { time: '6:50 – 8:00 PM', session: 'Track 1', detail: 'Yoga, Mindfulness, Meditation and Dharma in the Era of AI and HealthTech', type: 'breakout', parallel: true },
+  { time: '6:50 – 7:50 PM', session: 'Track 2', detail: 'Indian Knowledge Systems & AI, including Ayurveda: Diagnostics, Dosha Profiling and Personalised Digital Health', type: 'breakout', parallel: true },
+  { time: '8:00 – 9:15 PM', session: 'Track 3', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true },
+  { time: '8:00 – 9:30 PM', session: 'Track 4', detail: 'Contemplative Tech Innovation (HaaS, SaaS based on Contemplative Sciences)', type: 'breakout', parallel: true },
+  { time: '9:20 – 9:30 PM', session: 'Conclusion', detail: 'Vote of Thanks & Announcement of Society', type: 'close' },
 ]
 
 const typeColor: Record<string, string> = {

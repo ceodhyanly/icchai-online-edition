@@ -380,6 +380,15 @@ const speakers = [
     bio: 'Vice-Chancellor of the Central University of Haryana and a theoretical solid-state physicist, previously Vice-Chancellor of Guru Jambheshwar University of Science and Technology, Hisar. He earned his PhD in Theoretical Solid State Physics from Panjab University and held a postdoctoral fellowship at the International Centre for Theoretical Physics, Trieste, with research cited more than 2,400 times.',
   },
   {
+    name: 'Prof. (Dr.) Vijay Kumar',
+    title: 'Vice-Chancellor',
+    affiliation: 'Guru Jambheshwar University of Science & Technology (GJUST) and Chaudhary Devi Lal University (CDLU), Hisar',
+    affiliationUrl: 'https://cdlu.puchd-ac.in',
+    profileUrl: 'https://cdlu.puchd-ac.in/vc_message.php',
+    photo: '/speakers/vijay-kumar.jpg',
+    bio: 'Vice-Chancellor of Guru Jambheshwar University of Science & Technology (GJUST) and Chaudhary Devi Lal University (CDLU), Hisar.',
+  },
+  {
     name: 'Dr. Manish Saggar',
     title: 'Associate Professor of Psychiatry & Behavioral Sciences · Director, Brain Dynamics Lab',
     affiliation: 'Stanford University School of Medicine',
