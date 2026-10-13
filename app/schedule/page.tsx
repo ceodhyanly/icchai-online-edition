@@ -8,6 +8,7 @@ type Session = {
   parallel?: boolean
   subItems?: { time: string; session: string; detail?: string }[]
   table?: { role: string; name: string; designation?: string }[]
+  sequence?: { time: string; name: string; role?: string }[]
 }
 
 const inauguralTable: Session['table'] = [
@@ -35,20 +36,77 @@ const day1: Session[] = [
   { time: '5:00 – 5:30 PM', session: 'Refreshment & Networking', type: 'break' },
   {
     time: '5:30 – 8:50 PM', session: 'Hybrid Spotlight Talks & Panel', type: 'main',
-    subItems: [
-      { time: '5:30 PM', session: 'Opening Meditation', detail: '10-minute guided practice, led by Prof. Amy Wheeler-Mantoan' },
-      { time: 'Following', session: 'Spotlight Talks', detail: '7 curated headline speakers' },
-      { time: '8:00 – 8:50 PM', session: 'Panel Discussion' },
+    sequence: [
+      { time: '5:30 – 5:40 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Chair / Opening Meditation' },
+      { time: '5:45 – 6:05 PM', name: 'Dr. Bala Subramaniam', role: 'Spotlight Talk 1' },
+      { time: '6:05 – 6:25 PM', name: 'Dr. Sara Lazar', role: 'Spotlight Talk 2' },
+      { time: '6:30 – 6:45 PM', name: 'Dr. Sat Bir Singh Khalsa', role: 'Spotlight Talk 3' },
+      { time: '6:50 – 7:05 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Spotlight Talk 4' },
+      { time: '7:05 – 7:20 PM', name: 'Satyam Tiwari', role: 'Spotlight Talk 5' },
+      { time: '7:20 – 7:30 PM', name: 'Dhyanly Team', role: 'Contemplative Tech Demo' },
+      { time: '7:45 – 8:00 PM', name: 'Prof. Christopher Key Chapple', role: 'Spotlight Talk 7' },
+      { time: '8:00 – 8:50 PM', name: 'Chapple · Wheeler-Mantoan · Haberlin · Tiwari', role: 'Panel Discussion' },
+      { time: '8:45 – 9:10 PM', name: 'Dr. Steve Haberlin', role: 'Spotlight Talk 6' },
     ],
   },
 ]
 
 const day2: Session[] = [
-  { time: '5:30 – 6:50 PM', session: 'Opening & Spotlight Talks', type: 'main' },
-  { time: '6:50 – 8:00 PM', session: 'Track 1', detail: 'Yoga, Mindfulness, Meditation and Dharma in the Era of AI and HealthTech', type: 'breakout', parallel: true },
-  { time: '6:50 – 7:50 PM', session: 'Track 2', detail: 'Indian Knowledge Systems & AI, including Ayurveda: Diagnostics, Dosha Profiling and Personalised Digital Health', type: 'breakout', parallel: true },
-  { time: '8:00 – 9:15 PM', session: 'Track 3', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true },
-  { time: '8:00 – 9:30 PM', session: 'Track 4', detail: 'Contemplative Tech Innovation (HaaS, SaaS based on Contemplative Sciences)', type: 'breakout', parallel: true },
+  {
+    time: '5:30 – 6:50 PM', session: 'Opening & Spotlight Talks', type: 'main',
+    sequence: [
+      { time: '5:30 – 5:50 PM', name: 'Dr. Michael R. Sheehy', role: 'Spotlight Talk 1' },
+      { time: '5:50 – 6:10 PM', name: 'Dr. Marieke van Vugt', role: 'Spotlight Talk 2' },
+      { time: '6:30 – 6:50 PM', name: 'Dr. Sat Bir Singh Khalsa', role: 'Spotlight Talk 4' },
+    ],
+  },
+  {
+    time: '6:50 – 8:00 PM', session: 'Track 1', detail: 'Yoga, Mindfulness, Meditation and Dharma in the Era of AI and HealthTech', type: 'breakout', parallel: true,
+    sequence: [
+      { time: '6:50 – 8:00 PM', name: 'Satyam Tiwari', role: 'Chair' },
+      { time: '6:50 – 8:00 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair' },
+      { time: '6:50 – 7:05 PM', name: 'Prof. Ithamar Theodor', role: 'Speaker' },
+      { time: '7:05 – 7:20 PM', name: 'Dr. Ishwar V. Basavaraddi', role: 'Speaker' },
+      { time: '7:20 – 7:30 PM', name: 'Dr. Yikai Xu', role: 'Speaker' },
+      { time: '7:30 – 7:45 PM', name: 'Prof. Akshay Anand · Dr. Arnav Bhavsar', role: 'Speaker' },
+      { time: '7:45 – 8:00 PM', name: 'Prof. Christopher Key Chapple', role: 'Speaker' },
+    ],
+  },
+  {
+    time: '6:50 – 7:50 PM', session: 'Track 2', detail: 'Indian Knowledge Systems & AI, including Ayurveda: Diagnostics, Dosha Profiling and Personalised Digital Health', type: 'breakout', parallel: true,
+    sequence: [
+      { time: '6:50 – 7:50 PM', name: 'Dr. Amy Wheeler-Mantoan', role: 'Chair' },
+      { time: '6:50 – 7:50 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair' },
+      { time: '6:50 – 7:05 PM', name: 'Dr. Varun Dutt', role: 'Speaker' },
+      { time: '7:05 – 7:20 PM', name: 'Dr. Hemant Bhargav', role: 'Speaker' },
+      { time: '7:20 – 7:35 PM', name: 'Dr. Prathosh A P', role: 'Speaker' },
+      { time: '7:35 – 7:50 PM', name: 'Dr. Mrittunjoy Guha Majumdar', role: 'Speaker' },
+    ],
+  },
+  {
+    time: '8:00 – 9:15 PM', session: 'Track 3', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true,
+    sequence: [
+      { time: '8:00 – 9:15 PM', name: 'Dr. Steve Haberlin', role: 'Chair' },
+      { time: '8:00 – 9:15 PM', name: 'Dr. Amy Wheeler-Mantoan', role: 'Co-Chair' },
+      { time: '8:00 – 8:15 PM', name: 'Dr. Evan Lewis-Healey', role: 'Speaker' },
+      { time: '8:15 – 8:30 PM', name: 'Dr. Winson Yang', role: 'Speaker' },
+      { time: '8:30 – 8:45 PM', name: 'Dr. Kilian Abellaneda-Pérez', role: 'Speaker' },
+      { time: '8:45 – 9:00 PM', name: 'Dr. Manish Saggar', role: 'Speaker' },
+      { time: '9:00 – 9:15 PM', name: 'Prof. Ramakrishnan Mani', role: 'Speaker' },
+    ],
+  },
+  {
+    time: '8:00 – 9:30 PM', session: 'Track 4', detail: 'Contemplative Tech Innovation (HaaS, SaaS based on Contemplative Sciences)', type: 'breakout', parallel: true,
+    sequence: [
+      { time: '8:00 – 9:30 PM', name: 'Satyam Tiwari', role: 'Chair' },
+      { time: '8:00 – 9:30 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair' },
+      { time: '8:00 – 8:15 PM', name: 'Mihir Nath', role: 'Speaker' },
+      { time: '8:15 – 8:30 PM', name: 'Dr. Venkatesh Hanumant Rao Chembrolu', role: 'Speaker' },
+      { time: '8:30 – 8:45 PM', name: 'Satyam Tiwari', role: 'Speaker' },
+      { time: '8:45 – 9:00 PM', name: 'Dr. Shubhajit Roy Chowdhury', role: 'Speaker' },
+      { time: '9:00 – 9:20 PM', name: 'Dr. Eric Garland', role: 'Speaker' },
+    ],
+  },
   { time: '9:20 – 9:30 PM', session: 'Conclusion', detail: 'Vote of Thanks & Announcement of Society', type: 'close' },
 ]
 
@@ -238,6 +296,28 @@ function DayBlock({ label, date, format, theme, sub, sessions, bg }: {
                             {si.detail && <p style={{ fontSize: 12.5, color: 'var(--muted-light)', marginTop: 3, lineHeight: 1.55 }}>{si.detail}</p>}
                           </div>
                         ))}
+                      </div>
+                    )}
+                    {s.sequence && (
+                      <div style={{ marginTop: 16, overflowX: 'auto', border: '1px solid var(--border)', borderRadius: 6 }}>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13.5 }}>
+                          <thead>
+                            <tr style={{ background: 'var(--surface-2)' }}>
+                              <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Time</th>
+                              <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Speaker</th>
+                              <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Role</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {s.sequence.map((row, k) => (
+                              <tr key={k} style={{ borderBottom: k < s.sequence!.length - 1 ? '1px solid var(--border)' : 'none' }}>
+                                <td style={{ padding: '10px 16px', color: 'var(--teal)', fontWeight: 600, whiteSpace: 'nowrap' }}>{row.time}</td>
+                                <td style={{ padding: '10px 16px', fontWeight: 650, color: 'var(--foreground)' }}>{row.name}</td>
+                                <td style={{ padding: '10px 16px', color: 'var(--muted-light)', whiteSpace: 'nowrap' }}>{row.role}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
                       </div>
                     )}
                     {s.table && (
