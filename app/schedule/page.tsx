@@ -43,7 +43,7 @@ const day1: Session[] = [
       { time: '7:05 – 7:20 PM', name: 'Satyam Tiwari', role: 'Spotlight Talk 5', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
       { time: '7:20 – 7:30 PM', name: 'Dhyanly Team', role: 'Contemplative Tech Demo', designation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)' },
       { time: '7:45 – 8:00 PM', name: 'Prof. Christopher Key Chapple', role: 'Spotlight Talk 7', designation: 'Doshi Professor of Indic and Comparative Theology, Loyola Marymount University' },
-      { time: '8:00 – 8:50 PM', name: 'Shri Raghav Krishnan · Chapple · Wheeler-Mantoan · Haberlin · Tiwari', role: 'Panel Discussion', designation: 'Brhat · Loyola Marymount University · Notre Dame of Maryland University · University of Central Florida · YogaXBiofeedback (Dhyanly)' },
+      { time: '8:00 – 8:50 PM', name: 'Prof. Christopher Key Chapple · Prof. Amy Wheeler-Mantoan · Dr. Steve Haberlin · Satyam Tiwari', role: 'Panel Discussion', designation: 'Loyola Marymount University · Notre Dame of Maryland University · University of Central Florida · YogaXBiofeedback (Dhyanly)' },
       { time: '8:45 – 9:10 PM', name: 'Dr. Steve Haberlin', role: 'Spotlight Talk 6', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
     ],
   },
