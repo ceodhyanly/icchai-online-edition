@@ -28,7 +28,7 @@ const day1: Session[] = [
       { time: '4:30 – 4:40 PM', name: 'Dr. Usha Udaar', role: 'Talk', designation: 'Assistant Professor, Department of Humanities and Social Sciences, IIT Kanpur' },
       { time: '4:40 – 4:50 PM', name: 'Dr. Arpit Kumar Dubey', role: 'Talk', designation: 'Morarji Desai National Institute of Yoga (MDNIY)' },
       { time: '4:50 – 5:00 PM', name: 'Satyam Tiwari', role: 'Talk', designation: 'Convenor, ICCHAI 2026' },
-      { time: '5:00 – 5:05 PM', name: 'Shri Ramesh Tiwari', role: 'Vote of Thanks', designation: 'Director, Dhyanly' },
+      { time: '5:00 – 5:05 PM', name: 'Shri Ramesh Tiwari', role: 'Vote of Thanks', designation: 'Director, YogaXBiofeedback Pvt Ltd (Dhyanly)' },
       { time: '5:05 – 5:30 PM', name: 'Refreshment & Networking', role: 'Break' },
     ],
   },

@@ -35,6 +35,12 @@ const lineup: Person[] = [
     photo: '/speakers/rajeev-ahuja.jpg',
   },
   {
+    role: 'Vote of Thanks',
+    name: 'Shri Ramesh Tiwari',
+    designation: 'Director, YogaXBiofeedback Pvt Ltd (Dhyanly)',
+    photo: '/speakers/ramesh-tiwari.png',
+  },
+  {
     role: 'Talk',
     name: 'Dr. Swayam Bagaria',
     designation: 'Assistant Professor of Hindu Studies, Harvard Divinity School',
