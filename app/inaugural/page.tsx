@@ -66,15 +66,15 @@ const lineup: Person[] = [
   },
   {
     role: 'Talk',
-    name: 'Dr. Arpit Kumar Dubey',
-    designation: 'Morarji Desai National Institute of Yoga (MDNIY)',
-    photo: '/speakers/arpit-dubey.jpg',
-  },
-  {
-    role: 'Talk',
     name: 'Dr. Usha Udaar',
     designation: 'Assistant Professor, Department of Humanities and Social Sciences, IIT Kanpur',
     photo: '/speakers/usha-udaar.jpg',
+  },
+  {
+    role: 'Talk',
+    name: 'Dr. Arpit Kumar Dubey',
+    designation: 'Morarji Desai National Institute of Yoga (MDNIY)',
+    photo: '/speakers/arpit-dubey.jpg',
   },
   {
     role: 'Convenor',
