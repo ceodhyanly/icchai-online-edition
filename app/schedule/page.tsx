@@ -11,6 +11,22 @@ type Session = {
   sequence?: { time: string; name: string; role?: string; designation?: string }[]
 }
 
+const mananaSequence: Session['sequence'] = [
+  { time: '6:00 – 6:10 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Meditation', designation: 'Notre Dame of Maryland University' },
+  { time: '6:10 – 6:25 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'NDMU Presentation', designation: 'Notre Dame of Maryland University' },
+  { time: '6:25 – 6:40 PM', name: 'Dr. Steve Haberlin', role: 'UCF Presentation', designation: 'University of Central Florida' },
+  { time: '6:40 – 6:55 PM', name: 'Dr. Aditya Rajput', role: 'IIT Ropar Presentation', designation: 'CoE-IKS, IIT Ropar' },
+  { time: '6:55 – 7:10 PM', name: 'Prof. James Gomes', role: 'IIT Delhi Presentation', designation: 'Kusuma School of Biological Sciences, IIT Delhi' },
+  { time: '7:10 – 7:25 PM', name: 'Satyam Tiwari', role: 'Dhyanly Presentation', designation: 'YogaXBiofeedback Pvt Ltd (Dhyanly) · IIT Mandi' },
+  { time: '7:25 – 7:40 PM', name: 'Shri Raghav Krishnan', role: 'Brhat Presentation', designation: 'Brhat' },
+  { time: '7:40 – 8:40 PM', name: 'Prof. Amy Wheeler-Mantoan · Dr. Steve Haberlin · Satyam Tiwari · Shri Raghav Krishnan', role: 'Panel Discussion', designation: 'ICCHAI 2026' },
+  { time: '8:40 – 8:55 PM', name: 'Dr. Khushbu Jain', role: 'Spotlight Talk', designation: 'Morarji Desai National Institute of Yoga (MDNIY)' },
+  { time: '8:55 – 9:05 PM', name: 'Dr. Somya Nagar', role: 'Lightning Talk — "Devalaya to Dharma Sanchalan: A Blueprint for Mandir Governance"', designation: 'Banasthali Vidyapith' },
+  { time: '9:05 – 9:15 PM', name: 'Dr. Sunita Chaudhari', role: 'Lightning Talk — "Translating Yogic Traits Through mHealth: Real-Time PPG–HRV Tracking for Quality of Life, Mental Health"', designation: 'MITWPU, Pune' },
+  { time: '9:15 – 9:25 PM', name: 'Open Slot', role: 'Lightning Talk (Open)' },
+  { time: '9:25 – 9:30 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Vote of Thanks', designation: 'Notre Dame of Maryland University' },
+]
+
 const day1: Session[] = [
   {
     time: '2:00 – 5:30 PM', session: 'Inaugural Session (In-Person, IIT Delhi)', type: 'main',
@@ -195,6 +211,12 @@ export default function SchedulePage() {
             <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>Audience</p>
             <p style={{ fontSize: 15, fontWeight: 650, lineHeight: 1.45, color: 'var(--foreground)' }}>HoDs, faculty, PhD, Master&apos;s and Bachelor&apos;s students from IKS, Yoga, Mindfulness and Meditation departments</p>
           </div>
+
+          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--muted)', marginTop: 40, marginBottom: 4 }}>
+            Full Manana Programme <span style={{ color: 'var(--muted-light)', fontWeight: 600 }}>· times in IST</span>
+          </p>
+          <SequenceTable rows={mananaSequence} />
+
           <div style={{ marginTop: 32, background: 'var(--surface-2)', border: '1px solid var(--teal-border)', borderTop: '3px solid var(--teal)', borderRadius: 6, padding: '32px 32px' }}>
             <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>Manana registration</p>
             <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>Separate from conference registration</h3>
@@ -243,6 +265,35 @@ export default function SchedulePage() {
           <Link href="/register" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register Free</Link>
         </div>
       </section>
+    </div>
+  )
+}
+
+function SequenceTable({ rows }: { rows: Session['sequence'] }) {
+  if (!rows) return null
+  return (
+    <div style={{ marginTop: 16, overflowX: 'auto', border: '1px solid var(--border)', borderRadius: 6 }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13.5 }}>
+        <thead>
+          <tr style={{ background: 'var(--surface-2)' }}>
+            <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Time</th>
+            <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Speaker</th>
+            <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, k) => (
+            <tr key={k} style={{ borderBottom: k < rows.length - 1 ? '1px solid var(--border)' : 'none' }}>
+              <td style={{ padding: '10px 16px', color: 'var(--teal)', fontWeight: 600, whiteSpace: 'nowrap' }}>{row.time}</td>
+              <td style={{ padding: '10px 16px' }}>
+                <span style={{ fontWeight: 650, color: 'var(--foreground)', display: 'block' }}>{row.name}</span>
+                {row.designation && <span style={{ fontSize: 12, color: 'var(--muted-light)', display: 'block', marginTop: 2 }}>{row.designation}</span>}
+              </td>
+              <td style={{ padding: '10px 16px', color: 'var(--muted-light)', whiteSpace: 'nowrap' }}>{row.role}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -296,31 +347,7 @@ function DayBlock({ label, date, format, theme, sub, sessions, bg }: {
                         ))}
                       </div>
                     )}
-                    {s.sequence && (
-                      <div style={{ marginTop: 16, overflowX: 'auto', border: '1px solid var(--border)', borderRadius: 6 }}>
-                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13.5 }}>
-                          <thead>
-                            <tr style={{ background: 'var(--surface-2)' }}>
-                              <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Time</th>
-                              <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Speaker</th>
-                              <th style={{ textAlign: 'left', padding: '10px 16px', fontSize: 10.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--muted)', borderBottom: '1px solid var(--border)' }}>Role</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {s.sequence.map((row, k) => (
-                              <tr key={k} style={{ borderBottom: k < s.sequence!.length - 1 ? '1px solid var(--border)' : 'none' }}>
-                                <td style={{ padding: '10px 16px', color: 'var(--teal)', fontWeight: 600, whiteSpace: 'nowrap' }}>{row.time}</td>
-                                <td style={{ padding: '10px 16px' }}>
-                                  <span style={{ fontWeight: 650, color: 'var(--foreground)', display: 'block' }}>{row.name}</span>
-                                  {row.designation && <span style={{ fontSize: 12, color: 'var(--muted-light)', display: 'block', marginTop: 2 }}>{row.designation}</span>}
-                                </td>
-                                <td style={{ padding: '10px 16px', color: 'var(--muted-light)', whiteSpace: 'nowrap' }}>{row.role}</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    )}
+                    {s.sequence && <SequenceTable rows={s.sequence} />}
                     {s.table && (
                       <div style={{ marginTop: 16, overflowX: 'auto', border: '1px solid var(--border)', borderRadius: 6 }}>
                         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13.5 }}>
