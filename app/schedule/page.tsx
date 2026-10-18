@@ -33,7 +33,7 @@ const day1: Session[] = [
     sequence: [
       { time: '2:00 – 2:20 PM', name: 'Organising Team', role: 'Lamp Lighting & Welcome' },
       { time: '2:20 – 2:35 PM', name: 'Prof. (Dr.) Tankeshwar Kumar', role: 'Chief Guest Address', designation: 'Hon’ble Vice-Chancellor, Central University of Haryana' },
-      { time: '2:35 – 2:50 PM', name: 'Shri Akhilesh Mishra', role: 'Guest of Honour Address', designation: 'Former Ambassador of India to Ireland' },
+      { time: '2:35 – 2:50 PM', name: 'His Excellency Shri Akhilesh Mishra', role: 'Guest of Honour Address', designation: 'Former Ambassador of India to Ireland' },
       { time: '2:50 – 3:05 PM', name: 'Prof. (Dr.) Prerna Gaur', role: 'Inaugural Keynote Address', designation: 'Former Director, NSUT West Campus; IEEE Leader' },
       { time: '3:05 – 3:20 PM', name: 'Prof. Rajeev Ahuja', role: 'Plenary Talk (Online)', designation: 'Director, IIT Ropar' },
       { time: '3:20 – 3:35 PM', name: 'Dr. Swayam Bagaria', role: 'Talk', designation: 'Assistant Professor of Hindu Studies, Harvard Divinity School' },

@@ -18,7 +18,7 @@ const lineup: Person[] = [
   },
   {
     role: 'Guest of Honour',
-    name: 'Shri Akhilesh Mishra',
+    name: 'His Excellency Shri Akhilesh Mishra',
     designation: 'Former Ambassador of India to Ireland · High Commissioner to the Maldives',
     photo: '/speakers/akhilesh-mishra.jpeg',
   },
