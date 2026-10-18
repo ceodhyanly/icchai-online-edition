@@ -11,41 +11,39 @@ type Session = {
   sequence?: { time: string; name: string; role?: string; designation?: string }[]
 }
 
-const inauguralTable: Session['table'] = [
-  { role: 'Welcome', name: 'Organising Team', designation: 'Lamp Lighting & Welcome' },
-  { role: 'Plenary Address (Online)', name: 'Prof. Rajeev Ahuja', designation: 'Director, IIT Ropar' },
-  { role: 'Chief Guest', name: 'Prof. (Dr.) Tankeshwar Kumar', designation: 'Hon’ble Vice-Chancellor, Central University of Haryana' },
-  { role: 'Guest of Honour', name: 'Shri Akhilesh Mishra', designation: 'Former Ambassador of India to Ireland' },
-  { role: 'Inaugural Keynote Address', name: 'Prof. (Dr.) Prerna Gaur', designation: 'Former Director, NSUT West Campus; IEEE Leader' },
-  { role: 'Distinguished Speaker', name: 'Prof. (Dr.) Vijay Kumar', designation: 'Hon’ble Vice-Chancellor, GJUST & CDLU, Hisar' },
-  { role: 'Talk', name: 'Dr. Swayam Bagaria', designation: 'Assistant Professor of Hindu Studies, Harvard Divinity School' },
-  { role: 'Talk', name: 'Prof. Rahul Garg', designation: 'Department of Computer Science and Engineering, IIT Delhi' },
-  { role: 'Talk', name: 'Dr. James Gomes', designation: 'Kusuma School of Biological Sciences, IIT Delhi' },
-  { role: 'Talk', name: 'Prof. Subir Kumar Saha', designation: 'Project Director, IHFC, IIT Delhi' },
-  { role: 'Talk', name: 'Dr. Sangita Garg', designation: 'VP & Head of R&D, IHFC, IIT Delhi' },
-  { role: 'Talk', name: 'Dr. Arpit Kumar Dubey', designation: 'Morarji Desai National Institute of Yoga (MDNIY)' },
-  { role: 'Convenor', name: 'Satyam Tiwari', designation: 'ICCHAI 2026' },
-]
-
 const day1: Session[] = [
   {
-    time: '2:00 – 3:46 PM', session: 'Inaugural Session (In-Person, IIT Delhi)', type: 'main',
-    table: inauguralTable,
+    time: '2:00 – 5:30 PM', session: 'Inaugural Session (In-Person, IIT Delhi)', type: 'main',
+    sequence: [
+      { time: '2:00 – 2:20 PM', name: 'Organising Team', role: 'Lamp Lighting & Welcome' },
+      { time: '2:20 – 2:35 PM', name: 'Prof. (Dr.) Tankeshwar Kumar', role: 'Chief Guest Address', designation: 'Hon’ble Vice-Chancellor, Central University of Haryana' },
+      { time: '2:35 – 2:50 PM', name: 'Shri Akhilesh Mishra', role: 'Guest of Honour Address', designation: 'Former Ambassador of India to Ireland' },
+      { time: '2:50 – 3:05 PM', name: 'Prof. (Dr.) Prerna Gaur', role: 'Inaugural Keynote Address', designation: 'Former Director, NSUT West Campus; IEEE Leader' },
+      { time: '3:05 – 3:20 PM', name: 'Prof. Rajeev Ahuja', role: 'Plenary Talk (Online)', designation: 'Director, IIT Ropar' },
+      { time: '3:20 – 3:35 PM', name: 'Dr. Swayam Bagaria', role: 'Talk', designation: 'Assistant Professor of Hindu Studies, Harvard Divinity School' },
+      { time: '3:35 – 3:50 PM', name: 'Dr. James Gomes', role: 'Talk', designation: 'Kusuma School of Biological Sciences, IIT Delhi' },
+      { time: '3:50 – 4:05 PM', name: 'Prof. Jyoti Kumar', role: 'Talk', designation: 'Department of Design, IIT Delhi' },
+      { time: '4:05 – 4:20 PM', name: 'Prof. Rahul Garg', role: 'Talk', designation: 'Department of Computer Science and Engineering, IIT Delhi' },
+      { time: '4:20 – 4:30 PM', name: 'Dr. Sangita Garg', role: 'Talk', designation: 'VP & Head of R&D, IHFC, IIT Delhi' },
+      { time: '4:30 – 4:40 PM', name: 'Dr. Arpit Kumar Dubey', role: 'Talk', designation: 'Morarji Desai National Institute of Yoga (MDNIY)' },
+      { time: '4:40 – 4:50 PM', name: 'Dr. Usha Udaar', role: 'Talk', designation: 'Assistant Professor, Department of Humanities and Social Sciences, IIT Kanpur' },
+      { time: '4:50 – 5:00 PM', name: 'Satyam Tiwari', role: 'Talk', designation: 'Convenor, ICCHAI 2026' },
+      { time: '5:00 – 5:05 PM', name: 'Shri Ramesh Tiwari', role: 'Vote of Thanks', designation: 'Director, Dhyanly' },
+      { time: '5:05 – 5:30 PM', name: 'Refreshment & Networking', role: 'Break' },
+    ],
   },
-  { time: '4:10 – 5:00 PM', session: 'Tech Demo', type: 'demo' },
-  { time: '5:00 – 5:30 PM', session: 'Refreshment & Networking', type: 'break' },
   {
     time: '5:30 – 8:50 PM', session: 'Hybrid Spotlight Talks & Panel', type: 'main',
     sequence: [
       { time: '5:30 – 5:40 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Chair / Opening Meditation', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
       { time: '5:45 – 6:05 PM', name: 'Dr. Bala Subramaniam', role: 'Spotlight Talk 1', designation: 'Professor of Anesthesiology, Harvard Medical School · Beth Israel Deaconess Medical Center' },
       { time: '6:05 – 6:25 PM', name: 'Dr. Sara Lazar', role: 'Spotlight Talk 2', designation: 'Associate Researcher, Psychiatry, Massachusetts General Hospital · Harvard Medical School' },
-      { time: '6:25 – 6:45 PM', name: 'Dr. Sanjay Mishra, IAS', role: 'Spotlight Talk 3', designation: 'Government of Madhya Pradesh · AYUSH & Wellness Policy' },
+      { time: '6:25 – 6:45 PM', name: 'Dr. Sanjay Mishra, IAS', role: 'Spotlight Talk 3', designation: 'Ministry of AYUSH, Government of India' },
       { time: '6:50 – 7:05 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Spotlight Talk 4', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
       { time: '7:05 – 7:20 PM', name: 'Satyam Tiwari', role: 'Spotlight Talk 5', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
       { time: '7:20 – 7:30 PM', name: 'Dhyanly Team', role: 'Contemplative Tech Demo', designation: 'YogaXBiofeedback Pvt Ltd (Dhyanly)' },
       { time: '7:45 – 8:00 PM', name: 'Prof. Christopher Key Chapple', role: 'Spotlight Talk 7', designation: 'Doshi Professor of Indic and Comparative Theology, Loyola Marymount University' },
-      { time: '8:00 – 8:50 PM', name: 'Chapple · Wheeler-Mantoan · Haberlin · Tiwari', role: 'Panel Discussion', designation: 'Loyola Marymount University · Notre Dame of Maryland University · University of Central Florida · YogaXBiofeedback (Dhyanly)' },
+      { time: '8:00 – 8:50 PM', name: 'Shri Raghav Krishnan · Chapple · Wheeler-Mantoan · Haberlin · Tiwari', role: 'Panel Discussion', designation: 'Brhat · Loyola Marymount University · Notre Dame of Maryland University · University of Central Florida · YogaXBiofeedback (Dhyanly)' },
       { time: '8:45 – 9:10 PM', name: 'Dr. Steve Haberlin', role: 'Spotlight Talk 6', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
     ],
   },

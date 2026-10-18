@@ -29,12 +29,6 @@ const lineup: Person[] = [
     photo: '/speakers/prerna-gaur.jpeg',
   },
   {
-    role: 'Distinguished Speaker',
-    name: 'Prof. (Dr.) Vijay Kumar',
-    designation: 'Hon’ble Vice-Chancellor, GJUST & CDLU, Hisar',
-    photo: '/speakers/vijay-kumar.jpg',
-  },
-  {
     role: 'Plenary Address (Online)',
     name: 'Prof. Rajeev Ahuja',
     designation: 'Director, IIT Ropar',
@@ -48,21 +42,21 @@ const lineup: Person[] = [
   },
   {
     role: 'Talk',
-    name: 'Prof. Rahul Garg',
-    designation: 'Department of Computer Science and Engineering, IIT Delhi',
-    photo: '/speakers/rahul-garg.jpg',
-  },
-  {
-    role: 'Talk',
     name: 'Dr. James Gomes',
     designation: 'Kusuma School of Biological Sciences, IIT Delhi',
     photo: '/speakers/james-gomes.png',
   },
   {
     role: 'Talk',
-    name: 'Prof. Subir Kumar Saha',
-    designation: 'Project Director, IHFC, IIT Delhi',
-    photo: '/organizers/subir-kumar-saha.png',
+    name: 'Prof. Jyoti Kumar',
+    designation: 'Department of Design, IIT Delhi',
+    photo: '/speakers/jyoti-kumar.jpg',
+  },
+  {
+    role: 'Talk',
+    name: 'Prof. Rahul Garg',
+    designation: 'Department of Computer Science and Engineering, IIT Delhi',
+    photo: '/speakers/rahul-garg.jpg',
   },
   {
     role: 'Talk',
@@ -75,6 +69,12 @@ const lineup: Person[] = [
     name: 'Dr. Arpit Kumar Dubey',
     designation: 'Morarji Desai National Institute of Yoga (MDNIY)',
     photo: '/speakers/arpit-dubey.jpg',
+  },
+  {
+    role: 'Talk',
+    name: 'Dr. Usha Udaar',
+    designation: 'Assistant Professor, Department of Humanities and Social Sciences, IIT Kanpur',
+    photo: '/speakers/usha-udaar.jpg',
   },
   {
     role: 'Convenor',
