@@ -77,8 +77,8 @@ const day2: Session[] = [
   {
     time: '6:50 – 8:00 PM', session: 'Track 1', detail: 'Yoga, Mindfulness, Meditation and Dharma in the Era of AI and HealthTech', type: 'breakout', parallel: true,
     sequence: [
-      { time: '6:50 – 8:00 PM', name: 'Satyam Tiwari', role: 'Chair', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
-      { time: '6:50 – 8:00 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
+      { time: '6:50 – 8:00 PM', name: 'Dr. Steve Haberlin', role: 'Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
+      { time: '6:50 – 8:00 PM', name: 'Aditya Pandey', role: 'Support', designation: 'Head of International Operations, ICCH-AI 2026' },
       { time: '6:50 – 7:05 PM', name: 'Prof. Ithamar Theodor', role: 'Speaker', designation: 'Professor of Hindu and Indian Studies, Bar-Ilan University' },
       { time: '7:05 – 7:20 PM', name: 'Dr. Ishwar V. Basavaraddi', role: 'Speaker', designation: 'Director & Professor, Centre for Yoga, Wellness and Integrative Medicine, MGUMST Jaipur' },
       { time: '7:20 – 7:30 PM', name: 'Dr. Yikai Xu', role: 'Speaker', designation: 'New York University' },
@@ -90,7 +90,8 @@ const day2: Session[] = [
     time: '6:50 – 7:50 PM', session: 'Track 2', detail: 'Indian Knowledge Systems & AI, including Ayurveda: Diagnostics, Dosha Profiling and Personalised Digital Health', type: 'breakout', parallel: true,
     sequence: [
       { time: '6:50 – 7:50 PM', name: 'Dr. Amy Wheeler-Mantoan', role: 'Chair', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
-      { time: '6:50 – 7:50 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
+      { time: '6:50 – 7:50 PM', name: 'Satyam Tiwari', role: 'Co-Chair', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
+      { time: '6:50 – 7:50 PM', name: 'Rudrakshi Tomar · Shivangi Sharma', role: 'Support', designation: 'Head of Communications · Social Media Lead, ICCH-AI 2026' },
       { time: '6:50 – 7:05 PM', name: 'Dr. Varun Dutt', role: 'Speaker', designation: 'Professor, School of Computing and Electrical Engineering, IIT Mandi' },
       { time: '7:05 – 7:20 PM', name: 'Dr. Hemant Bhargav', role: 'Speaker', designation: 'Associate Professor, Department of Integrative Medicine, NIMHANS' },
       { time: '7:20 – 7:35 PM', name: 'Dr. Prathosh A P', role: 'Speaker', designation: 'Assistant Professor, Department of Electrical Communication Engineering, IISc Bengaluru' },
@@ -98,30 +99,32 @@ const day2: Session[] = [
     ],
   },
   {
-    time: '8:00 – 9:15 PM', session: 'Track 3', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true,
+    time: '8:00 – 9:30 PM', session: 'Track 3', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true,
     sequence: [
-      { time: '8:00 – 9:15 PM', name: 'Dr. Steve Haberlin', role: 'Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
-      { time: '8:00 – 9:15 PM', name: 'Dr. Amy Wheeler-Mantoan', role: 'Co-Chair', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
+      { time: '8:00 – 9:30 PM', name: 'Dr. Steve Haberlin', role: 'Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
+      { time: '8:00 – 9:30 PM', name: 'Aditya Pandey', role: 'Support', designation: 'Head of International Operations, ICCH-AI 2026' },
       { time: '8:00 – 8:15 PM', name: 'Dr. Evan Lewis-Healey', role: 'Speaker', designation: 'Postdoctoral Researcher, Department of Psychiatry, University of Oxford' },
       { time: '8:15 – 8:30 PM', name: 'Dr. Winson Yang', role: 'Speaker', designation: 'Junior Faculty and Instructor, Harvard Medical School · Massachusetts General Hospital' },
       { time: '8:30 – 8:45 PM', name: 'Dr. Kilian Abellaneda-Pérez', role: 'Speaker', designation: 'University of Lleida · Institut Guttmann, Spain' },
       { time: '8:45 – 9:00 PM', name: 'Dr. Manish Saggar', role: 'Speaker', designation: 'Associate Professor of Psychiatry & Behavioral Sciences, Stanford University' },
       { time: '9:00 – 9:15 PM', name: 'Prof. Ramakrishnan Mani', role: 'Speaker', designation: 'Associate Professor & Associate Dean (Research), University of Otago' },
+      { time: '9:15 – 9:30 PM', name: 'Satyam Tiwari · Prof. Amy Wheeler-Mantoan', role: 'Vote of Thanks' },
     ],
   },
   {
     time: '8:00 – 9:30 PM', session: 'Track 4', detail: 'Contemplative Tech Innovation (HaaS, SaaS based on Contemplative Sciences)', type: 'breakout', parallel: true,
     sequence: [
-      { time: '8:00 – 9:30 PM', name: 'Satyam Tiwari', role: 'Chair', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
-      { time: '8:00 – 9:30 PM', name: 'Dr. Steve Haberlin', role: 'Co-Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
+      { time: '8:00 – 9:30 PM', name: 'Dr. Amy Wheeler-Mantoan', role: 'Chair', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
+      { time: '8:00 – 9:30 PM', name: 'Satyam Tiwari', role: 'Co-Chair', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
+      { time: '8:00 – 9:30 PM', name: 'Rudrakshi Tomar · Shivangi Sharma', role: 'Support', designation: 'Head of Communications · Social Media Lead, ICCH-AI 2026' },
       { time: '8:00 – 8:15 PM', name: 'Mihir Nath', role: 'Speaker', designation: 'Research Assistant, Flourishing Intelligence Program, University of Oxford' },
       { time: '8:15 – 8:30 PM', name: 'Dr. Venkatesh Hanumant Rao Chembrolu', role: 'Speaker', designation: 'Associate Professor, Indian Institute of Technology, Mandi' },
       { time: '8:30 – 8:45 PM', name: 'Satyam Tiwari', role: 'Speaker', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
       { time: '8:45 – 9:00 PM', name: 'Dr. Shubhajit Roy Chowdhury', role: 'Speaker', designation: 'Professor, School of Computing and Electrical Engineering, IIT Mandi' },
       { time: '9:00 – 9:20 PM', name: 'Dr. Eric Garland', role: 'Speaker', designation: 'Endowed Professor in Health Sciences, University of California San Diego' },
+      { time: '9:20 – 9:30 PM', name: 'Satyam Tiwari · Prof. Amy Wheeler-Mantoan', role: 'Vote of Thanks' },
     ],
   },
-  { time: '9:20 – 9:30 PM', session: 'Conclusion', detail: 'Vote of Thanks & Announcement of Society', type: 'close' },
 ]
 
 const typeColor: Record<string, string> = {
