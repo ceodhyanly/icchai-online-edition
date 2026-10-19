@@ -12,19 +12,20 @@ type Session = {
 }
 
 const mananaSequence: Session['sequence'] = [
-  { time: '6:00 – 6:10 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Meditation', designation: 'Notre Dame of Maryland University' },
+  { time: '6:00 – 6:10 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Guided Meditation', designation: 'Notre Dame of Maryland University' },
   { time: '6:10 – 6:25 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'NDMU Presentation', designation: 'Notre Dame of Maryland University' },
   { time: '6:25 – 6:40 PM', name: 'Dr. Steve Haberlin', role: 'UCF Presentation', designation: 'University of Central Florida' },
   { time: '6:40 – 6:55 PM', name: 'Dr. Aditya Rajput', role: 'IIT Ropar Presentation', designation: 'CoE-IKS, IIT Ropar' },
   { time: '6:55 – 7:10 PM', name: 'Prof. James Gomes', role: 'IIT Delhi Presentation', designation: 'Kusuma School of Biological Sciences, IIT Delhi' },
   { time: '7:10 – 7:25 PM', name: 'Satyam Tiwari', role: 'Dhyanly Presentation', designation: 'YogaXBiofeedback Pvt Ltd (Dhyanly) · IIT Mandi' },
   { time: '7:25 – 7:40 PM', name: 'Shri Raghav Krishnan', role: 'Brhat Presentation', designation: 'Brhat' },
-  { time: '7:40 – 8:40 PM', name: 'Prof. Amy Wheeler-Mantoan · Dr. Steve Haberlin · Satyam Tiwari · Shri Raghav Krishnan', role: 'Panel Discussion', designation: 'ICCHAI 2026' },
+  { time: '7:40 – 8:40 PM', name: 'Prof. Amy Wheeler-Mantoan · Dr. Steve Haberlin · Satyam Tiwari', role: 'Panel Discussion', designation: 'ICCHAI 2026' },
   { time: '8:40 – 8:55 PM', name: 'Dr. Khushbu Jain', role: 'Spotlight Talk', designation: 'Morarji Desai National Institute of Yoga (MDNIY)' },
   { time: '8:55 – 9:05 PM', name: 'Dr. Somya Nagar', role: 'Lightning Talk — "Devalaya to Dharma Sanchalan: A Blueprint for Mandir Governance"', designation: 'Banasthali Vidyapith' },
   { time: '9:05 – 9:15 PM', name: 'Dr. Sunita Chaudhari', role: 'Lightning Talk — "Translating Yogic Traits Through mHealth: Real-Time PPG–HRV Tracking for Quality of Life, Mental Health"', designation: 'MITWPU, Pune' },
-  { time: '9:15 – 9:25 PM', name: 'Open Slot', role: 'Lightning Talk (Open)' },
-  { time: '9:25 – 9:30 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Vote of Thanks', designation: 'Notre Dame of Maryland University' },
+  { time: '9:15 – 9:25 PM', name: 'Dr. Racheal Nikita Sharma', role: 'Lightning Talk — "The Mind in the Age of AI: Ancient Upanishadic Insights for Digital Mental Wellness"', designation: 'Dept. of Wellness & Yogic Science, MIT World Peace University, Pune' },
+  { time: '9:25 – 9:30 PM', name: 'Rudrakshi Tomar', role: 'Lightning Talk — "Sagarbha and Agarbha Pranayama: Theory and Practice"', designation: 'ICCH-AI 2026' },
+  { time: '9:30 – 9:35 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Vote of Thanks', designation: 'Notre Dame of Maryland University' },
 ]
 
 const day1: Session[] = [
@@ -79,6 +80,7 @@ const day2: Session[] = [
     sequence: [
       { time: '—', name: 'Dr. Steve Haberlin', role: 'Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
       { time: '—', name: 'Aditya Pandey', role: 'Support', designation: 'Head of International Operations, ICCH-AI 2026' },
+      { time: '—', name: 'Sai Priya Chodavarapu · Tanya Fransz', role: 'Support', designation: 'Head of Programme Documentation · Head of Media & Promotion, ICCH-AI 2026' },
       { time: '6:50 – 7:05 PM', name: 'Prof. Ithamar Theodor', role: 'Speaker', designation: 'Professor of Hindu and Indian Studies, Bar-Ilan University' },
       { time: '7:05 – 7:20 PM', name: 'Dr. Ishwar V. Basavaraddi', role: 'Speaker', designation: 'Director & Professor, Centre for Yoga, Wellness and Integrative Medicine, MGUMST Jaipur' },
       { time: '7:20 – 7:30 PM', name: 'Dr. Yikai Xu', role: 'Speaker', designation: 'New York University' },
@@ -95,7 +97,7 @@ const day2: Session[] = [
       { time: '6:50 – 7:05 PM', name: 'Dr. Varun Dutt', role: 'Speaker', designation: 'Professor, School of Computing and Electrical Engineering, IIT Mandi' },
       { time: '7:05 – 7:20 PM', name: 'Dr. Hemant Bhargav', role: 'Speaker', designation: 'Associate Professor, Department of Integrative Medicine, NIMHANS' },
       { time: '7:20 – 7:35 PM', name: 'Dr. Prathosh A P', role: 'Speaker', designation: 'Assistant Professor, Department of Electrical Communication Engineering, IISc Bengaluru' },
-      { time: '7:35 – 7:50 PM', name: 'Dr. Mrittunjoy Guha Majumdar', role: 'Speaker', designation: 'Assistant Professor, NIAS Bengaluru' },
+      { time: '7:35 – 7:50 PM', name: 'Dr. Mrittunjoy Guha Majumdar', role: 'Speaker', designation: 'Amrita Vishwa Vidyapeetham' },
     ],
   },
   {
@@ -103,6 +105,7 @@ const day2: Session[] = [
     sequence: [
       { time: '—', name: 'Dr. Steve Haberlin', role: 'Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
       { time: '—', name: 'Aditya Pandey', role: 'Support', designation: 'Head of International Operations, ICCH-AI 2026' },
+      { time: '—', name: 'Sai Priya Chodavarapu · Tanya Fransz', role: 'Support', designation: 'Head of Programme Documentation · Head of Media & Promotion, ICCH-AI 2026' },
       { time: '8:00 – 8:15 PM', name: 'Dr. Evan Lewis-Healey', role: 'Speaker', designation: 'Postdoctoral Researcher, Department of Psychiatry, University of Oxford' },
       { time: '8:15 – 8:30 PM', name: 'Dr. Winson Yang', role: 'Speaker', designation: 'Junior Faculty and Instructor, Harvard Medical School · Massachusetts General Hospital' },
       { time: '8:30 – 8:45 PM', name: 'Dr. Kilian Abellaneda-Pérez', role: 'Speaker', designation: 'University of Lleida · Institut Guttmann, Spain' },
@@ -197,7 +200,7 @@ export default function SchedulePage() {
             {[
               { k: 'Date', v: 'Wednesday, October 21, 2026' },
               { k: 'Time', v: '6:00 PM IST · 8:30 AM ET · 2:30 PM CEST' },
-              { k: 'Duration', v: '3 hours' },
+              { k: 'Duration', v: '3.5 hours' },
               { k: 'Format', v: 'Virtual (link sent on registration)' },
               { k: 'Chair', v: 'Prof. Amy Wheeler-Mantoan, Notre Dame of Maryland University' },
               { k: 'Co-Chair', v: 'Satyam Tiwari, YogaXBiofeedback (Dhyanly)' },

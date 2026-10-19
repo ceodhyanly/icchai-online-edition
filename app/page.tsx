@@ -643,9 +643,9 @@ const speakers = [
   {
     name: 'Dr. Mrittunjoy Guha Majumdar',
     title: 'Assistant Professor',
-    affiliation: 'National Institute of Advanced Studies (NIAS), Bengaluru',
-    affiliationUrl: 'https://www.nias.res.in',
-    profileUrl: 'https://cms.nias.res.in/node/4427',
+    affiliation: 'Amrita Vishwa Vidyapeetham',
+    affiliationUrl: 'https://www.amrita.edu',
+    profileUrl: '',
     photo: '/speakers/mrittunjoy-guha.jpg',
     bio: 'Works on entanglement, quantum information and the foundations of quantum physics, with recent research in quantum machine learning. He completed his PhD at the Cavendish Laboratory, University of Cambridge, and has held postdoctoral positions at Harvard University and IISc Bangalore, including as a postdoctoral associate of Nobel Laureate Prof. Brian Josephson.',
   },
