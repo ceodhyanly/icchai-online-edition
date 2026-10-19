@@ -113,12 +113,12 @@ const mainPartners = [
     wide: false,
   },
   {
-    name: 'IIT Ropar',
-    dept: 'Centre of Excellence on Indian (Indigenous) Knowledge Systems (CoE-IKS)',
-    role: 'Institutional Partner',
-    desc: "IIT Ropar's dedicated centre advancing interdisciplinary research and scholarship on India's classical and contemporary knowledge traditions.",
-    logo: '/images/iit-ropar-logo-normalized.png',
-    logoAlt: 'IIT Ropar',
+    name: 'IIT Mandi',
+    dept: 'Indian Knowledge System and Mental Health Applications (IKSMHA) Centre',
+    role: 'Co-Organising Partner',
+    desc: "IIT Mandi's interdisciplinary centre bringing together Indian Knowledge Systems, cognitive science and mental health research, contributing researchers and speakers across the conference's programme.",
+    logo: '/images/iit-mandi-logo.png',
+    logoAlt: 'IIT Mandi',
     wide: false,
   },
   {
@@ -128,6 +128,15 @@ const mainPartners = [
     desc: 'Baltimore, MD. Graduate home of accredited yoga therapy and integrative health programs within a liberal-arts tradition.',
     logo: '/images/ndmulogo-normalized.png',
     logoAlt: 'Notre Dame of Maryland University',
+    wide: false,
+  },
+  {
+    name: 'IIT Ropar',
+    dept: 'Centre of Excellence on Indian (Indigenous) Knowledge Systems (CoE-IKS)',
+    role: 'Institutional Partner',
+    desc: "IIT Ropar's dedicated centre advancing interdisciplinary research and scholarship on India's classical and contemporary knowledge traditions.",
+    logo: '/images/iit-ropar-logo-normalized.png',
+    logoAlt: 'IIT Ropar',
     wide: false,
   },
   {
@@ -180,6 +189,15 @@ const speakerInstitutions = [
   { logo: '/images/otago-logo.jpg', alt: 'University of Otago', name: 'University of Otago' },
   { logo: '/images/bar-ilan-logo.png', alt: 'Bar-Ilan University', name: 'Bar-Ilan University' },
   { logo: '/images/lleida-logo.webp', alt: 'Universitat de Lleida', name: 'Universitat de Lleida' },
+  { logo: '/images/stanford-medicine.png', alt: 'Stanford University School of Medicine', name: 'Stanford Medicine' },
+  { logo: '/images/harvard-divinity-school.png', alt: 'Harvard Divinity School', name: 'Harvard Divinity School' },
+  { logo: '/images/ucsd.png', alt: 'University of California San Diego', name: 'UCSD' },
+  { logo: '/images/iit-mandi-logo.png', alt: 'Indian Institute of Technology, Mandi', name: 'IIT Mandi' },
+  { logo: '/images/university-of-groningen.jpg', alt: 'University of Groningen', name: 'University of Groningen' },
+  { logo: '/images/iit-delhi-logo.png', alt: 'Indian Institute of Technology, Delhi', name: 'IIT Delhi' },
+  { logo: '/images/iit-kanpur-logo.jpg', alt: 'Indian Institute of Technology, Kanpur', name: 'IIT Kanpur' },
+  { logo: '/images/nimhans-logo.jpg', alt: 'National Institute of Mental Health and Neurosciences (NIMHANS), Bengaluru', name: 'NIMHANS' },
+  { logo: '/images/iisc-logo.png', alt: 'Indian Institute of Science (IISc), Bengaluru', name: 'IISc Bengaluru' },
 ]
 
 const organizers = [
@@ -468,6 +486,15 @@ const speakers = [
     profileUrl: 'http://www.yogaiya.in/profile/dr-ishwar-v-basavaraddi/',
     photo: '/organizers/ishwar-basavaraddi.jpg',
     bio: "A principal architect of India's national and international yoga policy, credited for his role in developing the Common Yoga Protocol adopted for the UN International Day of Yoga. He led the Morarji Desai National Institute of Yoga (MDNIY), Ministry of AYUSH, for over two decades before moving to MGUMST, Jaipur, where he now trains postgraduate scholars in evidence-based yoga therapy.",
+  },
+  {
+    name: 'Dr. Arnav Bhavsar',
+    title: 'Professor · Chair, Indian Knowledge System and Mental Health Applications (IKSMHA) Centre',
+    affiliation: 'Indian Institute of Technology, Mandi',
+    affiliationUrl: 'https://www.iitmandi.ac.in',
+    profileUrl: 'https://faculty.iitmandi.ac.in/~arnav/',
+    photo: '/speakers/arnav-bhavsar.png',
+    bio: 'Chairs the Indian Knowledge System and Mental Health Applications (IKSMHA) Centre at IIT Mandi, where his research spans computer vision, medical image analysis, biosignal analysis and deep learning. He earned his PhD in Electrical Engineering from IIT Madras, followed by postdoctoral research at GE Global Research, Bangalore, and the University of North Carolina, Chapel Hill. His recent work includes EEG-based machine learning for mental workload classification and deep learning methods for diffusion MRI.',
   },
   {
     name: 'Dr. Varun Dutt',
@@ -840,7 +867,7 @@ export default function Home() {
 
           {/* Speaker institutions — static logo grid */}
           <div style={{ borderTop: '1px solid var(--border)', paddingTop: 48 }}>
-            <p className="label" style={{ marginBottom: 32 }}>Speakers represent institutions including</p>
+            <p className="label" style={{ marginBottom: 32 }}>Speakers call these institutions home</p>
             <div className="logo-grid">
               {speakerInstitutions.map(si => (
                 <div key={si.name} className="logo-grid-item">
