@@ -6,6 +6,7 @@ type Session = {
   detail?: string
   type: string
   parallel?: boolean
+  youtube?: string
   subItems?: { time: string; session: string; detail?: string }[]
   table?: { role: string; name: string; designation?: string }[]
   sequence?: { time: string; name: string; role?: string; designation?: string }[]
@@ -51,6 +52,7 @@ const day1: Session[] = [
   },
   {
     time: '5:30 – 8:50 PM', session: 'Hybrid Spotlight Talks & Panel', type: 'main',
+    youtube: 'https://youtube.com/live/6OUU4z1pAHU',
     sequence: [
       { time: '5:30 – 5:40 PM', name: 'Prof. Amy Wheeler-Mantoan', role: 'Chair / Opening Meditation', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
       { time: '5:45 – 6:05 PM', name: 'Dr. Bala Subramaniam', role: 'Spotlight Talk 1', designation: 'Professor of Anesthesiology, Harvard Medical School · Beth Israel Deaconess Medical Center' },
@@ -69,6 +71,7 @@ const day1: Session[] = [
 const day2: Session[] = [
   {
     time: '5:30 – 6:50 PM', session: 'Opening & Spotlight Talks', type: 'main',
+    youtube: 'https://youtube.com/live/OKTSXfXaiBI',
     sequence: [
       { time: '5:30 – 5:50 PM', name: 'Dr. Michael R. Sheehy', role: 'Spotlight Talk 1', designation: 'Research Associate Professor, Department of Religious Studies, University of Virginia' },
       { time: '5:50 – 6:10 PM', name: 'Dr. Marieke van Vugt', role: 'Spotlight Talk 2', designation: 'Associate Professor, Department of Artificial Intelligence (ALICE), University of Groningen' },
@@ -77,6 +80,7 @@ const day2: Session[] = [
   },
   {
     time: '6:50 – 8:00 PM', session: 'Track 1', detail: 'Yoga, Mindfulness, Meditation and Dharma in the Era of AI and HealthTech', type: 'breakout', parallel: true,
+    youtube: 'https://youtube.com/live/OKTSXfXaiBI',
     sequence: [
       { time: '—', name: 'Dr. Steve Haberlin', role: 'Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
       { time: '—', name: 'Aditya Pandey', role: 'Support', designation: 'Head of International Operations, ICCH-AI 2026' },
@@ -90,6 +94,7 @@ const day2: Session[] = [
   },
   {
     time: '6:50 – 7:50 PM', session: 'Track 2', detail: 'Indian Knowledge Systems & AI, including Ayurveda: Diagnostics, Dosha Profiling and Personalised Digital Health', type: 'breakout', parallel: true,
+    youtube: 'https://youtube.com/live/uE7sOAU0epc',
     sequence: [
       { time: '—', name: 'Dr. Amy Wheeler-Mantoan', role: 'Chair', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
       { time: '—', name: 'Satyam Tiwari', role: 'Co-Chair', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
@@ -102,6 +107,7 @@ const day2: Session[] = [
   },
   {
     time: '8:00 – 9:30 PM', session: 'Track 3', detail: 'Contemplative Neuroscience in the Era of HealthTech and AI (fMRI, EEG, Mental Health)', type: 'breakout', parallel: true,
+    youtube: 'https://youtube.com/live/OKTSXfXaiBI',
     sequence: [
       { time: '—', name: 'Dr. Steve Haberlin', role: 'Chair', designation: 'Assistant Professor, Curriculum & Instruction, University of Central Florida' },
       { time: '—', name: 'Aditya Pandey', role: 'Support', designation: 'Head of International Operations, ICCH-AI 2026' },
@@ -116,6 +122,7 @@ const day2: Session[] = [
   },
   {
     time: '8:00 – 9:30 PM', session: 'Track 4', detail: 'Contemplative Tech Innovation (HaaS, SaaS based on Contemplative Sciences)', type: 'breakout', parallel: true,
+    youtube: 'https://youtube.com/live/uE7sOAU0epc',
     sequence: [
       { time: '—', name: 'Dr. Amy Wheeler-Mantoan', role: 'Chair', designation: 'Professor & Chair, Yoga Therapy Department, Notre Dame of Maryland University' },
       { time: '—', name: 'Satyam Tiwari', role: 'Co-Chair', designation: 'Founder & CEO, YogaXBiofeedback Pvt Ltd (Dhyanly) · SRF, IIT Mandi' },
@@ -340,6 +347,16 @@ function DayBlock({ label, date, format, theme, sub, sessions, bg }: {
                     <span style={{ fontWeight: 700, fontSize: 15, color: 'var(--foreground)' }}>{s.session}</span>
                     {s.parallel && <span className="chip chip-teal" style={{ fontSize: 9.5, marginLeft: 10, verticalAlign: 'middle' }}>Parallel</span>}
                     {s.detail && <p style={{ fontSize: 13, color: 'var(--muted-light)', marginTop: 5, lineHeight: 1.6 }}>{s.detail}</p>}
+                    {s.youtube && (
+                      <a href={s.youtube} target="_blank" rel="noopener noreferrer" style={{
+                        display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 10,
+                        fontSize: 13, fontWeight: 700, color: '#CC0000', textDecoration: 'none',
+                        padding: '8px 14px', borderRadius: 20, background: 'rgba(204,0,0,0.08)', border: '1px solid rgba(204,0,0,0.25)',
+                      }}>
+                        <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#CC0000', display: 'inline-block' }} />
+                        Watch Live on YouTube
+                      </a>
+                    )}
                     {s.subItems && (
                       <div style={{ marginTop: 14, display: 'flex', flexDirection: 'column', gap: 12, borderLeft: '2px solid var(--border)', paddingLeft: 18 }}>
                         {s.subItems.map((si, k) => (
