@@ -128,10 +128,10 @@ export default function Navbar() {
                   <div style={{ fontWeight: 700, fontSize: 14 }}>Attend the conference</div>
                   <div style={{ fontSize: 12.5, color: '#6E5A4E', marginTop: 4, lineHeight: 1.5 }}>Open to all. Free. 22–23 October 2026.</div>
                 </Link>
-                <a href="https://forms.gle/ffjtMPo7oteYAhgTA" target="_blank" rel="noopener noreferrer" onClick={() => setRegOpen(false)} style={{ display: 'block', padding: '14px 16px', borderRadius: 6, textDecoration: 'none', color: '#1A0C08' }}>
+                <div style={{ display: 'block', padding: '14px 16px', borderRadius: 6, color: '#1A0C08', opacity: 0.55, cursor: 'not-allowed' }}>
                   <div style={{ fontWeight: 700, fontSize: 14 }}>Manana: speakers and research faculty</div>
-                  <div style={{ fontSize: 12.5, color: '#6E5A4E', marginTop: 4, lineHeight: 1.5 }}>For professors, scientists, departments, IKS and research centres. Pre-conference, 21 October 2026, online.</div>
-                </a>
+                  <div style={{ fontSize: 12.5, color: '#6E5A4E', marginTop: 4, lineHeight: 1.5 }}>Registration closed.</div>
+                </div>
               </div>
             )}
           </div>
@@ -179,7 +179,7 @@ export default function Navbar() {
           <hr style={{ border: 'none', borderTop: '1px solid rgba(26,12,8,0.09)' }} />
           <Link href="/login" className="btn btn-outline" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Sign in</Link>
           <Link href="/register" className="btn btn-teal" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Attend the conference (open to all)</Link>
-          <a href="https://forms.gle/ffjtMPo7oteYAhgTA" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Manana: speakers and research faculty</a>
+          <span className="btn btn-outline" style={{ textAlign: 'center', justifyContent: 'center', opacity: 0.55, cursor: 'not-allowed' }}>Manana: registration closed</span>
         </div>
       )}
 

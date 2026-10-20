@@ -227,9 +227,9 @@ export default function SchedulePage() {
             <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 10 }}>Manana registration</p>
             <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>Separate from conference registration</h3>
             <p className="body" style={{ maxWidth: 680, marginBottom: 20 }}>
-              Speakers, heads of department, faculty, and PhD, Master&apos;s and Bachelor&apos;s students from IKS, Yoga, Mindfulness and Meditation departments register for Manana through its own form. You do not need to register for the conference to join Manana.
+              Speakers, heads of department, faculty, and PhD, Master&apos;s and Bachelor&apos;s students from IKS, Yoga, Mindfulness and Meditation departments registered for Manana through its own form. You do not need to register for the conference to join Manana.
             </p>
-            <a href="https://forms.gle/ffjtMPo7oteYAhgTA" target="_blank" rel="noopener noreferrer" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register for Manana</a>
+            <span className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15, opacity: 0.55, cursor: 'not-allowed' }}>Manana registration is now closed</span>
           </div>
           <div style={{ marginTop: 20, padding: '24px 32px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6 }}>
             <p style={{ fontSize: 15, fontWeight: 650, marginBottom: 10 }}>Attending the conference on 22–23 October?</p>
