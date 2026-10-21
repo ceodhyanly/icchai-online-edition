@@ -37,9 +37,8 @@ export default function RegisterPage() {
     email: '', firstName: '', lastName: '', photo: '',
     institution: '', country: '', role: '', gender: '', phone: '', hasWhatsapp: true, secondaryEmail: '',
     interests: [] as string[], attendance: 'both',
-    mode: '' as '' | 'online' | 'offline', offlineCommitment: false,
-    mananInterest: false,
-    joinSociety: '' as '' | 'yes' | 'no',
+    mode: 'online' as const,
+    joinSociety: 'yes' as const,
   })
   const [photoError, setPhotoError] = useState('')
 
@@ -100,11 +99,6 @@ export default function RegisterPage() {
   }
 
   const submit = async () => {
-    if (!form.mode) { setError('Please choose how you would like to attend.'); return }
-    if (form.mode === 'offline' && !form.offlineCommitment) {
-      setError('For in-person attendance, please tick the commitment checkbox.'); return
-    }
-    if (!form.joinSociety) { setError('Please let us know whether you would like to join ISCHT.'); return }
     setLoading(true); setError('')
     const res = await fetch('/api/auth/register', {
       method: 'POST',
@@ -136,20 +130,18 @@ export default function RegisterPage() {
           <h1 style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 12 }}>
             Welcome, {success.name}!
           </h1>
-          <p className="body" style={{ marginBottom: success.mode === 'offline' ? 20 : 40 }}>
+          <p className="body" style={{ marginBottom: 20 }}>
             Your registration for ICCH-AI 2026 is confirmed. A confirmation email with your registration pass has been sent to your inbox.
           </p>
 
-          {success.mode === 'offline' && (
-            <div style={{ padding: '18px 22px', background: 'rgba(198,146,50,0.06)', border: '1px solid rgba(198,146,50,0.3)', borderRadius: 8, marginBottom: 40, textAlign: 'left' }}>
-              <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#B07C1E', marginBottom: 8 }}>
-                In-person seat — pending confirmation
-              </p>
-              <p style={{ fontSize: 12.5, color: 'var(--muted-light)', lineHeight: 1.65, marginBottom: 0 }}>
-                Your registration is complete and you can join online. Your in-person seat at IIT Delhi on 22 October 2026 is provisional and subject to confirmation by the conference authorities. We will contact you with the outcome; if it cannot be confirmed, you will still be able to attend online.
-              </p>
-            </div>
-          )}
+          <div style={{ padding: '18px 22px', background: 'rgba(164,28,48,0.05)', border: '1px solid var(--teal-border)', borderRadius: 8, marginBottom: 40, textAlign: 'left' }}>
+            <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 8 }}>
+              How you&apos;ll join
+            </p>
+            <p style={{ fontSize: 12.5, color: 'var(--muted-light)', lineHeight: 1.65, marginBottom: 0 }}>
+              ICCH-AI 2026 is fully online. We will email you the YouTube live-stream link for your sessions before the event &mdash; no further action is needed from you now.
+            </p>
+          </div>
 
           {/* Registration number box */}
           <div style={{ padding: '28px 32px', background: 'var(--surface)', border: '1px solid var(--border)', borderTop: '3px solid var(--teal)', borderRadius: 8, marginBottom: 28, textAlign: 'left' }}>
@@ -317,36 +309,11 @@ export default function RegisterPage() {
 
         {step === 4 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-            <div>
-              <label className="field-label" style={{ marginBottom: 12 }}>Mode of Attendance *</label>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {[
-                  { value: 'online', label: 'Online', sub: 'Join live from anywhere in the world (all three days)' },
-                  { value: 'offline', label: 'In person at IIT Delhi', sub: 'Attend Day 1 on-site in New Delhi on 22 October 2026 (Days 2–3 remain online)' },
-                ].map(m => (
-                  <label key={m.value} style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '16px 18px', background: form.mode === m.value ? 'rgba(164,28,48,0.06)' : 'var(--surface-3)', borderRadius: 6, border: `1px solid ${form.mode === m.value ? 'var(--teal-border)' : 'var(--border-mid)'}`, cursor: 'pointer', transition: 'all 0.15s' }}>
-                    <input type="radio" name="mode" value={m.value} checked={form.mode === m.value} onChange={e => setForm(f => ({ ...f, mode: e.target.value as 'online' | 'offline', offlineCommitment: e.target.value === 'offline' ? f.offlineCommitment : false }))} style={{ accentColor: 'var(--teal)' }} />
-                    <div>
-                      <div style={{ fontWeight: 600, fontSize: 14 }}>{m.label}</div>
-                      <div className="caption" style={{ marginTop: 2 }}>{m.sub}</div>
-                    </div>
-                  </label>
-                ))}
+            <div style={{ padding: '16px 18px', background: 'rgba(164,28,48,0.06)', borderRadius: 6, border: '1px solid var(--teal-border)' }}>
+              <div style={{ fontWeight: 600, fontSize: 14 }}>This registration is for online attendance</div>
+              <div className="caption" style={{ marginTop: 4, lineHeight: 1.6 }}>
+                ICCH-AI 2026 is fully online. We will email you the YouTube live-stream link for your sessions before the event &mdash; there is nothing else to arrange.
               </div>
-
-              {form.mode === 'offline' && (
-                <div style={{ marginTop: 12, padding: '18px 20px', background: 'var(--surface-2)', border: '1px solid var(--border)', borderRadius: 8 }}>
-                  <p style={{ fontSize: 12.5, color: 'var(--muted-light)', lineHeight: 1.7, marginBottom: 14 }}>
-                    In-person places at IIT Delhi are limited. Registering for in-person attendance records your intent — your seat is <strong>not</strong> confirmed at this stage. The conference authorities will review in-person registrations and contact you with the outcome closer to the event. If your seat cannot be confirmed, you will still be able to attend online. Please choose this option only if you are reasonably confident you can travel to New Delhi for Day 1.
-                  </p>
-                  <label style={{ display: 'flex', gap: 10, alignItems: 'flex-start', cursor: 'pointer' }}>
-                    <input type="checkbox" checked={form.offlineCommitment} onChange={e => setForm(f => ({ ...f, offlineCommitment: e.target.checked }))} style={{ accentColor: 'var(--teal)', marginTop: 3, flexShrink: 0 }} />
-                    <span style={{ fontSize: 13, color: 'var(--foreground)', lineHeight: 1.6 }}>
-                      I commit to attending Day 1 in person at IIT Delhi, New Delhi on 22 October 2026, and I understand my in-person seat is provisional and subject to confirmation by the conference authorities, who will contact me with the outcome.
-                    </span>
-                  </label>
-                </div>
-              )}
             </div>
 
             <div>
@@ -362,18 +329,6 @@ export default function RegisterPage() {
                   </label>
                 ))}
               </div>
-            </div>
-
-            <div style={{ padding: '16px 18px', background: form.mananInterest ? 'rgba(164,28,48,0.06)' : 'var(--surface-3)', borderRadius: 6, border: `1px solid ${form.mananInterest ? 'var(--teal-border)' : 'var(--border-mid)'}` }}>
-              <label style={{ display: 'flex', gap: 14, alignItems: 'flex-start', cursor: 'pointer' }}>
-                <input type="checkbox" checked={form.mananInterest} onChange={e => setForm(f => ({ ...f, mananInterest: e.target.checked }))} style={{ accentColor: 'var(--teal)', marginTop: 3, flexShrink: 0 }} />
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: 14 }}>Yes, I will attend the pre-conference on 21 October 2026: Manana, The Contemplative Futures Roundtable</div>
-                  <div className="caption" style={{ marginTop: 4, lineHeight: 1.6 }}>
-                    Virtual, 2&ndash;3 hours &middot; A researcher-level dialogue for IKS, Yoga, Mindfulness &amp; Meditation departments &mdash; HoDs, PhD, Master&apos;s &amp; Bachelor&apos;s students &mdash; on collaboration, accelerating research, and mutual grant writing.
-                  </div>
-                </div>
-              </label>
             </div>
 
             <div>
@@ -393,9 +348,9 @@ export default function RegisterPage() {
 
             <div style={{ padding: '22px 24px', background: 'var(--surface-2)', borderRadius: 8, border: '1px solid var(--border)' }}>
               <p className="label" style={{ marginBottom: 10 }}>One More Thing</p>
-              <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Become a Founding Member of ISCHT</h3>
+              <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>You&apos;re a Founding Member of ISCHT</h3>
               <p style={{ fontSize: 13, color: 'var(--muted-light)', lineHeight: 1.7, marginBottom: 6 }}>
-                The International Society for Contemplative Technology (ISCHT) is opening its doors to early members here, ahead of its launch at ICCH-AI 2026. Say yes today and it&apos;s free — with early access to society resources and $100 worth of launch-year benefits. Full enrolment follows after the conference.
+                The International Society for Contemplative Technology (ISCHT) is opening its doors to early members here, ahead of its launch at ICCH-AI 2026. By registering, you&apos;re automatically a Founding Member &mdash; completely free, with early access to society resources and $100 worth of launch-year benefits. Full enrolment follows after the conference.
               </p>
               <a href="/society" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5, color: 'var(--teal)', fontWeight: 600, textDecoration: 'none' }}>
                 Learn more about ISCHT →
@@ -403,20 +358,6 @@ export default function RegisterPage() {
               <p className="caption" style={{ marginTop: 10, fontStyle: 'italic' }}>
                 Note: the ID issued now is a provisional Founding Member listing, not a legal membership credential. Full ISCHT registration opens once the society is formally constituted, after the conference.
               </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 16 }}>
-                {[
-                  { value: 'yes', label: 'Yes — count me in as a Founding Member', sub: 'Free during this registration' },
-                  { value: 'no', label: 'Not right now', sub: '' },
-                ].map(opt => (
-                  <label key={opt.value} style={{ display: 'flex', gap: 12, alignItems: 'center', padding: '12px 14px', background: form.joinSociety === opt.value ? 'rgba(164,28,48,0.06)' : 'var(--surface)', borderRadius: 6, border: `1px solid ${form.joinSociety === opt.value ? 'var(--teal-border)' : 'var(--border-mid)'}`, cursor: 'pointer', transition: 'all 0.15s' }}>
-                    <input type="radio" name="joinSociety" value={opt.value} checked={form.joinSociety === opt.value} onChange={e => set('joinSociety', e.target.value)} style={{ accentColor: 'var(--teal)' }} />
-                    <div>
-                      <div style={{ fontWeight: 600, fontSize: 13.5 }}>{opt.label}</div>
-                      {opt.sub && <div className="caption" style={{ marginTop: 1 }}>{opt.sub}</div>}
-                    </div>
-                  </label>
-                ))}
-              </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 12 }}>
