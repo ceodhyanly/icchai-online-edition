@@ -241,7 +241,7 @@ export default function SchedulePage() {
           <div style={{ marginTop: 20, padding: '24px 32px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 6 }}>
             <p style={{ fontSize: 15, fontWeight: 650, marginBottom: 10 }}>Attending the conference on 22–23 October?</p>
             <p className="caption" style={{ marginBottom: 16 }}>Conference attendee registration is a separate form, with its own details and attendance options.</p>
-            <Link href="/register" className="btn btn-outline" style={{ padding: '12px 28px', fontSize: 14 }}>Register Free for the Conference</Link>
+            <Link href="/register" className="btn btn-outline" style={{ padding: '12px 28px', fontSize: 14 }}>Registration Closed</Link>
           </div>
         </div>
       </section>
@@ -275,7 +275,7 @@ export default function SchedulePage() {
         <div className="container">
           <h2 className="headline" style={{ marginBottom: 16 }}>Reserve your place</h2>
           <p className="body" style={{ maxWidth: 460, margin: '0 auto 40px' }}>Registration is free. Join researchers, clinicians and technologists from multiple institutions across several countries.</p>
-          <Link href="/register" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register Free</Link>
+          <Link href="/register" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Registration Closed</Link>
         </div>
       </section>
     </div>

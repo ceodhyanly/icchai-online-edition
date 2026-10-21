@@ -767,7 +767,7 @@ export default function Home() {
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Link href="/register" className="btn btn-teal">Register Free</Link>
+            <Link href="/register" className="btn btn-teal">Registration Closed</Link>
             <Link href="/schedule" className="hero-btn-outline">View Programme</Link>
           </div>
 
@@ -904,7 +904,7 @@ export default function Home() {
               <p className="body" style={{ marginBottom: 36 }}>
                 Contemplative neuroscience and biosignal science have spent the last three decades building rigorous evidence for what these practices do to the brain and body. AI and digital health now offer the tools to measure, personalise and deliver these practices at a scale no individual teacher, clinic or lab ever could.
               </p>
-              <Link href="/register" className="btn btn-teal">Join the Conference</Link>
+              <Link href="/register" className="btn btn-teal">Registration Closed</Link>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
@@ -1294,7 +1294,7 @@ export default function Home() {
             Registration is free. Join neuroscientists, yoga therapists, AI researchers, clinicians and technologists from across multiple institutions and countries.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/register" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Register Free</Link>
+            <Link href="/register" className="btn btn-teal" style={{ padding: '14px 36px', fontSize: 15 }}>Registration Closed</Link>
             <Link href="/schedule" className="btn btn-outline" style={{ padding: '14px 36px', fontSize: 15 }}>View Programme</Link>
           </div>
           <p className="caption" style={{ marginTop: 24 }}>Fully online worldwide &nbsp;·&nbsp; 17:30–21:30 IST &nbsp;·&nbsp; Free to attend</p>

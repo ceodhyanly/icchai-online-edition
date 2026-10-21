@@ -40,8 +40,13 @@ const ALLOWED_ATTENDANCE = ['both', 'day1', 'day2']
 const ALLOWED_GENDERS = ['Male', 'Female', 'Other']
 const ALLOWED_MODES = ['online', 'offline']
 
+const REGISTRATION_OPEN = false
+
 export async function POST(req: NextRequest) {
   try {
+    if (!REGISTRATION_OPEN) {
+      return NextResponse.json({ error: 'Registration is closed.' }, { status: 403 })
+    }
     const ip = (req.headers.get('x-forwarded-for') ?? '127.0.0.1').split(',')[0].trim()
     const { allowed } = rateLimit(`register:${ip}`, 5, 60 * 60 * 1000)
     if (!allowed) {

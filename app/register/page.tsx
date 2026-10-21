@@ -26,6 +26,8 @@ const attendance = [
 
 const stepLabels = ['Verify Email', 'Personal Info', 'Background', 'Preferences']
 
+const REGISTRATION_OPEN = false
+
 export default function RegisterPage() {
   const router = useRouter()
   const [checkingPending, setCheckingPending] = useState(true)
@@ -116,6 +118,30 @@ export default function RegisterPage() {
   }
 
   if (checkingPending) return null
+
+  if (!REGISTRATION_OPEN) {
+    return (
+      <div style={{ minHeight: '100vh', background: 'var(--background)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '100px 24px 80px' }}>
+        <div style={{ width: '100%', maxWidth: 520, textAlign: 'center' }}>
+          <p className="label" style={{ marginBottom: 20 }}>Registration</p>
+          <h1 style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 16 }}>
+            Registration is now closed
+          </h1>
+          <p className="body" style={{ marginBottom: 32 }}>
+            Registration for ICCH-AI 2026 is closed. If you already registered, your YouTube live-stream link will be emailed to you before the event.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <Link href="/login" className="btn btn-teal" style={{ justifyContent: 'center', padding: '14px 28px' }}>
+              Already registered? Sign in
+            </Link>
+            <Link href="/schedule" className="btn btn-outline" style={{ justifyContent: 'center', padding: '14px 28px' }}>
+              View the Programme
+            </Link>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   if (success) {
     return (
