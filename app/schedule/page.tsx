@@ -75,6 +75,7 @@ const day2: Session[] = [
     sequence: [
       { time: '5:30 – 5:50 PM', name: 'Dr. Michael R. Sheehy', role: 'Spotlight Talk 1', designation: 'Research Associate Professor, Department of Religious Studies, University of Virginia' },
       { time: '5:50 – 6:10 PM', name: 'Dr. Marieke van Vugt', role: 'Spotlight Talk 2', designation: 'Associate Professor, Department of Artificial Intelligence (ALICE), University of Groningen' },
+      { time: '6:10 – 6:30 PM', name: 'Prof. Laxmidhar Behera', role: 'Spotlight Talk 3', designation: 'Director, IIT Mandi; Senior Professor, Department of Electrical Engineering, IIT Kanpur' },
       { time: '6:30 – 6:50 PM', name: 'Dr. Sat Bir Singh Khalsa', role: 'Spotlight Talk 4', designation: 'Harvard Medical School' },
     ],
   },
