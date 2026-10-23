@@ -18,15 +18,11 @@ const pillars = [
   'Clinical Translation & Digital Health Delivery',
   'Ethics, Responsibility & the Future',
 ]
-const attendance = [
-  { value: 'both', label: 'Both Days', sub: 'October 22–23, 2026' },
-  { value: 'day1', label: 'Day 1 Only', sub: 'October 22: Opening the Dialogue' },
-  { value: 'day2', label: 'Day 2 Only', sub: 'October 23: Four Tracks, One Field' },
-]
-
 const stepLabels = ['Verify Email', 'Personal Info', 'Background', 'Preferences']
 
-const REGISTRATION_OPEN = false
+// Conference attendee registration is closed; this form now serves only
+// the ISCHT Founding Membership flow (same account pipeline underneath).
+const REGISTRATION_OPEN = true
 
 export default function RegisterPage() {
   const router = useRouter()
@@ -152,22 +148,13 @@ export default function RegisterPage() {
             ✓
           </div>
 
-          <p className="label" style={{ marginBottom: 12 }}>You are registered</p>
+          <p className="label" style={{ marginBottom: 12 }}>You&apos;re a Founding Member</p>
           <h1 style={{ fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 12 }}>
             Welcome, {success.name}!
           </h1>
-          <p className="body" style={{ marginBottom: 20 }}>
-            Your registration for ICCH-AI 2026 is confirmed. A confirmation email with your registration pass has been sent to your inbox.
+          <p className="body" style={{ marginBottom: 40 }}>
+            Your free ISCHT Founding Membership is confirmed. A confirmation email has been sent to your inbox. Note: ICCH-AI 2026 conference registration is closed — this does not register you to attend the conference.
           </p>
-
-          <div style={{ padding: '18px 22px', background: 'rgba(164,28,48,0.05)', border: '1px solid var(--teal-border)', borderRadius: 8, marginBottom: 40, textAlign: 'left' }}>
-            <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--teal)', marginBottom: 8 }}>
-              How you&apos;ll join
-            </p>
-            <p style={{ fontSize: 12.5, color: 'var(--muted-light)', lineHeight: 1.65, marginBottom: 0 }}>
-              ICCH-AI 2026 is fully online. We will email you the YouTube live-stream link for your sessions before the event &mdash; no further action is needed from you now.
-            </p>
-          </div>
 
           {/* Registration number box */}
           <div style={{ padding: '28px 32px', background: 'var(--surface)', border: '1px solid var(--border)', borderTop: '3px solid var(--teal)', borderRadius: 8, marginBottom: 28, textAlign: 'left' }}>
@@ -229,11 +216,11 @@ export default function RegisterPage() {
     <div style={{ minHeight: '100vh', background: 'var(--background)', paddingTop: 68, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '100px 24px 80px' }}>
       <div style={{ width: '100%', maxWidth: 600 }}>
         <div style={{ marginBottom: 48 }}>
-          <p className="label" style={{ marginBottom: 16 }}>Free Registration</p>
+          <p className="label" style={{ marginBottom: 16 }}>Free to Join</p>
           <h1 style={{ fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: 8 }}>
-            Register for ICCH-AI 2026
+            Join ISCHT — Founding Membership
           </h1>
-          <p className="body">October 22–24, 2026 · Online worldwide, with an in-person option at IIT Delhi on Day 1 · Free to attend</p>
+          <p className="body">ICCH-AI 2026 conference registration is closed. This form is for free ISCHT Founding Membership only.</p>
         </div>
 
         {/* Step indicator */}
@@ -336,24 +323,9 @@ export default function RegisterPage() {
         {step === 4 && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
             <div style={{ padding: '16px 18px', background: 'rgba(164,28,48,0.06)', borderRadius: 6, border: '1px solid var(--teal-border)' }}>
-              <div style={{ fontWeight: 600, fontSize: 14 }}>This registration is for online attendance</div>
+              <div style={{ fontWeight: 600, fontSize: 14 }}>Conference registration is closed</div>
               <div className="caption" style={{ marginTop: 4, lineHeight: 1.6 }}>
-                ICCH-AI 2026 is fully online. We will email you the YouTube live-stream link for your sessions before the event &mdash; there is nothing else to arrange.
-              </div>
-            </div>
-
-            <div>
-              <label className="field-label" style={{ marginBottom: 12 }}>Attendance</label>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {attendance.map(a => (
-                  <label key={a.value} style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '16px 18px', background: form.attendance === a.value ? 'rgba(164,28,48,0.06)' : 'var(--surface-3)', borderRadius: 6, border: `1px solid ${form.attendance === a.value ? 'var(--teal-border)' : 'var(--border-mid)'}`, cursor: 'pointer', transition: 'all 0.15s' }}>
-                    <input type="radio" name="attendance" value={a.value} checked={form.attendance === a.value} onChange={e => set('attendance', e.target.value)} style={{ accentColor: 'var(--teal)' }} />
-                    <div>
-                      <div style={{ fontWeight: 600, fontSize: 14 }}>{a.label}</div>
-                      <div className="caption" style={{ marginTop: 2 }}>{a.sub}</div>
-                    </div>
-                  </label>
-                ))}
+                ICCH-AI 2026 attendee registration has closed. This form now opens only your free ISCHT Founding Membership below &mdash; it does not register you to attend the conference.
               </div>
             </div>
 

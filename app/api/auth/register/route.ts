@@ -40,7 +40,9 @@ const ALLOWED_ATTENDANCE = ['both', 'day1', 'day2']
 const ALLOWED_GENDERS = ['Male', 'Female', 'Other']
 const ALLOWED_MODES = ['online', 'offline']
 
-const REGISTRATION_OPEN = false
+// Conference attendee registration is closed; this endpoint now only serves
+// the ISCHT Founding Membership flow on /register (same account pipeline).
+const REGISTRATION_OPEN = true
 
 export async function POST(req: NextRequest) {
   try {

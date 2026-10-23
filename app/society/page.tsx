@@ -158,13 +158,13 @@ export default function SocietyPage() {
       <section style={{ padding: '64px 0', background: 'var(--hero-bg)', textAlign: 'center' }}>
         <div className="container">
           <h3 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', fontSize: 'clamp(22px, 3vw, 30px)', fontWeight: 700, color: '#FFFFFF', marginBottom: 12 }}>
-            Say yes to founding membership during ICCH-AI 2026 registration
+            Join as a Founding Member — free
           </h3>
           <p style={{ fontSize: 14, color: 'rgba(228,232,241,0.7)', marginBottom: 28, maxWidth: 480, marginLeft: 'auto', marginRight: 'auto' }}>
-            Early membership is offered only to those who opt in while registering for the conference. Full enrolment opens to everyone after ICCH-AI 2026.
+            ICCH-AI 2026 conference registration is closed, but ISCHT Founding Membership is still open. Full enrolment opens to everyone after ICCH-AI 2026.
           </p>
           <Link href="/register" className="btn btn-teal" style={{ display: 'inline-flex' }}>
-            Register for ICCH-AI 2026
+            Join ISCHT — Founding Membership
           </Link>
         </div>
       </section>
