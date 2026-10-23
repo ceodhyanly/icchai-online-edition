@@ -116,7 +116,7 @@ export default function Navbar() {
               style={{ padding: '10px 20px', fontSize: 13, border: 'none', cursor: 'pointer' }}
               aria-expanded={regOpen}
             >
-              Register
+              Join ISCHT
             </button>
             {regOpen && (
               <div style={{
@@ -124,12 +124,12 @@ export default function Navbar() {
                 background: '#ffffff', border: '1px solid rgba(26,12,8,0.12)', borderRadius: 8,
                 boxShadow: '0 12px 36px rgba(26,12,8,0.14)', padding: 10, display: 'flex', flexDirection: 'column', gap: 6,
               }}>
+                <Link href="/register" onClick={() => setRegOpen(false)} style={{ display: 'block', padding: '14px 16px', borderRadius: 6, textDecoration: 'none', color: '#1A0C08' }}>
+                  <div style={{ fontWeight: 700, fontSize: 14 }}>ISCHT Founding Membership</div>
+                  <div style={{ fontSize: 12.5, color: '#6E5A4E', marginTop: 4, lineHeight: 1.5 }}>Free to join. Conference registration is closed.</div>
+                </Link>
                 <div style={{ display: 'block', padding: '14px 16px', borderRadius: 6, color: '#1A0C08', opacity: 0.55, cursor: 'not-allowed' }}>
                   <div style={{ fontWeight: 700, fontSize: 14 }}>Attend the conference</div>
-                  <div style={{ fontSize: 12.5, color: '#6E5A4E', marginTop: 4, lineHeight: 1.5 }}>Registration closed.</div>
-                </div>
-                <div style={{ display: 'block', padding: '14px 16px', borderRadius: 6, color: '#1A0C08', opacity: 0.55, cursor: 'not-allowed' }}>
-                  <div style={{ fontWeight: 700, fontSize: 14 }}>Manana: speakers and research faculty</div>
                   <div style={{ fontSize: 12.5, color: '#6E5A4E', marginTop: 4, lineHeight: 1.5 }}>Registration closed.</div>
                 </div>
               </div>
@@ -178,8 +178,8 @@ export default function Navbar() {
           }}>{societyLink.label}</Link>
           <hr style={{ border: 'none', borderTop: '1px solid rgba(26,12,8,0.09)' }} />
           <Link href="/login" className="btn btn-outline" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Sign in</Link>
+          <Link href="/register" className="btn btn-teal" style={{ textAlign: 'center', justifyContent: 'center' }} onClick={() => setOpen(false)}>Join ISCHT — Free</Link>
           <span className="btn btn-outline" style={{ textAlign: 'center', justifyContent: 'center', opacity: 0.55, cursor: 'not-allowed' }}>Conference registration closed</span>
-          <span className="btn btn-outline" style={{ textAlign: 'center', justifyContent: 'center', opacity: 0.55, cursor: 'not-allowed' }}>Manana: registration closed</span>
         </div>
       )}
 
